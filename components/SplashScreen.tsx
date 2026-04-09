@@ -46,7 +46,7 @@ export function SplashScreen() {
       ) : (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src="/logo-splash.png.PNG"
+          src="/logo-splash.png"
           alt="Eagle Eye Chauffeur"
           width={280}
           height={140}

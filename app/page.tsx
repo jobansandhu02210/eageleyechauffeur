@@ -41,14 +41,14 @@ const services = [
 // Fleet: tries your images in public/ first (see public/FLEET-IMAGES.txt), then fallback
 // Local paths must match filenames in public/ exactly (case-sensitive on Vercel)
 const fleet = [
-  { title: 'Business Class Sedan', local: '/fleet-business-sedan.png.PNG', fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80' },
-  { title: 'Business Class SUV', local: '/fleet-business-suv.png.PNG', fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80' },
-  { title: 'First Class SUV', local: '/fleet-first-suv.png.PNG', fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80' },
-  { title: 'First Class Sedan', local: '/fleet-first-sedan.png.PNG', fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80' },
+  { title: 'Business Class Sedan', local: '/fleet-business-sedan.png', fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80' },
+  { title: 'Business Class SUV', local: '/fleet-business-suv.png', fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80' },
+  { title: 'First Class SUV', local: '/fleet-first-suv.png', fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80' },
+  { title: 'First Class Sedan', local: '/fleet-first-sedan.png', fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80' },
 ];
 
-// Hero: your file is hero.jpg.jpg — rename to hero.jpg later and switch to '/hero.jpg'
-const HERO_IMAGE = '/hero.jpg.jpg';
+// Hero image in public/hero.jpg (simple name — works reliably on Vercel)
+const HERO_IMAGE = '/hero.jpg';
 
 const testimonials = [
   {
