@@ -70,6 +70,9 @@ PLACES_ALLOWED_HOST_SUFFIXES=example.com,another.com
 - **502 / error text from Google**  
   Billing, Places API not enabled, or key API restrictions don’t include **Places API**.
 
+- **REQUEST_DENIED when the old browser key is reused**  
+  Keys restricted to **HTTP referrers** often **fail** for server `fetch()` (no referrer is sent). Use a **separate** key for `PLACES_SERVER_API_KEY` with **Application restrictions = None** and **API restrictions = Places API** only.
+
 - **Contact page embed map**  
   Unrelated to this key; embeds can keep using a normal Google Maps embed URL (or Maps Embed API if required).
 
