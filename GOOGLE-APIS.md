@@ -38,10 +38,11 @@ For the **Contact** page embed map, you can keep using a normal Google Maps embe
 
 **Application restrictions**
 
-- For local development: choose **None** temporarily, or **HTTP referrers** and add:
-  - `http://localhost:3000/*`
-  - `http://127.0.0.1:3000/*`
+- For local development: choose **None** temporarily, or **HTTP referrers** and add **every port** Next.js might use:
+  - `http://localhost:3000/*`, `http://localhost:3001/*`, `http://localhost:3002/*`
+  - `http://127.0.0.1:3000/*`, `http://127.0.0.1:3001/*`, `http://127.0.0.1:3002/*`
 - For production: add your live site, e.g. `https://yourdomain.com/*` and `https://www.yourdomain.com/*`
+- For **Vercel preview** deployments: add `https://*.vercel.app/*` (or each preview URL you use)
 
 **API restrictions**
 
@@ -86,6 +87,15 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 ## Troubleshooting
 
+- **“Oops! Something went wrong.” inside the address field**  
+  The script loaded, but Google is **blocking** autocomplete requests. Fix in Google Cloud (same project as the key):
+
+  1. **Billing** is linked and active for that project.  
+  2. **Enable** [Maps JavaScript API](https://console.cloud.google.com/apis/library/maps-backend.googleapis.com) and [Places API](https://console.cloud.google.com/apis/library/places-backend.googleapis.com) (the one named **Places API**, not only “Places API (New)” unless Google’s console groups them).  
+  3. **API key restrictions** → allow at least **Maps JavaScript API** and **Places API**.  
+  4. **HTTP referrer** restrictions must include the **exact** origin you’re using (scheme + host + port). If Next.js says `http://localhost:3002`, you must add `http://localhost:3002/*` — `3000` alone is not enough. Include both `https://www.yourdomain.com/*` and `https://yourdomain.com/*` for production.  
+  5. **Quick test:** set application restriction to **None** and API restriction to **Don’t restrict key** for five minutes. If autocomplete works, re-enable restrictions one at a time to find the mistake.
+
 - **“This page can’t load Google Maps correctly”**  
   Check billing is enabled, APIs are enabled, and the key’s **API restrictions** include Maps JavaScript + Places.
 
@@ -93,6 +103,6 @@ NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
   Confirm `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is in `.env.local` (not only `.env`), restart `npm run dev`, and check the browser console for errors.
 
 - **Referrer not allowed**  
-  Add your exact URL pattern under **HTTP referrers** for the API key (including `localhost` for dev).
+  Add your exact URL pattern under **HTTP referrers** for the API key (including `localhost` **with the correct port** for dev).
 
 For official docs: [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript) and [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/place-autocomplete).

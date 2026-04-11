@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { GooglePlacesAutocomplete } from '@/components/GooglePlacesAutocomplete';
 
 type ServiceType = 'point-to-point' | 'hourly' | 'airport';
-type VehicleType = 'sedan' | 'suv' | 'sprinter';
+type VehicleType = 'business-sedan' | 'business-suv' | 'first-suv' | 'first-sedan';
 
 const SERVICE_LABELS: Record<ServiceType, string> = {
   'point-to-point': 'Point-to-Point',
@@ -14,9 +14,10 @@ const SERVICE_LABELS: Record<ServiceType, string> = {
 };
 
 const VEHICLE_LABELS: Record<VehicleType, string> = {
-  sedan: 'Executive Sedan',
-  suv: 'Luxury SUV',
-  sprinter: 'Sprinter Van',
+  'business-sedan': 'Business Class Sedan',
+  'business-suv': 'Business Class SUV',
+  'first-suv': 'First Class SUV',
+  'first-sedan': 'First Class Sedan',
 };
 
 const AIRPORTS = ['JFK - John F. Kennedy', 'LGA - LaGuardia', 'EWR - Newark Liberty', 'HPN - Westchester County'];
@@ -27,8 +28,18 @@ function getQuote(
   vehicle: VehicleType,
   hours?: number
 ): { amount: number; label: string } {
-  const base: Record<VehicleType, number> = { sedan: 85, suv: 120, sprinter: 180 };
-  const hourly: Record<VehicleType, number> = { sedan: 75, suv: 95, sprinter: 125 };
+  const base: Record<VehicleType, number> = {
+    'business-sedan': 85,
+    'business-suv': 120,
+    'first-suv': 145,
+    'first-sedan': 110,
+  };
+  const hourly: Record<VehicleType, number> = {
+    'business-sedan': 75,
+    'business-suv': 95,
+    'first-suv': 115,
+    'first-sedan': 90,
+  };
   const v = base[vehicle];
   if (service === 'hourly' && hours && hours >= 2) {
     const total = v + (hours - 1) * hourly[vehicle];
@@ -53,7 +64,7 @@ export default function BookPage() {
   const [dropoff, setDropoff] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [vehicle, setVehicle] = useState<VehicleType>('sedan');
+  const [vehicle, setVehicle] = useState<VehicleType>('business-sedan');
   const [passengers, setPassengers] = useState(1);
   const [luggage, setLuggage] = useState(0);
   const [hours, setHours] = useState(2);
