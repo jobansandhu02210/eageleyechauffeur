@@ -28,7 +28,7 @@ const services: Record<string, ServiceEntry> = {
       'fixed rate chauffeur New York',
       'borough to borough car service',
     ],
-    image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=1200&q=80',
+    image: '/service-point-to-point.png',
     content: [
       {
         heading: 'Door-to-Door Convenience',
@@ -56,7 +56,7 @@ const services: Record<string, ServiceEntry> = {
       'executive day driver New York',
       'roadshow chauffeur NYC',
     ],
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&q=80',
+    image: '/service-hourly.png',
     content: [
       {
         heading: 'Flexibility When You Need It',
@@ -85,7 +85,7 @@ const services: Record<string, ServiceEntry> = {
       'NYC airport meet and greet',
       'private airport pickup New York',
     ],
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80',
+    image: '/service-airport.png',
     content: [
       {
         heading: 'Every Major NYC Airport',

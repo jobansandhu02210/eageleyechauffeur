@@ -23,19 +23,19 @@ const services = [
     title: 'Point-to-Point Transfers',
     slug: 'point-to-point',
     description: 'Direct, luxurious transportation within NYC and surrounding areas.',
-    image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=600&q=80',
+    image: '/service-point-to-point.png',
   },
   {
     title: 'Hourly Chauffeur Service',
     slug: 'hourly',
     description: 'Flexible hourly hire for business meetings, events, or leisurely tours.',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=600&q=80',
+    image: '/service-hourly.png',
   },
   {
     title: 'Airport Transfers',
     slug: 'airport',
     description: 'JFK, LGA, EWR, HPN. Meet-and-greet and real-time flight tracking.',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80',
+    image: '/service-airport.png',
   },
   {
     title: 'Corporate Travel',

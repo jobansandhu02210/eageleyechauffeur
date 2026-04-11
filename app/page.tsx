@@ -22,19 +22,19 @@ const services = [
     title: 'Point-to-Point Transfers',
     description: 'Direct, luxurious transportation within NYC and surrounding areas. Door-to-door convenience.',
     href: '/services/point-to-point',
-    image: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80',
+    image: '/service-point-to-point.png',
   },
   {
     title: 'Hourly Chauffeur Service',
     description: 'Flexible hourly hire for meetings, events, or leisurely tours. Your schedule, your way.',
     href: '/services/hourly',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80',
+    image: '/service-hourly.png',
   },
   {
     title: 'Airport Transfers',
     description: 'JFK, LGA, EWR, HPN. Meet-and-greet, flight tracking, and punctual pickups every time.',
     href: '/services/airport',
-    image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&q=80',
+    image: '/service-airport.png',
   },
 ];
 
