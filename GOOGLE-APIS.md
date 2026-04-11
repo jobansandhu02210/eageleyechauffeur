@@ -1,108 +1,82 @@
-# Turn on Google APIs for Eagle Eye Chauffeur
+# Google Places for address autocomplete (Book page)
 
-Follow these steps in **Google Cloud Console**, then add keys to your project.
+The booking form loads suggestions through **your Next.js server** (`/api/places/*`), not the Maps JavaScript widget in the browser. That way:
 
-## 1. Create a Google Cloud project
+- The API key stays **server-only** (`PLACES_SERVER_API_KEY`).
+- You do **not** depend on **HTTP referrer** rules on the key, so redeploys, `www` vs non-`www`, localhost ports, and `*.vercel.app` previews stop breaking autocomplete.
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/).
-2. Sign in with your Google account.
-3. Click the project menu (top left) → **New Project**.
-4. Name it (e.g. `Eagle Eye Chauffeur`) → **Create**.
+## 1. Google Cloud project
 
-## 2. Enable billing
+1. [Google Cloud Console](https://console.cloud.google.com/) → select or create a project.
+2. **Billing** must be linked (Maps Platform uses a monthly credit; see [pricing](https://mapsplatform.google.com/pricing/)).
 
-Google Maps Platform requires a billing account (Google gives a monthly free credit; see [pricing](https://mapsplatform.google.com/pricing/)).
+## 2. Enable APIs
 
-1. **Billing** → **Link a billing account** (or create one).
-
-## 3. Enable the APIs you need
-
-1. Open **APIs & Services** → **Library** (or [API Library](https://console.cloud.google.com/apis/library)).
-2. Search and **Enable** each of these:
+**APIs & Services** → **Library** → enable:
 
 | API | Used for |
 |-----|----------|
-| **Maps JavaScript API** | Maps + Places Autocomplete on your booking page |
-| **Places API** | Address suggestions (pick-up / drop-off) |
-| **Geocoding API** | *(Optional)* Turn addresses into coordinates |
+| **Places API** | Place Autocomplete + Place Details (server JSON API) |
 
-For the **Contact** page embed map, you can keep using a normal Google Maps embed URL, or enable **Maps Embed API** if Google asks for it.
+You do **not** need Maps JavaScript API for the Book page autocomplete anymore.
 
-## 4. Create an API key
+## 3. Create a server API key
 
-1. **APIs & Services** → **Credentials**.
-2. **+ Create credentials** → **API key**.
-3. Copy the key (you will paste it into `.env.local`).
+1. **APIs & Services** → **Credentials** → **Create credentials** → **API key**.
+2. **API restrictions**: **Restrict key** → select **Places API** only.
+3. **Application restrictions**: **None** (recommended for this server key).  
+   The key is only on Vercel / your server, not in client bundles. Our `/api/places/*` routes also check that requests come from allowed hosts (see below).
 
-## 5. Restrict the key (important)
+## 4. Add the key to the app
 
-**Application restrictions**
-
-- For local development: choose **None** temporarily, or **HTTP referrers** and add **every port** Next.js might use:
-  - `http://localhost:3000/*`, `http://localhost:3001/*`, `http://localhost:3002/*`
-  - `http://127.0.0.1:3000/*`, `http://127.0.0.1:3001/*`, `http://127.0.0.1:3002/*`
-- For production: add your live site, e.g. `https://yourdomain.com/*` and `https://www.yourdomain.com/*`
-- For **Vercel preview** deployments: add `https://*.vercel.app/*` (or each preview URL you use)
-
-**API restrictions**
-
-- Choose **Restrict key** → select only:
-  - Maps JavaScript API  
-  - Places API  
-  - (and Maps Embed API if you use it)
-
-Save. Changes can take a few minutes.
-
-## 6. Add the key to this project
-
-1. In the project root, create a file named **`.env.local`** (same folder as `package.json`).
-2. Add (replace with your real key):
+**Local** — `.env.local` (same folder as `package.json`):
 
 ```env
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=AIzaSy...your_key_here
+PLACES_SERVER_API_KEY=AIzaSy...your_key_here
 ```
 
-3. Restart the dev server (`Ctrl+C`, then `npm run dev`).
+Restart `npm run dev`.
 
-The booking page will load **address autocomplete** when this variable is set.
+**Vercel** — Project → **Settings** → **Environment Variables**:
 
-## 7. Google Analytics (optional)
+- Name: `PLACES_SERVER_API_KEY`  
+- Value: same key  
+- Environments: Production, Preview, Development as needed  
 
-1. In [Google Analytics](https://analytics.google.com/), create a **GA4** property for your site.
-2. Copy the **Measurement ID** (starts with `G-`).
-3. In `.env.local`:
+Redeploy after saving.
+
+## 5. Allowed hosts (security)
+
+By default, `/api/places/*` accepts requests when the browser’s **Referer** / **Origin** host is:
+
+- `localhost` / `127.0.0.1` (any port)
+- `*.vercel.app`
+- `eagleeyechauffeur.com` and `*.eagleeyechauffeur.com`
+
+To allow another domain, set:
 
 ```env
-NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+PLACES_ALLOWED_HOST_SUFFIXES=example.com,another.com
 ```
-
-4. Restart the dev server.
-
-## 8. Google Search Console (optional)
-
-1. [Google Search Console](https://search.google.com/search-console) → add your property.
-2. Use the HTML tag verification method and put the code in `app/layout.tsx` under `metadata.verification.google`.
-
----
 
 ## Troubleshooting
 
-- **“Oops! Something went wrong.” inside the address field**  
-  The script loaded, but Google is **blocking** autocomplete requests. Fix in Google Cloud (same project as the key):
+- **No suggestions, no “powered by Google” line**  
+  `PLACES_SERVER_API_KEY` is missing or the deployment wasn’t rebuilt after adding it.
 
-  1. **Billing** is linked and active for that project.  
-  2. **Enable** [Maps JavaScript API](https://console.cloud.google.com/apis/library/maps-backend.googleapis.com) and [Places API](https://console.cloud.google.com/apis/library/places-backend.googleapis.com) (the one named **Places API**, not only “Places API (New)” unless Google’s console groups them).  
-  3. **API key restrictions** → allow at least **Maps JavaScript API** and **Places API**.  
-  4. **HTTP referrer** restrictions must include the **exact** origin you’re using (scheme + host + port). If Next.js says `http://localhost:3002`, you must add `http://localhost:3002/*` — `3000` alone is not enough. Include both `https://www.yourdomain.com/*` and `https://yourdomain.com/*` for production.  
-  5. **Quick test:** set application restriction to **None** and API restriction to **Don’t restrict key** for five minutes. If autocomplete works, re-enable restrictions one at a time to find the mistake.
+- **403 Forbidden** on `/api/places/config`  
+  You’re opening the site from a hostname not in the allowlist; add it via `PLACES_ALLOWED_HOST_SUFFIXES` or use an allowed domain.
 
-- **“This page can’t load Google Maps correctly”**  
-  Check billing is enabled, APIs are enabled, and the key’s **API restrictions** include Maps JavaScript + Places.
+- **502 / error text from Google**  
+  Billing, Places API not enabled, or key API restrictions don’t include **Places API**.
 
-- **Autocomplete does nothing**  
-  Confirm `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is in `.env.local` (not only `.env`), restart `npm run dev`, and check the browser console for errors.
+- **Contact page embed map**  
+  Unrelated to this key; embeds can keep using a normal Google Maps embed URL (or Maps Embed API if required).
 
-- **Referrer not allowed**  
-  Add your exact URL pattern under **HTTP referrers** for the API key (including `localhost` **with the correct port** for dev).
+Official docs: [Place Autocomplete](https://developers.google.com/maps/documentation/places/web-service/autocomplete), [Place Details](https://developers.google.com/maps/documentation/places/web-service/details).
 
-For official docs: [Maps JavaScript API](https://developers.google.com/maps/documentation/javascript) and [Places Autocomplete](https://developers.google.com/maps/documentation/javascript/place-autocomplete).
+---
+
+## Optional: Google Analytics & Search Console
+
+See previous sections in your internal docs or `.env.example` for `NEXT_PUBLIC_GA_ID` and Search Console verification in `app/layout.tsx`.

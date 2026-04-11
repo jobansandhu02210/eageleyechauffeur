@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { GooglePlacesAutocomplete } from '@/components/GooglePlacesAutocomplete';
 
@@ -70,6 +70,22 @@ export default function BookPage() {
   const [hours, setHours] = useState(2);
   const [specialRequests, setSpecialRequests] = useState('');
   const [airport, setAirport] = useState('');
+  const [placesServerEnabled, setPlacesServerEnabled] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/api/places/config', { credentials: 'same-origin' })
+      .then((r) => (r.ok ? r.json() : { enabled: false }))
+      .then((d: { enabled?: boolean }) => {
+        if (!cancelled) setPlacesServerEnabled(!!d.enabled);
+      })
+      .catch(() => {
+        if (!cancelled) setPlacesServerEnabled(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const quote = getQuote(service, vehicle, service === 'hourly' ? hours : undefined);
   const canProceed =
@@ -144,8 +160,9 @@ export default function BookPage() {
                   value={pickup}
                   onChange={setPickup}
                   placeholder="Address, airport, or hotel"
+                  serverProxyEnabled={placesServerEnabled}
                 />
-                {process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY && (
+                {placesServerEnabled && (
                   <p className="mt-1 text-xs text-brand-silver">Address suggestions powered by Google</p>
                 )}
               </div>
@@ -157,6 +174,7 @@ export default function BookPage() {
                     value={dropoff}
                     onChange={setDropoff}
                     placeholder="Address, airport, or hotel"
+                    serverProxyEnabled={placesServerEnabled}
                   />
                 </div>
               )}

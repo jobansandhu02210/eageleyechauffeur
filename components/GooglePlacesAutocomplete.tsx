@@ -1,47 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-const SCRIPT_ID = 'google-maps-js';
-
-const GOOGLE_MAPS_AUTH_FAILURE = 'google-maps-auth-failure';
-
-function installGmAuthFailureListener(): void {
-  const w = window as Window & {
-    __eecGmAuthFailureHook?: boolean;
-    gm_authFailure?: () => void;
-  };
-  if (w.__eecGmAuthFailureHook) return;
-  w.__eecGmAuthFailureHook = true;
-  const previous = w.gm_authFailure;
-  w.gm_authFailure = function gmAuthFailure() {
-    previous?.();
-    window.dispatchEvent(new CustomEvent(GOOGLE_MAPS_AUTH_FAILURE));
-  };
-}
-
-function loadMapsScript(apiKey: string): Promise<void> {
-  if (typeof window === 'undefined') return Promise.resolve();
-  const w = window as Window & { google?: { maps?: { places?: unknown } } };
-  if (w.google?.maps?.places) return Promise.resolve();
-
-  return new Promise((resolve, reject) => {
-    const existing = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null;
-    if (existing) {
-      existing.addEventListener('load', () => resolve(), { once: true });
-      existing.addEventListener('error', () => reject(new Error('Google Maps script failed')), { once: true });
-      return;
-    }
-    installGmAuthFailureListener();
-    const script = document.createElement('script');
-    script.id = SCRIPT_ID;
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(apiKey)}&libraries=places&v=weekly`;
-    script.async = true;
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Google Maps script failed'));
-    document.head.appendChild(script);
-  });
-}
+type Prediction = { description: string; placeId: string };
 
 type Props = {
   id: string;
@@ -49,121 +10,149 @@ type Props = {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  /**
+   * When true, suggestions use your server-side key via /api/places/* (no browser referrer rules).
+   */
+  serverProxyEnabled: boolean;
 };
 
-export function GooglePlacesAutocomplete({ id, label, value, onChange, placeholder }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const onChangeRef = useRef(onChange);
-  onChangeRef.current = onChange;
-
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-  const [loadError, setLoadError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (!apiKey) return;
-    const onAuthFailure = () => {
-      setLoadError(
-        'Google rejected this request (check billing, enabled APIs, and HTTP referrer restrictions for your API key — see GOOGLE-APIS.md).'
-      );
-      console.error(
-        '[Google Maps] Auth failure. Typical fixes: (1) Billing linked to the same project as the key. (2) Enable Maps JavaScript API + Places API. (3) Under key restrictions → HTTP referrers, add your exact origin e.g. https://www.yourdomain.com/* and http://localhost:3002/* if you use port 3002.'
-      );
-    };
-    window.addEventListener(GOOGLE_MAPS_AUTH_FAILURE, onAuthFailure);
-    return () => window.removeEventListener(GOOGLE_MAPS_AUTH_FAILURE, onAuthFailure);
-  }, [apiKey]);
-
-  // Google's Autocomplete mutates the input; a fully controlled React value can fight it and break typing.
-  useEffect(() => {
-    const el = inputRef.current;
-    if (!apiKey || !el) return;
-    if (el.value !== value) el.value = value;
-  }, [apiKey, value]);
+export function GooglePlacesAutocomplete({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder,
+  serverProxyEnabled,
+}: Props) {
+  const [open, setOpen] = useState(false);
+  const [predictions, setPredictions] = useState<Prediction[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (!apiKey || !inputRef.current) return;
-
-    let listener: unknown;
-    setLoadError(null);
-
-    loadMapsScript(apiKey)
-      .then(() => {
-        const w = window as Window & {
-          google?: {
-            maps: {
-              event: { removeListener: (l: unknown) => void };
-              places: {
-                Autocomplete: new (el: HTMLInputElement, opts?: object) => {
-                  addListener: (ev: string, fn: () => void) => unknown;
-                  getPlace: () => { formatted_address?: string; name?: string };
-                };
-              };
-            };
-          };
-        };
-        const g = w.google;
-        if (!g?.maps?.places || !inputRef.current) return;
-
-        const Autocomplete = g.maps.places.Autocomplete;
-        const ac = new Autocomplete(inputRef.current, {
-          componentRestrictions: { country: ['us'] },
-          fields: ['formatted_address', 'name'],
-        });
-
-        listener = ac.addListener('place_changed', () => {
-          const place = ac.getPlace();
-          const addr = place.formatted_address || place.name || '';
-          if (addr) onChangeRef.current(addr);
-        });
-      })
-      .catch((err) => {
-        const msg = err instanceof Error ? err.message : 'Google Places failed to load';
-        console.error('[GooglePlacesAutocomplete]', err);
-        setLoadError(msg);
-      });
-
-    return () => {
-      const w = window as Window & { google?: { maps?: { event?: { removeListener: (l: unknown) => void } } } };
-      if (listener && w.google?.maps?.event) {
-        w.google.maps.event.removeListener(listener);
+    function onDocMouseDown(e: MouseEvent) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
       }
-    };
-  }, [apiKey, id]);
+    }
+    document.addEventListener('mousedown', onDocMouseDown);
+    return () => document.removeEventListener('mousedown', onDocMouseDown);
+  }, []);
 
-  if (!apiKey) {
-    return (
-      <>
-        <label htmlFor={id} className="block text-sm font-medium text-brand-black mb-2">
-          {label}
-        </label>
-        <input
-          id={id}
-          type="text"
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          placeholder={placeholder}
-          className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black placeholder-brand-silver focus:outline-none focus:ring-2 focus:ring-brand-black"
-        />
-      </>
-    );
-  }
+  const fetchPredictions = useCallback(
+    async (q: string) => {
+      if (!serverProxyEnabled || q.trim().length < 2) {
+        setPredictions([]);
+        setOpen(false);
+        return;
+      }
+      setLoading(true);
+      setError(null);
+      try {
+        const res = await fetch(
+          `/api/places/autocomplete?input=${encodeURIComponent(q.trim())}`,
+          { credentials: 'same-origin' }
+        );
+        const data = (await res.json()) as { predictions?: Prediction[]; error?: string };
+        if (!res.ok) {
+          setPredictions([]);
+          setError(data.error ?? 'Suggestions unavailable');
+          setOpen(false);
+          return;
+        }
+        const list = data.predictions ?? [];
+        setPredictions(list);
+        setOpen(list.length > 0);
+      } catch {
+        setPredictions([]);
+        setError('Could not load suggestions');
+        setOpen(false);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [serverProxyEnabled]
+  );
+
+  const onInputChange = (v: string) => {
+    onChange(v);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    if (!serverProxyEnabled) return;
+    debounceRef.current = setTimeout(() => fetchPredictions(v), 350);
+  };
+
+  const onPick = async (p: Prediction) => {
+    setOpen(false);
+    setPredictions([]);
+    setLoading(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/places/details?placeId=${encodeURIComponent(p.placeId)}`, {
+        credentials: 'same-origin',
+      });
+      const data = (await res.json()) as { formattedAddress?: string; error?: string };
+      if (!res.ok || !data.formattedAddress) {
+        onChange(p.description);
+        if (!res.ok) setError(data.error ?? null);
+        return;
+      }
+      onChange(data.formattedAddress);
+    } catch {
+      onChange(p.description);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <>
+    <div ref={wrapRef} className="relative">
       <label htmlFor={id} className="block text-sm font-medium text-brand-black mb-2">
         {label}
       </label>
       <input
-        ref={inputRef}
         id={id}
         type="text"
-        defaultValue={value}
-        onChange={(e) => onChange(e.target.value)}
+        value={value}
+        onChange={(e) => onInputChange(e.target.value)}
+        onFocus={() => {
+          if (serverProxyEnabled && predictions.length > 0) setOpen(true);
+        }}
         placeholder={placeholder}
         autoComplete="off"
+        aria-autocomplete={serverProxyEnabled ? 'list' : undefined}
+        aria-controls={serverProxyEnabled ? `${id}-places-list` : undefined}
+        aria-expanded={serverProxyEnabled ? open : undefined}
         className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black placeholder-brand-silver focus:outline-none focus:ring-2 focus:ring-brand-black"
       />
-      {loadError && <p className="mt-1 text-xs text-red-600">{loadError}</p>}
-    </>
+      {loading && (
+        <p className="mt-1 text-xs text-brand-silver" aria-live="polite">
+          Loading suggestions…
+        </p>
+      )}
+      {error && <p className="mt-1 text-xs text-red-600">{error}</p>}
+      {serverProxyEnabled && open && predictions.length > 0 && (
+        <ul
+          id={`${id}-places-list`}
+          role="listbox"
+          className="absolute z-50 left-0 right-0 top-full mt-1 max-h-56 overflow-auto border border-brand-light bg-brand-white shadow-lg text-sm"
+        >
+          {predictions.map((p) => (
+            <li key={p.placeId} role="presentation">
+              <button
+                type="button"
+                role="option"
+                className="w-full text-left px-4 py-3 hover:bg-brand-offwhite text-brand-dark border-b border-brand-light last:border-0"
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => onPick(p)}
+              >
+                {p.description}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
