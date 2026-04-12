@@ -28,5 +28,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...pages, ...servicePages];
+  const areaPages: MetadataRoute.Sitemap = [
+    { url: `${base}/services/areas/manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/jfk-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+  ];
+
+  return [...pages, ...servicePages, ...areaPages];
 }
