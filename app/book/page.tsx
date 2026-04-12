@@ -27,84 +27,11 @@ const VEHICLE_LABELS: Record<VehicleType, string> = {
 
 const AIRPORTS = ['JFK - John F. Kennedy', 'LGA - LaGuardia', 'EWR - Newark Liberty', 'HPN - Westchester County'];
 
-const VEHICLE_BASE: Record<VehicleType, number> = {
-  'business-sedan': 85,
-  'business-suv': 120,
-  'first-suv': 145,
-  'first-sedan': 110,
-};
+type EstimateLine = { label: string; amount: number };
 
-const VEHICLE_HOURLY: Record<VehicleType, number> = {
-  'business-sedan': 75,
-  'business-suv': 95,
-  'first-suv': 115,
-  'first-sedan': 90,
-};
-
-const EXTRA_PASSENGER_FEE = 15;
-const INCLUDED_PASSENGERS = 4;
-const EXTRA_LUGGAGE_FEE = 8;
-const INCLUDED_LUGGAGE = 3;
-
-type QuoteLine = { label: string; amount: number };
-
-/** Auto-calculated estimate from current form values (replace with API/pricing table when ready). */
-function getQuote(
-  service: ServiceType,
-  vehicle: VehicleType,
-  passengers: number,
-  luggage: number,
-  hours?: number
-): { amount: number; label: string; lines: QuoteLine[] } {
-  const lines: QuoteLine[] = [];
-  const v = VEHICLE_BASE[vehicle];
-  const vehicleName = VEHICLE_LABELS[vehicle];
-
-  if (service === 'hourly' && hours != null && hours >= 2) {
-    const rate = VEHICLE_HOURLY[vehicle];
-    lines.push({ label: `First hour (${vehicleName})`, amount: v });
-    const extraHours = hours - 1;
-    lines.push({
-      label: `${extraHours} additional hour${extraHours > 1 ? 's' : ''} × $${rate}`,
-      amount: extraHours * rate,
-    });
-  } else if (service === 'airport') {
-    lines.push({ label: `Vehicle (${vehicleName})`, amount: v });
-    lines.push({ label: 'Airport meet & greet', amount: 45 });
-  } else {
-    lines.push({ label: `Vehicle (${vehicleName})`, amount: v });
-    lines.push({ label: 'Point-to-point route estimate', amount: 25 });
-  }
-
-  if (passengers > INCLUDED_PASSENGERS) {
-    const n = passengers - INCLUDED_PASSENGERS;
-    lines.push({
-      label: `Extra passengers (${n} beyond ${INCLUDED_PASSENGERS}) × $${EXTRA_PASSENGER_FEE}`,
-      amount: n * EXTRA_PASSENGER_FEE,
-    });
-  }
-  if (luggage > INCLUDED_LUGGAGE) {
-    const n = luggage - INCLUDED_LUGGAGE;
-    lines.push({
-      label: `Extra luggage (${n} bag${n > 1 ? 's' : ''} beyond ${INCLUDED_LUGGAGE}) × $${EXTRA_LUGGAGE_FEE}`,
-      amount: n * EXTRA_LUGGAGE_FEE,
-    });
-  }
-
-  const subtotal = lines.reduce((s, l) => s + l.amount, 0);
-  const amount = Math.round(subtotal);
-
-  let label: string;
-  if (service === 'hourly' && hours != null) {
-    label = `${hours} hour chauffeur (estimated)`;
-  } else if (service === 'airport') {
-    label = 'Airport transfer (estimated)';
-  } else {
-    label = 'Point-to-point (estimated)';
-  }
-
-  return { amount, label, lines };
-}
+type BookingEstimate =
+  | { incomplete: true; message: string }
+  | { incomplete: false; amount: number; label: string; lines: EstimateLine[] };
 
 const STEPS = [
   'Service & locations',
@@ -134,8 +61,58 @@ export default function BookPage() {
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'error'>('idle');
   const [bookingError, setBookingError] = useState<string | null>(null);
+  const [estimate, setEstimate] = useState<BookingEstimate | null>(null);
+  const [estimateLoading, setEstimateLoading] = useState(false);
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail.trim());
+
+  useEffect(() => {
+    let cancelled = false;
+    const t = setTimeout(async () => {
+      setEstimateLoading(true);
+      try {
+        const res = await fetch('/api/booking/estimate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({
+            service,
+            vehicle,
+            pickup,
+            dropoff,
+            airport,
+            hours,
+            passengers,
+            luggage,
+          }),
+        });
+        const data = (await res.json()) as BookingEstimate | { error?: string };
+        if (cancelled) return;
+        if (!res.ok) {
+          const msg =
+            typeof (data as { error?: string }).error === 'string'
+              ? (data as { error: string }).error
+              : 'Could not calculate an estimate. Try again in a moment.';
+          setEstimate({ incomplete: true, message: msg });
+          return;
+        }
+        setEstimate(data as BookingEstimate);
+      } catch {
+        if (!cancelled) {
+          setEstimate({
+            incomplete: true,
+            message: 'Could not reach the server. Check your connection and try again.',
+          });
+        }
+      } finally {
+        if (!cancelled) setEstimateLoading(false);
+      }
+    }, 550);
+    return () => {
+      cancelled = true;
+      clearTimeout(t);
+    };
+  }, [service, vehicle, pickup, dropoff, airport, hours, passengers, luggage]);
 
   useEffect(() => {
     let cancelled = false;
@@ -152,13 +129,11 @@ export default function BookPage() {
     };
   }, []);
 
-  const quote = getQuote(
-    service,
-    vehicle,
-    passengers,
-    luggage,
-    service === 'hourly' ? hours : undefined
-  );
+  const quoteReady = estimate && !estimate.incomplete;
+  const quoteAmount = quoteReady ? estimate.amount : 0;
+  const quoteLabel = quoteReady ? estimate.label : '';
+  const quoteLines = quoteReady ? estimate.lines : [];
+
   const canProceed =
     (step === 1 &&
       pickup.trim() &&
@@ -195,8 +170,8 @@ export default function BookPage() {
           luggage,
           hours: service === 'hourly' ? hours : undefined,
           specialRequests,
-          quoteAmount: quote.amount,
-          quoteLabel: quote.label,
+          quoteAmount,
+          quoteLabel: quoteReady ? quoteLabel : 'Pending estimate',
           customerName: customerName.trim(),
           customerEmail: customerEmail.trim(),
           customerPhone: customerPhone.trim(),
@@ -248,22 +223,32 @@ export default function BookPage() {
             aria-atomic="true"
           >
             <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Live estimate</p>
-            <p className="text-sm text-brand-grey mt-1">{quote.label}</p>
-            <ul className="mt-4 space-y-2">
-              {quote.lines.map((line, i) => (
-                <li key={i} className="flex justify-between gap-4 text-sm text-brand-grey">
-                  <span className="min-w-0">{line.label}</span>
-                  <span className="shrink-0 tabular-nums text-brand-black font-medium">${line.amount}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="flex justify-between items-baseline gap-4 mt-5 pt-4 border-t border-brand-light">
-              <span className="font-serif text-lg font-semibold text-brand-black">Estimated total</span>
-              <span className="text-2xl font-semibold text-brand-black tabular-nums">${quote.amount}</span>
-            </div>
+            {estimateLoading ? (
+              <p className="text-sm text-brand-grey mt-3">Calculating your estimate…</p>
+            ) : estimate?.incomplete ? (
+              <p className="text-sm text-brand-grey mt-3">{estimate.message}</p>
+            ) : quoteReady ? (
+              <>
+                <p className="text-sm text-brand-grey mt-1">{quoteLabel}</p>
+                <ul className="mt-4 space-y-2">
+                  {quoteLines.map((line, i) => (
+                    <li key={i} className="flex justify-between gap-4 text-sm text-brand-grey">
+                      <span className="min-w-0">{line.label}</span>
+                      <span className="shrink-0 tabular-nums text-brand-black font-medium">${line.amount}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex justify-between items-baseline gap-4 mt-5 pt-4 border-t border-brand-light">
+                  <span className="font-serif text-lg font-semibold text-brand-black">Estimated total</span>
+                  <span className="text-2xl font-semibold text-brand-black tabular-nums">${quoteAmount}</span>
+                </div>
+              </>
+            ) : (
+              <p className="text-sm text-brand-grey mt-3">Preparing estimate…</p>
+            )}
             <p className="text-xs text-brand-silver mt-3">
-              Updates automatically as you change service, vehicle, hours, passengers, and luggage. Final price
-              confirmed after routing and availability.
+              Total updates as you change trip details. Final price is confirmed after we review routing and
+              availability.
             </p>
           </div>
         )}
@@ -497,7 +482,9 @@ export default function BookPage() {
                       {dropoff && <li>Drop-off: {dropoff}</li>}
                       {service === 'airport' && airport && <li>Airport: {airport}</li>}
                       <li>{date} at {time}</li>
-                      <li className="font-medium text-brand-black mt-2">Estimate: ${quote.amount}</li>
+                      <li className="font-medium text-brand-black mt-2">
+                        Estimate: {quoteReady ? `$${quoteAmount}` : '—'}
+                      </li>
                     </ul>
                   </div>
                   <div>

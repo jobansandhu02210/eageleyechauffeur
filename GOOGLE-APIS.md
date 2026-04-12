@@ -17,6 +17,7 @@ The booking form loads suggestions through **your Next.js server** (`/api/places
 | API | Used for |
 |-----|----------|
 | **Places API** | Place Autocomplete + Place Details (server JSON API) |
+| **Distance Matrix API** | Driving miles for the booking price estimate (same server key) |
 
 You do **not** need Maps JavaScript API for the Book page autocomplete anymore.
 
