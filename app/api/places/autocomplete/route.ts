@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { userFacingPlacesError } from '@/lib/places-api-errors';
 import { getPlacesServerApiKey } from '@/lib/places-env';
 import { assertAllowedPlacesCaller } from '@/lib/places-request';
 
@@ -43,7 +44,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(
       {
         predictions: [],
-        error: data.error_message ?? data.status,
+        error: userFacingPlacesError(data.error_message ?? data.status),
         enabled: true,
       },
       { status: 502 }
