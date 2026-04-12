@@ -27,31 +27,83 @@ const VEHICLE_LABELS: Record<VehicleType, string> = {
 
 const AIRPORTS = ['JFK - John F. Kennedy', 'LGA - LaGuardia', 'EWR - Newark Liberty', 'HPN - Westchester County'];
 
-// Simplified quote calculation (replace with real pricing logic/API)
+const VEHICLE_BASE: Record<VehicleType, number> = {
+  'business-sedan': 85,
+  'business-suv': 120,
+  'first-suv': 145,
+  'first-sedan': 110,
+};
+
+const VEHICLE_HOURLY: Record<VehicleType, number> = {
+  'business-sedan': 75,
+  'business-suv': 95,
+  'first-suv': 115,
+  'first-sedan': 90,
+};
+
+const EXTRA_PASSENGER_FEE = 15;
+const INCLUDED_PASSENGERS = 4;
+const EXTRA_LUGGAGE_FEE = 8;
+const INCLUDED_LUGGAGE = 3;
+
+type QuoteLine = { label: string; amount: number };
+
+/** Auto-calculated estimate from current form values (replace with API/pricing table when ready). */
 function getQuote(
   service: ServiceType,
   vehicle: VehicleType,
+  passengers: number,
+  luggage: number,
   hours?: number
-): { amount: number; label: string } {
-  const base: Record<VehicleType, number> = {
-    'business-sedan': 85,
-    'business-suv': 120,
-    'first-suv': 145,
-    'first-sedan': 110,
-  };
-  const hourly: Record<VehicleType, number> = {
-    'business-sedan': 75,
-    'business-suv': 95,
-    'first-suv': 115,
-    'first-sedan': 90,
-  };
-  const v = base[vehicle];
-  if (service === 'hourly' && hours && hours >= 2) {
-    const total = v + (hours - 1) * hourly[vehicle];
-    return { amount: Math.round(total), label: `${hours} hours` };
+): { amount: number; label: string; lines: QuoteLine[] } {
+  const lines: QuoteLine[] = [];
+  const v = VEHICLE_BASE[vehicle];
+  const vehicleName = VEHICLE_LABELS[vehicle];
+
+  if (service === 'hourly' && hours != null && hours >= 2) {
+    const rate = VEHICLE_HOURLY[vehicle];
+    lines.push({ label: `First hour (${vehicleName})`, amount: v });
+    const extraHours = hours - 1;
+    lines.push({
+      label: `${extraHours} additional hour${extraHours > 1 ? 's' : ''} × $${rate}`,
+      amount: extraHours * rate,
+    });
+  } else if (service === 'airport') {
+    lines.push({ label: `Vehicle (${vehicleName})`, amount: v });
+    lines.push({ label: 'Airport meet & greet', amount: 45 });
+  } else {
+    lines.push({ label: `Vehicle (${vehicleName})`, amount: v });
+    lines.push({ label: 'Point-to-point route estimate', amount: 25 });
   }
-  if (service === 'airport') return { amount: v + 45, label: 'Airport (meet & greet)' };
-  return { amount: v + 25, label: 'Point-to-point (estimate)' };
+
+  if (passengers > INCLUDED_PASSENGERS) {
+    const n = passengers - INCLUDED_PASSENGERS;
+    lines.push({
+      label: `Extra passengers (${n} beyond ${INCLUDED_PASSENGERS}) × $${EXTRA_PASSENGER_FEE}`,
+      amount: n * EXTRA_PASSENGER_FEE,
+    });
+  }
+  if (luggage > INCLUDED_LUGGAGE) {
+    const n = luggage - INCLUDED_LUGGAGE;
+    lines.push({
+      label: `Extra luggage (${n} bag${n > 1 ? 's' : ''} beyond ${INCLUDED_LUGGAGE}) × $${EXTRA_LUGGAGE_FEE}`,
+      amount: n * EXTRA_LUGGAGE_FEE,
+    });
+  }
+
+  const subtotal = lines.reduce((s, l) => s + l.amount, 0);
+  const amount = Math.round(subtotal);
+
+  let label: string;
+  if (service === 'hourly' && hours != null) {
+    label = `${hours} hour chauffeur (estimated)`;
+  } else if (service === 'airport') {
+    label = 'Airport transfer (estimated)';
+  } else {
+    label = 'Point-to-point (estimated)';
+  }
+
+  return { amount, label, lines };
 }
 
 const STEPS = [
@@ -100,7 +152,13 @@ export default function BookPage() {
     };
   }, []);
 
-  const quote = getQuote(service, vehicle, service === 'hourly' ? hours : undefined);
+  const quote = getQuote(
+    service,
+    vehicle,
+    passengers,
+    luggage,
+    service === 'hourly' ? hours : undefined
+  );
   const canProceed =
     (step === 1 &&
       pickup.trim() &&
@@ -182,6 +240,33 @@ export default function BookPage() {
             </li>
           ))}
         </ol>
+
+        {!(step === 5 && bookingSubmitted) && (
+          <div
+            className="mb-6 border border-brand-light bg-brand-white p-5 sm:p-6 shadow-sm"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Live estimate</p>
+            <p className="text-sm text-brand-grey mt-1">{quote.label}</p>
+            <ul className="mt-4 space-y-2">
+              {quote.lines.map((line, i) => (
+                <li key={i} className="flex justify-between gap-4 text-sm text-brand-grey">
+                  <span className="min-w-0">{line.label}</span>
+                  <span className="shrink-0 tabular-nums text-brand-black font-medium">${line.amount}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="flex justify-between items-baseline gap-4 mt-5 pt-4 border-t border-brand-light">
+              <span className="font-serif text-lg font-semibold text-brand-black">Estimated total</span>
+              <span className="text-2xl font-semibold text-brand-black tabular-nums">${quote.amount}</span>
+            </div>
+            <p className="text-xs text-brand-silver mt-3">
+              Updates automatically as you change service, vehicle, hours, passengers, and luggage. Final price
+              confirmed after routing and availability.
+            </p>
+          </div>
+        )}
 
         <div className="bg-brand-white border border-brand-light p-6 sm:p-8 shadow-sm">
           {/* Step 1: Service & locations */}
@@ -357,7 +442,7 @@ export default function BookPage() {
             </div>
           )}
 
-          {/* Step 4: Details & quote */}
+          {/* Step 4: Details (estimate shown in live panel above) */}
           {step === 4 && (
             <div className="space-y-6">
               <div>
@@ -373,19 +458,10 @@ export default function BookPage() {
                   className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black placeholder-brand-silver focus:outline-none focus:ring-2 focus:ring-brand-black resize-y"
                 />
               </div>
-              <div className="bg-brand-offwhite border border-brand-light p-6">
-                <h3 className="font-serif text-lg font-semibold text-brand-black mb-2">
-                  Your quote
-                </h3>
-                <p className="text-brand-grey text-sm mb-2">{quote.label}</p>
-                <p className="text-2xl font-semibold text-brand-black">
-                  ${quote.amount}
-                  {service === 'hourly' && <span className="text-base font-normal text-brand-grey"> total</span>}
-                </p>
-                <p className="mt-2 text-xs text-brand-silver">
-                  Final price may vary slightly based on route and wait time. No hidden fees.
-                </p>
-              </div>
+              <p className="text-sm text-brand-grey">
+                Your running total is in the <strong className="text-brand-black">Live estimate</strong> above. Add
+                any notes here; they don’t change the auto-calculated price.
+              </p>
             </div>
           )}
 
