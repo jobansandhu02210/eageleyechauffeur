@@ -17,14 +17,17 @@ The booking form loads suggestions through **your Next.js server** (`/api/places
 | API | Used for |
 |-----|----------|
 | **Places API** | Place Autocomplete + Place Details (server JSON API) |
-| **Distance Matrix API** | Driving miles for the booking price estimate (same server key) |
+| **Distance Matrix API** | Preferred: real driving miles for per-mile booking estimates |
+| **Geocoding API** | Fallback: if Matrix is off or denied, approximate miles (straight-line × factor) |
 
 You do **not** need Maps JavaScript API for the Book page autocomplete anymore.
+
+**Important:** If the key is restricted to **Places API only**, Distance Matrix calls fail and estimates used to fall back to a short default route. Enable **Distance Matrix API** and **Geocoding API** on the same project and add them to the key’s **API restrictions** (see below).
 
 ## 3. Create a server API key
 
 1. **APIs & Services** → **Credentials** → **Create credentials** → **API key**.
-2. **API restrictions**: **Restrict key** → select **Places API** only.
+2. **API restrictions**: **Restrict key** → select **Places API**, **Distance Matrix API**, and **Geocoding API** (all three on one server key).
 3. **Application restrictions**: **None** (recommended for this server key).  
    The key is only on Vercel / your server, not in client bundles. Our `/api/places/*` routes also check that requests come from allowed hosts (see below).
 
@@ -76,7 +79,10 @@ PLACES_ALLOWED_HOST_SUFFIXES=example.com,another.com
   Billing, Places API not enabled, or key API restrictions don’t include **Places API**.
 
 - **REQUEST_DENIED when the old browser key is reused**  
-  Keys restricted to **HTTP referrers** often **fail** for server `fetch()` (no referrer is sent). Use a **separate** key for `PLACES_SERVER_API_KEY` with **Application restrictions = None** and **API restrictions = Places API** only.
+  Keys restricted to **HTTP referrers** often **fail** for server `fetch()` (no referrer is sent). Use a **separate** key for `PLACES_SERVER_API_KEY` with **Application restrictions = None** and **API restrictions** including **Places**, **Distance Matrix**, and **Geocoding**.
+
+- **Booking estimate far too low (e.g. ~14 mi for a long trip)**  
+  Distance Matrix was not returning a route (key missing APIs or billing). Enable **Distance Matrix** and **Geocoding** on the key; the app uses Matrix first, then Geocoding + approximate miles if Matrix fails.
 
 - **Contact page embed map**  
   Unrelated to this key; embeds can keep using a normal Google Maps embed URL (or Maps Embed API if required).

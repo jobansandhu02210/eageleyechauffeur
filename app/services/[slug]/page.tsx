@@ -60,15 +60,15 @@ const services: Record<string, ServiceEntry> = {
     content: [
       {
         heading: 'Flexibility When You Need It',
-        body: 'Need a driver for a few hours of meetings, a half-day of errands, or a full-day tour? Our hourly service lets you book minimum blocks (typically 2–4 hours) with the option to extend. The car and chauffeur stay with you—no rebooking between stops.',
+        body: 'Need a driver for a few hours of meetings, a half-day of errands, or a full-day tour? Our hourly service uses a two-hour minimum with the option to extend. The car and chauffeur stay with you—no rebooking between stops.',
       },
       {
         heading: 'Business and Pleasure',
         body: 'Ideal for executive travel, client visits, site tours, and city sightseeing. Your chauffeur will wait at each stop and be ready when you are.',
       },
       {
-        heading: 'Simple Billing',
-        body: 'Clear hourly rates with a minimum. Overtime is prorated so you only pay for what you use. Fuel and gratuity can be included—ask when you book.',
+        heading: 'Confirm when you book',
+        body: 'We don’t publish hourly pricing online. When you reach out or submit a booking request, our team confirms vehicle, duration, and arrangements with you directly—clear and upfront, before you travel.',
       },
     ],
   },
@@ -241,12 +241,22 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
 
         <section className="pb-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center px-8 py-4 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
-            >
-              Get a Quote
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-8 py-4 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
+              >
+                Get a Quote
+              </Link>
+              {params.slug === 'hourly' && (
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
+                >
+                  Contact us
+                </Link>
+              )}
+            </div>
             <p className="mt-4 text-sm text-brand-grey">
               <Link href="/services" className="hover:text-brand-black underline">
                 ← Back to all services

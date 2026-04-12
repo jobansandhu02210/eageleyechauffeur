@@ -67,6 +67,18 @@ export default function BookPage() {
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail.trim());
 
   useEffect(() => {
+    if (service === 'hourly') {
+      setEstimate(null);
+      setEstimateLoading(false);
+      return;
+    }
+
+    if (step < 3) {
+      setEstimate(null);
+      setEstimateLoading(false);
+      return;
+    }
+
     let cancelled = false;
     const t = setTimeout(async () => {
       setEstimateLoading(true);
@@ -112,7 +124,7 @@ export default function BookPage() {
       cancelled = true;
       clearTimeout(t);
     };
-  }, [service, vehicle, pickup, dropoff, airport, hours, passengers, luggage]);
+  }, [step, service, vehicle, pickup, dropoff, airport, hours, passengers, luggage]);
 
   useEffect(() => {
     let cancelled = false;
@@ -129,10 +141,48 @@ export default function BookPage() {
     };
   }, []);
 
-  const quoteReady = estimate && !estimate.incomplete;
+  const quoteReady = service !== 'hourly' && estimate && !estimate.incomplete;
   const quoteAmount = quoteReady ? estimate.amount : 0;
   const quoteLabel = quoteReady ? estimate.label : '';
   const quoteLines = quoteReady ? estimate.lines : [];
+
+  const pricedEstimateBlock = (
+    <>
+      {estimateLoading ? (
+        <p className="text-sm text-brand-grey mt-3">Calculating your quote…</p>
+      ) : estimate?.incomplete ? (
+        <p className="text-sm text-brand-grey mt-3">{estimate.message}</p>
+      ) : quoteReady ? (
+        <>
+          <p className="text-sm text-brand-grey mt-1">{quoteLabel}</p>
+          <ul className="mt-4 space-y-2">
+            {quoteLines.map((line, i) => (
+              <li key={i} className="flex justify-between gap-4 text-sm text-brand-grey">
+                <span className="min-w-0">{line.label}</span>
+                <span className="shrink-0 tabular-nums text-brand-black font-medium">${line.amount}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="flex justify-between items-baseline gap-4 mt-5 pt-4 border-t border-brand-light">
+            <span className="font-serif text-lg font-semibold text-brand-black">Estimated total</span>
+            <span className="text-2xl font-semibold text-brand-black tabular-nums">${quoteAmount}</span>
+          </div>
+        </>
+      ) : (
+        <p className="text-sm text-brand-grey mt-3">Preparing quote…</p>
+      )}
+    </>
+  );
+
+  const estimateDisclaimer = (
+    <p className="text-xs text-brand-silver mt-3">
+      Total updates as you change trip details. Final price is confirmed after we review routing and availability.
+    </p>
+  );
+
+  /** Quote on step 3 (inline); steps 4–5 repeat it in the panel above the form so it stays visible. */
+  const showQuoteSummaryPanel =
+    service !== 'hourly' && step >= 4 && step <= 5 && !bookingSubmitted;
 
   const canProceed =
     (step === 1 &&
@@ -170,8 +220,13 @@ export default function BookPage() {
           luggage,
           hours: service === 'hourly' ? hours : undefined,
           specialRequests,
-          quoteAmount,
-          quoteLabel: quoteReady ? quoteLabel : 'Pending estimate',
+          quoteAmount: service === 'hourly' ? 0 : quoteAmount,
+          quoteLabel:
+            service === 'hourly'
+              ? `Hourly chauffeur, ${hours} hr (2 hr minimum)`
+              : quoteReady
+                ? quoteLabel
+                : 'Pending estimate',
           customerName: customerName.trim(),
           customerEmail: customerEmail.trim(),
           customerPhone: customerPhone.trim(),
@@ -216,40 +271,19 @@ export default function BookPage() {
           ))}
         </ol>
 
-        {!(step === 5 && bookingSubmitted) && (
+        {showQuoteSummaryPanel && (
           <div
             className="mb-6 border border-brand-light bg-brand-white p-5 sm:p-6 shadow-sm"
             aria-live="polite"
             aria-atomic="true"
           >
-            <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Live estimate</p>
-            {estimateLoading ? (
-              <p className="text-sm text-brand-grey mt-3">Calculating your estimate…</p>
-            ) : estimate?.incomplete ? (
-              <p className="text-sm text-brand-grey mt-3">{estimate.message}</p>
-            ) : quoteReady ? (
-              <>
-                <p className="text-sm text-brand-grey mt-1">{quoteLabel}</p>
-                <ul className="mt-4 space-y-2">
-                  {quoteLines.map((line, i) => (
-                    <li key={i} className="flex justify-between gap-4 text-sm text-brand-grey">
-                      <span className="min-w-0">{line.label}</span>
-                      <span className="shrink-0 tabular-nums text-brand-black font-medium">${line.amount}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex justify-between items-baseline gap-4 mt-5 pt-4 border-t border-brand-light">
-                  <span className="font-serif text-lg font-semibold text-brand-black">Estimated total</span>
-                  <span className="text-2xl font-semibold text-brand-black tabular-nums">${quoteAmount}</span>
-                </div>
-              </>
-            ) : (
-              <p className="text-sm text-brand-grey mt-3">Preparing estimate…</p>
-            )}
-            <p className="text-xs text-brand-silver mt-3">
-              Total updates as you change trip details. Final price is confirmed after we review routing and
-              availability.
+            <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Your quote</p>
+            <p className="text-sm font-medium text-brand-black mt-2">
+              {VEHICLE_LABELS[vehicle]} · {passengers} passenger{passengers !== 1 ? 's' : ''}
+              {luggage > 0 ? ` · ${luggage} luggage` : ''}
             </p>
+            <div className="mt-4">{pricedEstimateBlock}</div>
+            {estimateDisclaimer}
           </div>
         )}
 
@@ -411,7 +445,7 @@ export default function BookPage() {
               {service === 'hourly' && (
                 <div>
                   <label htmlFor="hours" className="block text-sm font-medium text-brand-black mb-2">
-                    Hours
+                    Hours <span className="text-brand-silver font-normal">(2 minimum)</span>
                   </label>
                   <input
                     id="hours"
@@ -424,10 +458,29 @@ export default function BookPage() {
                   />
                 </div>
               )}
+
+              {service !== 'hourly' && (
+                <div
+                  className="border border-brand-light bg-brand-offwhite p-5 sm:p-6"
+                  aria-live="polite"
+                  aria-atomic="true"
+                >
+                  <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Your quote</p>
+                  <p className="text-sm font-medium text-brand-black mt-2">
+                    Selected vehicle: {VEHICLE_LABELS[vehicle]}
+                  </p>
+                  <p className="text-xs text-brand-silver mt-1">
+                    {passengers} passenger{passengers !== 1 ? 's' : ''}
+                    {luggage > 0 ? ` · ${luggage} luggage` : ''}
+                  </p>
+                  <div className="mt-4">{pricedEstimateBlock}</div>
+                  {estimateDisclaimer}
+                </div>
+              )}
             </div>
           )}
 
-          {/* Step 4: Details (estimate shown in live panel above) */}
+          {/* Step 4: Details */}
           {step === 4 && (
             <div className="space-y-6">
               <div>
@@ -444,8 +497,16 @@ export default function BookPage() {
                 />
               </div>
               <p className="text-sm text-brand-grey">
-                Your running total is in the <strong className="text-brand-black">Live estimate</strong> above. Add
-                any notes here; they don’t change the auto-calculated price.
+                {service === 'hourly' ? (
+                  <>
+                    Add any notes here. Hourly bookings have a <strong className="text-brand-black">2 hour minimum</strong>.
+                  </>
+                ) : (
+                  <>
+                    Add any notes here. Your <strong className="text-brand-black">quote</strong> is above; notes
+                    don&apos;t change the calculated price.
+                  </>
+                )}
               </p>
             </div>
           )}
@@ -482,9 +543,17 @@ export default function BookPage() {
                       {dropoff && <li>Drop-off: {dropoff}</li>}
                       {service === 'airport' && airport && <li>Airport: {airport}</li>}
                       <li>{date} at {time}</li>
-                      <li className="font-medium text-brand-black mt-2">
-                        Estimate: {quoteReady ? `$${quoteAmount}` : '—'}
-                      </li>
+                      {service === 'hourly' && (
+                        <>
+                          <li>Hours: {hours}</li>
+                          <li className="font-medium text-brand-black mt-2">2 hours minimum</li>
+                        </>
+                      )}
+                      {service !== 'hourly' && (
+                        <li className="font-medium text-brand-black mt-2">
+                          Quote: {quoteReady ? `$${quoteAmount}` : '—'}
+                        </li>
+                      )}
                     </ul>
                   </div>
                   <div>
