@@ -20,6 +20,50 @@ const INCLUDED_LUGGAGE = 3;
 /** Used when Matrix is unavailable or addresses incomplete. */
 const FALLBACK_MILES = 14;
 
+/** Rough zip code / area distance estimation for NYC area */
+function estimateMilesNYC(pickup: string, dropoff: string): number {
+  const p = pickup.toLowerCase();
+  const d = dropoff.toLowerCase();
+  
+  // Manhattan areas
+  const manhattan = ['manhattan', 'midtown', 'downtown', 'uptown', 'upper east', 'upper west', 'chelsea', 'soho', 'tribeca', 'financial district', 'fidi', 'times square', 'hell\'s kitchen', 'murray hill', 'gramercy'];
+  // Outer boroughs
+  const brooklyn = ['brooklyn', 'williamsburg', 'dumbo', 'park slope', 'bay ridge', 'coney island'];
+  const queens = ['queens', 'jfk', 'la guardia', 'laguardia', 'astoria', 'long island city', 'lic'];
+  const bronx = ['bronx'];
+  const staten = ['staten'];
+  // Airports
+  const airports = ['jfk airport', 'john f kennedy', 'la guardia', 'laguardia airport', 'newark airport', 'newark liberty', 'ewr'];
+  
+  const isManhattan = (s: string) => manhattan.some(area => s.includes(area));
+  const isBrooklyn = (s: string) => brooklyn.some(area => s.includes(area));
+  const isQueens = (s: string) => queens.some(area => s.includes(area)) || s.includes('jfk') || s.includes('lga');
+  const isBronx = (s: string) => bronx.some(area => s.includes(area));
+  const isStaten = (s: string) => staten.some(area => s.includes(area));
+  const isAirport = (s: string) => airports.some(area => s.includes(area));
+  
+  // Manhattan ↔ Manhattan = short trip
+  if (isManhattan(p) && isManhattan(d)) return 3;
+  // Manhattan ↔ Brooklyn
+  if ((isManhattan(p) && isBrooklyn(d)) || (isBrooklyn(p) && isManhattan(d))) return 8;
+  // Manhattan ↔ Queens
+  if ((isManhattan(p) && isQueens(d)) || (isQueens(p) && isManhattan(d))) return 12;
+  // Manhattan ↔ JFK
+  if ((isManhattan(p) && d.includes('jfk')) || (p.includes('jfk') && isManhattan(d))) return 18;
+  // Manhattan ↔ LGA
+  if ((isManhattan(p) && (d.includes('laguardia') || d.includes('la guardia'))) || ((p.includes('laguardia') || p.includes('la guardia')) && isManhattan(d))) return 10;
+  // Manhattan ↔ Newark
+  if ((isManhattan(p) && d.includes('newark')) || (p.includes('newark') && isManhattan(d))) return 16;
+  // Brooklyn ↔ JFK
+  if ((isBrooklyn(p) && d.includes('jfk')) || (p.includes('jfk') && isBrooklyn(d))) return 12;
+  // Queens ↔ JFK
+  if ((isQueens(p) && d.includes('jfk')) || (p.includes('jfk') && isQueens(d))) return 8;
+  // Airport generic
+  if (isAirport(p) || isAirport(d)) return 20;
+  
+  return FALLBACK_MILES;
+}
+
 const AIRPORT_DEST: Record<string, string> = {
   'JFK - John F. Kennedy': 'John F. Kennedy International Airport, Jamaica, NY, USA',
   'LGA - LaGuardia': 'LaGuardia Airport, Queens, NY, USA',
@@ -84,18 +128,18 @@ export async function computeBookingEstimate(input: {
     miles = Math.max(10, h * 12);
   } else if (input.service === 'airport') {
     const dest = AIRPORT_DEST[input.airport];
-    if (key) {
+    if (key && dest) {
       const m = await getDrivingMiles(input.pickup, dest, key);
-      miles = m != null ? m : FALLBACK_MILES;
+      miles = m != null ? m : estimateMilesNYC(input.pickup, input.airport);
     } else {
-      miles = FALLBACK_MILES;
+      miles = estimateMilesNYC(input.pickup, input.airport);
     }
   } else {
     if (key) {
       const m = await getDrivingMiles(input.pickup, input.dropoff, key);
-      miles = m != null ? m : FALLBACK_MILES;
+      miles = m != null ? m : estimateMilesNYC(input.pickup, input.dropoff);
     } else {
-      miles = FALLBACK_MILES;
+      miles = estimateMilesNYC(input.pickup, input.dropoff);
     }
   }
 
