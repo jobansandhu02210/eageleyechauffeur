@@ -136,7 +136,7 @@ export function GooglePlacesAutocomplete({
         <ul
           id={`${id}-places-list`}
           role="listbox"
-          className="absolute z-50 left-0 right-0 top-full mt-1 max-h-56 overflow-auto border border-brand-light bg-brand-white shadow-lg text-sm"
+          className="absolute z-[100] left-0 right-0 top-full mt-1 max-h-56 overflow-auto border border-brand-light bg-brand-white shadow-lg text-sm"
         >
           {predictions.map((p) => (
             <li key={p.placeId} role="presentation">

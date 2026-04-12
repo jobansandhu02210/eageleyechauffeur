@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server';
+import { getPlacesServerApiKey } from '@/lib/places-env';
 import { assertAllowedPlacesCaller } from '@/lib/places-request';
 
 export const dynamic = 'force-dynamic';
@@ -13,7 +14,7 @@ export async function GET(request: NextRequest) {
   const denied = assertAllowedPlacesCaller(request);
   if (denied) return denied;
 
-  const key = process.env.PLACES_SERVER_API_KEY?.trim();
+  const key = getPlacesServerApiKey();
   if (!key) {
     return NextResponse.json({ error: 'not_configured' }, { status: 503 });
   }

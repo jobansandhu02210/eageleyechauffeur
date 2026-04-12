@@ -35,6 +35,10 @@ You do **not** need Maps JavaScript API for the Book page autocomplete anymore.
 PLACES_SERVER_API_KEY=AIzaSy...your_key_here
 ```
 
+You can also use `GOOGLE_PLACES_SERVER_KEY` as an alias. If neither is set, the app will try `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` on the server (only works for Places REST if that key is **not** limited to HTTP referrers).
+
+Set `NEXT_PUBLIC_SITE_URL=https://www.yourdomain.com` so `/api/places/*` accepts your production host even if it differs from the defaults.
+
 Restart `npm run dev`.
 
 **Vercel** — Project → **Settings** → **Environment Variables**:
