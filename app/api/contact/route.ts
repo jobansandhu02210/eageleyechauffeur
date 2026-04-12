@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 import { CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 import { escapeHtml } from '@/lib/escape-html';
 import { assertAllowedPlacesCaller } from '@/lib/places-request';
+import { publicEmailSendError } from '@/lib/resend-user-error';
 
 export const dynamic = 'force-dynamic';
 
@@ -66,7 +67,10 @@ export async function POST(request: NextRequest) {
 
   if (error) {
     console.error('[contact]', error);
-    return NextResponse.json({ error: error.message || 'Failed to send email' }, { status: 502 });
+    return NextResponse.json(
+      { error: publicEmailSendError(error.message) },
+      { status: 502 }
+    );
   }
 
   return NextResponse.json({ ok: true });
