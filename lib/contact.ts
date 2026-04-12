@@ -5,4 +5,4 @@ export const CONTACT_PHONE_E164 = '+19299196499';
 export const CONTACT_PHONE_DISPLAY = '(929) 919-6499';
 
 /** Booking notifications and primary inquiries */
-export const CONTACT_EMAIL_BOOKINGS = 'bookings@eagleeyechauffeur.com';
+export const CONTACT_EMAIL_BOOKINGS = 'eagleeyechauffeur@gmail.com';
