@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_E164 } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 
 /**
@@ -13,8 +14,8 @@ export function LocalBusinessJsonLd() {
     description:
       'Eagle Eye Chauffeur provides luxury black car and chauffeur service in New York City: JFK, LGA, EWR, and HPN airport transfers, Manhattan and boroughs, hourly hire, corporate travel, and point-to-point rides. Professional, discreet, and reliable.',
     url: site,
-    telephone: '+1-212-555-1234',
-    email: 'book@eagleeyechauffeur.com',
+    telephone: CONTACT_PHONE_E164,
+    email: CONTACT_EMAIL_BOOKINGS,
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'New York',

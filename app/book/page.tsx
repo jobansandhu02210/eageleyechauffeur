@@ -3,6 +3,11 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { GooglePlacesAutocomplete } from '@/components/GooglePlacesAutocomplete';
+import {
+  CONTACT_EMAIL_BOOKINGS,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_E164,
+} from '@/lib/contact';
 
 type ServiceType = 'point-to-point' | 'hourly' | 'airport';
 type VehicleType = 'business-sedan' | 'business-suv' | 'first-suv' | 'first-sedan';
@@ -54,7 +59,7 @@ const STEPS = [
   'Date & time',
   'Vehicle & guests',
   'Details & quote',
-  'Payment',
+  'Confirm',
 ];
 
 export default function BookPage() {
@@ -71,6 +76,14 @@ export default function BookPage() {
   const [specialRequests, setSpecialRequests] = useState('');
   const [airport, setAirport] = useState('');
   const [placesServerEnabled, setPlacesServerEnabled] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+  const [customerEmail, setCustomerEmail] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
+  const [bookingSubmitted, setBookingSubmitted] = useState(false);
+  const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'error'>('idle');
+  const [bookingError, setBookingError] = useState<string | null>(null);
+
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail.trim());
 
   useEffect(() => {
     let cancelled = false;
@@ -96,12 +109,54 @@ export default function BookPage() {
     (step === 2 && date && time) ||
     (step === 3) ||
     (step === 4) ||
-    (step === 5);
+    (step === 5 && bookingSubmitted);
 
   const next = () => {
     if (step < 5 && canProceed) setStep(step + 1);
   };
   const prev = () => setStep(Math.max(1, step - 1));
+
+  const submitBooking = async () => {
+    if (!customerName.trim() || !emailOk) return;
+    setBookingStatus('sending');
+    setBookingError(null);
+    try {
+      const res = await fetch('/api/booking/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'same-origin',
+        body: JSON.stringify({
+          service: SERVICE_LABELS[service],
+          vehicle: VEHICLE_LABELS[vehicle],
+          pickup,
+          dropoff: service === 'point-to-point' || service === 'hourly' ? dropoff : '',
+          airport: service === 'airport' ? airport : '',
+          date,
+          time,
+          passengers,
+          luggage,
+          hours: service === 'hourly' ? hours : undefined,
+          specialRequests,
+          quoteAmount: quote.amount,
+          quoteLabel: quote.label,
+          customerName: customerName.trim(),
+          customerEmail: customerEmail.trim(),
+          customerPhone: customerPhone.trim(),
+        }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) {
+        setBookingError(typeof data.error === 'string' ? data.error : 'Could not send booking.');
+        setBookingStatus('error');
+        return;
+      }
+      setBookingSubmitted(true);
+      setBookingStatus('idle');
+    } catch {
+      setBookingError('Network error. Please try again or call us.');
+      setBookingStatus('error');
+    }
+  };
 
   return (
     <div className="bg-brand-offwhite min-h-screen py-12 lg:py-20">
@@ -334,37 +389,100 @@ export default function BookPage() {
             </div>
           )}
 
-          {/* Step 5: Payment */}
+          {/* Step 5: Confirm & notify */}
           {step === 5 && (
             <div className="space-y-6">
-              <div className="bg-brand-offwhite border border-brand-light p-6">
-                <h3 className="font-serif text-lg font-semibold text-brand-black mb-2">
-                  Summary
-                </h3>
-                <ul className="text-sm text-brand-grey space-y-1">
-                  <li>{SERVICE_LABELS[service]} • {VEHICLE_LABELS[vehicle]}</li>
-                  <li>Pick-up: {pickup || '—'}</li>
-                  {dropoff && <li>Drop-off: {dropoff}</li>}
-                  <li>{date} at {time}</li>
-                  <li className="font-medium text-brand-black mt-2">Total: ${quote.amount}</li>
-                </ul>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-brand-black mb-2">
-                  Secure payment
-                </p>
-                <p className="text-brand-grey text-sm mb-4">
-                  Payment integration (e.g. Stripe) can be connected here. For now, complete your booking by calling us or using the contact form.
-                </p>
-                <div className="border-2 border-dashed border-brand-light p-8 text-center text-brand-silver text-sm">
-                  Payment form placeholder. Integrate Stripe or your preferred provider.
+              {bookingSubmitted ? (
+                <div className="bg-brand-offwhite border border-brand-light p-6 text-center">
+                  <h3 className="font-serif text-xl font-semibold text-brand-black mb-2">
+                    Request received
+                  </h3>
+                  <p className="text-brand-grey text-sm">
+                    We emailed you a confirmation copy. Our team will follow up shortly at{' '}
+                    <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
+                      {CONTACT_EMAIL_BOOKINGS}
+                    </a>
+                    . Questions? Call{' '}
+                    <a href={`tel:${CONTACT_PHONE_E164}`} className="text-brand-black underline">
+                      {CONTACT_PHONE_DISPLAY}
+                    </a>
+                    .
+                  </p>
                 </div>
-                <p className="mt-4 text-sm text-brand-grey">
-                  <a href="tel:+12125551234" className="text-brand-black font-medium underline">(212) 555-1234</a>
-                  {' '}or{' '}
-                  <Link href="/contact" className="text-brand-black font-medium underline">contact us</Link> to confirm your booking.
-                </p>
-              </div>
+              ) : (
+                <>
+                  <div className="bg-brand-offwhite border border-brand-light p-6">
+                    <h3 className="font-serif text-lg font-semibold text-brand-black mb-2">
+                      Summary
+                    </h3>
+                    <ul className="text-sm text-brand-grey space-y-1">
+                      <li>{SERVICE_LABELS[service]} • {VEHICLE_LABELS[vehicle]}</li>
+                      <li>Pick-up: {pickup || '—'}</li>
+                      {dropoff && <li>Drop-off: {dropoff}</li>}
+                      {service === 'airport' && airport && <li>Airport: {airport}</li>}
+                      <li>{date} at {time}</li>
+                      <li className="font-medium text-brand-black mt-2">Estimate: ${quote.amount}</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-lg font-semibold text-brand-black mb-4">
+                      Your contact details
+                    </h3>
+                    <p className="text-brand-grey text-sm mb-4">
+                      We&apos;ll send this request to {CONTACT_EMAIL_BOOKINGS} and email you a confirmation.
+                    </p>
+                    <div className="space-y-4">
+                      <div>
+                        <label htmlFor="cust-name" className="block text-sm font-medium text-brand-black mb-2">
+                          Full name
+                        </label>
+                        <input
+                          id="cust-name"
+                          type="text"
+                          value={customerName}
+                          onChange={(e) => setCustomerName(e.target.value)}
+                          autoComplete="name"
+                          className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-black"
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="cust-email" className="block text-sm font-medium text-brand-black mb-2">
+                          Email
+                        </label>
+                        <input
+                          id="cust-email"
+                          type="email"
+                          value={customerEmail}
+                          onChange={(e) => setCustomerEmail(e.target.value)}
+                          autoComplete="email"
+                          className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-black"
+                          placeholder="you@example.com"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="cust-phone" className="block text-sm font-medium text-brand-black mb-2">
+                          Phone <span className="text-brand-silver font-normal">(optional)</span>
+                        </label>
+                        <input
+                          id="cust-phone"
+                          type="tel"
+                          value={customerPhone}
+                          onChange={(e) => setCustomerPhone(e.target.value)}
+                          autoComplete="tel"
+                          className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-black"
+                          placeholder={CONTACT_PHONE_DISPLAY}
+                        />
+                      </div>
+                    </div>
+                    {bookingError && (
+                      <p className="mt-4 text-sm text-red-600" role="alert">
+                        {bookingError}
+                      </p>
+                    )}
+                  </div>
+                </>
+              )}
             </div>
           )}
 
@@ -385,10 +503,22 @@ export default function BookPage() {
               >
                 Continue
               </button>
+            ) : bookingSubmitted ? (
+              <Link
+                href="/"
+                className="py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors text-center sm:inline-block"
+              >
+                Back to home
+              </Link>
             ) : (
-              <span className="text-brand-grey text-sm sm:self-center">
-                Booking can be completed by phone or contact form.
-              </span>
+              <button
+                type="button"
+                onClick={submitBooking}
+                disabled={bookingStatus === 'sending' || !customerName.trim() || !emailOk}
+                className="py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {bookingStatus === 'sending' ? 'Sending…' : 'Submit booking request'}
+              </button>
             )}
           </div>
         </div>

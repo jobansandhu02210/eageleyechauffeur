@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SafeFleetImage } from '@/components/SafeFleetImage';
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 import { defaultSiteDescription, siteKeywords } from '@/lib/seo';
 
@@ -223,8 +224,8 @@ export default function HomePage() {
             Book Now
           </Link>
           <div className="mt-12 pt-12 border-t border-brand-dark flex flex-wrap justify-center gap-x-8 gap-y-2 text-brand-silver text-sm">
-            <a href="tel:+12125551234">(212) 555-1234</a>
-            <a href="mailto:book@eagleeyechauffeur.com">book@eagleeyechauffeur.com</a>
+            <a href={`tel:${CONTACT_PHONE_E164}`}>{CONTACT_PHONE_DISPLAY}</a>
+            <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`}>{CONTACT_EMAIL_BOOKINGS}</a>
           </div>
         </div>
       </section>

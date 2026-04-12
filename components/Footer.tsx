@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 const services = [
   { href: '/services/point-to-point', label: 'Point-to-Point' },
@@ -65,13 +66,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3 text-brand-silver text-sm">
               <li>
-                <a href="tel:+12125551234" className="hover:text-brand-white transition-colors">
-                  (212) 555-1234
+                <a href={`tel:${CONTACT_PHONE_E164}`} className="hover:text-brand-white transition-colors">
+                  {CONTACT_PHONE_DISPLAY}
                 </a>
               </li>
               <li>
-                <a href="mailto:book@eagleeyechauffeur.com" className="hover:text-brand-white transition-colors">
-                  book@eagleeyechauffeur.com
+                <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="hover:text-brand-white transition-colors">
+                  {CONTACT_EMAIL_BOOKINGS}
                 </a>
               </li>
               <li>New York, NY</li>
