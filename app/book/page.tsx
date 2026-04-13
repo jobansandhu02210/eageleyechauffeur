@@ -61,6 +61,7 @@ export default function BookPage() {
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'error'>('idle');
   const [bookingError, setBookingError] = useState<string | null>(null);
+  const [bookingGuestCopyIssue, setBookingGuestCopyIssue] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<BookingEstimate | null>(null);
   const [estimateLoading, setEstimateLoading] = useState(false);
 
@@ -176,7 +177,7 @@ export default function BookPage() {
 
   const estimateDisclaimer = (
     <p className="text-xs text-brand-silver mt-3">
-      Total updates as you change trip details. Final price is confirmed after we review routing and availability.
+      Estimate updates as details change. Your official price will be on the invoice we send after we confirm your trip.
     </p>
   );
 
@@ -203,6 +204,7 @@ export default function BookPage() {
     if (!customerName.trim() || !emailOk) return;
     setBookingStatus('sending');
     setBookingError(null);
+    setBookingGuestCopyIssue(null);
     try {
       const res = await fetch('/api/booking/notify', {
         method: 'POST',
@@ -232,11 +234,22 @@ export default function BookPage() {
           customerPhone: customerPhone.trim(),
         }),
       });
-      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      const data = (await res.json().catch(() => ({}))) as {
+        error?: string;
+        guestEmailSent?: boolean;
+        guestEmailError?: string;
+      };
       if (!res.ok) {
         setBookingError(typeof data.error === 'string' ? data.error : 'Could not send booking.');
         setBookingStatus('error');
         return;
+      }
+      if (data.guestEmailSent === false) {
+        setBookingGuestCopyIssue(
+          typeof data.guestEmailError === 'string'
+            ? data.guestEmailError
+            : 'We could not send a copy to your email. Your request still reached our team.'
+        );
       }
       setBookingSubmitted(true);
       setBookingStatus('idle');
@@ -254,7 +267,7 @@ export default function BookPage() {
             Book Your Ride
           </h1>
           <p className="mt-2 text-brand-grey">
-            Get an instant quote and secure your chauffeur in a few steps.
+            Enter your trip details and submit — we confirm by email and send a formal invoice with your final price.
           </p>
         </div>
 
@@ -503,8 +516,8 @@ export default function BookPage() {
                   </>
                 ) : (
                   <>
-                    Add any notes here. Your <strong className="text-brand-black">quote</strong> is above; notes
-                    don&apos;t change the calculated price.
+                    Add any notes here. The <strong className="text-brand-black">estimate</strong> above is a guide;
+                    your invoice will show the confirmed price.
                   </>
                 )}
               </p>
@@ -520,11 +533,22 @@ export default function BookPage() {
                     Request received
                   </h3>
                   <p className="text-brand-grey text-sm">
-                    We emailed you a confirmation copy. Our team will follow up shortly at{' '}
-                    <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
-                      {CONTACT_EMAIL_BOOKINGS}
-                    </a>
-                    . Questions? Call{' '}
+                    {bookingGuestCopyIssue ? (
+                      <>
+                        Your request reached our team. We could not deliver the acknowledgment email to your address
+                        (check spam/promotions). {bookingGuestCopyIssue}
+                      </>
+                    ) : (
+                      <>
+                        We emailed you a booking acknowledgment. You&apos;ll receive your{' '}
+                        <strong className="text-brand-black">invoice</strong> from us with the final price after we
+                        confirm your trip. Questions?{' '}
+                        <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
+                          {CONTACT_EMAIL_BOOKINGS}
+                        </a>
+                      </>
+                    )}{' '}
+                    Questions? Call{' '}
                     <a href={`tel:${CONTACT_PHONE_E164}`} className="text-brand-black underline">
                       {CONTACT_PHONE_DISPLAY}
                     </a>
@@ -551,7 +575,7 @@ export default function BookPage() {
                       )}
                       {service !== 'hourly' && (
                         <li className="font-medium text-brand-black mt-2">
-                          Quote: {quoteReady ? `$${quoteAmount}` : '—'}
+                          Website estimate: {quoteReady ? `$${quoteAmount}` : '—'} (invoice will show final price)
                         </li>
                       )}
                     </ul>
@@ -561,7 +585,9 @@ export default function BookPage() {
                       Your contact details
                     </h3>
                     <p className="text-brand-grey text-sm mb-4">
-                      We&apos;ll send this request to {CONTACT_EMAIL_BOOKINGS} and email you a confirmation.
+                      Submitting notifies our team at {CONTACT_EMAIL_BOOKINGS}. We&apos;ll email you an acknowledgment,
+                      then send your <strong className="text-brand-black">invoice</strong> with the final ride price
+                      after we confirm details.
                     </p>
                     <div className="space-y-4">
                       <div>

@@ -82,7 +82,10 @@ export async function POST(request: NextRequest) {
     ['Passengers', String(passengers)],
     ['Luggage (bags)', String(luggage)],
     ['Hours', hours != null ? String(hours) : '—'],
-    ['Quote', `$${quoteAmount} (${quoteLabel})`],
+    [
+      'Website estimate (reference only)',
+      quoteAmount > 0 ? `$${quoteAmount} — send official invoice with final price` : `— (${quoteLabel})`,
+    ],
     ['Special requests', specialRequests || '—'],
     ['', ''],
     ['Guest name', customerName],
@@ -97,12 +100,13 @@ export async function POST(request: NextRequest) {
     )
     .join('');
 
-  const html = `<p>New booking request from the website.</p>
+  const html = `<p><strong>New booking request</strong> — a client submitted the booking form on your website with the details below.</p>
+<p style="margin:12px 0;font-size:14px"><strong>Your workflow:</strong> Reply to this message to email the client directly, then send them your <strong>official invoice</strong> with the final ride price when you&apos;re ready.</p>
 <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">${tableHtml}</table>
-<p style="margin-top:16px;font-size:13px;color:#666">Reply to this email to reach the guest.</p>`;
+<p style="margin-top:16px;font-size:13px;color:#666">Reply-to is set to the guest&apos;s address.</p>`;
 
   const resend = new Resend(apiKey);
-  const subject = `New booking: ${oneLine(service || 'Request', 60)} — ${oneLine(customerName, 80)}`;
+  const subject = `Booking request — ${oneLine(customerName, 80)} — ${oneLine(service || 'Ride', 50)}`;
 
   const { data, error } = await resend.emails.send({
     from,
@@ -113,27 +117,42 @@ export async function POST(request: NextRequest) {
   });
 
   if (error) {
-    console.error('[booking/notify]', error);
+    console.error('[booking/notify] notify to business failed', error);
     return NextResponse.json(
       { error: publicEmailSendError(error.message) },
       { status: 502 }
     );
   }
 
+  const referenceEstimate =
+    quoteAmount > 0
+      ? `<p style="margin:12px 0;font-size:13px;color:#555">Reference estimate from our website: <strong>$${quoteAmount}</strong> (${escapeHtml(quoteLabel)}). This is <strong>not</strong> a final bill — you will receive a formal invoice from us with the confirmed price.</p>`
+      : `<p style="margin:12px 0;font-size:13px;color:#555">Final pricing will appear on your invoice after we confirm your trip details.</p>`;
+
   const confirmHtml = `<p>Hi ${escapeHtml(customerName)},</p>
-<p>Thank you — we received your booking request for Eagle Eye Chauffeur.</p>
-<p><strong>Summary:</strong> ${escapeHtml(service)} on ${escapeHtml(date)} at ${escapeHtml(time)}. Estimated total: <strong>$${quoteAmount}</strong> (${escapeHtml(quoteLabel)}).</p>
-<p>Our team will confirm availability and final pricing shortly. If this is urgent, call or text us at <strong>${escapeHtml(CONTACT_PHONE_DISPLAY)}</strong>.</p>
+<p>Thank you — we received your booking request for <strong>Eagle Eye Chauffeur</strong>.</p>
+<p><strong>Trip summary:</strong> ${escapeHtml(service)} on ${escapeHtml(date)} at ${escapeHtml(time)}. We have your pick-up and trip details on file.</p>
+${referenceEstimate}
+<p><strong>What happens next:</strong> Our team will review your request and email you an <strong>official invoice</strong> for the ride when pricing is confirmed. If you need anything sooner, call or text <strong>${escapeHtml(CONTACT_PHONE_DISPLAY)}</strong>.</p>
 <p>— Eagle Eye Chauffeur<br/><a href="mailto:${escapeHtml(CONTACT_EMAIL_BOOKINGS)}">${escapeHtml(CONTACT_EMAIL_BOOKINGS)}</a></p>`;
 
-  await resend.emails
-    .send({
-      from,
-      to: [customerEmail],
-      subject: 'We received your booking request — Eagle Eye Chauffeur',
-      html: confirmHtml,
-    })
-    .catch((e) => console.error('[booking/notify] guest confirmation email failed', e));
+  const { error: guestError } = await resend.emails.send({
+    from,
+    to: [customerEmail],
+    replyTo: to,
+    subject: 'Booking received — invoice to follow — Eagle Eye Chauffeur',
+    html: confirmHtml,
+  });
 
-  return NextResponse.json({ ok: true, id: data?.id });
+  if (guestError) {
+    console.error('[booking/notify] guest confirmation failed (business email was sent)', guestError);
+    return NextResponse.json({
+      ok: true,
+      id: data?.id,
+      guestEmailSent: false,
+      guestEmailError: publicEmailSendError(guestError.message),
+    });
+  }
+
+  return NextResponse.json({ ok: true, id: data?.id, guestEmailSent: true });
 }

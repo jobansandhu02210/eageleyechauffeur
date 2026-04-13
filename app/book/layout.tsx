@@ -3,9 +3,9 @@ import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Book NYC Chauffeur — Instant Quote',
+  title: 'Book NYC Chauffeur — Request & Invoice',
   description:
-    'Book NYC chauffeur service online: instant quotes for point-to-point, hourly hire, and JFK LGA EWR airport transfers. Eagle Eye Chauffeur.',
+    'Request NYC chauffeur service online: point-to-point, hourly, and JFK LGA EWR airport transfers. We confirm by email and send your invoice. Eagle Eye Chauffeur.',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/book` },
   openGraph: {

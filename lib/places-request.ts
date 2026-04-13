@@ -77,11 +77,22 @@ function hostnameFromBrowserHeaders(request: NextRequest): string | null {
 }
 
 /**
- * Allows /api/places/* when the request targets an allowed host (fixes missing Referer on some browsers)
- * or when Referer/Origin matches.
+ * Allows /api/places/*, /api/booking/notify, and /api/contact when:
+ * - The browser marks the request same-origin / same-site (so booking & contact work on any custom
+ *   domain without editing env), or
+ * - Host / Referer / Origin matches the allowlist (Places + explicit domains).
  */
 export function assertAllowedPlacesCaller(request: NextRequest): NextResponse | null {
   const reqHost = requestHostname(request);
+
+  const secFetchSite = request.headers.get('sec-fetch-site');
+  if (
+    reqHost &&
+    (secFetchSite === 'same-origin' || secFetchSite === 'same-site')
+  ) {
+    return null;
+  }
+
   if (reqHost && hostnameAllowed(reqHost)) {
     return null;
   }
@@ -91,12 +102,11 @@ export function assertAllowedPlacesCaller(request: NextRequest): NextResponse | 
     return null;
   }
 
-  const secFetchSite = request.headers.get('sec-fetch-site');
-  if (secFetchSite === 'same-origin' || secFetchSite === 'same-site') {
-    if (reqHost && hostnameAllowed(reqHost)) {
-      return null;
-    }
-  }
-
-  return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
+  return NextResponse.json(
+    {
+      error:
+        'Request blocked (host check). Set NEXT_PUBLIC_SITE_URL in Vercel to your live URL, or open the site from an allowed domain.',
+    },
+    { status: 403 }
+  );
 }
