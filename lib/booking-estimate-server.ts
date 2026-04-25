@@ -6,10 +6,10 @@ import { resolveDrivingMilesForPricing } from '@/lib/google-driving-distance';
 import { getPlacesServerApiKey } from '@/lib/places-env';
 
 const VEHICLE_PER_MILE_USD: Record<string, number> = {
-  'business-sedan': 9,
-  'business-suv': 11,
-  'first-suv': 13,
-  'first-sedan': 16,
+  'business-sedan': 7.5,
+  'business-suv': 9.5,
+  'first-suv': 11.5,
+  'first-sedan': 15,
 };
 
 const EXTRA_PASSENGER = 15;
@@ -37,6 +37,10 @@ export type BookingEstimateResponse =
 
 function perMileRate(vehicle: string): number {
   return VEHICLE_PER_MILE_USD[vehicle] ?? VEHICLE_PER_MILE_USD['business-sedan'];
+}
+
+function roundUsd2(n: number): number {
+  return Math.round((n + Number.EPSILON) * 100) / 100;
 }
 
 export async function computeBookingEstimate(input: {
@@ -111,7 +115,7 @@ export async function computeBookingEstimate(input: {
     distanceSource = resolved.source;
   }
 
-  const tripCharge = Math.max(0, Math.round(miles * rate));
+  const tripCharge = roundUsd2(Math.max(0, miles * rate));
   const tripLineLabel =
     input.service === 'hourly'
       ? 'Trip estimate'
@@ -129,7 +133,7 @@ export async function computeBookingEstimate(input: {
     lines.push({ label: `Additional luggage (${n})`, amount: n * EXTRA_LUGGAGE });
   }
 
-  const amount = lines.reduce((s, l) => s + l.amount, 0);
+  const amount = roundUsd2(lines.reduce((s, l) => s + l.amount, 0));
 
   let label = 'Point-to-point (estimated)';
   if (input.service === 'hourly') {
