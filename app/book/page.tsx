@@ -55,7 +55,7 @@ export default function BookPage() {
   const [dropoff, setDropoff] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  const [vehicle, setVehicle] = useState<VehicleType>('business-sedan');
+  const [vehicle, setVehicle] = useState<VehicleType | null>(null);
   const [passengers, setPassengers] = useState(1);
   const [luggage, setLuggage] = useState(0);
   const [hours, setHours] = useState(2);
@@ -81,6 +81,11 @@ export default function BookPage() {
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail.trim());
 
+  const hasRequiredLocations =
+    (service === 'point-to-point' && pickup.trim() && dropoff.trim()) ||
+    (service === 'airport' && pickup.trim() && airport.trim()) ||
+    service === 'hourly';
+
   useEffect(() => {
     if (service === 'hourly') {
       setEstimate(null);
@@ -88,7 +93,7 @@ export default function BookPage() {
       return;
     }
 
-    if (step < 3) {
+    if (step < 4 || !vehicle) {
       setEstimate(null);
       setEstimateLoading(false);
       return;
@@ -144,6 +149,16 @@ export default function BookPage() {
   // Fetch prices for ALL vehicle types simultaneously when user reaches step 3
   useEffect(() => {
     if (service === 'hourly' || step !== 3) return;
+    if (!hasRequiredLocations) {
+      setAllEstimates({
+        'business-sedan': null,
+        'business-suv': null,
+        'first-suv': null,
+        'first-sedan': null,
+      });
+      setAllEstimatesLoading(false);
+      return;
+    }
     const vehicleTypes: VehicleType[] = ['business-sedan', 'business-suv', 'first-suv', 'first-sedan'];
     let cancelled = false;
     setAllEstimatesLoading(true);
@@ -166,7 +181,7 @@ export default function BookPage() {
       setAllEstimatesLoading(false);
     });
     return () => { cancelled = true; };
-  }, [step, service, pickup, dropoff, airport, hours, passengers, luggage]);
+  }, [step, service, pickup, dropoff, airport, hours, passengers, luggage, hasRequiredLocations]);
 
   useEffect(() => {
     let cancelled = false;
@@ -224,7 +239,7 @@ export default function BookPage() {
 
   /** Quote on step 3 (inline); steps 4–5 repeat it in the panel above the form so it stays visible. */
   const showQuoteSummaryPanel =
-    service !== 'hourly' && step >= 4 && step <= 5 && !bookingSubmitted;
+    service !== 'hourly' && !!vehicle && step >= 4 && step <= 5 && !bookingSubmitted;
 
   const canProceed =
     (step === 1 &&
@@ -232,7 +247,7 @@ export default function BookPage() {
       (service === 'point-to-point' ? dropoff.trim() : true) &&
       (service !== 'airport' || airport)) ||
     (step === 2 && date && time) ||
-    (step === 3) ||
+    (step === 3 && !!vehicle) ||
     (step === 4) ||
     (step === 5 && bookingSubmitted);
 
@@ -243,6 +258,7 @@ export default function BookPage() {
 
   const submitBooking = async () => {
     if (!customerName.trim() || !emailOk) return;
+    if (!vehicle) return;
     setBookingStatus('sending');
     setBookingError(null);
     setBookingGuestCopyIssue(null);
@@ -333,7 +349,7 @@ export default function BookPage() {
           >
             <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Your quote</p>
             <p className="text-sm font-medium text-brand-black mt-2">
-              {VEHICLE_LABELS[vehicle]} · {passengers} passenger{passengers !== 1 ? 's' : ''}
+              {vehicle ? VEHICLE_LABELS[vehicle] : 'Select a vehicle'} · {passengers} passenger{passengers !== 1 ? 's' : ''}
               {luggage > 0 ? ` · ${luggage} luggage` : ''}
             </p>
             <div className="mt-4">{pricedEstimateBlock}</div>
@@ -499,6 +515,10 @@ export default function BookPage() {
                               <p className={`text-sm font-medium ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
                                 Contact for hourly rate
                               </p>
+                            ) : !hasRequiredLocations ? (
+                              <p className={`text-sm ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                Enter your route to see estimate
+                              </p>
                             ) : allEstimatesLoading ? (
                               <p className={`text-sm ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
                                 Calculating…
@@ -523,6 +543,11 @@ export default function BookPage() {
                     );
                   })}
                 </div>
+                {!vehicle && (
+                  <p className="mt-3 text-xs text-brand-silver">
+                    Select a vehicle to continue.
+                  </p>
+                )}
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -649,7 +674,7 @@ export default function BookPage() {
                       Summary
                     </h3>
                     <ul className="text-sm text-brand-grey space-y-1">
-                      <li>{SERVICE_LABELS[service]} • {VEHICLE_LABELS[vehicle]}</li>
+                      <li>{SERVICE_LABELS[service]} • {vehicle ? VEHICLE_LABELS[vehicle] : 'Vehicle TBD'}</li>
                       <li>Pick-up: {pickup || '—'}</li>
                       {dropoff && <li>Drop-off: {dropoff}</li>}
                       {service === 'airport' && airport && <li>Airport: {airport}</li>}
