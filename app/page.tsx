@@ -5,6 +5,7 @@ import { SafeFleetImage } from '@/components/SafeFleetImage';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 import { defaultSiteDescription, siteKeywords } from '@/lib/seo';
+import { FaqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'NYC Luxury Chauffeur, Black Car & Airport Transfers',
@@ -156,6 +157,7 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
+      <FaqJsonLd faqs={faqs} />
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center justify-center bg-brand-black text-brand-white overflow-hidden">
         <div className="absolute inset-0 z-0">

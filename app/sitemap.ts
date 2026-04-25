@@ -29,9 +29,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const areaPages: MetadataRoute.Sitemap = [
-    { url: `${base}/services/areas/manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    // Boroughs
+    { url: `${base}/services/areas/manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/areas/brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/services/areas/jfk-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/areas/queens`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/bronx`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/staten-island`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    // Airports
+    { url: `${base}/services/areas/jfk-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/areas/lga-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/areas/ewr-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/areas/hpn-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    // Regions
+    { url: `${base}/services/areas/westchester`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/long-island`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/new-jersey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ];
 
   return [...pages, ...servicePages, ...areaPages];
