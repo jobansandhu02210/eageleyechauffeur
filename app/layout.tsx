@@ -7,6 +7,7 @@ import { AnalyticsPlaceholder } from '@/components/AnalyticsPlaceholder';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
 import { SplashScreen } from '@/components/SplashScreen';
 import MobileBottomBar from '@/components/MobileBottomBar';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import { getSiteUrl } from '@/lib/site';
 import { defaultSiteDescription, siteKeywords } from '@/lib/seo';
 
@@ -76,6 +77,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />
+        <WhatsAppButton />
         <MobileBottomBar />
         <AnalyticsPlaceholder />
       </body>
