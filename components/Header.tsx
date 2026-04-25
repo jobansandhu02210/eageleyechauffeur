@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { clsx } from 'clsx';
+import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -59,6 +60,16 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-4">
+            <a
+              href={`tel:${CONTACT_PHONE_E164}`}
+              className="hidden lg:flex items-center gap-2 text-sm font-medium text-brand-grey hover:text-brand-black transition-colors"
+              aria-label="Call us"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              {CONTACT_PHONE_DISPLAY}
+            </a>
             <Link
               href="/book"
               className="hidden sm:inline-flex items-center justify-center px-5 py-2.5 bg-brand-black text-brand-white text-sm font-medium hover:bg-brand-charcoal transition-colors"

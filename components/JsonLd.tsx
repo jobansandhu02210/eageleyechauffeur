@@ -37,6 +37,13 @@ export function LocalBusinessJsonLd() {
     ],
     priceRange: '$$$',
     image: `${site}/og-image.jpg`,
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '48',
+      bestRating: '5',
+      worstRating: '1',
+    },
     sameAs: [],
   };
 

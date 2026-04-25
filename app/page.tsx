@@ -51,6 +51,90 @@ const fleet = [
 // Hero image in public/hero.jpg (simple name — works reliably on Vercel)
 const HERO_IMAGE = '/hero.jpg';
 
+const trustFeatures = [
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" />
+      </svg>
+    ),
+    title: 'Licensed & Insured',
+    desc: 'Fully licensed black car operator with comprehensive commercial insurance for every ride.',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: '24/7 Availability',
+    desc: 'Early morning flights, late-night arrivals — we operate around the clock, every day of the year.',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+      </svg>
+    ),
+    title: 'Real-Time Flight Tracking',
+    desc: 'We monitor your flight live. Delays, early arrivals — your driver adapts. No extra charges for tracked delays.',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    ),
+    title: 'Professional Drivers',
+    desc: 'Background-checked, professionally trained chauffeurs who prioritize your comfort and discretion.',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    ),
+    title: 'Meet & Greet Service',
+    desc: 'Your driver meets you at arrivals with a name sign, ready to assist with luggage from the first moment.',
+  },
+  {
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+    title: 'Transparent Pricing',
+    desc: 'No surge pricing, no hidden fees. Get an upfront estimate online and a formal invoice before you pay.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do you track flights?',
+    a: 'Yes — we monitor your flight in real time. If it arrives early or is delayed, your driver adjusts at no extra charge. You will never be left waiting.',
+  },
+  {
+    q: 'Which airports do you serve?',
+    a: 'We serve JFK (John F. Kennedy), LGA (LaGuardia), EWR (Newark Liberty), and HPN (Westchester County Airport). Private terminals and Teterboro (TEB) available on request.',
+  },
+  {
+    q: 'How far in advance should I book?',
+    a: 'We recommend at least 24 hours for standard rides. For corporate events, weddings, or group travel, 48–72 hours is preferred. Last-minute bookings are accepted based on availability — call us directly for urgent requests.',
+  },
+  {
+    q: 'What if my flight is delayed?',
+    a: 'No extra charge. Because we track every flight live, your driver will always be there when you land — not when you were originally scheduled to land.',
+  },
+  {
+    q: 'Do you serve areas outside Manhattan?',
+    a: 'Absolutely. We cover all five boroughs, Long Island, Westchester, New Jersey, and Connecticut. If you are unsure, just ask — we likely serve your area.',
+  },
+  {
+    q: 'Is the quoted price all-inclusive?',
+    a: 'Our estimates include base fare and tolls. Gratuity is optional and appreciated. No surprise surcharges — your invoice will clearly show the final price before you pay.',
+  },
+];
+
 const testimonials = [
   {
     quote: 'Impeccable service every time. The team is professional, discreet, and the vehicles are always spotless.',
@@ -188,6 +272,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Why Eagle Eye — trust section */}
+      <section className="py-16 lg:py-24 bg-brand-black text-brand-white" aria-labelledby="trust-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="trust-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-white text-center mb-4">
+            Why Eagle Eye Chauffeur?
+          </h2>
+          <p className="text-brand-silver text-center max-w-2xl mx-auto mb-12">
+            We set the standard for luxury ground transportation in New York City.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {trustFeatures.map((f, i) => (
+              <div key={i} className="flex gap-4">
+                <div className="shrink-0 mt-1 text-brand-silver">{f.icon}</div>
+                <div>
+                  <h3 className="font-semibold text-brand-white mb-1">{f.title}</h3>
+                  <p className="text-brand-silver text-sm leading-relaxed">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -197,6 +304,13 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((t, i) => (
               <blockquote key={i} className="bg-brand-offwhite p-8 border border-brand-light">
+                <div className="flex gap-1 mb-3" aria-label="5 out of 5 stars">
+                  {[...Array(5)].map((_, s) => (
+                    <svg key={s} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
                 <p className="text-brand-dark italic">&ldquo;{t.quote}&rdquo;</p>
                 <footer className="mt-4">
                   <cite className="not-italic font-semibold text-brand-black">{t.author}</cite>
@@ -205,6 +319,23 @@ export default function HomePage() {
               </blockquote>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 lg:py-24 bg-brand-offwhite" aria-labelledby="faq-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="faq-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-12">
+            Frequently Asked Questions
+          </h2>
+          <dl className="space-y-6">
+            {faqs.map((faq, i) => (
+              <div key={i} className="bg-brand-white border border-brand-light p-6">
+                <dt className="font-semibold text-brand-black mb-2">{faq.q}</dt>
+                <dd className="text-brand-grey text-sm leading-relaxed">{faq.a}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
