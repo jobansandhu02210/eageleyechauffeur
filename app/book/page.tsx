@@ -25,6 +25,13 @@ const VEHICLE_LABELS: Record<VehicleType, string> = {
   'first-sedan': 'First Class Sedan',
 };
 
+const VEHICLE_META: Record<VehicleType, { image: string; passengers: number; luggage: number; description: string }> = {
+  'business-sedan': { image: '/fleet-business-sedan.png', passengers: 3, luggage: 3, description: 'Perfect for solo & executive travel' },
+  'business-suv': { image: '/fleet-business-suv.png', passengers: 5, luggage: 5, description: 'Extra room for groups & luggage' },
+  'first-suv': { image: '/fleet-first-suv.png', passengers: 6, luggage: 6, description: 'Top-tier luxury for VIP travel' },
+  'first-sedan': { image: '/fleet-first-sedan.png', passengers: 3, luggage: 3, description: 'Premium comfort with elegant style' },
+};
+
 const AIRPORTS = ['JFK - John F. Kennedy', 'LGA - LaGuardia', 'EWR - Newark Liberty', 'HPN - Westchester County'];
 
 type EstimateLine = { label: string; amount: number };
@@ -64,6 +71,13 @@ export default function BookPage() {
   const [bookingGuestCopyIssue, setBookingGuestCopyIssue] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<BookingEstimate | null>(null);
   const [estimateLoading, setEstimateLoading] = useState(false);
+  const [allEstimates, setAllEstimates] = useState<Record<VehicleType, BookingEstimate | null>>({
+    'business-sedan': null,
+    'business-suv': null,
+    'first-suv': null,
+    'first-sedan': null,
+  });
+  const [allEstimatesLoading, setAllEstimatesLoading] = useState(false);
 
   const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail.trim());
 
@@ -126,6 +140,33 @@ export default function BookPage() {
       clearTimeout(t);
     };
   }, [step, service, vehicle, pickup, dropoff, airport, hours, passengers, luggage]);
+
+  // Fetch prices for ALL vehicle types simultaneously when user reaches step 3
+  useEffect(() => {
+    if (service === 'hourly' || step !== 3) return;
+    const vehicleTypes: VehicleType[] = ['business-sedan', 'business-suv', 'first-suv', 'first-sedan'];
+    let cancelled = false;
+    setAllEstimatesLoading(true);
+    Promise.all(
+      vehicleTypes.map((v) =>
+        fetch('/api/booking/estimate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          body: JSON.stringify({ service, vehicle: v, pickup, dropoff, airport, hours, passengers, luggage }),
+        })
+          .then((r) => (r.ok ? r.json() : { incomplete: true, message: 'Could not estimate' }))
+          .catch(() => ({ incomplete: true, message: 'Could not estimate' }))
+      )
+    ).then((results) => {
+      if (cancelled) return;
+      const estimates = {} as Record<VehicleType, BookingEstimate>;
+      vehicleTypes.forEach((v, i) => { estimates[v] = results[i]; });
+      setAllEstimates(estimates);
+      setAllEstimatesLoading(false);
+    });
+    return () => { cancelled = true; };
+  }, [step, service, pickup, dropoff, airport, hours, passengers, luggage]);
 
   useEffect(() => {
     let cancelled = false;
@@ -405,24 +446,82 @@ export default function BookPage() {
           {step === 3 && (
             <div className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-brand-black mb-3">
-                  Vehicle
+                <label className="block text-sm font-medium text-brand-black mb-1">
+                  Choose your vehicle
                 </label>
-                <div className="space-y-2">
-                  {(Object.keys(VEHICLE_LABELS) as VehicleType[]).map((v) => (
-                    <button
-                      key={v}
-                      type="button"
-                      onClick={() => setVehicle(v)}
-                      className={`w-full py-3 px-4 border text-left text-sm font-medium transition-colors ${
-                        vehicle === v
-                          ? 'border-brand-black bg-brand-black text-brand-white'
-                          : 'border-brand-light text-brand-dark hover:border-brand-grey'
-                      }`}
-                    >
-                      {VEHICLE_LABELS[v]}
-                    </button>
-                  ))}
+                {service !== 'hourly' && (
+                  <p className="text-xs text-brand-silver mb-4">Prices calculated automatically for your route</p>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {(Object.keys(VEHICLE_LABELS) as VehicleType[]).map((v) => {
+                    const meta = VEHICLE_META[v];
+                    const est = allEstimates[v];
+                    const isSelected = vehicle === v;
+                    return (
+                      <button
+                        key={v}
+                        type="button"
+                        onClick={() => setVehicle(v)}
+                        className={`text-left border transition-all overflow-hidden ${
+                          isSelected
+                            ? 'border-brand-black ring-2 ring-brand-black'
+                            : 'border-brand-light hover:border-brand-dark'
+                        }`}
+                      >
+                        {/* Vehicle image */}
+                        <div className="relative aspect-[16/9] bg-brand-offwhite overflow-hidden">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={meta.image}
+                            alt={VEHICLE_LABELS[v]}
+                            className="w-full h-full object-cover"
+                          />
+                          {isSelected && (
+                            <div className="absolute top-2 right-2 bg-brand-black text-brand-white text-xs px-2 py-1 font-medium">
+                              ✓ Selected
+                            </div>
+                          )}
+                        </div>
+                        {/* Vehicle info + price */}
+                        <div className={`p-4 ${ isSelected ? 'bg-brand-black' : 'bg-brand-white' }`}>
+                          <p className={`font-serif text-base font-semibold ${ isSelected ? 'text-brand-white' : 'text-brand-black' }`}>
+                            {VEHICLE_LABELS[v]}
+                          </p>
+                          <p className={`text-xs mt-0.5 ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                            {meta.description}
+                          </p>
+                          <p className={`text-xs mt-1 ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                            Up to {meta.passengers} passengers · {meta.luggage} bags
+                          </p>
+                          {/* Price display */}
+                          <div className={`mt-3 pt-3 border-t ${ isSelected ? 'border-white/20' : 'border-brand-light' }`}>
+                            {service === 'hourly' ? (
+                              <p className={`text-sm font-medium ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                Contact for hourly rate
+                              </p>
+                            ) : allEstimatesLoading ? (
+                              <p className={`text-sm ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                Calculating…
+                              </p>
+                            ) : est && !est.incomplete ? (
+                              <div className="flex items-baseline gap-1">
+                                <span className={`text-2xl font-semibold tabular-nums ${ isSelected ? 'text-brand-white' : 'text-brand-black' }`}>
+                                  ${est.amount}
+                                </span>
+                                <span className={`text-xs ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                  estimated
+                                </span>
+                              </div>
+                            ) : (
+                              <p className={`text-sm ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                Quote on request
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -472,23 +571,11 @@ export default function BookPage() {
                 </div>
               )}
 
+              {/* Disclaimer — estimate is now shown inline on each vehicle card */}
               {service !== 'hourly' && (
-                <div
-                  className="border border-brand-light bg-brand-offwhite p-5 sm:p-6"
-                  aria-live="polite"
-                  aria-atomic="true"
-                >
-                  <p className="text-xs font-medium uppercase tracking-wider text-brand-silver">Your quote</p>
-                  <p className="text-sm font-medium text-brand-black mt-2">
-                    Selected vehicle: {VEHICLE_LABELS[vehicle]}
-                  </p>
-                  <p className="text-xs text-brand-silver mt-1">
-                    {passengers} passenger{passengers !== 1 ? 's' : ''}
-                    {luggage > 0 ? ` · ${luggage} luggage` : ''}
-                  </p>
-                  <div className="mt-4">{pricedEstimateBlock}</div>
-                  {estimateDisclaimer}
-                </div>
+                <p className="text-xs text-brand-silver">
+                  Estimates are based on your route and update as you change vehicle or guest details. Final price will be on your invoice.
+                </p>
               )}
             </div>
           )}
