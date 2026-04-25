@@ -33,10 +33,11 @@ export function SplashScreen() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-brand-black transition-opacity duration-700 ease-out ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center transition-opacity duration-700 ease-out ${
         !mounted ? 'opacity-0' : fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
-      style={{ pointerEvents: 'none' }}
+      // Use true black to blend with the logo image background (avoids a visible seam vs brand black #0a0a0a).
+      style={{ pointerEvents: 'none', backgroundColor: '#000000' }}
       aria-hidden="true"
     >
       {logoError ? (
@@ -48,9 +49,9 @@ export function SplashScreen() {
         <img
           src="/logo-splash-2026-04-25.png"
           alt="Eagle Eye Chauffeur"
-          width={280}
-          height={140}
-          className="object-contain w-[min(80vw,280px)] h-auto"
+          width={360}
+          height={180}
+          className="object-contain w-[min(86vw,360px)] h-auto"
           onError={() => setLogoError(true)}
         />
       )}
