@@ -36,7 +36,11 @@ export function LocalBusinessJsonLd() {
       },
     ],
     priceRange: '$$$',
-    image: `${site}/og-image.jpg`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${site}/logo-2026-04-25.png`,
+    },
+    image: [`${site}/og-image.jpg`, `${site}/logo-2026-04-25.png`],
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',

@@ -25,6 +25,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 const siteUrl = getSiteUrl();
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -59,9 +60,9 @@ export const metadata: Metadata = {
     images: [`${siteUrl}/og-image.jpg`],
   },
   robots: { index: true, follow: true },
-  verification: {
-    google: 'your-google-verification-code', // Replace with actual code for Search Console
-  },
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
 };
 
 export default function RootLayout({

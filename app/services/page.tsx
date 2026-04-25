@@ -95,6 +95,30 @@ export default function ServicesPage() {
               </Link>
             ))}
           </div>
+
+          <div className="mt-14 bg-brand-white border border-brand-light p-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-3">
+              NYC Areas We Serve
+            </h2>
+            <p className="text-brand-grey max-w-3xl">
+              Browse borough coverage and dedicated airport transfer pages for Manhattan, Brooklyn, Queens, the Bronx,
+              Staten Island, and JFK/LGA/EWR.
+            </p>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/services/areas"
+                className="inline-flex items-center justify-center px-7 py-3 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
+              >
+                View service areas
+              </Link>
+              <Link
+                href="/book"
+                className="inline-flex items-center justify-center px-7 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
+              >
+                Request a ride
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

@@ -32,7 +32,7 @@ export default function Header() {
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img
-                src="/logo.png"
+                src="/logo-2026-04-25.png"
                 alt="Eagle Eye Chauffeur"
                 width={180}
                 height={56}

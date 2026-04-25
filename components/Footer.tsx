@@ -7,6 +7,7 @@ const services = [
   { href: '/services/airport', label: 'Airport Transfers' },
   { href: '/services/corporate', label: 'Corporate Travel' },
   { href: '/services/special-events', label: 'Special Events' },
+  { href: '/services/areas', label: 'Service Areas' },
 ];
 
 const company = [

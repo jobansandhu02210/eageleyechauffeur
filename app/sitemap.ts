@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const areaPages: MetadataRoute.Sitemap = [
+    { url: `${base}/services/areas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
     // Boroughs
     { url: `${base}/services/areas/manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/areas/brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
