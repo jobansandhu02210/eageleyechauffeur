@@ -28,6 +28,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const airportPages: MetadataRoute.Sitemap = [
+    { url: `${base}/services/airport/jfk`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/airport/lga`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/airport/ewr`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/airport/hpn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+  ];
+
   const areaPages: MetadataRoute.Sitemap = [
     { url: `${base}/services/areas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
     // Boroughs
@@ -47,5 +54,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/areas/new-jersey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
   ];
 
-  return [...pages, ...servicePages, ...areaPages];
+  return [...pages, ...servicePages, ...airportPages, ...areaPages];
 }
