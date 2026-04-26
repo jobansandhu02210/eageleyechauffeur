@@ -52,7 +52,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/areas/westchester`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services/areas/long-island`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services/areas/new-jersey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    // New areas
+    { url: `${base}/services/areas/hamptons`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/areas/nassau-county`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/suffolk-county`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/connecticut`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/services/areas/upstate-ny`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   ];
 
-  return [...pages, ...servicePages, ...airportPages, ...areaPages];
+  const routePages: MetadataRoute.Sitemap = [
+    { url: `${base}/services/routes/manhattan-to-brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${base}/services/routes/jfk-to-manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/jfk-to-brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+  ];
+
+  return [...pages, ...servicePages, ...airportPages, ...areaPages, ...routePages];
 }
