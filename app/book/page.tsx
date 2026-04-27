@@ -123,6 +123,9 @@ export default function BookPage() {
             hours,
             passengers,
             luggage,
+            promoCode: promoResolved?.code || promoCode.trim() || '',
+            customerEmail: customerEmail.trim(),
+            customerPhone: customerPhone.trim(),
           }),
         });
         const data = (await res.json()) as BookingEstimate | { error?: string };
@@ -151,7 +154,7 @@ export default function BookPage() {
       cancelled = true;
       clearTimeout(t);
     };
-  }, [step, service, vehicle, pickup, dropoff, airport, hours, passengers, luggage]);
+  }, [step, service, vehicle, pickup, dropoff, airport, hours, passengers, luggage, promoCode, promoResolved, customerEmail, customerPhone]);
 
   // Fetch prices for ALL vehicle types simultaneously when user reaches step 3
   useEffect(() => {

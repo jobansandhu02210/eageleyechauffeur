@@ -4,6 +4,8 @@
  */
 import { resolveDrivingMilesForPricing } from '@/lib/google-driving-distance';
 import { getPlacesServerApiKey } from '@/lib/places-env';
+import { prisma } from '@/lib/prisma';
+import { normalizePromoCode } from '@/lib/referral-utils';
 
 const VEHICLE_PER_MILE_USD: Record<string, number> = {
   'business-sedan': 7.5,
@@ -52,6 +54,9 @@ export async function computeBookingEstimate(input: {
   hours: number;
   passengers: number;
   luggage: number;
+  promoCode?: string;
+  customerEmail?: string;
+  customerPhone?: string;
 }): Promise<BookingEstimateResponse> {
   const vehicle = ALLOWED_VEHICLES.has(input.vehicle) ? input.vehicle : 'business-sedan';
   const rate = perMileRate(vehicle);
@@ -131,6 +136,32 @@ export async function computeBookingEstimate(input: {
   if (input.luggage > INCLUDED_LUGGAGE) {
     const n = input.luggage - INCLUDED_LUGGAGE;
     lines.push({ label: `Additional luggage (${n})`, amount: n * EXTRA_LUGGAGE });
+  }
+
+  // Promo discount: 10% off first ride per customer email/phone.
+  const promoCode = normalizePromoCode(input.promoCode ?? '');
+  const email = (input.customerEmail ?? '').trim().toLowerCase();
+  const phone = (input.customerPhone ?? '').trim();
+  if (promoCode && (email || phone)) {
+    // Only apply discount if this customer has not used this promo code before.
+    const existing = await prisma.booking.findFirst({
+      where: {
+        promoCode,
+        OR: [
+          ...(email ? [{ customerEmail: email }] : []),
+          ...(phone ? [{ customerPhone: phone }] : []),
+        ],
+      },
+      select: { id: true },
+    });
+
+    if (!existing) {
+      const subtotal = lines.reduce((s, l) => s + l.amount, 0);
+      const discount = roundUsd2(Math.max(0, subtotal * 0.1));
+      if (discount > 0) {
+        lines.push({ label: 'Promo discount (10% off first ride)', amount: -discount });
+      }
+    }
   }
 
   const amount = roundUsd2(lines.reduce((s, l) => s + l.amount, 0));

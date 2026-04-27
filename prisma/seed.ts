@@ -11,14 +11,12 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-  // Replace these with your real driver names + codes (promo codes).
-  // Codes should be short, uppercase, and easy to type.
   const drivers = [
-    { name: 'Driver 1', code: 'DRIVER1' },
-    { name: 'Driver 2', code: 'DRIVER2' },
-    { name: 'Driver 3', code: 'DRIVER3' },
-    { name: 'Driver 4', code: 'DRIVER4' },
-    { name: 'Driver 5', code: 'DRIVER5' },
+    { name: 'Joban', code: 'JOBAN' },
+    { name: 'Robin', code: 'ROBIN' },
+    { name: 'Yuvi', code: 'YUVI' },
+    { name: 'Dilawar', code: 'DILAWAR' },
+    { name: 'Harsh', code: 'HARSH' },
   ];
 
   for (const d of drivers) {
