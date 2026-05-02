@@ -5,12 +5,8 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const code = url.searchParams.get('code') ?? '';
 
-  try {
-    const result = await lookupDriverByPromoCode(code);
-    if (!result.ok) return NextResponse.json(result, { status: 404 });
-    return NextResponse.json(result);
-  } catch {
-    return NextResponse.json({ ok: false, message: 'Lookup failed.' }, { status: 500 });
-  }
+  const result = await lookupDriverByPromoCode(code);
+  if (!result.ok) return NextResponse.json(result, { status: 404 });
+  return NextResponse.json(result);
 }
 

@@ -5,6 +5,7 @@
 import { resolveDrivingMilesForPricing } from '@/lib/google-driving-distance';
 import { getPlacesServerApiKey } from '@/lib/places-env';
 import { prisma } from '@/lib/prisma';
+import { isKnownDriverPromoCode } from '@/lib/referral-driver-list';
 import { normalizePromoCode } from '@/lib/referral-utils';
 
 const VEHICLE_PER_MILE_USD: Record<string, number> = {
@@ -142,20 +143,26 @@ export async function computeBookingEstimate(input: {
   const promoCode = normalizePromoCode(input.promoCode ?? '');
   const email = (input.customerEmail ?? '').trim().toLowerCase();
   const phone = (input.customerPhone ?? '').trim();
-  if (promoCode && (email || phone)) {
-    // Only apply discount if this customer has not used this promo code before.
-    const existing = await prisma.booking.findFirst({
-      where: {
-        promoCode,
-        OR: [
-          ...(email ? [{ customerEmail: email }] : []),
-          ...(phone ? [{ customerPhone: phone }] : []),
-        ],
-      },
-      select: { id: true },
-    });
+  if (promoCode && (email || phone) && isKnownDriverPromoCode(promoCode)) {
+    let alreadyUsed = false;
+    try {
+      const existing = await prisma.booking.findFirst({
+        where: {
+          promoCode,
+          OR: [
+            ...(email ? [{ customerEmail: email }] : []),
+            ...(phone ? [{ customerPhone: phone }] : []),
+          ],
+        },
+        select: { id: true },
+      });
+      alreadyUsed = !!existing;
+    } catch {
+      // DB unavailable — still honor first-ride discount for known driver promo codes.
+      alreadyUsed = false;
+    }
 
-    if (!existing) {
+    if (!alreadyUsed) {
       const subtotal = lines.reduce((s, l) => s + l.amount, 0);
       const discount = roundUsd2(Math.max(0, subtotal * 0.1));
       if (discount > 0) {

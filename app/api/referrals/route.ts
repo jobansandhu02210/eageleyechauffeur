@@ -57,7 +57,21 @@ export async function POST(req: Request) {
     });
 
     if (!result.ok) return NextResponse.json(result, { status: 400 });
-    return NextResponse.json({ ok: true, bookingId: result.booking.id, driver: result.driver });
+    if (result.persisted) {
+      return NextResponse.json({
+        ok: true,
+        persisted: true,
+        bookingId: result.bookingId,
+        driver: result.driver,
+      });
+    }
+    return NextResponse.json({
+      ok: true,
+      persisted: false,
+      bookingId: result.bookingId,
+      driver: result.driver,
+      message: result.message,
+    });
   } catch {
     return NextResponse.json({ ok: false, message: 'Could not record referral.' }, { status: 500 });
   }

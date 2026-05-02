@@ -1,6 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 import { PrismaPg } from '@prisma/adapter-pg';
 import { Pool } from 'pg';
+import { DRIVER_PROMOS } from '../lib/referral-driver-list';
 
 const prisma = new PrismaClient({
   adapter: new PrismaPg(
@@ -11,15 +12,7 @@ const prisma = new PrismaClient({
 });
 
 async function main() {
-  const drivers = [
-    { name: 'Joban', code: 'JOBAN' },
-    { name: 'Robin', code: 'ROBIN' },
-    { name: 'Yuvi', code: 'YUVI' },
-    { name: 'Dilawar', code: 'DILAWAR' },
-    { name: 'Harsh', code: 'HARSH' },
-  ];
-
-  for (const d of drivers) {
+  for (const d of DRIVER_PROMOS) {
     await prisma.driver.upsert({
       where: { code: d.code },
       update: { name: d.name, active: true },
@@ -36,4 +29,3 @@ main()
     await prisma.$disconnect();
     process.exit(1);
   });
-
