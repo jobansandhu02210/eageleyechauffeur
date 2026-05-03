@@ -290,6 +290,7 @@ export default function BookPage() {
           hours: service === 'hourly' ? hours : undefined,
           specialRequests,
           promoCode: promoResolved?.code || promoCode.trim() || undefined,
+          promoDriverName: promoResolved?.driverName || undefined,
           quoteAmount: service === 'hourly' ? 0 : quoteAmount,
           quoteLabel:
             service === 'hourly'
