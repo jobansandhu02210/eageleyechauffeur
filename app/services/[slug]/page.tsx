@@ -8,6 +8,7 @@ import { siteKeywords } from '@/lib/seo';
 
 type ServiceEntry = {
   title: string;
+  seoTitle: string;
   description: string;
   metaDescription: string;
   keywords: string[];
@@ -18,9 +19,10 @@ type ServiceEntry = {
 const services: Record<string, ServiceEntry> = {
   'point-to-point': {
     title: 'Point-to-Point Transfers',
+    seoTitle: 'Point-to-Point Car Service NYC | Direct Luxury Transfers',
     description: 'Direct, luxurious transportation within NYC and surrounding areas.',
     metaDescription:
-      'Premium point-to-point chauffeur service in NYC. Door-to-door black car transfers in Manhattan, Brooklyn, Queens, and the tri-state. Quote & book Eagle Eye Chauffeur.',
+      'Direct luxury point-to-point transfers in NYC. Door-to-door service across all 5 boroughs. Professional chauffeurs, transparent pricing. Book now!',
     keywords: [
       'point to point chauffeur NYC',
       'door to door black car Manhattan',
@@ -46,9 +48,10 @@ const services: Record<string, ServiceEntry> = {
   },
   hourly: {
     title: 'Hourly Chauffeur Service',
+    seoTitle: 'Hourly Chauffeur Service NYC | Luxury Car Hire by the Hour',
     description: 'Flexible hourly hire for business meetings, events, or leisurely tours.',
     metaDescription:
-      'Hourly chauffeur and black car in NYC: meetings, roadshows, shopping, and city tours. Driver stays with you — book Eagle Eye Chauffeur.',
+      'Hire a luxury chauffeur by the hour in NYC. Perfect for meetings, events & city tours. Flexible scheduling, premium vehicles. Book hourly service today!',
     keywords: [
       'hourly chauffeur NYC',
       'chauffeur by the hour Manhattan',
@@ -74,9 +77,10 @@ const services: Record<string, ServiceEntry> = {
   },
   airport: {
     title: 'Airport Transfers',
+    seoTitle: 'NYC Airport Transfer | JFK, LGA, EWR Luxury Car Service',
     description: 'JFK, LGA, EWR, HPN. Meet-and-greet and real-time flight tracking.',
     metaDescription:
-      'NYC airport car service: JFK, LGA, EWR, HPN. Meet-and-greet, flight tracking, sedans & SUVs. Book Eagle Eye Chauffeur airport transfers.',
+      'Premium NYC airport transfers to JFK, LGA, EWR & HPN. Real-time flight tracking, meet & greet service. No surge pricing. Book your luxury ride now!',
     keywords: [
       'JFK car service Manhattan',
       'LaGuardia black car',
@@ -103,9 +107,10 @@ const services: Record<string, ServiceEntry> = {
   },
   corporate: {
     title: 'Corporate Travel',
+    seoTitle: 'Corporate Car Service NYC | Executive Chauffeur for Business',
     description: 'Tailored services for executives, roadshows, and corporate events.',
     metaDescription:
-      'NYC corporate car service: executives, roadshows, investor visits, and events. Invoicing, discretion, and consistent chauffeurs — Eagle Eye Chauffeur.',
+      'Reliable corporate chauffeur service in NYC for executives & business travel. Account billing, dedicated drivers, 24/7 availability. Get a corporate quote!',
     keywords: [
       'corporate car service NYC',
       'executive transportation Manhattan',
@@ -131,9 +136,10 @@ const services: Record<string, ServiceEntry> = {
   },
   'special-events': {
     title: 'Special Events',
+    seoTitle: 'Wedding & Event Chauffeur Service NYC | Luxury Transportation',
     description: 'Weddings, proms, concerts, and other special occasions.',
     metaDescription:
-      'NYC wedding and event chauffeur: proms, galas, concerts, and celebrations. Luxury sedans, SUVs & Sprinters — Eagle Eye Chauffeur.',
+      "Make your special event memorable with Eagle Eye's luxury chauffeur service. Weddings, proms, galas in NYC. Elegant vehicles, professional drivers.",
     keywords: [
       'wedding car service NYC',
       'prom chauffeur New York',
@@ -170,15 +176,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!s) return { title: 'Service' };
   const base = getSiteUrl();
   const path = `${base}/services/${params.slug}`;
-  const ogTitle = `${s.title} | Eagle Eye Chauffeur`;
   return {
-    title: s.title,
+    title: { absolute: s.seoTitle },
     description: s.metaDescription,
     keywords: [...siteKeywords, ...s.keywords],
     alternates: { canonical: path },
     openGraph: {
       url: path,
-      title: ogTitle,
+      title: s.seoTitle,
       description: s.metaDescription,
       images: [
         {
@@ -191,7 +196,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     },
     twitter: {
       card: 'summary_large_image',
-      title: ogTitle,
+      title: s.seoTitle,
       description: s.metaDescription,
       images: [s.image],
     },

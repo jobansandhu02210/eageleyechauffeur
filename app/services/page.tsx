@@ -5,16 +5,20 @@ import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'NYC Chauffeur Services — Airport, Hourly, Corporate',
+  title: {
+    absolute:
+      'Luxury Chauffeur Services NYC | Airport, Hourly & Point-to-Point',
+  },
   description:
-    'Premium NYC chauffeur services: JFK LGA EWR HPN airport transfers, hourly black car, point-to-point, corporate travel, weddings & events. Eagle Eye Chauffeur.',
+    "Explore Eagle Eye Chauffeur's full range of NYC services: airport transfers, hourly hire, corporate travel & special events. Book luxury rides 24/7.",
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/services` },
   openGraph: {
     url: `${getSiteUrl()}/services`,
-    title: 'Chauffeur Services NYC | Eagle Eye Chauffeur',
+    title:
+      'Luxury Chauffeur Services NYC | Airport, Hourly & Point-to-Point',
     description:
-      'Airport, hourly, corporate, and special-event chauffeur service across Manhattan, Brooklyn, Queens, and the greater NYC area.',
+      "Explore Eagle Eye Chauffeur's full range of NYC services: airport transfers, hourly hire, corporate travel & special events. Book luxury rides 24/7.",
   },
 };
 

@@ -5,16 +5,18 @@ import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'About Our NYC Chauffeur Team',
+  title: {
+    absolute: "About Eagle Eye Chauffeur | NYC's Premier Luxury Car Service",
+  },
   description:
-    'Meet Eagle Eye Chauffeur: NYC luxury black car and chauffeur professionals committed to discretion, punctuality, and five-borough & tri-state service.',
+    'Learn about Eagle Eye Chauffeur - NYC\'s trusted luxury transportation provider. Licensed, insured & dedicated to white-glove service since day one.',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/about` },
   openGraph: {
     url: `${getSiteUrl()}/about`,
-    title: 'About Eagle Eye Chauffeur | NYC Luxury Chauffeur Service',
+    title: "About Eagle Eye Chauffeur | NYC's Premier Luxury Car Service",
     description:
-      'Professional NYC chauffeurs, local expertise, and a client-first approach. Learn why businesses and travelers choose Eagle Eye.',
+      'Learn about Eagle Eye Chauffeur - NYC\'s trusted luxury transportation provider. Licensed, insured & dedicated to white-glove service since day one.',
   },
 };
 

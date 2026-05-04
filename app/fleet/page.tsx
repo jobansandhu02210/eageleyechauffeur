@@ -5,16 +5,20 @@ import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Luxury Fleet — Sedans, SUVs & Sprinter NYC',
+  title: {
+    absolute:
+      'Luxury Fleet NYC | Business & First Class Sedans & SUVs | Eagle Eye',
+  },
   description:
-    'Executive sedans, luxury SUVs, and Sprinter vans for NYC airport transfers, corporate travel, and events. Eagle Eye Chauffeur premium black car fleet.',
+    'Choose from our premium fleet of Business & First Class sedans and SUVs in NYC. Mercedes, Cadillac & more. Spotless vehicles, professional chauffeurs.',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/fleet` },
   openGraph: {
     url: `${getSiteUrl()}/fleet`,
-    title: 'Our Fleet | NYC Luxury Black Car Vehicles',
+    title:
+      'Luxury Fleet NYC | Business & First Class Sedans & SUVs | Eagle Eye',
     description:
-      'Volvo sedans, Chevrolet Suburban SUVs, and Mercedes Sprinter options — chauffeur-driven across New York City.',
+      'Choose from our premium fleet of Business & First Class sedans and SUVs in NYC. Mercedes, Cadillac & more. Spotless vehicles, professional chauffeurs.',
   },
 };
 

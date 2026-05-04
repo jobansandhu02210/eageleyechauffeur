@@ -4,18 +4,24 @@ import Link from 'next/link';
 import { SafeFleetImage } from '@/components/SafeFleetImage';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
-import { defaultSiteDescription, siteKeywords } from '@/lib/seo';
+import { siteKeywords } from '@/lib/seo';
 import { FaqJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'NYC Luxury Chauffeur, Black Car & Airport Transfers',
-  description: defaultSiteDescription,
+  title: {
+    absolute:
+      'NYC Chauffeur Service | Luxury Black Car & Airport Transfers | Eagle Eye',
+  },
+  description:
+    'Premium NYC chauffeur service with luxury sedans & SUVs. JFK, LGA, EWR airport transfers. Professional drivers, 24/7 availability. Book your ride today!',
   keywords: siteKeywords,
   alternates: { canonical: getSiteUrl() },
   openGraph: {
     url: getSiteUrl(),
-    title: 'Eagle Eye Chauffeur | NYC Luxury Chauffeur & Black Car Service',
-    description: defaultSiteDescription,
+    title:
+      'NYC Chauffeur Service | Luxury Black Car & Airport Transfers | Eagle Eye',
+    description:
+      'Premium NYC chauffeur service with luxury sedans & SUVs. JFK, LGA, EWR airport transfers. Professional drivers, 24/7 availability. Book your ride today!',
   },
 };
 

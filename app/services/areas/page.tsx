@@ -4,11 +4,21 @@ import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'NYC Car Service Areas | Eagle Eye Chauffeur',
+  title: {
+    absolute:
+      'NYC Chauffeur Service Areas | Manhattan, Brooklyn, Queens & More',
+  },
   description:
-    'Chauffeur and black car service areas in NYC: Manhattan, Brooklyn, Queens, Bronx, Staten Island, and airport transfers (JFK, LGA, EWR).',
+    'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Luxury transportation wherever you need it. Check our service areas!',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/services/areas` },
+  openGraph: {
+    url: `${getSiteUrl()}/services/areas`,
+    title:
+      'NYC Chauffeur Service Areas | Manhattan, Brooklyn, Queens & More',
+    description:
+      'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Luxury transportation wherever you need it. Check our service areas!',
+  },
 };
 
 const areas = [

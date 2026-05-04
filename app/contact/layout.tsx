@@ -1,18 +1,18 @@
 import type { Metadata } from 'next';
 import { getSiteUrl } from '@/lib/site';
-import { siteKeywords } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Contact — Book NYC Chauffeur & Quotes',
+  title: {
+    absolute: 'Contact Eagle Eye Chauffeur NYC | Book Luxury Car Service 24/7',
+  },
   description:
-    'Contact Eagle Eye Chauffeur for NYC black car quotes, airport pickups (JFK LGA EWR HPN), and corporate travel. Phone, email, or form — fast replies.',
-  keywords: siteKeywords,
+    'Contact Eagle Eye Chauffeur for premium NYC transportation. Call (929) 919-6499 or WhatsApp us 24/7. Quick quotes, instant bookings, professional service.',
   alternates: { canonical: `${getSiteUrl()}/contact` },
   openGraph: {
     url: `${getSiteUrl()}/contact`,
-    title: 'Contact Eagle Eye Chauffeur | NYC',
+    title: 'Contact Eagle Eye Chauffeur NYC | Book Luxury Car Service 24/7',
     description:
-      'Request a quote or ask about chauffeur service in Manhattan, airports, and the tri-state area.',
+      'Contact Eagle Eye Chauffeur for premium NYC transportation. Call (929) 919-6499 or WhatsApp us 24/7. Quick quotes, instant bookings, professional service.',
   },
 };
 
