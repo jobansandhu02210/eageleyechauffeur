@@ -6,6 +6,11 @@ const nextConfig = {
       { protocol: 'https', hostname: 'placehold.co' },
     ],
   },
+  experimental: {
+    turbo: {
+      root: __dirname,
+    },
+  },
 };
 
 module.exports = nextConfig;

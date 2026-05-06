@@ -84,6 +84,67 @@ export function FaqJsonLd({ faqs }: { faqs: { q: string; a: string }[] }) {
   );
 }
 
+export function BlogPostingJsonLd({
+  headline,
+  description,
+  datePublished,
+  author,
+  image,
+  url,
+}: {
+  headline: string;
+  description: string;
+  datePublished: string;
+  author: string;
+  image: string;
+  url: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline,
+    description,
+    datePublished,
+    author: {
+      '@type': 'Organization',
+      name: author,
+    },
+    image,
+    url,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Eagle Eye Chauffeur',
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function BreadcrumbJsonLd({ items }: { items: { name: string; url: string }[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
 export function ServiceJsonLd({
   name,
   description,

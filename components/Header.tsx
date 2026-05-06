@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/book', label: 'Book Now' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Header() {
