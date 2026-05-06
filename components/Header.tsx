@@ -14,6 +14,8 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
+  { href: '/world-cup-2026', label: 'World Cup' },
+  { href: '/referrals', label: 'Refer' },
 ];
 
 export default function Header() {

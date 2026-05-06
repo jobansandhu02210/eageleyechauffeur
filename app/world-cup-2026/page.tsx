@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
+import WorldCupLeadCapture from '@/components/WorldCupLeadCapture';
 
 export const metadata: Metadata = {
   title: {
@@ -220,6 +221,8 @@ export default function WorldCupPage() {
           </div>
         </div>
       </section>
+
+      <WorldCupLeadCapture />
 
       {/* Why Book With Us for the World Cup */}
       <section className="py-16 lg:py-24">
