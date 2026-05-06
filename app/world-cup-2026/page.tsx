@@ -195,8 +195,62 @@ export default function WorldCupPage() {
         </div>
       </section>
 
+      {/* Match Schedule */}
+      <section className="py-16 lg:py-24 bg-brand-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold text-brand-black text-center mb-4">
+            MetLife Stadium Match Schedule
+          </h2>
+          <p className="text-brand-grey text-center mb-10 max-w-2xl mx-auto">
+            All 8 World Cup matches at MetLife Stadium. Every date is a surge-pricing nightmare — except with us.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="border-b-2 border-brand-black">
+                  <th className="text-left py-3 px-4 font-semibold text-brand-black">Date</th>
+                  <th className="text-left py-3 px-4 font-semibold text-brand-black">Phase</th>
+                  <th className="text-left py-3 px-4 font-semibold text-brand-black">Match</th>
+                  <th className="text-left py-3 px-4 font-semibold text-brand-black">Kickoff</th>
+                  <th className="text-center py-3 px-4">
+                    <Link href="/book" className="text-sm font-medium text-brand-black hover:underline">Book Ride →</Link>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { date: 'June 14', phase: 'Group Stage', match: 'Match 1', time: 'TBD' },
+                  { date: 'June 16', phase: 'Group Stage', match: 'Match 2', time: 'TBD' },
+                  { date: 'June 19', phase: 'Group Stage', match: 'Match 3', time: 'TBD' },
+                  { date: 'June 22', phase: 'Group Stage', match: 'Match 4', time: 'TBD' },
+                  { date: 'June 25', phase: 'Group Stage', match: 'Match 5', time: 'TBD' },
+                  { date: 'June 28', phase: 'Group Stage', match: 'Match 6', time: 'TBD' },
+                  { date: 'July 2', phase: 'Knockout', match: 'Round of 16', time: 'TBD' },
+                  { date: 'July 7', phase: 'Knockout', match: 'Quarterfinal', time: 'TBD' },
+                ].map((m, i) => (
+                  <tr key={i} className="border-b border-brand-light hover:bg-brand-offwhite transition-colors">
+                    <td className="py-3 px-4 font-medium text-brand-black">{m.date}</td>
+                    <td className="py-3 px-4 text-brand-grey">{m.phase}</td>
+                    <td className="py-3 px-4 text-brand-grey">{m.match}</td>
+                    <td className="py-3 px-4 text-brand-grey">{m.time}</td>
+                    <td className="py-3 px-4 text-center">
+                      <Link href="/book" className="text-sm text-brand-black hover:underline font-medium">
+                        Book
+                      </Link>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-center mt-6 text-xs text-brand-grey">
+            Schedule subject to FIFA confirmation. We will update match details as they are announced.
+          </p>
+        </div>
+      </section>
+
       {/* Travel Options */}
-      <section className="py-16 lg:py-24 bg-brand-white border-y border-brand-light">
+      <section className="py-16 lg:py-24 bg-brand-offwhite border-y border-brand-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black text-center mb-4">
             Match-Day Travel Options

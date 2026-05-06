@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SafeFleetImage } from '@/components/SafeFleetImage';
+import UberCalculator from '@/components/UberCalculator';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
@@ -139,6 +140,14 @@ const faqs = [
   {
     q: 'Is the quoted price all-inclusive?',
     a: 'Our estimates include base fare and tolls. Gratuity is optional and appreciated. No surprise surcharges — your invoice will clearly show the final price before you pay.',
+  },
+  {
+    q: 'Is Eagle Eye cheaper than Uber?',
+    a: 'For airport transfers and longer rides, Eagle Eye often matches or beats Uber — especially during surge pricing. Unlike Uber, our price is fixed: what you see at booking is what you pay. No 3x surge, no surprise fees, and you get a guaranteed luxury vehicle with a professional chauffeur.',
+  },
+  {
+    q: 'Can I book for someone else?',
+    a: 'Absolutely. Book a ride for a client, guest, or family member. Just provide the passenger\'s name and flight details in the notes. We will meet them at arrivals with their name on the sign and deliver the same premium experience.',
   },
 ];
 
@@ -291,6 +300,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="how-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="how-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-12">
+            How It Works
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-black text-brand-white flex items-center justify-center text-2xl font-serif font-bold mx-auto mb-4">1</div>
+              <h3 className="font-semibold text-brand-black mb-2">Book Online</h3>
+              <p className="text-brand-grey text-sm">Tell us where and when. Get an instant quote — no account needed.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-black text-brand-white flex items-center justify-center text-2xl font-serif font-bold mx-auto mb-4">2</div>
+              <h3 className="font-semibold text-brand-black mb-2">We Track Your Flight</h3>
+              <p className="text-brand-grey text-sm">Your driver monitors your flight live. Delays? No problem. No extra charge.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-black text-brand-white flex items-center justify-center text-2xl font-serif font-bold mx-auto mb-4">3</div>
+              <h3 className="font-semibold text-brand-black mb-2">Meet & Greet</h3>
+              <p className="text-brand-grey text-sm">Your chauffeur meets you with a name sign at arrivals. Luggage handled.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-brand-black text-brand-white flex items-center justify-center text-2xl font-serif font-bold mx-auto mb-4">4</div>
+              <h3 className="font-semibold text-brand-black mb-2">Enjoy the Ride</h3>
+              <p className="text-brand-grey text-sm">Premium vehicle, professional driver, door-to-door. That simple.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Eagle Eye — trust section */}
       <section className="py-16 lg:py-24 bg-brand-black text-brand-white" aria-labelledby="trust-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -313,6 +353,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Uber Cost Calculator */}
+      <UberCalculator />
 
       {/* Testimonials */}
       <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="testimonials-heading">
