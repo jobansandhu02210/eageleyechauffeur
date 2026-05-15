@@ -4,6 +4,8 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { AnalyticsPlaceholder } from '@/components/AnalyticsPlaceholder';
+import { GtagLeadEvents } from '@/components/GtagLeadEvents';
+import { LeadCaptureStrip } from '@/components/LeadCaptureStrip';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
 import { SplashScreen } from '@/components/SplashScreen';
 import MobileBottomBar from '@/components/MobileBottomBar';
@@ -26,6 +28,7 @@ const cormorant = Cormorant_Garamond({
 
 const siteUrl = getSiteUrl();
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID?.trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -86,6 +89,8 @@ export default function RootLayout({
         <LocalBusinessJsonLd />
         <SplashScreen />
         <Header />
+        <LeadCaptureStrip />
+        {gaMeasurementId ? <GtagLeadEvents /> : null}
         <main className="flex-1 pb-16 lg:pb-0">{children}</main>
         <Footer />
         <WhatsAppButton />
