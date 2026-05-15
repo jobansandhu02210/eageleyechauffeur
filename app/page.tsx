@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { SafeFleetImage } from '@/components/SafeFleetImage';
-import UberCalculator from '@/components/UberCalculator';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
@@ -140,10 +139,6 @@ const faqs = [
   {
     q: 'Is the quoted price all-inclusive?',
     a: 'Our estimates include base fare and tolls. Gratuity is optional and appreciated. No surprise surcharges — your invoice will clearly show the final price before you pay.',
-  },
-  {
-    q: 'Is Eagle Eye cheaper than Uber?',
-    a: 'For airport transfers and longer rides, Eagle Eye often matches or beats Uber — especially during surge pricing. Unlike Uber, our price is fixed: what you see at booking is what you pay. No 3x surge, no surprise fees, and you get a guaranteed luxury vehicle with a professional chauffeur.',
   },
   {
     q: 'Can I book for someone else?',
@@ -353,9 +348,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Uber Cost Calculator */}
-      <UberCalculator />
 
       {/* Testimonials */}
       <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="testimonials-heading">
