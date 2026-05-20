@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ServiceJsonLd } from '@/components/JsonLd';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Westchester Airport Car Service (HPN) | Eagle Eye Chauffeur',
@@ -10,13 +10,40 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/airport/hpn` },
 };
 
+const hpnFaqs = [
+  {
+    q: 'How much is a car service from Westchester Airport (HPN) to Manhattan?',
+    a: 'Prices start at $120 for a business sedan from HPN to Manhattan, typically a 35-50 minute ride depending on traffic.',
+  },
+  {
+    q: 'Do you track flights at Westchester Airport?',
+    a: 'Yes. We monitor your HPN flight and adjust pickup timing automatically. No extra charge for delays.',
+  },
+  {
+    q: 'Is HPN good for corporate travelers avoiding JFK and LGA?',
+    a: 'Absolutely. HPN is far less congested than JFK or LGA, making it ideal for executives who value time. Quick check-in and minimal security lines.',
+  },
+  {
+    q: 'Do you serve Greenwich and Stamford from HPN?',
+    a: 'Yes. We regularly transfer passengers from HPN to Greenwich, Stamford, and other Connecticut destinations. Ask for a custom quote.',
+  },
+];
+
 export default function HPNPage() {
   return (
     <>
+      <FaqJsonLd faqs={hpnFaqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: getSiteUrl() },
+        { name: 'Services', url: `${getSiteUrl()}/services` },
+        { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
+        { name: 'Westchester Airport', url: `${getSiteUrl()}/services/airport/hpn` },
+      ]} />
       <ServiceJsonLd
         name="Westchester County Airport Car Service"
         description="Premium Westchester County Airport transfers to Manhattan, Westchester, and Connecticut. Luxury fleet and professional chauffeurs."
         areaServed="New York City, NY; Westchester County, NY"
+        url={`${getSiteUrl()}/services/airport/hpn`}
       />
       <div className="bg-brand-offwhite">
         <section className="py-16 lg:py-24">
@@ -58,7 +85,7 @@ export default function HPNPage() {
           </div>
         </section>
 
-        <section className="pb-20">
+        <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-brand-white border border-brand-light p-8">
               <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
@@ -75,6 +102,23 @@ export default function HPNPage() {
               >
                 Book HPN Transfer
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="pb-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              Westchester Airport Car Service FAQ
+            </h2>
+            <div className="space-y-4">
+              {hpnFaqs.map((faq) => (
+                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
+                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
+                  <p className="text-sm text-brand-grey">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

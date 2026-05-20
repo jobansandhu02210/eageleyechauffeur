@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ServiceJsonLd } from '@/components/JsonLd';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'LaGuardia Airport Car Service (LGA) | Eagle Eye Chauffeur',
@@ -10,13 +10,40 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/airport/lga` },
 };
 
+const lgaFaqs = [
+  {
+    q: 'How much is a car service from LaGuardia to Manhattan?',
+    a: 'Prices start at $75 for a business sedan from LGA to Manhattan. LaGuardia is NYC\'s closest major airport to Midtown, often just 20-30 minutes away.',
+  },
+  {
+    q: 'Do you track flights at LaGuardia Airport?',
+    a: 'Yes. We monitor your LGA flight live and adjust pickup time automatically — no extra charge for delays or early arrivals.',
+  },
+  {
+    q: 'Where does my driver meet me at LGA?',
+    a: 'Your chauffeur meets you in the arrivals area with a name sign. You\'ll receive a WhatsApp message with the exact meeting point before you land.',
+  },
+  {
+    q: 'Do you serve all LGA terminals?',
+    a: 'Yes. We service all LaGuardia terminals including the new Terminal B and Terminal C/D.',
+  },
+];
+
 export default function LGAPage() {
   return (
     <>
+      <FaqJsonLd faqs={lgaFaqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: getSiteUrl() },
+        { name: 'Services', url: `${getSiteUrl()}/services` },
+        { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
+        { name: 'LaGuardia Airport', url: `${getSiteUrl()}/services/airport/lga` },
+      ]} />
       <ServiceJsonLd
         name="LaGuardia Airport Car Service"
         description="Professional LaGuardia airport transfers to Manhattan and all NYC boroughs. Luxury fleet, flight tracking, meet & greet."
         areaServed="New York City, NY"
+        url={`${getSiteUrl()}/services/airport/lga`}
       />
       <div className="bg-brand-offwhite">
         {/* Hero */}
@@ -62,7 +89,7 @@ export default function LGAPage() {
         </section>
 
         {/* Features */}
-        <section className="pb-20">
+        <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-brand-white border border-brand-light p-8">
               <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
@@ -80,6 +107,23 @@ export default function LGAPage() {
               >
                 Book Now
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="pb-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              LGA Car Service FAQ
+            </h2>
+            <div className="space-y-4">
+              {lgaFaqs.map((faq) => (
+                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
+                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
+                  <p className="text-sm text-brand-grey">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

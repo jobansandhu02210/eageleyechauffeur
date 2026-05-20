@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ServiceJsonLd } from '@/components/JsonLd';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Newark Airport Car Service (EWR) | Eagle Eye Chauffeur NYC',
@@ -10,13 +10,40 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/airport/ewr` },
 };
 
+const ewrFaqs = [
+  {
+    q: 'How much is a car service from Newark Airport to Manhattan?',
+    a: 'Prices start at $95 from EWR to Manhattan. This includes tolls for the Lincoln or Holland Tunnel — no hidden fees.',
+  },
+  {
+    q: 'Do you track flights at Newark Liberty Airport?',
+    a: 'Yes. We monitor your EWR flight in real-time and adjust your pickup automatically for delays or early arrivals at no extra charge.',
+  },
+  {
+    q: 'Where does my driver meet me at EWR?',
+    a: 'Your chauffeur meets you in the ground transportation area of your terminal with a name sign. We cover all three EWR terminals (A, B, C).',
+  },
+  {
+    q: 'Are tolls included in the EWR price?',
+    a: 'Yes. Tunnel and airport tolls are included in your quoted price. No surprise fees at the end of your ride.',
+  },
+];
+
 export default function EWRPage() {
   return (
     <>
+      <FaqJsonLd faqs={ewrFaqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: getSiteUrl() },
+        { name: 'Services', url: `${getSiteUrl()}/services` },
+        { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
+        { name: 'Newark Airport', url: `${getSiteUrl()}/services/airport/ewr` },
+      ]} />
       <ServiceJsonLd
         name="Newark Airport Car Service"
         description="Premium Newark Liberty Airport transfers to Manhattan, Brooklyn, and New Jersey. Luxury sedan and SUV fleet, real-time flight tracking."
         areaServed="New York City, NY; Newark, NJ"
+        url={`${getSiteUrl()}/services/airport/ewr`}
       />
       <div className="bg-brand-offwhite">
         <section className="py-16 lg:py-24">
@@ -59,7 +86,7 @@ export default function EWRPage() {
           </div>
         </section>
 
-        <section className="pb-20">
+        <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-brand-white border border-brand-light p-8">
               <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
@@ -77,6 +104,23 @@ export default function EWRPage() {
               >
                 Book EWR Transfer
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section className="pb-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              Newark Airport Car Service FAQ
+            </h2>
+            <div className="space-y-4">
+              {ewrFaqs.map((faq) => (
+                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
+                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
+                  <p className="text-sm text-brand-grey">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ServiceJsonLd } from '@/components/JsonLd';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'JFK Airport Car Service | Eagle Eye Chauffeur NYC',
@@ -10,13 +10,40 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/airport/jfk` },
 };
 
+const jfkFaqs = [
+  {
+    q: 'How much is a car service from JFK to Manhattan?',
+    a: 'Prices start at $85 for a business sedan from JFK to Midtown Manhattan. The exact price depends on your drop-off location and vehicle choice.',
+  },
+  {
+    q: 'Do you monitor flight delays at JFK?',
+    a: 'Yes. We track your flight in real-time so we adjust pickup timing automatically. No extra charge for delays.',
+  },
+  {
+    q: 'Where does the chauffeur meet me at JFK?',
+    a: 'Your chauffeur meets you at the arrivals level with a name sign, just past baggage claim. You also get a WhatsApp message with the exact meeting spot before landing.',
+  },
+  {
+    q: 'Do you offer child seats for JFK transfers?',
+    a: "Yes. Let us know when booking and we'll have a car seat ready at no extra charge.",
+  },
+];
+
 export default function JFKPage() {
   return (
     <>
+      <FaqJsonLd faqs={jfkFaqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: getSiteUrl() },
+        { name: 'Services', url: `${getSiteUrl()}/services` },
+        { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
+        { name: 'JFK Airport', url: `${getSiteUrl()}/services/airport/jfk` },
+      ]} />
       <ServiceJsonLd
         name="JFK Airport Car Service"
         description="Premium JFK airport transfer service. Luxury sedan and SUV, real-time flight tracking, and meet & greet at arrivals. Serving all NYC airports."
         areaServed="New York City, NY"
+        url={`${getSiteUrl()}/services/airport/jfk`}
       />
       <div className="bg-brand-offwhite">
         {/* Hero */}
