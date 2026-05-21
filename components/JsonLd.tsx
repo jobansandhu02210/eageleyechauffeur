@@ -9,7 +9,7 @@ export function LocalBusinessJsonLd() {
   const site = getSiteUrl();
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'TaxiService'],
     name: 'Eagle Eye Chauffeur',
     description:
       'Eagle Eye Chauffeur provides luxury black car and chauffeur service in New York City: JFK, LGA, EWR, and HPN airport transfers, Manhattan and boroughs, hourly hire, corporate travel, and point-to-point rides. Professional, discreet, and reliable.',
@@ -48,6 +48,19 @@ export function LocalBusinessJsonLd() {
       bestRating: '5',
       worstRating: '1',
     },
+    areaServed: [
+      { '@type': 'City', name: 'New York City', sameAs: 'https://www.wikidata.org/wiki/Q60' },
+      { '@type': 'Neighborhood', name: 'Manhattan' },
+      { '@type': 'Neighborhood', name: 'Brooklyn' },
+      { '@type': 'Neighborhood', name: 'Queens' },
+      { '@type': 'Neighborhood', name: 'Bronx' },
+      { '@type': 'Neighborhood', name: 'Staten Island' },
+      { '@type': 'City', name: 'Westchester' },
+      { '@type': 'AdministrativeArea', name: 'Long Island' },
+      { '@type': 'State', name: 'New Jersey' },
+      { '@type': 'State', name: 'Connecticut' },
+    ],
+    hasMap: 'https://maps.google.com/?q=Eagle+Eye+Chauffeur+New+York+NY',
     sameAs: [],
   };
 
@@ -149,19 +162,26 @@ export function ServiceJsonLd({
   name,
   description,
   areaServed = 'New York, NY',
+  url,
 }: {
   name: string;
   description: string;
   areaServed?: string;
+  url?: string;
 }) {
+  const site = getSiteUrl();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name,
     description,
+    ...(url ? { url } : {}),
+    serviceType: 'Chauffeur & Black Car Service',
     provider: {
-      '@type': 'LocalBusiness',
+      '@type': ['LocalBusiness', 'TaxiService'],
       name: 'Eagle Eye Chauffeur',
+      telephone: CONTACT_PHONE_E164,
+      url: site,
     },
     areaServed: {
       '@type': 'City',

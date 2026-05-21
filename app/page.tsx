@@ -31,28 +31,31 @@ const services = [
     description: 'Direct, luxurious transportation within NYC and surrounding areas. Door-to-door convenience.',
     href: '/services/point-to-point',
     image: '/service-point-to-point.png',
+    alt: 'Luxury black car point-to-point transfer service in New York City',
   },
   {
     title: 'Hourly Chauffeur Service',
     description: 'Flexible hourly hire for meetings, events, or leisurely tours. Your schedule, your way.',
     href: '/services/hourly',
     image: '/service-hourly.png',
+    alt: 'Professional hourly chauffeur hire with luxury sedan in NYC',
   },
   {
     title: 'Airport Transfers',
     description: 'JFK, LGA, EWR, HPN. Meet-and-greet, flight tracking, and punctual pickups every time.',
     href: '/services/airport',
     image: '/service-airport.png',
+    alt: 'Airport car service to JFK LGA EWR airports by Eagle Eye Chauffeur NYC',
   },
 ];
 
 // Fleet: tries your images in public/ first (see public/FLEET-IMAGES.txt), then fallback
 // Local paths must match filenames in public/ exactly (case-sensitive on Vercel)
 const fleet = [
-  { title: 'Business Class Sedan', local: '/fleet-business-sedan.png', fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80' },
-  { title: 'Business Class SUV', local: '/fleet-business-suv.png', fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80' },
-  { title: 'First Class SUV', local: '/fleet-first-suv.png', fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80' },
-  { title: 'First Class Sedan', local: '/fleet-first-sedan.png', fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80' },
+  { title: 'Business Class Sedan', alt: 'Business class luxury sedan for chauffeur service in NYC', local: '/fleet-business-sedan.png', fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80' },
+  { title: 'Business Class SUV', alt: 'Business class luxury SUV for corporate and airport transfers NYC', local: '/fleet-business-suv.png', fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80' },
+  { title: 'First Class SUV', alt: 'First class premium SUV chauffeur service New York City', local: '/fleet-first-suv.png', fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80' },
+  { title: 'First Class Sedan', alt: 'First class executive sedan luxury car service NYC', local: '/fleet-first-sedan.png', fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80' },
 ];
 
 // Hero image in public/hero.jpg (simple name — works reliably on Vercel)
@@ -229,7 +232,7 @@ export default function HomePage() {
                 <div className="aspect-[4/3] relative">
                   <Image
                     src={s.image}
-                    alt=""
+                    alt={s.alt}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     sizes="(max-width: 768px) 100vw, 33vw"
@@ -275,7 +278,7 @@ export default function HomePage() {
                   <SafeFleetImage
                     localSrc={v.local}
                     fallbackSrc={v.fallback}
-                    alt={v.title}
+                    alt={v.alt}
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
