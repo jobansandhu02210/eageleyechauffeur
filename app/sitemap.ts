@@ -23,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/world-cup-2026`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/referrals`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/tip`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((slug) => ({
@@ -63,7 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routePages: MetadataRoute.Sitemap = [
     { url: `${base}/services/routes/manhattan-to-brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${base}/services/routes/jfk-to-manhattan`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/routes/jfk-to-brooklyn`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/routes/jfk-to-manhattan-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/routes/manhattan-to-jfk-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
@@ -74,6 +72,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/routes/brooklyn-to-jfk-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/routes/midtown-to-jfk-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/routes/upper-east-side-to-jfk-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    // New high-value routes
+    { url: `${base}/services/routes/lga-to-brooklyn-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/routes/ewr-to-brooklyn-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/routes/jfk-to-queens-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/routes/manhattan-to-hamptons-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/nyc-to-westchester-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/jfk-to-westchester-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/brooklyn-to-manhattan-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.85 },
   ];
 
   // Blog posts

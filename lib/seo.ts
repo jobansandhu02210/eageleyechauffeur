@@ -3,50 +3,93 @@
  * Titles & descriptions are primary signals; keywords supplement other systems.
  */
 export const siteKeywords: string[] = [
+  // Brand
+  'Eagle Eye Chauffeur',
+  // Core service
   'NYC chauffeur',
   'New York chauffeur service',
   'chauffeur service NYC',
-  'Manhattan black car service',
   'black car service NYC',
   'NYC black car service',
   'luxury car service NYC',
   'executive car service New York',
   'private driver NYC',
+  // Manhattan
+  'Manhattan black car service',
   'chauffeur service Manhattan',
+  'Midtown Manhattan car service',
+  'Upper East Side car service',
+  'Financial District car service',
+  'Times Square car service',
+  // Brooklyn
   'Brooklyn chauffeur',
   'Brooklyn black car service',
+  'Williamsburg car service',
+  'DUMBO car service',
+  'Park Slope car service',
+  // Queens
   'Queens car service',
   'Queens black car service',
+  'Astoria car service',
+  'Flushing car service',
+  // Other boroughs
   'Bronx car service',
   'Staten Island car service',
+  // Suburbs & long-distance
   'Westchester car service',
   'Long Island chauffeur',
+  'Hamptons car service',
+  'Connecticut car service',
   'New Jersey car service NYC',
+  'NYC to Hamptons car service',
+  'NYC to Westchester car service',
+  // Airports — JFK
   'NYC airport car service',
   'airport transfer NYC',
   'JFK car service',
   'JFK airport car service',
   'JFK airport transfer',
   'JFK black car',
+  'JFK to Manhattan car service',
+  'Manhattan to JFK car service',
+  'JFK to Brooklyn car service',
+  'Brooklyn to JFK car service',
+  // Airports — LGA
   'LaGuardia car service',
   'LGA car service',
   'LGA airport car service',
   'LGA airport transfer',
+  'LGA to Manhattan car service',
+  'LGA to Brooklyn car service',
+  // Airports — EWR
   'Newark airport car service',
   'EWR airport car service',
   'EWR airport transfer',
   'EWR car service',
+  'Newark to Manhattan car service',
+  'Newark to Brooklyn car service',
+  // Airports — HPN
   'Westchester airport HPN car service',
+  'HPN airport car service',
+  // Corporate
   'corporate car service NYC',
   'executive transportation NYC',
   'corporate chauffeur NYC',
   'roadshow chauffeur New York',
+  'corporate black car NYC',
+  // Service types
   'hourly chauffeur NYC',
   'point to point car service NYC',
   'wedding car service NYC',
+  'prom car service NYC',
   'special event chauffeur New York',
+  'airport meet and greet NYC',
+  'flat rate car service NYC',
+  'no surge pricing car service NYC',
+  // Vehicle
   'premium sedan SUV NYC',
-  'Eagle Eye Chauffeur',
+  'luxury SUV service NYC',
+  'TLC licensed chauffeur NYC',
 ];
 
 export const defaultSiteDescription =

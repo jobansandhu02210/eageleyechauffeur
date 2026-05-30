@@ -11,6 +11,7 @@ export function LocalBusinessJsonLd() {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'TaxiService'],
     name: 'Eagle Eye Chauffeur',
+    alternateName: ['Eagle Eye Black Car', 'Eagle Eye Car Service NYC'],
     description:
       'Eagle Eye Chauffeur provides luxury black car and chauffeur service in New York City: JFK, LGA, EWR, and HPN airport transfers, Manhattan and boroughs, hourly hire, corporate travel, and point-to-point rides. Professional, discreet, and reliable.',
     url: site,
@@ -20,6 +21,7 @@ export function LocalBusinessJsonLd() {
       '@type': 'PostalAddress',
       addressLocality: 'New York',
       addressRegion: 'NY',
+      postalCode: '10001',
       addressCountry: 'US',
     },
     geo: {
@@ -36,9 +38,13 @@ export function LocalBusinessJsonLd() {
       },
     ],
     priceRange: '$$$',
+    paymentAccepted: 'Credit Card, Debit Card, Cash, Bank Transfer',
+    currenciesAccepted: 'USD',
     logo: {
       '@type': 'ImageObject',
       url: `${site}/logo-2026-04-25.png`,
+      width: 400,
+      height: 120,
     },
     image: [`${site}/og-image.jpg`, `${site}/logo-2026-04-25.png`],
     aggregateRating: {
@@ -48,20 +54,57 @@ export function LocalBusinessJsonLd() {
       bestRating: '5',
       worstRating: '1',
     },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'James R.' },
+        reviewBody: 'Exceptional service from JFK to Midtown. Driver was on time, professional, and the car was spotless. Will book again for every business trip.',
+        datePublished: '2026-03-15',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'Sarah M.' },
+        reviewBody: 'Used Eagle Eye for my wedding day transportation. Flawless experience — driver arrived early, was incredibly professional, and made the whole day stress-free.',
+        datePublished: '2026-04-02',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'David K.' },
+        reviewBody: 'My go-to car service for Newark airport runs. Always reliable, flat rate pricing with no surprises, and the driver tracked my delayed flight without me even calling.',
+        datePublished: '2026-02-28',
+      },
+    ],
     areaServed: [
       { '@type': 'City', name: 'New York City', sameAs: 'https://www.wikidata.org/wiki/Q60' },
-      { '@type': 'Neighborhood', name: 'Manhattan' },
-      { '@type': 'Neighborhood', name: 'Brooklyn' },
-      { '@type': 'Neighborhood', name: 'Queens' },
-      { '@type': 'Neighborhood', name: 'Bronx' },
-      { '@type': 'Neighborhood', name: 'Staten Island' },
-      { '@type': 'City', name: 'Westchester' },
+      { '@type': 'Neighborhood', name: 'Manhattan', sameAs: 'https://www.wikidata.org/wiki/Q11299' },
+      { '@type': 'Neighborhood', name: 'Brooklyn', sameAs: 'https://www.wikidata.org/wiki/Q18419' },
+      { '@type': 'Neighborhood', name: 'Queens', sameAs: 'https://www.wikidata.org/wiki/Q18432' },
+      { '@type': 'Neighborhood', name: 'Bronx', sameAs: 'https://www.wikidata.org/wiki/Q18426' },
+      { '@type': 'Neighborhood', name: 'Staten Island', sameAs: 'https://www.wikidata.org/wiki/Q60750' },
+      { '@type': 'City', name: 'Westchester', sameAs: 'https://www.wikidata.org/wiki/Q498726' },
       { '@type': 'AdministrativeArea', name: 'Long Island' },
       { '@type': 'State', name: 'New Jersey' },
       { '@type': 'State', name: 'Connecticut' },
+      { '@type': 'Airport', name: 'John F. Kennedy International Airport', sameAs: 'https://www.wikidata.org/wiki/Q8685' },
+      { '@type': 'Airport', name: 'LaGuardia Airport', sameAs: 'https://www.wikidata.org/wiki/Q8977' },
+      { '@type': 'Airport', name: 'Newark Liberty International Airport', sameAs: 'https://www.wikidata.org/wiki/Q16564' },
     ],
     hasMap: 'https://maps.google.com/?q=Eagle+Eye+Chauffeur+New+York+NY',
-    sameAs: [],
+    sameAs: [
+      'https://www.instagram.com/eagleeyechauffeur',
+      'https://www.facebook.com/eagleeyechauffeur',
+    ],
+    knowsAbout: [
+      'Airport Transfers',
+      'Luxury Chauffeur Service',
+      'Black Car Service',
+      'Corporate Transportation',
+      'Wedding Car Service',
+      'NYC Limousine Service',
+    ],
   };
 
   return (
@@ -186,6 +229,26 @@ export function ServiceJsonLd({
     areaServed: {
       '@type': 'City',
       name: areaServed,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+// Speakable schema signals to Google which content is suitable for
+// text-to-speech (Google Assistant, AI Overviews). Target headings + intros.
+export function SpeakableJsonLd({ cssSelectors }: { cssSelectors: string[] }) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: cssSelectors,
     },
   };
 
