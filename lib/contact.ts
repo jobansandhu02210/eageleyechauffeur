@@ -4,8 +4,12 @@ export const CONTACT_PHONE_E164 = '+19299196499';
 /** Human-readable US format */
 export const CONTACT_PHONE_DISPLAY = '(929) 919-6499';
 
+/** Secondary phone number */
+export const CONTACT_PHONE_2_E164 = '+19294244201';
+export const CONTACT_PHONE_2_DISPLAY = '(929) 424-4201';
+
 /** Booking notifications and primary inquiries */
-export const CONTACT_EMAIL_BOOKINGS = 'eagleeyechauffeur@gmail.com';
+export const CONTACT_EMAIL_BOOKINGS = 'info@eagleeyechauffeur.com';
 
 /** WhatsApp number (E.164 without +) for wa.me links */
 export const CONTACT_WHATSAPP_NUMBER = '19299196499';

@@ -369,7 +369,7 @@ export default function BookPage() {
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10">
           <h1 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black">
-            Book Your Ride
+            Book NYC Black Car Service | Eagle Eye Chauffeur
           </h1>
           <p className="mt-2 text-brand-grey">
             Enter your trip details and submit — we confirm by email and send a formal invoice with your final price.
@@ -700,21 +700,13 @@ export default function BookPage() {
                     Request received
                   </h3>
                   <p className="text-brand-grey text-sm">
-                    {bookingGuestCopyIssue ? (
-                      <>
-                        Your request reached our team. We could not deliver the acknowledgment email to your address
-                        (check spam/promotions). {bookingGuestCopyIssue}
-                      </>
-                    ) : (
-                      <>
-                        We emailed you a booking acknowledgment. You&apos;ll receive your{' '}
-                        <strong className="text-brand-black">invoice</strong> from us with the final price after we
-                        confirm your trip. Questions?{' '}
-                        <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
-                          {CONTACT_EMAIL_BOOKINGS}
-                        </a>
-                      </>
-                    )}{' '}
+                    <>
+                      Your booking request has been received. Our team will be in touch shortly with your invoice and
+                      confirmed trip details. Questions?{' '}
+                      <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
+                        {CONTACT_EMAIL_BOOKINGS}
+                      </a>
+                    </>{' '}
                     Questions? Call{' '}
                     <a href={`tel:${CONTACT_PHONE_E164}`} className="text-brand-black underline">
                       {CONTACT_PHONE_DISPLAY}

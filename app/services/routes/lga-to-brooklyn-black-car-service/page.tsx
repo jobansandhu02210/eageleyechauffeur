@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate — locked at booking, no surprises', uber: 'Surge pricing — spikes during peak hours' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Meet & Greet', blackCar: 'Chauffeur at arrivals with name sign', uber: 'Curbside pickup at rideshare zone' },
-  { feature: 'Flight Tracking', blackCar: 'Real-time — adjusted for delays automatically', uber: 'None — you must re-request if flight changes' },
-  { feature: 'Wait Time', blackCar: '60 minutes complimentary after landing', uber: 'Driver may cancel if you are slow to exit' },
-];
 
 export default function LGAToBrooklynBlackCarPage() {
   return (
@@ -66,7 +58,7 @@ export default function LGAToBrooklynBlackCarPage() {
               LaGuardia to Brooklyn Car Service
             </h1>
             <p className="text-lg text-brand-grey mb-6">
-              Skip the rideshare queue and surge pricing. Eagle Eye Chauffeur provides flat-rate black car
+              Eagle Eye Chauffeur provides flat-rate black car
               service from LaGuardia Airport directly to any Brooklyn neighborhood — with a professional
               chauffeur waiting at arrivals the moment you clear baggage claim.
             </p>
@@ -110,27 +102,25 @@ export default function LGAToBrooklynBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for LGA to Brooklyn
+              Why Eagle Eye for LGA to Brooklyn
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no surprises during peak hours.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Meet & Greet at Arrivals', body: 'Your chauffeur waits with a name sign past baggage claim — no searching for your ride.' },
+                { title: 'Real-Time Flight Tracking', body: 'We monitor your LGA arrival and adjust your driver automatically for any delay — at no extra charge.' },
+                { title: '60 Minutes Complimentary Wait', body: 'No rushing once you land — your driver waits up to 60 minutes after touchdown at no extra charge.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

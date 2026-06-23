@@ -33,13 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate — confirmed at booking, no changes', uber: 'Surge pricing in peak hours and bad weather' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown until driver is assigned' },
-  { feature: 'Pickup', blackCar: 'Exact address — door-to-door', uber: 'May require walking to a pickup zone' },
-  { feature: 'Reliability', blackCar: 'Confirmed booking, driver notified in advance', uber: 'Driver can cancel last-minute' },
-];
 
 export default function BrooklynToManhattanPage() {
   return (
@@ -65,9 +58,9 @@ export default function BrooklynToManhattanPage() {
               Brooklyn to Manhattan Car Service
             </h1>
             <p className="text-lg text-brand-grey mb-6">
-              Skip the subway delays and rideshare surge. Eagle Eye Chauffeur provides flat-rate black
-              car service from any Brooklyn neighborhood directly to your Manhattan destination — door
-              to door, professional chauffeur, confirmed price before you book.
+              Eagle Eye Chauffeur provides flat-rate black car service from any Brooklyn neighborhood
+              directly to your Manhattan destination — door to door, professional chauffeur, confirmed
+              price before you book.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/book" className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
@@ -109,27 +102,24 @@ export default function BrooklynToManhattanPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car vs. Uber for Brooklyn to Manhattan
+              Why Eagle Eye for Brooklyn to Manhattan
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { title: 'Flat Rate — Confirmed at Booking', body: 'Your price is locked when you book and never changes — no surprises due to traffic or time of day.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and is trained to a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not whatever happens to be available nearby.' },
+                { title: 'Exact Door Pickup', body: 'Your driver comes to your Brooklyn address — not a nearby corner or curbside zone.' },
+                { title: 'Driver Confirmed in Advance', body: 'You receive your driver details before your pickup day — not minutes before arrival.' },
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

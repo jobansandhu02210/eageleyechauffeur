@@ -7,6 +7,7 @@ import { AnalyticsPlaceholder } from '@/components/AnalyticsPlaceholder';
 import { GtagLeadEvents } from '@/components/GtagLeadEvents';
 import { LeadCaptureStrip } from '@/components/LeadCaptureStrip';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
+import { WebSiteJsonLd } from '@/components/JsonLd';
 import { SplashScreen } from '@/components/SplashScreen';
 import MobileBottomBar from '@/components/MobileBottomBar';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -87,6 +88,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="font-sans min-h-screen flex flex-col">
         <LocalBusinessJsonLd />
+        <WebSiteJsonLd />
         <SplashScreen />
         <Header />
         <LeadCaptureStrip />

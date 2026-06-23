@@ -34,7 +34,7 @@ export default function WorldCupLeadCapture() {
       if (!res.ok) throw new Error('Submission failed');
       setSubmitted(true);
     } catch {
-      setError('Something went wrong. Please email us directly at eagleeyechauffeur@gmail.com.');
+      setError('Something went wrong. Please email us directly at info@eagleeyechauffeur.com.');
     }
   }
 

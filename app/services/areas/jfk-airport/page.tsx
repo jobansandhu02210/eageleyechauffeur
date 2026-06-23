@@ -1,160 +1,337 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { ServiceJsonLd, FaqJsonLd } from '@/components/JsonLd';
+import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'JFK Airport Area Car Service | Black Car to/from JFK | Eagle Eye',
+  title: 'JFK Airport Car Service NYC | Black Car Transfers All Terminals | Eagle Eye',
   description:
-    'Black car service to and from John F. Kennedy International Airport. Meet-and-greet, real-time flight tracking, luxury sedan & SUV. Serving all NYC boroughs. Book Eagle Eye Chauffeur.',
+    'JFK Airport black car service — meet & greet, real-time flight tracking, all terminals. Flat rates from Manhattan, Brooklyn, Queens, Long Island & NJ. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/jfk-airport` },
 };
 
 const faqs = [
   {
-    q: 'What is the difference between a chauffeur and a taxi at JFK?',
-    a: 'A chauffeur service like Eagle Eye provides a pre-booked, fixed-price ride in a luxury vehicle with a professional driver. Unlike taxis, there is no metering, no surge pricing, and your driver meets you at arrivals with a name sign.',
+    q: 'Where does my driver meet me at JFK?',
+    a: 'Your chauffeur meets you in the ground transportation area of your specific terminal with a name sign. You will also receive a WhatsApp message with the exact meeting point before your flight lands — so you never have to search.',
   },
   {
-    q: 'How early should my driver arrive at JFK?',
-    a: 'We track your flight live and time arrival precisely. Your chauffeur will be curbside or in the arrivals hall before you exit baggage claim — typically 15 minutes before your estimated arrival.',
+    q: 'Does Eagle Eye cover all JFK terminals?',
+    a: 'Yes — we cover T1, T2, T4, T5, T7, and T8. Your driver is assigned to your specific terminal based on your airline, so there is no confusion at pickup.',
   },
   {
-    q: 'Which NYC neighborhoods do you serve from JFK?',
-    a: 'We serve all five boroughs: Manhattan, Brooklyn, Queens, Bronx, and Staten Island. We also cover Long Island, Westchester, New Jersey, and Connecticut.',
+    q: 'How long does it take from JFK to Manhattan?',
+    a: 'Approximately 40–55 minutes to Midtown under normal traffic conditions. The FDR Drive to Midtown is the most common route. During peak evening hours (5–8pm), plan for additional time.',
   },
   {
-    q: 'Can I book a round trip from JFK?',
-    a: 'Yes. Book your JFK pickup and your return ride at the same time for peace of mind. Just provide both trip details when booking.',
+    q: 'Is there free wait time after my JFK flight lands?',
+    a: 'Yes — 60 minutes complimentary wait time is included after your flight lands. That covers customs, baggage claim, and walking to ground transportation — no rush.',
   },
+  {
+    q: 'Can I book a JFK pickup for someone else?',
+    a: "Absolutely. Provide the passenger's name and flight number at booking. Your driver will meet them at arrivals with their name on the sign. You will receive real-time updates throughout.",
+  },
+];
+
+const eaglEyeBenefits = [
+  { title: 'Flat rate — tolls included', desc: 'Your price is locked at booking. All applicable tolls are included — no itemized charges at drop-off.' },
+  { title: 'TLC-licensed professional chauffeur', desc: 'Every driver is background-checked, licensed, and trained to a professional service standard.' },
+  { title: 'Luxury sedan or SUV', desc: 'Clean, late-model vehicles in the class you booked — confirmed before your trip.' },
+  { title: 'Meet & greet at arrivals', desc: 'Your chauffeur meets you in the ground transportation area of your specific terminal with a name sign.' },
+  { title: 'Real-time flight tracking', desc: 'Your driver adjusts automatically for delays — you receive updates via WhatsApp before landing.' },
+  { title: 'No hidden fees', desc: 'Tolls included. 60-minute complimentary wait time included. The rate at booking is the rate you pay.' },
+];
+
+const terminals = [
+  {
+    name: 'Terminal 1',
+    airlines: 'Lufthansa, Korean Air, Japan Airlines, Air France',
+    detail: 'Driver waits in the ground floor arrivals area with a name sign, just past baggage claim.',
+  },
+  {
+    name: 'Terminal 2',
+    airlines: 'Delta (domestic routes)',
+    detail: 'Arrivals level ground floor — driver holds sign at the exit from baggage claim.',
+  },
+  {
+    name: 'Terminal 4',
+    airlines: 'Delta (main international hub), Emirates, Etihad, Virgin Atlantic, many others',
+    detail: "JFK's largest terminal. Driver meets you on the ground level arrivals hall with a name sign.",
+  },
+  {
+    name: 'Terminal 5',
+    airlines: 'JetBlue (main hub)',
+    detail: 'Arrivals ground floor — driver positioned just past baggage claim exit with name sign.',
+  },
+  {
+    name: 'Terminal 7',
+    airlines: 'British Airways, Iberia',
+    detail: 'Ground level arrivals — driver waits with name sign past baggage claim and customs.',
+  },
+  {
+    name: 'Terminal 8',
+    airlines: 'American Airlines (main hub)',
+    detail: 'Arrivals level — chauffeur is positioned past baggage claim and customs with name sign.',
+  },
+];
+
+const popularRoutes = [
+  { label: 'JFK → Midtown Manhattan', time: '40–55 min' },
+  { label: 'JFK → Financial District', time: '35–50 min' },
+  { label: 'JFK → Upper East Side', time: '40–55 min' },
+  { label: 'JFK → Brooklyn', time: '25–40 min' },
+  { label: 'JFK → Queens', time: '15–30 min' },
+  { label: 'Manhattan → JFK', time: '40–55 min' },
+  { label: 'Brooklyn → JFK', time: '25–40 min' },
+  { label: 'Long Island → JFK', time: '20–60 min (varies by community)' },
+];
+
+const whatsIncluded = [
+  'Real-time flight tracking — driver adjusts for delays at no extra charge',
+  'Meet & greet at arrivals with name sign',
+  'Flat-rate pricing locked at booking — no surge pricing',
+  'Door-to-door pickup at your exact address',
+  '60 minutes complimentary wait time after landing',
+  'Luggage assistance at pickup and terminal',
+  '24/7 support via phone or WhatsApp',
 ];
 
 export default function JFKAreaPage() {
   return (
     <>
       <FaqJsonLd faqs={faqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: getSiteUrl() },
+          { name: 'Services', url: `${getSiteUrl()}/services` },
+          { name: 'Service Areas', url: `${getSiteUrl()}/services/areas` },
+          { name: 'JFK Airport', url: `${getSiteUrl()}/services/areas/jfk-airport` },
+        ]}
+      />
       <ServiceJsonLd
         name="JFK Airport Black Car Service"
-        description="Luxury black car service to and from John F. Kennedy International Airport (JFK). Pre-booked, fixed-price rides with professional chauffeurs."
+        description="Luxury black car service to and from John F. Kennedy International Airport. All terminals covered. Meet & greet, real-time flight tracking, flat-rate pricing with no surge."
         areaServed="JFK Airport, Queens, New York, NY"
         url={`${getSiteUrl()}/services/areas/jfk-airport`}
       />
-      <div className="bg-brand-offwhite">
-        <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-              JFK Airport Black Car Service
-            </h1>
-            <p className="text-lg text-brand-grey mb-6">
-              Stress-free black car transfers to and from John F. Kennedy International Airport.
-              Flight tracking, meet-and-greet at arrivals, and 24/7 availability — no surge pricing ever.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+
+      {/* Hero */}
+      <section className="py-16 lg:py-24 bg-brand-black text-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-brand-silver text-sm uppercase tracking-widest mb-3">JFK Airport · All Terminals</p>
+          <h1 className="font-serif text-4xl lg:text-5xl font-semibold mb-5">
+            JFK Airport Car Service | All Terminals, Meet &amp; Greet, Flat Rates
+          </h1>
+          <p className="text-lg text-brand-silver max-w-2xl mb-4">
+            John F. Kennedy International serves over 60 million passengers across 8 terminals and virtually every major airline in the world. Eagle Eye Chauffeur covers every single one — with a professional driver waiting at your specific terminal, real-time flight tracking, and a flat rate locked at booking.
+          </p>
+          <p className="text-brand-silver max-w-2xl mb-8">
+            Whether you are flying Delta at Terminal 4, JetBlue at Terminal 5, or American at Terminal 8, your chauffeur is already there. No surge pricing. No confusion. Meet-and-greet service right at your terminal.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center px-8 py-4 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
+            >
+              Book JFK Transfer
+            </Link>
+            <a
+              href={WHATSAPP_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] transition-colors"
+            >
+              Book on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* JFK Terminals */}
+      <section className="py-16 lg:py-20 bg-brand-offwhite">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            All JFK Terminals Covered
+          </h2>
+          <p className="text-brand-grey mb-8">
+            JFK's terminal layout can be confusing — multiple buildings, different airlines, and varying ground transportation setups. Eagle Eye assigns your driver to your specific terminal based on your airline and flight number. You never need to guess where to go.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {terminals.map((t) => (
+              <div key={t.name} className="bg-brand-white border border-brand-light p-5">
+                <div className="font-semibold text-brand-black mb-1">{t.name}</div>
+                <div className="text-sm text-brand-charcoal mb-2 font-medium">{t.airlines}</div>
+                <p className="text-sm text-brand-grey">{t.detail}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-sm text-brand-grey mt-6">
+            Terminal assignments can change. Your confirmation will always list your driver&apos;s exact terminal location. WhatsApp updates sent before landing.
+          </p>
+        </div>
+      </section>
+
+      {/* Popular Routes */}
+      <section className="py-16 lg:py-20 bg-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            Popular Routes From &amp; To JFK
+          </h2>
+          <p className="text-brand-grey mb-8">
+            All times are typical estimates under normal traffic conditions. Route times can vary based on time of day and traffic. Your driver monitors conditions in real-time and selects the fastest path.
+          </p>
+          <div className="space-y-3">
+            {popularRoutes.map((route) => (
+              <div
+                key={route.label}
+                className="flex justify-between items-center bg-brand-offwhite border border-brand-light p-4"
+              >
+                <span className="font-medium text-brand-black">{route.label}</span>
+                <span className="text-brand-grey text-sm">{route.time}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center px-8 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
+            >
+              Book Your Route
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-16 lg:py-20 bg-brand-offwhite">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            What&apos;s Included with Every JFK Ride
+          </h2>
+          <p className="text-brand-grey mb-8">
+            No add-ons. No upsells. Everything below is standard on every Eagle Eye booking at JFK.
+          </p>
+          <div className="bg-brand-white border border-brand-light p-6 lg:p-8">
+            <ul className="space-y-4">
+              {whatsIncluded.map((item, i) => (
+                <li key={i} className="flex items-start gap-3 text-brand-grey">
+                  <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8">
               <Link
                 href="/book"
-                className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
+                className="inline-flex items-center justify-center px-8 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
               >
                 Book JFK Transfer
               </Link>
-              <Link
-                href="/services/airport/jfk"
-                className="inline-block py-3 px-8 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
-              >
-                View JFK Pricing
-              </Link>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-brand-white border border-brand-light p-8">
-              <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
-                Why Choose Our JFK Black Car Service
-              </h2>
-              <ul className="space-y-3 text-brand-grey">
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  Real-time flight tracking — we adjust for delays at no extra charge
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  Meet-and-greet inside terminal with name sign
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  60 minutes complimentary wait time after landing
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  Fixed pricing — no metering, no surge
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  Service to all NYC boroughs and surrounding areas
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-brand-black font-bold">✓</span>
-                  Luxury sedan and SUV options
-                </li>
-              </ul>
-
-              <div className="mt-8">
-                <Link
-                  href="/book"
-                  className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
-                >
-                  Book JFK Transfer
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related routes */}
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Popular JFK Routes
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Link href="/services/routes/jfk-to-manhattan" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">JFK → Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">From $85 · 35-50 min</div>
-              </Link>
-              <Link href="/services/routes/jfk-to-brooklyn" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">JFK → Brooklyn</div>
-                <div className="text-sm text-brand-grey mt-1">From $75 · 25-40 min</div>
-              </Link>
-              <Link href="/services/areas/queens" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">JFK → Queens</div>
-                <div className="text-sm text-brand-grey mt-1">From $65 · 15-25 min</div>
-              </Link>
-              <Link href="/services/areas/westchester" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">JFK → Westchester</div>
-                <div className="text-sm text-brand-grey mt-1">From $110 · 50-70 min</div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ */}
-        <section className="pb-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              JFK Black Car Service FAQ
-            </h2>
-            <div className="space-y-4">
-              {faqs.map((faq) => (
-                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
-                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
-                  <p className="text-sm text-brand-grey">{faq.a}</p>
+      {/* Why Eagle Eye */}
+      <section className="py-16 lg:py-20 bg-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            Why Choose Eagle Eye at JFK
+          </h2>
+          <p className="text-brand-grey mb-8">
+            With a professional black car, your driver is already at your specific terminal when you land, your rate is flat with all tolls included, and 60 minutes of wait time is built in. No walking to distant pickup zones, no surprises.
+          </p>
+          <ul className="space-y-3">
+            {eaglEyeBenefits.map((benefit) => (
+              <li key={benefit.title} className="flex items-start gap-3 bg-brand-offwhite border border-brand-light p-4">
+                <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                <div>
+                  <span className="font-medium text-brand-black">{benefit.title} — </span>
+                  <span className="text-brand-grey text-sm">{benefit.desc}</span>
                 </div>
-              ))}
-            </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 lg:py-20 bg-brand-offwhite">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-8">
+            JFK Airport Car Service — Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="bg-brand-white border border-brand-light p-5 lg:p-6">
+                <h3 className="font-semibold text-brand-black mb-2">{faq.q}</h3>
+                <p className="text-brand-grey text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      {/* Related Routes */}
+      <section className="py-16 lg:py-20 bg-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-8">
+            Related JFK Routes &amp; Services
+          </h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            <Link
+              href="/services/routes/jfk-to-manhattan-black-car-service"
+              className="bg-brand-offwhite border border-brand-light p-5 hover:border-brand-dark transition-colors"
+            >
+              <div className="font-semibold text-brand-black mb-1">JFK → Manhattan</div>
+              <div className="text-sm text-brand-grey">Meet & greet, all terminals to Midtown and beyond</div>
+            </Link>
+            <Link
+              href="/services/routes/manhattan-to-jfk-black-car-service"
+              className="bg-brand-offwhite border border-brand-light p-5 hover:border-brand-dark transition-colors"
+            >
+              <div className="font-semibold text-brand-black mb-1">Manhattan → JFK</div>
+              <div className="text-sm text-brand-grey">Door-to-terminal, any Manhattan neighborhood</div>
+            </Link>
+            <Link
+              href="/services/routes/jfk-to-brooklyn"
+              className="bg-brand-offwhite border border-brand-light p-5 hover:border-brand-dark transition-colors"
+            >
+              <div className="font-semibold text-brand-black mb-1">JFK → Brooklyn</div>
+              <div className="text-sm text-brand-grey">Direct service, all Brooklyn neighborhoods</div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 bg-brand-black text-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold mb-4">
+            Ready to Book Your JFK Transfer?
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-xl mx-auto">
+            Lock in your flat rate now. Confirmation within minutes. Your driver is tracking your flight before you even board.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center px-8 py-4 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
+            >
+              Book JFK Transfer
+            </Link>
+            <a
+              href={WHATSAPP_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] transition-colors"
+            >
+              Book on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -6,14 +6,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Manhattan to JFK Black Car Service | Eagle Eye Chauffeur',
   description:
-    'Manhattan to JFK black car service — flat rates from $85, flight monitoring, door-to-door pickup. Professional chauffeurs, no surge pricing. Book Eagle Eye Chauffeur 24/7.',
+    'Manhattan to JFK black car service — flat rates, flight monitoring, door-to-door pickup. Professional chauffeurs, no surge pricing. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-jfk-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from Manhattan to JFK?',
-    a: 'Black car service from Manhattan to JFK starts at $85 from Midtown. Your exact price depends on your pickup neighborhood and vehicle choice. All rates are flat — confirmed at booking.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your Manhattan pickup address and JFK as the destination.',
   },
   {
     q: 'How early should I book my Manhattan to JFK black car?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Will my chauffeur come to my building door?',
-    a: 'Yes. Your chauffeur picks you up directly at your Manhattan address — apartment building, hotel, or office. No walking to a corner or waiting at a rideshare zone.',
+    a: 'Yes. Your chauffeur picks you up directly at your Manhattan address — apartment building, hotel, or office. Step outside when your driver arrives and you are on your way.',
   },
   {
     q: 'What if I have a lot of luggage for JFK?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate from $85 — locked at booking', uber: 'Surge pricing — can double during rush hour' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until driver is assigned' },
-  { feature: 'Pickup', blackCar: 'Door-to-door — chauffeur comes to your address', uber: 'Pin-drop pickup, may not reach your exact door' },
-  { feature: 'Reliability', blackCar: 'Confirmed driver the evening before your trip', uber: 'Driver assigned close to pickup time' },
-  { feature: 'Early Mornings', blackCar: 'Pre-dawn availability guaranteed', uber: 'Surge pricing spikes on early morning departures' },
-];
 
 export default function ManhattanToJFKBlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function ManhattanToJFKBlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Manhattan to JFK Black Car Service"
-        description="Premium black car service from Manhattan to JFK Airport. Flat rates from $85, door-to-door pickup, 24/7 availability."
+        description="Premium black car service from Manhattan to JFK Airport. Flat rates, door-to-door pickup, 24/7 availability."
         areaServed="Manhattan, New York City, NY"
         url={`${getSiteUrl()}/services/routes/manhattan-to-jfk-black-car-service`}
       />
@@ -84,53 +76,51 @@ export default function ManhattanToJFKBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Manhattan to JFK Black Car Pricing
+              Popular Routes from Manhattan to JFK
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'Midtown Manhattan → JFK', price: '$85', time: '35–50 min', miles: '16 mi' },
-                { from: 'Financial District / Wall Street → JFK', price: '$85', time: '35–50 min', miles: '16 mi' },
-                { from: 'Times Square / Theater District → JFK', price: '$85', time: '40–50 min', miles: '17 mi' },
-                { from: 'Chelsea / Meatpacking District → JFK', price: '$85', time: '35–50 min', miles: '16 mi' },
-                { from: 'Upper East Side → JFK', price: '$90', time: '40–55 min', miles: '18 mi' },
-                { from: 'Upper West Side → JFK', price: '$95', time: '45–60 min', miles: '19 mi' },
-                { from: 'SoHo / Tribeca → JFK', price: '$85', time: '35–50 min', miles: '16 mi' },
-                { from: 'Harlem / East Harlem → JFK', price: '$95', time: '45–60 min', miles: '20 mi' },
+                { from: 'Midtown Manhattan → JFK', time: '35–50 min' },
+                { from: 'Financial District / Wall Street → JFK', time: '35–50 min' },
+                { from: 'Times Square / Theater District → JFK', time: '40–50 min' },
+                { from: 'Chelsea / Meatpacking District → JFK', time: '35–50 min' },
+                { from: 'Upper East Side → JFK', time: '40–55 min' },
+                { from: 'Upper West Side → JFK', time: '45–60 min' },
+                { from: 'SoHo / Tribeca → JFK', time: '35–50 min' },
+                { from: 'Harlem / East Harlem → JFK', time: '45–60 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Gratuity and tolls included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat and confirmed at booking. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Manhattan to JFK
+              Why Eagle Eye for Manhattan to JFK
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no surprises during rush hour or early morning departures.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Door-to-Door Pickup', body: 'Your driver comes to your exact Manhattan address — building entrance, hotel lobby, or office door.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, number, and vehicle details the night before — full peace of mind.' },
+                { title: 'Pre-Dawn Availability Guaranteed', body: 'Early morning JFK departures are fully covered. Your flat rate never changes regardless of the hour.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -181,7 +171,7 @@ export default function ManhattanToJFKBlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/jfk-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $85</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/jfk" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK Airport Service</div>

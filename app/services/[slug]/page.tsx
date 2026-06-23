@@ -2,166 +2,356 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ServiceJsonLd } from '@/components/JsonLd';
+import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
+import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 type ServiceEntry = {
   title: string;
+  h1: string;
   seoTitle: string;
   description: string;
   metaDescription: string;
   keywords: string[];
   image: string;
-  content: { heading: string; body: string }[];
+  heroSubtitle: string;
+  includes: string[];
+  useCases: { title: string; desc: string }[];
+  faqs: { q: string; a: string }[];
+  relatedLinks: { label: string; href: string; sub: string }[];
+  ctaHeading: string;
+  ctaSubline: string;
 };
 
 const services: Record<string, ServiceEntry> = {
   'point-to-point': {
     title: 'Point-to-Point Transfers',
-    seoTitle: 'Point-to-Point Car Service NYC | Direct Luxury Transfers',
-    description: 'Direct, luxurious transportation within NYC and surrounding areas.',
+    h1: 'Point-to-Point Black Car Service NYC',
+    seoTitle: 'Point-to-Point Car Service NYC | Direct Luxury Transfers | Eagle Eye',
+    description: 'Direct, luxurious black car transportation within NYC and surrounding areas.',
     metaDescription:
-      'Direct luxury point-to-point transfers in NYC. Door-to-door service across all 5 boroughs. Professional chauffeurs, transparent pricing. Book now!',
+      'Direct luxury point-to-point transfers in NYC. Door-to-door black car service across all 5 boroughs, Long Island, NJ & CT. Flat rates, no surge pricing. Professional TLC-certified chauffeurs. Book 24/7.',
     keywords: [
-      'point to point chauffeur NYC',
+      'point to point car service NYC',
       'door to door black car Manhattan',
       'NYC private car transfer',
       'fixed rate chauffeur New York',
       'borough to borough car service',
+      'direct car service NYC',
     ],
     image: '/service-point-to-point.png',
-    content: [
+    heroSubtitle: 'Direct, door-to-door luxury transportation from any pickup to any destination — across Manhattan, all five boroughs, Long Island, New Jersey, Connecticut, and beyond. Flat rate, confirmed at booking.',
+    includes: [
+      'Door-to-door pickup at your exact address — hotel lobby, building entrance, or co-op',
+      'Flat-rate pricing locked at booking — no surge, no hidden fees',
+      'TLC-licensed, professional chauffeur',
+      'Luxury sedan or SUV, always clean and maintained',
+      'Luggage assistance at pickup and drop-off',
+      'Driver confirmed the evening before your trip',
+      '24/7 booking and support via phone or WhatsApp',
+    ],
+    useCases: [
+      { title: 'Hotel to Office', desc: 'Arrive at your Manhattan business meeting in a luxury sedan with no parking stress and total peace of mind.' },
+      { title: 'Apartment to Dinner', desc: 'Cross-borough rides from the Upper East Side to Williamsburg or downtown — no bridge traffic worries.' },
+      { title: 'NYC to the Hamptons', desc: 'Long Island transfers with flat rates to East Hampton, Southampton, Bridgehampton, and all Hamptons destinations.' },
+      { title: 'NYC to Connecticut', desc: 'Greenwich, Stamford, Westport, and Hartford. Direct service with a professional driver and no tolls surprises.' },
+      { title: 'Groups of 2–6', desc: 'SUV transfers keep everyone together — no splitting up the party into separate vehicles.' },
+      { title: 'Late-Night Returns', desc: 'After a show, dinner, or event — no surge pricing no matter the hour. Fixed price, door-to-door.' },
+    ],
+    faqs: [
       {
-        heading: 'Door-to-Door Convenience',
-        body: 'Whether you need a ride from your hotel to a meeting in Midtown or from Brooklyn to Manhattan, our point-to-point service delivers you directly with no stops and no hassle. Every trip is tailored to your schedule.',
+        q: 'What is point-to-point car service?',
+        a: 'Point-to-point service means a direct, non-stop transfer from one specific address to another. Your driver picks you up at your door and drives you directly to your destination with no detours or shared rides.',
       },
       {
-        heading: 'NYC and Beyond',
-        body: 'We serve all five boroughs plus Westchester, Long Island, New Jersey, and Connecticut. Same premium experience whether you\'re crossing the bridge or heading to the Hamptons.',
+        q: 'How does point-to-point pricing work?',
+        a: 'All rates are flat and confirmed at booking. Enter your pickup and destination on our booking page and you\'ll see an exact quote instantly. The price never changes due to traffic, time of day, or demand.',
       },
       {
-        heading: 'Transparent Pricing',
-        body: 'Get an instant quote when you book. No hidden fees—just a fixed price for your route so you can travel with confidence.',
+        q: 'Do you serve all NYC boroughs for point-to-point transfers?',
+        a: 'Yes. We serve all five boroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — plus Long Island, Westchester, New Jersey, Connecticut, and the Hamptons.',
+      },
+      {
+        q: 'Can I book a point-to-point ride for someone else?',
+        a: 'Absolutely. Book for a client, guest, or family member. Just provide the passenger name and contact details at booking. Your driver will be there with their name ready.',
+      },
+      {
+        q: 'Is point-to-point better than an hourly booking?',
+        a: 'Point-to-point is best when you have a single destination and need a direct transfer. Hourly hire is better when you have multiple stops, client visits, or a flexible schedule throughout the day.',
       },
     ],
+    relatedLinks: [
+      { label: 'Airport Transfers', href: '/services/airport', sub: 'JFK, LGA, EWR & HPN' },
+      { label: 'Hourly Chauffeur', href: '/services/hourly', sub: 'By the hour, all day' },
+      { label: 'Service Areas', href: '/services/areas', sub: 'All NYC & surrounding regions' },
+    ],
+    ctaHeading: 'Book Your Point-to-Point Black Car',
+    ctaSubline: 'Instant quote. Flat rate. Door-to-door professional service.',
   },
+
   hourly: {
     title: 'Hourly Chauffeur Service',
-    seoTitle: 'Hourly Chauffeur Service NYC | Luxury Car Hire by the Hour',
-    description: 'Flexible hourly hire for business meetings, events, or leisurely tours.',
+    h1: 'Hourly Chauffeur Service NYC | Black Car Hire by the Hour',
+    seoTitle: 'Hourly Chauffeur Service NYC | Luxury Car Hire by the Hour | Eagle Eye',
+    description: 'Flexible hourly black car hire for meetings, events, roadshows, and city tours in NYC.',
     metaDescription:
-      'Hire a luxury chauffeur by the hour in NYC. Perfect for meetings, events & city tours. Flexible scheduling, premium vehicles. Book hourly service today!',
+      'Hire a professional black car chauffeur by the hour in NYC. Perfect for executive meetings, roadshows, events & city tours. Luxury sedan or SUV. Flexible scheduling. Book Eagle Eye Chauffeur.',
     keywords: [
       'hourly chauffeur NYC',
       'chauffeur by the hour Manhattan',
-      'NYC black car hourly',
+      'NYC black car hourly hire',
       'executive day driver New York',
       'roadshow chauffeur NYC',
+      'hourly car service New York City',
     ],
     image: '/service-hourly.png',
-    content: [
+    heroSubtitle: 'Your driver — your schedule. Hire a professional chauffeur by the hour for back-to-back meetings, client tours, roadshows, events, or a full day across New York City. Your driver stays with you the entire booking.',
+    includes: [
+      'Dedicated chauffeur for the full duration of your booking',
+      'Luxury sedan or SUV — choose your vehicle class',
+      'Driver waits at every stop — no re-booking between appointments',
+      'Real-time routing around NYC traffic and construction',
+      'Professional discretion — ideal for client and VIP transfers',
+      'Invoicing available for corporate accounts',
+      '24/7 support via phone or WhatsApp',
+    ],
+    useCases: [
+      { title: 'Executive Roadshows', desc: 'Multi-stop investor meetings across Midtown, Wall Street, and beyond. Your driver moves between locations seamlessly.' },
+      { title: 'Back-to-Back Client Visits', desc: 'Finance, law, and corporate executives needing a reliable driver for a full morning or afternoon of office visits.' },
+      { title: 'Corporate Event Days', desc: 'Board meetings, conference shuttles, offsite events. We coordinate multiple vehicles and drivers as needed.' },
+      { title: 'City Tours for VIP Guests', desc: 'First-time visitors or international clients — show them New York in style with a knowledgeable professional driver.' },
+      { title: 'Shopping & Personal Errands', desc: 'A few hours for luxury shopping on Fifth Avenue or Madison Avenue. Your driver loads bags and keeps you on schedule.' },
+      { title: 'Medical Appointments', desc: 'Comfortable, stress-free transport for medical visits across Manhattan and the outer boroughs.' },
+    ],
+    faqs: [
       {
-        heading: 'Flexibility When You Need It',
-        body: 'Need a driver for a few hours of meetings, a half-day of errands, or a full-day tour? Our hourly service uses a two-hour minimum with the option to extend. The car and chauffeur stay with you—no rebooking between stops.',
+        q: 'What is the minimum booking for hourly chauffeur service?',
+        a: 'Our standard minimum is 2 hours for hourly hire. For full-day bookings and roadshows, we recommend a 4–8 hour block. Contact us for specific requirements based on your itinerary.',
       },
       {
-        heading: 'Business and Pleasure',
-        body: 'Ideal for executive travel, client visits, site tours, and city sightseeing. Your chauffeur will wait at each stop and be ready when you are.',
+        q: 'Does the driver stay with me during stops?',
+        a: 'Yes. With hourly hire, your chauffeur stays with you for the entire booking — waiting outside your meetings, appointments, or events. No need to call for a new car between stops.',
       },
       {
-        heading: 'Confirm when you book',
-        body: 'We don’t publish hourly pricing online. When you reach out or submit a booking request, our team confirms vehicle, duration, and arrangements with you directly—clear and upfront, before you travel.',
+        q: 'Can I extend my hourly booking on the day?',
+        a: 'Yes, subject to driver availability. Let your chauffeur or our team know as early as possible if you need to extend. We accommodate extensions whenever we can.',
+      },
+      {
+        q: 'Can I book hourly service for a roadshow?',
+        a: 'Absolutely. Roadshows are one of our most common hourly requests. We coordinate the full itinerary, multiple stops, and — if needed — multiple vehicles.',
+      },
+      {
+        q: 'Is hourly chauffeur service available on weekends?',
+        a: 'Yes. We operate 24/7, including all weekends and holidays. Hourly service is popular on weekends for events, shopping, and social engagements.',
       },
     ],
+    relatedLinks: [
+      { label: 'Corporate Travel', href: '/services/corporate', sub: 'Accounts & executive transport' },
+      { label: 'Point-to-Point', href: '/services/point-to-point', sub: 'Direct transfers, flat rate' },
+      { label: 'Special Events', href: '/services/special-events', sub: 'Weddings, galas, occasions' },
+    ],
+    ctaHeading: 'Book Your Hourly Chauffeur',
+    ctaSubline: 'Driver stays with you all day. No re-booking between stops.',
   },
+
   airport: {
-    title: 'Airport Transfers',
-    seoTitle: 'NYC Airport Transfer | JFK, LGA, EWR Luxury Car Service',
-    description: 'JFK, LGA, EWR, HPN. Meet-and-greet and real-time flight tracking.',
+    title: 'NYC Airport Transfers',
+    h1: 'NYC Airport Car Service | JFK, LGA, EWR & HPN Black Car Transfers',
+    seoTitle: 'NYC Airport Transfer | JFK, LGA, EWR Black Car Service | Eagle Eye Chauffeur',
+    description: 'Premium airport car service to JFK, LGA, EWR & HPN — meet-and-greet, real-time flight tracking, flat rates.',
     metaDescription:
-      'Premium NYC airport transfers to JFK, LGA, EWR & HPN. Real-time flight tracking, meet & greet service. No surge pricing. Book your luxury ride now!',
+      'NYC airport transfers to JFK, LGA, EWR & HPN. Real-time flight tracking, meet & greet, flat rates — no surge pricing. Professional chauffeur at arrivals. Book Eagle Eye Chauffeur 24/7.',
     keywords: [
-      'JFK car service Manhattan',
-      'LaGuardia black car',
-      'EWR airport transfer NYC',
-      'HPN Westchester car service',
+      'JFK airport car service NYC',
+      'LaGuardia black car service',
+      'EWR airport transfer Manhattan',
+      'HPN Westchester airport car',
       'NYC airport meet and greet',
-      'private airport pickup New York',
+      'private airport transfer New York',
     ],
     image: '/service-airport.png',
-    content: [
+    heroSubtitle: 'Professional black car service to and from all New York City airports — JFK, LGA, EWR, and HPN. Real-time flight tracking, meet-and-greet at arrivals, flat rates with no surge pricing. Confirmed driver the night before.',
+    includes: [
+      'Meet-and-greet at arrivals — chauffeur with name sign at your terminal',
+      'Real-time flight tracking — no extra charge for delays or early arrivals',
+      'Flat-rate pricing locked at booking — no surge on early morning or late-night flights',
+      'Door-to-door pickup at your Manhattan, Brooklyn, or NJ address',
+      '60 minutes of complimentary wait time after your flight lands',
+      'Correct terminal drop-off — we know every airline at every airport',
+      'Luggage assistance at pickup and the airport terminal',
+    ],
+    useCases: [
+      { title: 'JFK Arrivals & Departures', desc: 'All terminals. Business class sedan or SUV — confirmed driver, name sign at baggage claim. From all NYC neighborhoods and Long Island.' },
+      { title: 'LaGuardia Airport (LGA)', desc: 'Manhattan\'s closest major airport. Fast, flat-rate service from anywhere in the city with no surge on morning departures.' },
+      { title: 'Newark Airport (EWR)', desc: 'All tunnel tolls included. Service from all Manhattan neighborhoods and New Jersey. Real-time flight tracking at EWR.' },
+      { title: 'Westchester Airport (HPN)', desc: 'White Plains, Westchester County. Private and commercial terminal service with professional meet-and-greet.' },
+      { title: 'Early Morning Departures', desc: '4am, 5am, 6am flights — no surge pricing. Driver confirmed the night before so there\'s zero stress on departure day.' },
+      { title: 'International Arrivals', desc: 'Long international flights with customs delays? We track them all. Your driver is there when you walk out — not a minute before.' },
+    ],
+    faqs: [
       {
-        heading: 'Every Major NYC Airport',
-        body: 'We provide reliable pickups and drop-offs at John F. Kennedy (JFK), LaGuardia (LGA), Newark Liberty (EWR), and Westchester County (HPN). Choose sedan, SUV, or van based on passengers and luggage.',
+        q: 'Do you track flights for airport pickups?',
+        a: 'Yes — we monitor every flight in real time. If your flight is delayed, early, or diverted, your driver adjusts automatically at no extra charge. You never have to call us to update your pickup.',
       },
       {
-        heading: 'Meet-and-Greet Service',
-        body: 'Your chauffeur will meet you in the terminal with a personalized sign, assist with luggage, and escort you to the vehicle. No waiting in line for taxis or rideshares.',
+        q: 'Where does the driver meet me at the airport?',
+        a: 'For arrivals, your chauffeur meets you in the ground transportation area of your terminal with a sign displaying your name. You\'ll receive the exact meeting point and driver details before landing.',
       },
       {
-        heading: 'Real-Time Flight Tracking',
-        body: 'We monitor your flight for delays and early arrivals. If your plane is late, we adjust—no extra charge for reasonable wait time. You\'ll receive driver and vehicle details before your trip.',
+        q: 'How much wait time is included after landing?',
+        a: 'We include 60 minutes of complimentary wait time after your scheduled or actual arrival. This covers customs, baggage claim, and any terminal walking time.',
+      },
+      {
+        q: 'Do you serve all terminals at JFK, LGA, and EWR?',
+        a: 'Yes. We serve all terminals at JFK (1, 2, 4, 5, 7, 8), LaGuardia (B, C, D), and Newark (A, B, C). Your driver is assigned to your specific terminal based on your airline.',
+      },
+      {
+        q: 'Is surge pricing charged for early morning or late-night airport rides?',
+        a: 'Never. Our prices are flat and fixed at booking. A 4am departure to JFK costs the same as a 10am departure. Time of day, weather, and demand never affect your fare.',
+      },
+      {
+        q: 'Can I book an airport transfer for someone else?',
+        a: 'Yes. Book for a client, family member, or guest. Provide the passenger name and flight number and we\'ll handle everything from tracking to the terminal pickup.',
       },
     ],
+    relatedLinks: [
+      { label: 'JFK Airport Service', href: '/services/airport/jfk', sub: 'All JFK terminals' },
+      { label: 'LGA Airport Service', href: '/services/airport/lga', sub: 'LaGuardia transfers' },
+      { label: 'EWR Airport Service', href: '/services/airport/ewr', sub: 'Newark, tolls included' },
+    ],
+    ctaHeading: 'Book Your Airport Transfer',
+    ctaSubline: 'Flight tracking included. Flat rate. Chauffeur waiting when you land.',
   },
+
   corporate: {
-    title: 'Corporate Travel',
-    seoTitle: 'Corporate Car Service NYC | Executive Chauffeur for Business',
-    description: 'Tailored services for executives, roadshows, and corporate events.',
+    title: 'Corporate Car Service NYC',
+    h1: 'Corporate Car Service NYC | Executive Chauffeur for Business Travel',
+    seoTitle: 'Corporate Car Service NYC | Executive Chauffeur | Eagle Eye Chauffeur',
+    description: 'Premium corporate chauffeur service for executives, roadshows, and business travel in NYC.',
     metaDescription:
-      'Reliable corporate chauffeur service in NYC for executives & business travel. Account billing, dedicated drivers, 24/7 availability. Get a corporate quote!',
+      'Corporate car service NYC for executives and business travelers. Roadshows, board meetings, client transfers, corporate accounts. Discreet, punctual TLC-certified chauffeurs. Book Eagle Eye Chauffeur.',
     keywords: [
       'corporate car service NYC',
       'executive transportation Manhattan',
       'business black car New York',
-      'NYC roadshow transportation',
-      'corporate account chauffeur',
+      'NYC roadshow chauffeur',
+      'corporate account car service',
+      'executive chauffeur New York City',
     ],
     image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=80',
-    content: [
+    heroSubtitle: 'From single executive transfers to full roadshows and board meeting logistics — Eagle Eye Chauffeur supports NYC corporate travel with discretion, precision, and a consistent premium experience.',
+    includes: [
+      'Corporate account setup with consolidated monthly invoicing',
+      'Dedicated driver relationships for recurring executive clients',
+      'Multi-vehicle coordination for roadshows and investor events',
+      'Executive assistants and travel managers — we take the detail burden off you',
+      'Discreet, professionally trained chauffeurs with NDA-level confidentiality',
+      'All 4 NYC airports served — JFK, LGA, EWR, HPN',
+      'Multi-stop itinerary management throughout the business day',
+    ],
+    useCases: [
+      { title: 'Executive Roadshows', desc: 'Multi-day, multi-stop investor and client roadshows across Manhattan\'s financial district and Midtown. Full itinerary coordination.' },
+      { title: 'Board Meetings & Law Firms', desc: 'Reliable executive transport to board meetings, investor presentations, and law firm appointments — never late, always professional.' },
+      { title: 'Airport Pickups for VIP Guests', desc: 'Pick up international clients, board members, and executives from JFK, LGA, or EWR with meet-and-greet and name sign at arrivals.' },
+      { title: 'Client Entertainment', desc: 'Restaurant transfers, event pickups, Broadway or sports events — your clients arrive in style and comfort.' },
+      { title: 'Corporate Relocation Support', desc: 'Executives relocating to NYC need reliable ground transportation during the transition. We provide consistent, accountable service.' },
+      { title: 'Recurring Corporate Accounts', desc: 'Many of our clients use Eagle Eye daily. We set up accounts with consolidated billing and dedicated driver assignments for regulars.' },
+    ],
+    faqs: [
       {
-        heading: 'Built for Business',
-        body: 'From single executive transfers to multi-vehicle roadshows and event shuttles, we support corporate travel with discretion, punctuality, and a consistent premium experience. Many of our clients use us for board meetings, investor visits, and executive commutes.',
+        q: 'Do you offer corporate accounts with invoicing?',
+        a: 'Yes. We work with corporate travel managers, executive assistants, and CFOs to set up accounts with consolidated monthly invoicing. Contact us to arrange a corporate account.',
       },
       {
-        heading: 'Roadshows and Events',
-        body: 'We coordinate multi-stop itineraries, multi-day bookings, and group moves. Dedicated account management and invoicing available for recurring corporate clients.',
+        q: 'Can the same driver be assigned to regular corporate rides?',
+        a: 'Yes. For recurring corporate clients, we assign a preferred driver whenever possible. Consistency builds trust — your executive knows who is picking them up.',
       },
       {
-        heading: 'Professional Chauffeurs',
-        body: 'Our drivers are trained in protocol, confidentiality, and reliability. Vehicles are kept to the highest standard—clean, comfortable, and professional.',
+        q: 'Do you sign NDAs or confidentiality agreements for corporate clients?',
+        a: 'Yes. For high-profile executives, law firms, financial institutions, and M&A clients, we can execute standard NDAs. Confidentiality is non-negotiable for our team.',
+      },
+      {
+        q: 'Can you coordinate multi-vehicle corporate events?',
+        a: 'Absolutely. Roadshows, conference days, and corporate events requiring multiple vehicles and drivers are part of our core offering. We manage the full logistics.',
+      },
+      {
+        q: 'What notice do you need for corporate bookings?',
+        a: 'Standard corporate rides: 24 hours. Roadshows, multi-vehicle events, or complex itineraries: 48–72 hours or more. For recurring accounts, we handle the scheduling directly.',
       },
     ],
+    relatedLinks: [
+      { label: 'Hourly Chauffeur', href: '/services/hourly', sub: 'By the hour — driver stays all day' },
+      { label: 'Airport Transfers', href: '/services/airport', sub: 'JFK, LGA, EWR & HPN' },
+      { label: 'Special Events', href: '/services/special-events', sub: 'Galas, dinners, client entertainment' },
+    ],
+    ctaHeading: 'Set Up Your Corporate Account',
+    ctaSubline: 'Dedicated drivers. Consolidated billing. Total discretion.',
   },
+
   'special-events': {
-    title: 'Special Events',
-    seoTitle: 'Wedding & Event Chauffeur Service NYC | Luxury Transportation',
-    description: 'Weddings, proms, concerts, and other special occasions.',
+    title: 'Wedding & Event Chauffeur Service',
+    h1: 'Wedding & Special Event Chauffeur Service NYC',
+    seoTitle: 'Wedding & Special Event Car Service NYC | Luxury Chauffeur | Eagle Eye',
+    description: 'Luxury chauffeur service for weddings, proms, galas, concerts, and special occasions in NYC.',
     metaDescription:
-      "Make your special event memorable with Eagle Eye's luxury chauffeur service. Weddings, proms, galas in NYC. Elegant vehicles, professional drivers.",
+      'Luxury car service for weddings, proms, galas, concerts, and special events in NYC. Professional chauffeur, elegant vehicles. No surge pricing. Book Eagle Eye Chauffeur for your special occasion.',
     keywords: [
       'wedding car service NYC',
       'prom chauffeur New York',
       'gala black car Manhattan',
       'concert transportation NYC',
       'special event chauffeur',
+      'luxury wedding transportation New York',
     ],
     image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80',
-    content: [
+    heroSubtitle: 'Your special day deserves perfect transportation. Elegant luxury vehicles, professional chauffeurs, and coordinated arrivals and departures — so you focus on the moment, not the logistics.',
+    includes: [
+      'Pristine luxury sedan or SUV, detailed before every event',
+      'Professional, formally dressed chauffeur',
+      'On-time arrival — coordinated with your event schedule',
+      'Complimentary wait time at the venue',
+      'Luggage and floral arrangement assistance',
+      'Multiple vehicles available for wedding parties and large groups',
+      'Red-carpet curbside service and arrival coordination',
+    ],
+    useCases: [
+      { title: 'Wedding Day Transportation', desc: 'Bridal party arrivals, ceremony to reception transfers, after-party pickups — coordinated across the full day with multiple vehicles if needed.' },
+      { title: 'Wedding Rehearsal Dinner', desc: 'The night before your wedding, arrive at rehearsal dinners and welcome events with elegant, stress-free transportation.' },
+      { title: 'Prom Night', desc: 'A memorable, safe night out. Luxury sedan or SUV for prom arrivals and returns — parents and students can trust the experience.' },
+      { title: 'Galas & Black-Tie Events', desc: 'Metropolitan Museum Gala, charity galas, black-tie dinners — arrive in a vehicle that matches the dress code.' },
+      { title: 'Concerts & Broadway Shows', desc: 'No parking, no surge pricing, no scramble after the show. Door-to-door black car service for Carnegie Hall, the Met, and Broadway.' },
+      { title: 'Anniversaries & Milestones', desc: 'A special anniversary dinner, a milestone birthday, a graduation celebration — we make the ride part of the occasion.' },
+    ],
+    faqs: [
       {
-        heading: 'Your Special Day',
-        body: 'Weddings, proms, anniversaries, and milestone celebrations deserve stress-free, elegant transportation. We provide coordinated arrivals and departures so you and your guests can focus on the moment.',
+        q: 'How far in advance should I book a wedding car service?',
+        a: 'For weddings, we recommend booking at least 4–8 weeks in advance, especially for peak wedding season (May–October). Popular dates fill up quickly, so the sooner you reach out, the better.',
       },
       {
-        heading: 'Concerts, Galas, and More',
-        body: 'Going to a show, a gala, or a black-tie event? Arrive in style and leave without waiting for a ride. Hourly or point-to-point—we adapt to your timeline.',
+        q: 'Do you provide multiple vehicles for a wedding party?',
+        a: 'Yes. We coordinate multiple vehicles for bridal parties, groomsmen, family members, and guest shuttles. We manage the full schedule so everyone arrives on time.',
       },
       {
-        heading: 'Group Options',
-        body: 'Larger parties can use our Sprinters and SUVs so everyone travels together. We can arrange multiple vehicles for wedding parties and events—contact us for a custom quote.',
+        q: 'Is there surge pricing for New Year\'s Eve or holiday events?',
+        a: 'No. All rates are flat and confirmed at booking. New Year\'s Eve, Valentine\'s Day, prom weekend — the rate you book is the rate you pay. No exceptions.',
+      },
+      {
+        q: 'Can you accommodate decorations in the vehicle?',
+        a: 'Yes, with advance notice. Floral arrangements, ribbons, and tasteful wedding decorations can be arranged. Let us know at booking and we\'ll make it happen.',
+      },
+      {
+        q: 'What vehicles are best for a wedding?',
+        a: 'Our First Class Sedan and First Class SUV are most popular for weddings — elegant, spotless, and professionally presented. For larger parties, our SUVs accommodate up to 6 passengers with bags.',
       },
     ],
+    relatedLinks: [
+      { label: 'Hourly Chauffeur', href: '/services/hourly', sub: 'By the hour for events' },
+      { label: 'Corporate Events', href: '/services/corporate', sub: 'Galas & client entertainment' },
+      { label: 'Fleet', href: '/fleet', sub: 'View all vehicle options' },
+    ],
+    ctaHeading: 'Book Your Event Chauffeur',
+    ctaSubline: 'Elegant vehicle. Professional chauffeur. Perfect timing.',
   },
 };
 
@@ -185,14 +375,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       url: path,
       title: s.seoTitle,
       description: s.metaDescription,
-      images: [
-        {
-          url: s.image,
-          width: 1200,
-          height: 630,
-          alt: `${s.title} — Eagle Eye Chauffeur NYC`,
-        },
-      ],
+      images: [{ url: s.image, width: 1200, height: 630, alt: `${s.title} — Eagle Eye Chauffeur NYC` }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -207,66 +390,184 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
   const s = services[params.slug];
   if (!s) notFound();
 
+  const base = getSiteUrl();
+  const path = `${base}/services/${params.slug}`;
+
   return (
     <>
-      <ServiceJsonLd name={s.title} description={s.metaDescription} />
+      <FaqJsonLd faqs={s.faqs} />
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: base },
+        { name: 'Services', url: `${base}/services` },
+        { name: s.title, url: path },
+      ]} />
+      <ServiceJsonLd name={s.title} description={s.metaDescription} url={path} />
+
+      {/* Hero */}
+      <section className="relative h-[50vh] min-h-[340px] bg-brand-black">
+        <Image
+          src={s.image}
+          alt={s.title}
+          fill
+          className="object-cover opacity-50"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/40 to-brand-black/80" />
+        <div className="absolute inset-0 flex items-end pb-14">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-white mb-3">
+              {s.h1}
+            </h1>
+            <p className="text-brand-silver max-w-2xl leading-relaxed">{s.heroSubtitle}</p>
+          </div>
+        </div>
+      </section>
+
       <div className="bg-brand-offwhite">
-        <section className="relative h-[40vh] min-h-[280px] bg-brand-black">
-          <Image
-            src={s.image}
-            alt=""
-            fill
-            className="object-cover opacity-60"
-            sizes="100vw"
-            priority
-          />
-          <div className="absolute inset-0 bg-brand-black/50" />
-          <div className="absolute inset-0 flex items-end pb-12">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-white">
-                {s.title}
-              </h1>
-              <p className="mt-2 text-brand-silver max-w-2xl">{s.description}</p>
+
+        {/* CTAs */}
+        <section className="py-8 bg-brand-white border-b border-brand-light">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-3">
+            <Link href="/book" className="inline-flex items-center justify-center px-7 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors text-sm">
+              Book Now — Instant Quote
+            </Link>
+            <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] transition-colors text-sm">
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              Book on WhatsApp
+            </a>
+            <Link href="/contact" className="inline-flex items-center justify-center px-7 py-3 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors text-sm">
+              Contact Us
+            </Link>
+          </div>
+        </section>
+
+        {/* What's Included */}
+        <section className="py-16 lg:py-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div>
+                <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+                  What&rsquo;s Included in Every Booking
+                </h2>
+                <ul className="space-y-3">
+                  {s.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-brand-grey text-sm">
+                      <svg className="w-5 h-5 shrink-0 mt-0.5 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Use Cases */}
+              <div>
+                <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+                  When to Book {s.title}
+                </h2>
+                <div className="space-y-4">
+                  {s.useCases.map((uc) => (
+                    <div key={uc.title} className="bg-brand-white border border-brand-light p-4">
+                      <h3 className="font-semibold text-brand-black text-sm mb-1">{uc.title}</h3>
+                      <p className="text-brand-grey text-sm">{uc.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="py-16 lg:py-24">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            {s.content.map((block, i) => (
-              <div key={i}>
-                <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
-                  {block.heading}
-                </h2>
-                <p className="text-brand-grey leading-relaxed">{block.body}</p>
-              </div>
-            ))}
+        {/* Eagle Eye Benefits */}
+        <section className="pb-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              The Eagle Eye Chauffeur Difference
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no surprises at the end of the ride.' },
+                { title: 'TLC-Licensed Professional Driver', body: 'Every chauffeur is TLC-licensed, background-checked, and trained to a professional hospitality standard.' },
+                { title: 'Luxury Sedan or SUV — Guaranteed', body: 'You travel in a premium, clean, maintained black car every time — confirmed before your trip.' },
+                { title: 'Exact Door Pickup', body: 'Your driver comes to your building entrance, hotel lobby, or terminal — not a nearby corner.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, number, and vehicle details the night before — not minutes beforehand.' },
+                { title: '24/7 Phone & WhatsApp Support', body: 'Real support before, during, and after your trip — by phone or WhatsApp, any hour of the day.' },
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-2">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="pb-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center px-8 py-4 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
-              >
-                Get a Quote
-              </Link>
-              {params.slug === 'hourly' && (
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors"
-                >
-                  Contact us
+        {/* FAQ */}
+        <section className="pb-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              {s.title} — Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              {s.faqs.map((faq) => (
+                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
+                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
+                  <p className="text-sm text-brand-grey leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services */}
+        <section className="pb-16">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              Related Services
+            </h2>
+            <div className="grid sm:grid-cols-3 gap-4">
+              {s.relatedLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
+                  <div className="font-semibold text-brand-black">{link.label}</div>
+                  <div className="text-sm text-brand-grey mt-1">{link.sub}</div>
                 </Link>
-              )}
+              ))}
             </div>
             <p className="mt-4 text-sm text-brand-grey">
               <Link href="/services" className="hover:text-brand-black underline">
-                ← Back to all services
+                ← View all services
               </Link>
             </p>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="pb-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-brand-black p-8 text-center">
+              <h2 className="font-serif text-2xl font-semibold text-brand-white mb-3">
+                {s.ctaHeading}
+              </h2>
+              <p className="text-brand-silver mb-6">{s.ctaSubline}</p>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Link href="/book" className="inline-block py-3 px-8 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors">
+                  Book Now
+                </Link>
+                <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 py-3 px-8 bg-[#25D366] text-white font-medium hover:bg-[#1ebe5d] transition-colors">
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
+                  WhatsApp Us
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </div>

@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_E164 } from '@/lib/contact';
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_E164, CONTACT_PHONE_2_E164 } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 
 /**
@@ -10,13 +10,15 @@ export function LocalBusinessJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'TaxiService'],
+    '@id': `${site}/#business`,
     name: 'Eagle Eye Chauffeur',
     alternateName: ['Eagle Eye Black Car', 'Eagle Eye Car Service NYC'],
     description:
       'Eagle Eye Chauffeur provides luxury black car and chauffeur service in New York City: JFK, LGA, EWR, and HPN airport transfers, Manhattan and boroughs, hourly hire, corporate travel, and point-to-point rides. Professional, discreet, and reliable.',
     url: site,
-    telephone: CONTACT_PHONE_E164,
+    telephone: [CONTACT_PHONE_E164, CONTACT_PHONE_2_E164],
     email: CONTACT_EMAIL_BOOKINGS,
+    founder: { '@type': 'Person', name: 'Joban Sandhu' },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'New York',
@@ -50,7 +52,7 @@ export function LocalBusinessJsonLd() {
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '48',
+      reviewCount: '3',
       bestRating: '5',
       worstRating: '1',
     },
@@ -105,6 +107,20 @@ export function LocalBusinessJsonLd() {
       'Wedding Car Service',
       'NYC Limousine Service',
     ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Chauffeur & Black Car Services',
+      itemListElement: [
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'JFK Airport Car Service', url: `${site}/services/airport/jfk` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'LGA Airport Car Service', url: `${site}/services/airport/lga` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'EWR Airport Car Service', url: `${site}/services/airport/ewr` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'HPN Airport Car Service', url: `${site}/services/airport/hpn` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Corporate Car Service NYC', url: `${site}/services/corporate` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hourly Chauffeur NYC', url: `${site}/services/hourly` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Point-to-Point Car Service', url: `${site}/services/point-to-point` } },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Special Events Car Service', url: `${site}/services/special-events` } },
+      ],
+    },
   };
 
   return (
@@ -155,21 +171,27 @@ export function BlogPostingJsonLd({
   image: string;
   url: string;
 }) {
+  const site = getSiteUrl();
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline,
     description,
     datePublished,
+    dateModified: datePublished,
     author: {
       '@type': 'Organization',
       name: author,
+      url: site,
     },
-    image,
+    image: { '@type': 'ImageObject', url: image, width: 1200, height: 800 },
     url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     publisher: {
       '@type': 'Organization',
       name: 'Eagle Eye Chauffeur',
+      url: site,
+      logo: { '@type': 'ImageObject', url: `${site}/logo-2026-04-25.png`, width: 400, height: 120 },
     },
   };
 
@@ -232,6 +254,28 @@ export function ServiceJsonLd({
     },
   };
 
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function WebSiteJsonLd() {
+  const site = getSiteUrl();
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${site}/#website`,
+    name: 'Eagle Eye Chauffeur',
+    url: site,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: { '@type': 'EntryPoint', urlTemplate: `${site}/blog?q={search_term_string}` },
+      'query-input': 'required name=search_term_string',
+    },
+  };
   return (
     <script
       type="application/ld+json"

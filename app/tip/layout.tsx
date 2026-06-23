@@ -6,36 +6,11 @@ export const metadata: Metadata = {
     absolute: 'Tip Your Chauffeur | Eagle Eye — NYC Luxury Car Service',
   },
   description:
-    'Show appreciation for your NYC chauffeur. Calculate a tip for your Eagle Eye ride — 10%, 15%, or 20% of the fare. Tipping guidelines for black car service in New York.',
-  keywords: [
-    'tip chauffeur NYC',
-    'how much to tip car service NYC',
-    'black car service tipping',
-    'NYC chauffeur tip calculator',
-    'Eagle Eye Chauffeur tip',
-  ],
+    'Leave a tip for your Eagle Eye Chauffeur driver. Enter your ride total and pay securely by card via Stripe.',
+  // Noindex: this is a utility page for existing customers, not a search landing page.
+  // Removing from robots.ts disallow so Stripe can redirect back here after payment.
+  robots: { index: false, follow: false },
   alternates: { canonical: `${getSiteUrl()}/tip` },
-  openGraph: {
-    url: `${getSiteUrl()}/tip`,
-    title: 'Tip Your Chauffeur | Eagle Eye — NYC Luxury Car Service',
-    description:
-      'Show appreciation for your NYC chauffeur. Calculate a tip for your Eagle Eye ride.',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Tip Your Chauffeur — Eagle Eye',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Tip Your Chauffeur | Eagle Eye NYC',
-    description:
-      'Show appreciation for your NYC chauffeur. Calculate a tip for your Eagle Eye ride.',
-    images: [`${getSiteUrl()}/og-image.jpg`],
-  },
 };
 
 export default function TipLayout({ children }: { children: React.ReactNode }) {

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_PHONE_2_DISPLAY, CONTACT_PHONE_2_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 const services = [
   { href: '/services/point-to-point', label: 'Point-to-Point' },
@@ -72,6 +72,11 @@ export default function Footer() {
               <li>
                 <a href={`tel:${CONTACT_PHONE_E164}`} className="hover:text-brand-white transition-colors">
                   {CONTACT_PHONE_DISPLAY}
+                </a>
+              </li>
+              <li>
+                <a href={`tel:${CONTACT_PHONE_2_E164}`} className="hover:text-brand-white transition-colors">
+                  {CONTACT_PHONE_2_DISPLAY}
                 </a>
               </li>
               <li>

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
+import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_PHONE_2_DISPLAY, CONTACT_PHONE_2_E164 } from '@/lib/contact';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -43,7 +43,7 @@ export default function ContactPage() {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-            Contact Us
+            Contact Eagle Eye Chauffeur | NYC Car Service
           </h1>
           <p className="text-lg text-brand-grey max-w-2xl">
             Have a question or need a custom quote? Reach out by phone, email, or the form below. We typically respond within a few hours.
@@ -61,8 +61,11 @@ export default function ContactPage() {
               <ul className="space-y-4 text-brand-grey">
                 <li>
                   <span className="text-brand-silver block text-sm font-medium">Phone</span>
-                  <a href={`tel:${CONTACT_PHONE_E164}`} className="text-brand-black hover:underline">
+                  <a href={`tel:${CONTACT_PHONE_E164}`} className="text-brand-black hover:underline block">
                     {CONTACT_PHONE_DISPLAY}
+                  </a>
+                  <a href={`tel:${CONTACT_PHONE_2_E164}`} className="text-brand-black hover:underline block">
+                    {CONTACT_PHONE_2_DISPLAY}
                   </a>
                 </li>
                 <li>

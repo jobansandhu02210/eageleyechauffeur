@@ -2,221 +2,504 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LGA Airport Black Car Service NYC | Flat Rates from $75 | Eagle Eye',
+  title: 'LaGuardia Airport Car Service NYC | LGA Black Car & Meet & Greet | Eagle Eye',
   description:
-    'LaGuardia Airport black car service — flat rates from $75, real-time flight tracking, meet & greet. NYC closest major airport. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
+    'LaGuardia Airport car service — flat rates, real-time flight tracking, meet & greet at Terminal B & C. Professional chauffeur. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/lga` },
 };
 
-const lgaFaqs = [
+const faqs = [
   {
-    q: 'How much is a black car from LaGuardia to Manhattan?',
-    a: 'Black car service from LGA to Manhattan starts at $75. LaGuardia is NYC\'s closest major airport to Midtown — typically just 20-30 minutes away in normal traffic.',
+    q: 'How much is a black car from LGA to Manhattan?',
+    a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Your price is locked the moment you book, regardless of traffic or time of day. Get an instant quote at /book by entering your pickup and drop-off.',
   },
   {
-    q: 'How is black car service from LGA different from a taxi?',
-    a: 'Taxis use metered pricing — your final cost depends on traffic. Our black car service is flat-rate, confirmed at booking. You also get a professional chauffeur waiting at arrivals with a name sign, not a taxi queue.',
+    q: 'Where do I meet my chauffeur at LaGuardia?',
+    a: 'Your chauffeur meets you at the arrivals level with a name sign — at Terminal B or Terminal C depending on your airline. You will receive a WhatsApp message with the exact meeting point before you land so there is zero confusion.',
   },
   {
-    q: 'Do you track flights at LaGuardia Airport?',
-    a: 'Yes. We monitor your LGA flight live and adjust pickup time automatically — no extra charge for delays or early arrivals.',
+    q: 'Do you track my flight for LGA arrivals?',
+    a: 'Yes. We monitor your LGA flight in real-time and adjust your driver\'s timing automatically. If your flight lands early or is delayed, your chauffeur adjusts — no extra charge, no phone calls needed from you.',
   },
   {
-    q: 'Where does my driver meet me at LGA?',
-    a: 'Your chauffeur meets you in the arrivals area with a name sign. You\'ll receive a WhatsApp message with the exact meeting point before you land. We cover Terminal B and Terminal C/D.',
+    q: 'Which LGA terminal does my airline use?',
+    a: 'Terminal B (opened 2022): American Airlines, United Airlines, and Southwest Airlines. Terminal C (opened 2023): Delta Air Lines domestic flights. If you are unsure, check your boarding pass — the terminal is printed on it, and we will confirm when you book.',
   },
   {
-    q: 'Do you serve all LGA terminals?',
-    a: 'Yes. We service Terminal B (Delta, American) and Terminal C/D (United, Southwest, others).',
+    q: 'Is LGA car service available early morning or late night?',
+    a: 'Yes — Eagle Eye operates 24 hours a day, 7 days a week, including holidays. Early morning departures, red-eye arrivals, and last-minute bookings are all covered.',
   },
   {
-    q: 'Can I book a black car for a LGA departure?',
-    a: 'Yes. We handle both arrivals and departures. For departures, your driver picks you up at your address and drops you at your departure terminal.',
+    q: 'How long does LGA to Manhattan take?',
+    a: 'LaGuardia is only 9 miles from Midtown — off-peak, expect 20 to 30 minutes. During rush hour (7–10 am and 4–7 pm), allow 30 to 45 minutes. Your chauffeur knows LGA routes well and will choose the fastest path.',
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate from $75 — locked at booking', yellowCab: 'Metered + tolls — unpredictable', uber: 'Surge pricing — spikes during peak hours' },
-  { feature: 'Meet & Greet', blackCar: 'Arrivals hall, name sign', yellowCab: 'Taxi stand queue', uber: 'Rideshare lot — walk required' },
-  { feature: 'Luggage Help', blackCar: 'Yes — chauffeur assists', yellowCab: 'Varies by driver', uber: 'No' },
-  { feature: 'Flight Tracking', blackCar: 'Yes — real-time, no charge', yellowCab: 'No', uber: 'No' },
-  { feature: 'Vehicle Quality', blackCar: 'Luxury sedan or SUV', yellowCab: 'Standard taxi', uber: 'Unknown until assigned' },
-  { feature: 'Wait Time', blackCar: '60 min complimentary after landing', yellowCab: 'None — meter runs', uber: 'Driver may cancel if delayed' },
-];
 
 export default function LGAPage() {
   return (
     <>
-      <FaqJsonLd faqs={lgaFaqs} />
-      <BreadcrumbJsonLd items={[
-        { name: 'Home', url: getSiteUrl() },
-        { name: 'Services', url: `${getSiteUrl()}/services` },
-        { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
-        { name: 'LaGuardia Airport', url: `${getSiteUrl()}/services/airport/lga` },
-      ]} />
       <ServiceJsonLd
-        name="LGA Airport Black Car Service"
-        description="Premium LaGuardia Airport black car service. Flat rates from $75, real-time flight tracking, meet & greet at arrivals. All terminals. 24/7 availability."
+        name="LaGuardia Airport Black Car Service"
+        description="Premium LaGuardia Airport car service. Flat rates, real-time flight tracking, meet & greet at Terminal B and Terminal C. All TLC licensed. 24/7 availability."
         areaServed="New York City, NY"
         url={`${getSiteUrl()}/services/airport/lga`}
       />
-      <div className="bg-brand-offwhite">
+      <FaqJsonLd faqs={faqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: getSiteUrl() },
+          { name: 'Services', url: `${getSiteUrl()}/services` },
+          { name: 'Airport Transfers', url: `${getSiteUrl()}/services/airport` },
+          { name: 'LaGuardia Airport', url: `${getSiteUrl()}/services/airport/lga` },
+        ]}
+      />
 
-        <section className="py-16 lg:py-24">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-              LGA Airport Black Car Service NYC
-            </h1>
-            <p className="text-lg text-brand-grey mb-6">
-              LaGuardia is NYC&apos;s closest major airport to Midtown — just 9 miles away. Make the most
-              of that with a flat-rate black car service, professional chauffeur waiting at arrivals,
-              and a price that does not move regardless of traffic or time of day.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/book" className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
-                Book Your LGA Transfer
-              </Link>
-              <Link href="/services/routes/lga-to-manhattan-black-car-service" className="inline-block py-3 px-8 border border-brand-black text-brand-black font-medium hover:bg-brand-white transition-colors">
-                LGA → Manhattan Pricing
-              </Link>
-            </div>
+      {/* HERO */}
+      <section className="bg-brand-black py-20 lg:py-28">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-brand-silver text-xs font-medium tracking-widest uppercase mb-4">
+            Airport Service
+          </p>
+          <h1 className="font-serif text-4xl lg:text-6xl font-semibold text-brand-white mb-6 leading-tight">
+            LaGuardia Airport Car Service NYC
+          </h1>
+          <p className="text-brand-silver text-lg lg:text-xl max-w-2xl mb-10 leading-relaxed">
+            NYC&apos;s most-used airport for domestic flights — flat-rate black car service,
+            real-time flight tracking, and meet &amp; greet at newly rebuilt Terminal B and
+            Terminal C.
+          </p>
+
+          {/* Stat bar */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-brand-charcoal mb-10">
+            {[
+              { label: 'Terminals Served', value: 'Terminal B & C' },
+              { label: 'Wait Time', value: 'Free Wait Time' },
+              { label: 'Availability', value: '24/7' },
+              { label: 'Licensing', value: 'TLC Licensed' },
+            ].map((stat) => (
+              <div key={stat.label} className="bg-brand-black px-6 py-5">
+                <div className="text-brand-white font-semibold text-sm mb-1">{stat.value}</div>
+                <div className="text-brand-silver text-xs tracking-wide">{stat.label}</div>
+              </div>
+            ))}
           </div>
-        </section>
 
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              LGA Black Car Rates &amp; Pricing
-            </h2>
-            <div className="space-y-3">
-              {[
-                { from: 'LGA ↔ Midtown Manhattan', price: '$75+', miles: '9 mi', time: '20–30 min', href: '/services/routes/lga-to-manhattan-black-car-service' },
-                { from: 'LGA ↔ Financial District', price: '$80+', miles: '12 mi', time: '25–40 min', href: '/services/routes/lga-to-manhattan-black-car-service' },
-                { from: 'LGA ↔ Upper East Side', price: '$75+', miles: '8 mi', time: '20–30 min', href: '/services/routes/lga-to-manhattan-black-car-service' },
-                { from: 'LGA ↔ Brooklyn', price: '$65+', miles: '12 mi', time: '25–40 min', href: '/services/areas/brooklyn' },
-                { from: 'LGA ↔ Queens', price: '$55+', miles: '5 mi', time: '15–25 min', href: '/services/areas/queens' },
-                { from: 'LGA ↔ Bronx', price: '$70+', miles: '12 mi', time: '20–35 min', href: '/services/areas/bronx' },
-                { from: 'LGA ↔ Long Island', price: '$75+', miles: '15 mi', time: '25–40 min', href: '/services/areas/long-island' },
-                { from: 'LGA ↔ Westchester', price: '$95+', miles: '25 mi', time: '35–50 min', href: '/services/areas/westchester' },
-              ].map((r) => (
-                <Link key={r.from} href={r.href} className="flex justify-between items-center bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
-                  <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} · {r.time}</span>
-                </Link>
-              ))}
-            </div>
-            <p className="text-sm text-brand-grey mt-4">All rates are flat. Gratuity and tolls included. No surge pricing.</p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Link
+              href="/book"
+              className="inline-block py-3 px-8 bg-brand-white text-brand-black font-medium hover:bg-brand-silver transition-colors text-center"
+            >
+              Book Your LGA Transfer
+            </Link>
+            <Link
+              href={WHATSAPP_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block py-3 px-8 border border-brand-silver text-brand-white font-medium hover:border-brand-white transition-colors text-center"
+            >
+              WhatsApp Us
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              LGA Black Car vs. Yellow Cab &amp; Uber
-            </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Yellow Cab</th>
-                    <th className="text-left p-3 font-medium">Uber</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.yellowCab}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              LGA Terminal Pickup Guide
-            </h2>
-            <div className="space-y-4">
-              {[
-                { terminal: 'Terminal B', airlines: 'Delta, American Airlines, and most carriers', pickup: 'Ground floor arrivals — your chauffeur meets you past baggage claim with a name sign. Terminal B is the main renovated terminal at LGA.' },
-                { terminal: 'Terminal C / D', airlines: 'United, Southwest, Spirit, and others', pickup: 'Arrivals level, ground floor — driver holds name sign just past baggage claim exit. You\'ll receive a WhatsApp message with exact meeting spot.' },
-              ].map((t) => (
-                <div key={t.terminal} className="bg-brand-white border border-brand-light p-5">
-                  <h3 className="font-medium text-brand-black mb-1">{t.terminal} — {t.airlines}</h3>
-                  <p className="text-sm text-brand-grey">{t.pickup}</p>
+      {/* HOW IT WORKS */}
+      <section className="bg-brand-offwhite py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            How LGA Car Service Works
+          </h2>
+          <p className="text-brand-grey mb-12 max-w-xl">
+            From booking to arrival, every step is handled for you. Here is what to expect.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Book Online in Minutes',
+                body: 'Enter your flight details and destination at /book. Your flat rate is confirmed instantly — no account needed, no back-and-forth.',
+              },
+              {
+                step: '02',
+                title: 'Driver Monitors Your Flight',
+                body: 'We track your LGA flight live from departure. If it lands early or is delayed, your chauffeur adjusts automatically with no action required from you.',
+              },
+              {
+                step: '03',
+                title: 'Meet Your Chauffeur at Arrivals',
+                body: 'Your driver waits at the arrivals level with a name sign — inside Terminal B or Terminal C. A WhatsApp message confirms the exact spot.',
+              },
+              {
+                step: '04',
+                title: 'Straight to Your Destination',
+                body: 'Luggage loaded, you are on your way. No transfers, no meter running, no surprises. Just a direct, comfortable ride to wherever you are going.',
+              },
+            ].map((s) => (
+              <div key={s.step} className="flex flex-col">
+                <div className="font-serif text-4xl font-semibold text-brand-black opacity-20 mb-4 leading-none">
+                  {s.step}
                 </div>
-              ))}
-            </div>
+                <h3 className="font-semibold text-brand-black mb-2">{s.title}</h3>
+                <p className="text-brand-grey text-sm leading-relaxed">{s.body}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-brand-white border border-brand-light p-8">
-              <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-                Why Eagle Eye for LGA Transfers
-              </h2>
-              <ul className="space-y-4 text-brand-grey">
-                <li><strong className="text-brand-black">Closest airport to Midtown</strong> — LGA is just 9 miles from Midtown. With Eagle Eye, you are at your hotel in 20 minutes.</li>
-                <li><strong className="text-brand-black">Flight tracking included</strong> — we adjust for any delays automatically, no extra charge.</li>
-                <li><strong className="text-brand-black">Transparent pricing</strong> — no surprises, no surge. What you see at booking is what you pay.</li>
-                <li><strong className="text-brand-black">Professional chauffeurs</strong> — licensed, insured, uniformed.</li>
-                <li><strong className="text-brand-black">24/7 availability</strong> — early morning and late-night flights fully covered.</li>
-              </ul>
-              <div className="mt-8">
-                <Link href="/book" className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
-                  Book Now
-                </Link>
+      {/* TERMINAL GUIDE */}
+      <section className="bg-brand-white py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            LGA Terminal Guide
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-2xl">
+            LaGuardia has two active terminals following its multi-billion-dollar renovation.
+            Both offer streamlined arrivals flows — your chauffeur knows both well.
+          </p>
+          <div className="grid lg:grid-cols-2 gap-6 mb-10">
+            {[
+              {
+                terminal: 'Terminal B — Rebuilt 2022',
+                airlines: 'American Airlines · United Airlines · Southwest Airlines',
+                detail:
+                  'Terminal B is the primary domestic hub at LGA and home to the award-winning new facility that opened in 2022. Arrivals exit onto a modern ground-level hall with clear signage. Your chauffeur waits past baggage claim with your name on a sign.',
+                note: 'American, United, and Southwest depart and arrive here.',
+              },
+              {
+                terminal: 'Terminal C — Opened 2023',
+                airlines: 'Delta Air Lines (domestic)',
+                detail:
+                  'Terminal C is the newest terminal at LaGuardia, opened in 2023 exclusively for Delta Air Lines domestic operations. The arrivals level is compact and efficient — easy to navigate. Your driver will be waiting at the base of the escalators with a name sign as you exit baggage claim.',
+                note: 'All Delta domestic flights use Terminal C.',
+              },
+            ].map((t) => (
+              <div key={t.terminal} className="border border-brand-light p-6">
+                <h3 className="font-serif text-xl font-semibold text-brand-black mb-1">
+                  {t.terminal}
+                </h3>
+                <p className="text-sm text-brand-silver mb-4">{t.airlines}</p>
+                <p className="text-brand-grey text-sm leading-relaxed mb-3">{t.detail}</p>
+                <p className="text-xs text-brand-silver border-t border-brand-light pt-3">
+                  {t.note}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="bg-brand-offwhite border border-brand-light p-6">
+            <h3 className="font-semibold text-brand-black mb-2">Carrier Quick Reference</h3>
+            <div className="grid sm:grid-cols-2 gap-4 text-sm text-brand-grey">
+              <div>
+                <span className="font-medium text-brand-black">Terminal B:</span> American Airlines,
+                United Airlines, Southwest Airlines, and most domestic carriers
+              </div>
+              <div>
+                <span className="font-medium text-brand-black">Terminal C:</span> Delta Air Lines —
+                all domestic Delta flights including Delta Connection
               </div>
             </div>
+            <p className="text-xs text-brand-silver mt-4">
+              Terminal assignments can change. Always verify on your boarding pass. When you book
+              with Eagle Eye, we confirm your terminal at dispatch.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Popular LGA Black Car Routes
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <Link href="/services/routes/lga-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">LGA to Manhattan Black Car</div>
-                <div className="text-sm text-brand-grey mt-1">From $75 — 20–30 min</div>
-              </Link>
-              <Link href="/services/routes/manhattan-to-lga-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
-                <div className="font-semibold text-brand-black">Manhattan to LGA Black Car</div>
-                <div className="text-sm text-brand-grey mt-1">From $75 — 20–30 min</div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section className="pb-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              LGA Car Service FAQ
-            </h2>
-            <div className="space-y-4">
-              {lgaFaqs.map((faq) => (
-                <div key={faq.q} className="bg-brand-white border border-brand-light p-5">
-                  <h3 className="font-medium text-brand-black mb-1">{faq.q}</h3>
-                  <p className="text-sm text-brand-grey">{faq.a}</p>
+      {/* POPULAR ROUTES */}
+      <section className="bg-brand-offwhite py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            Popular LGA Routes
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-xl">
+            We run these routes every day. Flat rates, no surge, no meter surprises.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                label: 'LGA to Manhattan',
+                time: '20–30 min',
+                href: '/services/routes/lga-to-manhattan-black-car-service',
+              },
+              {
+                label: 'Manhattan to LGA',
+                time: '20–30 min',
+                href: '/services/routes/manhattan-to-lga-black-car-service',
+              },
+              {
+                label: 'LGA to Brooklyn',
+                time: '25–40 min',
+                href: '/services/routes/lga-to-brooklyn-black-car-service',
+              },
+              {
+                label: 'Queens to LGA',
+                time: '10–25 min',
+                href: '/services/routes/queens-to-lga-black-car-service',
+              },
+              {
+                label: 'LGA to Upper East Side',
+                time: '15–25 min',
+                href: '/book',
+              },
+              {
+                label: 'LGA to Midtown',
+                time: '20–30 min',
+                href: '/book',
+              },
+              {
+                label: 'LGA to Financial District',
+                time: '25–40 min',
+                href: '/book',
+              },
+              {
+                label: 'LGA to Westchester',
+                time: '50–65 min',
+                href: '/book',
+              },
+            ].map((route) => (
+              <Link
+                key={route.label}
+                href={route.href}
+                className="group bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors"
+              >
+                <div className="font-semibold text-brand-black text-sm mb-2 group-hover:underline">
+                  {route.label}
                 </div>
-              ))}
+                <div className="text-brand-grey text-xs">{route.time} off-peak</div>
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs text-brand-silver mt-6">
+            All travel times are estimates and vary with traffic. Flat rate is confirmed at booking
+            regardless of actual travel time.{' '}
+            <Link href="/book" className="underline">
+              Get your quote →
+            </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* WHY EAGLE EYE */}
+      <section className="bg-brand-white py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            Why Eagle Eye Black Car at LGA
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-xl">
+            Professional black car service is built around reliability, comfort, and total
+            transparency — from the moment you book to the moment you arrive.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — regardless of traffic, time of day, or demand.' },
+              { title: 'Meet & Greet at Arrivals', body: 'Your chauffeur waits inside Terminal B or C with a name sign, past baggage claim — no searching required.' },
+              { title: 'Real-Time Flight Tracking', body: 'We monitor your flight automatically. If it lands early or is delayed, your driver adjusts at no extra charge.' },
+              { title: 'Luggage Assistance', body: 'Your chauffeur loads and unloads all bags — from baggage claim straight to the vehicle.' },
+              { title: 'Luxury Sedan or SUV', body: 'You travel in a premium, late-model black car — clean, maintained, and guaranteed before every trip.' },
+              { title: 'TLC Licensed & Insured', body: 'Every Eagle Eye driver holds a NYC TLC license and carries commercial insurance on every booking.' },
+            ].map((item) => (
+              <div key={item.title} className="bg-brand-offwhite border border-brand-light p-5">
+                <div className="flex items-start gap-3 mb-2">
+                  <span className="text-brand-black font-bold mt-0.5">✓</span>
+                  <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                </div>
+                <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-brand-silver mt-6">
+            Visit{' '}
+            <Link href="/book" className="underline">
+              /book
+            </Link>{' '}
+            for your confirmed flat rate.
+          </p>
+        </div>
+      </section>
+
+      {/* WHAT'S INCLUDED */}
+      <section className="bg-brand-offwhite py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            What&apos;s Included with Every LGA Transfer
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-xl">
+            Your flat rate covers everything below — no line-item surprises at the end.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                title: 'Real-Time Flight Tracking',
+                body: 'We monitor your LGA flight from departure and adjust your driver automatically — delays, early arrivals, gate changes.',
+              },
+              {
+                title: 'Meet & Greet at Terminal B or C',
+                body: 'Your chauffeur waits inside the terminal at the arrivals level with a name sign — not at a parking lot or app pin.',
+              },
+              {
+                title: 'Luggage Assistance',
+                body: 'Your driver loads your bags and handles them at drop-off. No wrestling bags onto a train or loading them yourself.',
+              },
+              {
+                title: 'Flat Rate — No Surge Pricing',
+                body: 'Your price is locked at booking. No multipliers for rush hour, storms, or high demand on a Friday evening.',
+              },
+              {
+                title: 'Luxury Sedan or SUV',
+                body: 'Travel in a premium black car — not whatever happens to be nearby. All vehicles are clean, late-model, and TLC inspected.',
+              },
+              {
+                title: '24/7 Availability',
+                body: 'LGA has early morning and late-night departures. We are available every hour, every day — including holidays.',
+              },
+              {
+                title: 'TLC Licensed & Fully Insured',
+                body: 'Every Eagle Eye driver holds a NYC TLC license. You are covered by commercial insurance, not a personal auto policy.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-brand-white border border-brand-light p-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <span className="mt-0.5 text-brand-black" aria-hidden="true">
+                    ✓
+                  </span>
+                  <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                </div>
+                <p className="text-brand-grey text-sm leading-relaxed pl-6">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-brand-white py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            LGA Car Service — Frequently Asked Questions
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-xl">
+            Common questions about booking LaGuardia Airport transfers with Eagle Eye.
+          </p>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="border border-brand-light p-6">
+                <h3 className="font-semibold text-brand-black mb-3">{faq.q}</h3>
+                <p className="text-brand-grey text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <p className="text-brand-grey text-sm mb-4">
+              Have a question not answered here? Contact us directly.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href={`tel:${CONTACT_PHONE_E164}`}
+                className="inline-block py-2 px-6 border border-brand-light text-brand-black text-sm hover:border-brand-dark transition-colors"
+              >
+                Call {CONTACT_PHONE_DISPLAY}
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL_BOOKINGS}`}
+                className="inline-block py-2 px-6 border border-brand-light text-brand-black text-sm hover:border-brand-dark transition-colors"
+              >
+                Email Us
+              </a>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
+      {/* RELATED AIRPORTS */}
+      <section className="bg-brand-offwhite py-16 lg:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-3">
+            Other NYC Area Airports
+          </h2>
+          <p className="text-brand-grey mb-10 max-w-xl">
+            Flying in or out of a different airport? Eagle Eye covers all three major NYC airports
+            plus Westchester.
+          </p>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                code: 'JFK',
+                name: 'John F. Kennedy International',
+                detail:
+                  'NYC\'s largest international airport — 4 active terminals. All international carriers plus JetBlue\'s domestic hub.',
+                href: '/services/airport/jfk',
+              },
+              {
+                code: 'EWR',
+                name: 'Newark Liberty International',
+                detail:
+                  'Serving New Jersey and Manhattan — all NJ Turnpike and tunnel tolls included in your flat rate.',
+                href: '/services/airport/ewr',
+              },
+              {
+                code: 'HPN',
+                name: 'Westchester County Airport',
+                detail:
+                  'Smaller regional airport with shorter security lines — popular with business travelers heading to Westchester and Connecticut.',
+                href: '/services/airport/hpn',
+              },
+            ].map((airport) => (
+              <Link
+                key={airport.code}
+                href={airport.href}
+                className="group bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors"
+              >
+                <div className="font-serif text-2xl font-semibold text-brand-black mb-1 group-hover:underline">
+                  {airport.code}
+                </div>
+                <div className="text-sm font-medium text-brand-black mb-3">{airport.name}</div>
+                <p className="text-brand-grey text-xs leading-relaxed">{airport.detail}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-brand-black py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-serif text-3xl lg:text-5xl font-semibold text-brand-white mb-6 leading-tight">
+            Book Your LGA Transfer Today
+          </h2>
+          <p className="text-brand-silver text-lg mb-10 max-w-xl mx-auto">
+            Flat rate confirmed at booking. Flight tracking included. Your chauffeur waiting at
+            arrivals with a name sign — whether you land at Terminal B or Terminal C.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link
+              href="/book"
+              className="inline-block py-4 px-10 bg-brand-white text-brand-black font-medium hover:bg-brand-silver transition-colors"
+            >
+              Get an Instant Quote
+            </Link>
+            <Link
+              href={WHATSAPP_BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block py-4 px-10 border border-brand-silver text-brand-white font-medium hover:border-brand-white transition-colors"
+            >
+              WhatsApp a Booking
+            </Link>
+          </div>
+          <p className="text-brand-silver text-sm mt-8">
+            Or call us at{' '}
+            <a href={`tel:${CONTACT_PHONE_E164}`} className="underline">
+              {CONTACT_PHONE_DISPLAY}
+            </a>{' '}
+            — available 24/7.
+          </p>
+        </div>
+      </section>
     </>
   );
 }

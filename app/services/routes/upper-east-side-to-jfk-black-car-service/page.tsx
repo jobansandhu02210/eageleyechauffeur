@@ -6,14 +6,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Upper East Side to JFK Black Car Service | Eagle Eye Chauffeur',
   description:
-    'Upper East Side to JFK black car service — from $90 flat rate, door-to-door pickup, real-time flight tracking. Professional chauffeurs from UES to JFK Airport. Book 24/7.',
+    'Upper East Side to JFK black car service — door-to-door pickup, real-time flight tracking. Professional chauffeurs from UES to JFK Airport. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/upper-east-side-to-jfk-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from the Upper East Side to JFK?',
-    a: 'Black car service from the Upper East Side to JFK starts at $90 flat. This covers all UES addresses — from 60th Street to 96th Street, from Fifth Avenue to the East River.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your Upper East Side address and JFK as the destination.',
   },
   {
     q: 'How long does it take from the Upper East Side to JFK?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Do you pick up from UES apartments and co-ops?',
-    a: 'Yes. Your chauffeur comes directly to your building entrance — doorman buildings, co-ops, and walk-ups. No walking to a corner or rideshare zone with your luggage.',
+    a: 'Yes. Your chauffeur comes directly to your building entrance — doorman buildings, co-ops, and walk-ups. Your driver takes your luggage and gets you on your way.',
   },
   {
     q: 'What is the best route from the Upper East Side to JFK?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'From $90 flat — locked at booking', uber: 'Surge pricing — UES to JFK surges heavily in the morning' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Pickup', blackCar: 'Building entrance — doorman buildings welcome', uber: 'May not reach doorman buildings directly' },
-  { feature: 'Wait Time', blackCar: 'Driver waits — no pressure to rush out', uber: 'Driver may cancel if delayed more than a few minutes' },
-  { feature: 'Reliability', blackCar: 'Driver confirmed the evening before departure', uber: 'Driver assigned close to pickup time' },
-];
 
 export default function UpperEastSideToJFKBlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function UpperEastSideToJFKBlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Upper East Side to JFK Black Car Service"
-        description="Premium black car service from the Upper East Side to JFK Airport. Flat rates from $90, door-to-door building pickup, 24/7 availability."
+        description="Premium black car service from the Upper East Side to JFK Airport. Flat rates, door-to-door building pickup, 24/7 availability."
         areaServed="Upper East Side, Manhattan, New York City, NY"
         url={`${getSiteUrl()}/services/routes/upper-east-side-to-jfk-black-car-service`}
       />
@@ -68,7 +60,7 @@ export default function UpperEastSideToJFKBlackCarPage() {
             <p className="text-lg text-brand-grey mb-6">
               From Park Avenue to the East River, 60th to 96th Street — Eagle Eye Chauffeur picks
               you up at your building entrance and delivers you to JFK in a luxury sedan or SUV.
-              A flat $90 rate, no surge pricing, and a chauffeur confirmed the night before.
+              Flat-rate pricing, no surge, and a chauffeur confirmed the night before.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/book" className="inline-block py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
@@ -84,50 +76,48 @@ export default function UpperEastSideToJFKBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Upper East Side to JFK Black Car Pricing
+              Popular Routes from Upper East Side to JFK
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'Upper East Side (60s–70s) → JFK', price: '$90', time: '40–50 min', miles: '17 mi' },
-                { from: 'Upper East Side (80s–90s) → JFK', price: '$90', time: '40–55 min', miles: '18 mi' },
-                { from: 'Carnegie Hill / Yorkville → JFK', price: '$90', time: '40–55 min', miles: '18 mi' },
-                { from: 'Lenox Hill → JFK', price: '$90', time: '40–50 min', miles: '17 mi' },
-                { from: 'Upper East Side to JFK — SUV', price: '$110', time: '40–55 min', miles: '18 mi' },
+                { from: 'Upper East Side (60s–70s) → JFK', time: '40–50 min' },
+                { from: 'Upper East Side (80s–90s) → JFK', time: '40–55 min' },
+                { from: 'Carnegie Hill / Yorkville → JFK', time: '40–55 min' },
+                { from: 'Lenox Hill → JFK', time: '40–50 min' },
+                { from: 'Upper East Side → JFK (SUV)', time: '40–55 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Gratuity and tolls included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat and confirmed at booking. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Upper East Side to JFK
+              Why Eagle Eye for Upper East Side to JFK
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no morning surge on the Upper East Side.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Building Entrance Pickup', body: 'Your driver comes to your building entrance — doorman buildings, co-ops, and walk-ups all welcome.' },
+                { title: 'Driver Waits — No Pressure to Rush', body: 'Your driver is patient and professional. No anxiety about making it to the car in time.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, vehicle, and contact details the night before departure.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -158,7 +148,7 @@ export default function UpperEastSideToJFKBlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/jfk-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $85</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/jfk" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK Airport Service</div>
@@ -194,7 +184,7 @@ export default function UpperEastSideToJFKBlackCarPage() {
               <h2 className="font-serif text-2xl font-semibold text-brand-white mb-3">
                 Book Your Upper East Side to JFK Black Car
               </h2>
-              <p className="text-brand-silver mb-6">From $90 flat. Building entrance pickup. No surge pricing.</p>
+              <p className="text-brand-silver mb-6">Flat rate. Building entrance pickup. No surge pricing.</p>
               <Link href="/book" className="inline-block py-3 px-8 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors">
                 Reserve Now
               </Link>

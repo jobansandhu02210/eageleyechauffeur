@@ -128,17 +128,6 @@ export default function HomePage() {
             >
               Book Your Ride
             </Link>
-            <a
-              href={WHATSAPP_BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-semibold hover:bg-[#1ebe5d] transition-colors text-base"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              WhatsApp Us
-            </a>
           </div>
         </div>
       </section>
@@ -270,21 +259,21 @@ export default function HomePage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              { route: 'Manhattan → JFK Airport', href: '/services/routes/manhattan-to-jfk-black-car-service' },
               { route: 'JFK Airport → Manhattan', href: '/services/routes/jfk-to-manhattan-black-car-service' },
-              { route: 'Manhattan → LGA Airport', href: '/services/routes/manhattan-to-lga-black-car-service' },
+              { route: 'Manhattan → JFK Airport', href: '/services/routes/manhattan-to-jfk-black-car-service' },
               { route: 'LGA Airport → Manhattan', href: '/services/routes/lga-to-manhattan-black-car-service' },
-              { route: 'Manhattan → Newark Airport (EWR)', href: '/services/routes/manhattan-to-ewr-black-car-service' },
+              { route: 'Manhattan → LGA Airport', href: '/services/routes/manhattan-to-lga-black-car-service' },
               { route: 'Newark Airport → Manhattan', href: '/services/routes/ewr-to-manhattan-black-car-service' },
+              { route: 'Manhattan → Newark Airport', href: '/services/routes/manhattan-to-ewr-black-car-service' },
               { route: 'Brooklyn → JFK Airport', href: '/services/routes/brooklyn-to-jfk-black-car-service' },
-              { route: 'JFK Airport → Brooklyn', href: '/services/routes/jfk-to-brooklyn' },
-              { route: 'Midtown → JFK Airport', href: '/services/routes/midtown-to-jfk-black-car-service' },
-              { route: 'Upper East Side → JFK', href: '/services/routes/upper-east-side-to-jfk-black-car-service' },
-              { route: 'Manhattan → Brooklyn', href: '/services/routes/manhattan-to-brooklyn' },
-              { route: 'JFK → Manhattan (Meet & Greet)', href: '/services/routes/jfk-to-manhattan' },
+              { route: 'Queens → JFK Airport', href: '/services/routes/queens-to-jfk-black-car-service' },
+              { route: 'JFK Airport → Long Island', href: '/services/routes/jfk-to-long-island-car-service' },
+              { route: 'Manhattan → Hamptons', href: '/services/routes/manhattan-to-hamptons-car-service' },
+              { route: 'NYC → Westchester', href: '/services/routes/nyc-to-westchester-car-service' },
+              { route: 'Manhattan → Connecticut', href: '/services/routes/manhattan-to-connecticut-car-service' },
             ].map((r) => (
               <Link
-                key={r.href}
+                key={r.route}
                 href={r.href}
                 className="flex items-center justify-between bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors group"
               >
@@ -293,10 +282,46 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-          <p className="mt-6 text-sm text-brand-grey">
-            Don&rsquo;t see your route?{' '}
-            <Link href="/book" className="underline text-brand-black">Get an instant quote →</Link>
+          <div className="mt-6 flex flex-wrap gap-4 text-sm text-brand-grey">
+            <Link href="/services/routes" className="underline text-brand-black">View all 35+ routes →</Link>
+            <Link href="/book" className="underline text-brand-black">Get instant quote →</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICE AREAS ────────────────────────────────── */}
+      <section className="py-12 lg:py-16 bg-brand-white" aria-labelledby="areas-quick-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="areas-quick-heading" className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-2">
+            Black Car Service Across the NYC Area
+          </h2>
+          <p className="text-brand-grey text-sm mb-8 max-w-2xl">
+            We serve all five boroughs, Long Island, Westchester, New Jersey, and Connecticut — flat-rate pricing everywhere.
           </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-sm">
+            {[
+              { label: 'Manhattan', href: '/services/areas/manhattan' },
+              { label: 'Brooklyn', href: '/services/areas/brooklyn' },
+              { label: 'Queens', href: '/services/areas/queens' },
+              { label: 'Bronx', href: '/services/areas/bronx' },
+              { label: 'Staten Island', href: '/services/areas/staten-island' },
+              { label: 'Long Island', href: '/services/areas/long-island' },
+              { label: 'Westchester', href: '/services/areas/westchester' },
+              { label: 'New Jersey', href: '/services/areas/new-jersey' },
+              { label: 'Connecticut', href: '/services/areas/connecticut' },
+              { label: 'Hamptons', href: '/services/areas/hamptons' },
+              { label: 'Nassau County', href: '/services/areas/nassau-county' },
+              { label: 'All Areas →', href: '/services/areas' },
+            ].map((a) => (
+              <Link
+                key={a.href}
+                href={a.href}
+                className="bg-brand-offwhite border border-brand-light px-4 py-3 text-brand-black hover:border-brand-dark hover:bg-brand-white transition-colors text-center font-medium"
+              >
+                {a.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -314,7 +339,7 @@ export default function HomePage() {
               {
                 icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>,
                 title: 'TLC Licensed & Fully Insured',
-                desc: 'Every vehicle and driver is TLC-licensed and fully insured. We operate under NYC black car regulations — not as a rideshare app.',
+                desc: 'Every vehicle and driver is TLC-licensed and fully insured. We operate as a professional black car service under NYC regulations.',
               },
               {
                 icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
@@ -334,7 +359,7 @@ export default function HomePage() {
               {
                 icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 13l4 4L19 7" /></svg>,
                 title: 'No Surge Pricing — Ever',
-                desc: 'Your price is locked at booking. Rain, rush hour, major events, holidays — the rate you see is the rate you pay. Uber cannot say that.',
+                desc: 'Your price is locked at booking. Rain, rush hour, major events, holidays — the rate you see is the rate you pay. Always.',
               },
               {
                 icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>,

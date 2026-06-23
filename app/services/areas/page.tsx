@@ -2,78 +2,298 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: {
-    absolute:
-      'NYC Chauffeur Service Areas | Manhattan, Brooklyn, Queens & More',
+    absolute: 'NYC Black Car Service Areas | Manhattan, Brooklyn, Queens, LI, NJ & More | Eagle Eye',
   },
   description:
-    'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Luxury transportation wherever you need it. Check our service areas!',
+    'Eagle Eye Chauffeur serves all NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island), Long Island, Westchester, New Jersey, Connecticut, and the Hamptons. Flat-rate black car service 24/7.',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/services/areas` },
   openGraph: {
     url: `${getSiteUrl()}/services/areas`,
-    title:
-      'NYC Chauffeur Service Areas | Manhattan, Brooklyn, Queens & More',
+    title: 'NYC Black Car Service Areas | Manhattan, Brooklyn, Queens & More | Eagle Eye',
     description:
-      'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Luxury transportation wherever you need it. Check our service areas!',
+      'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Premium black car service, flat rates, 24/7 availability.',
   },
 };
 
-const areas = [
-  { href: '/services/areas/manhattan', title: 'Manhattan Chauffeur Service', blurb: 'Midtown, Downtown, UES/UWS, and more.' },
-  { href: '/services/areas/brooklyn', title: 'Brooklyn Chauffeur Service', blurb: 'Williamsburg, DUMBO, Park Slope, and beyond.' },
-  { href: '/services/areas/queens', title: 'Queens Chauffeur Service', blurb: 'LIC, Astoria, Flushing, and more.' },
-  { href: '/services/areas/bronx', title: 'Bronx Chauffeur Service', blurb: 'Riverdale, Fordham, Pelham Bay, and beyond.' },
-  { href: '/services/areas/staten-island', title: 'Staten Island Chauffeur Service', blurb: 'St. George, Great Kills, Tottenville, and more.' },
-  { href: '/services/areas/jfk-airport', title: 'JFK Airport Car Service', blurb: 'Meet-and-greet, flight tracking, 24/7.' },
-  { href: '/services/areas/lga-airport', title: 'LGA Airport Car Service', blurb: 'Reliable LaGuardia pickups and drop-offs.' },
-  { href: '/services/areas/ewr-airport', title: 'EWR Airport Car Service', blurb: 'Cross-river transfers to NYC and NJ.' },
+const boroughs = [
+  { href: '/services/areas/manhattan', title: 'Manhattan', blurb: 'Midtown, Downtown, Upper East Side, Upper West Side, Financial District, SoHo, Tribeca, Harlem & more.' },
+  { href: '/services/areas/brooklyn', title: 'Brooklyn', blurb: 'Williamsburg, DUMBO, Park Slope, Brooklyn Heights, Flatbush, Carroll Gardens & beyond.' },
+  { href: '/services/areas/queens', title: 'Queens', blurb: 'Long Island City, Astoria, Flushing, Jackson Heights, Forest Hills, Jamaica & more.' },
+  { href: '/services/areas/bronx', title: 'The Bronx', blurb: 'Riverdale, Fordham, Pelham Bay, Mott Haven, Soundview & beyond.' },
+  { href: '/services/areas/staten-island', title: 'Staten Island', blurb: 'St. George, Great Kills, Tottenville, Stapleton, Snug Harbor & more.' },
+];
+
+const manhattanNeighborhoods = [
+  { href: '/services/areas/midtown-manhattan', title: 'Midtown Manhattan', blurb: 'Corporate hub, Times Square, Rockefeller Center, Grand Central, Penn Station & Hudson Yards.' },
+  { href: '/services/areas/financial-district', title: 'Financial District', blurb: 'Wall Street, NYSE, One World Trade, Fulton Center, South Street Seaport & Battery Park.' },
+  { href: '/services/areas/upper-east-side', title: 'Upper East Side', blurb: 'Museum Mile, Park Avenue, Fifth Avenue, Lenox Hill, Yorkville & Carnegie Hill.' },
+  { href: '/services/areas/upper-west-side', title: 'Upper West Side', blurb: 'Lincoln Center, Central Park West, Columbia University, Amsterdam Ave & Riverside Park.' },
+  { href: '/services/areas/tribeca', title: 'Tribeca', blurb: 'Premium residential, Hudson Square, SoHo border, Battery Park access & private events.' },
+  { href: '/services/areas/soho', title: 'SoHo', blurb: 'Luxury shopping, boutique hotels, NoLIta, Little Italy, Hudson Square & Lower East Side.' },
+  { href: '/services/areas/chelsea', title: 'Chelsea', blurb: 'High Line, Chelsea Market, Hudson Yards, Meatpacking District & West Side galleries.' },
+  { href: '/services/areas/hells-kitchen', title: "Hell's Kitchen", blurb: 'Theater District, Broadway, Javits Center, Columbus Circle, Penn Station & Times Square.' },
+  { href: '/services/areas/greenwich-village', title: 'Greenwich Village', blurb: 'West Village, NYU, Washington Square Park, SoHo border & Meatpacking District.' },
+  { href: '/services/areas/flatiron', title: 'Flatiron District', blurb: 'Madison Square Park, NoMad, Union Square, tech offices, MSG & Gramercy.' },
+  { href: '/services/areas/battery-park-city', title: 'Battery Park City', blurb: 'Brookfield Place, World Trade Center, Hudson River, Liberty Street & Tribeca.' },
+  { href: '/services/areas/lower-manhattan', title: 'Lower Manhattan', blurb: 'Financial District, Battery Park, City Hall, Chinatown, Brooklyn Bridge & Seaport.' },
+  { href: '/services/areas/gramercy-park', title: 'Gramercy Park', blurb: 'Murray Hill, Kips Bay, Irving Place, Stuyvesant Town & Union Square.' },
+  { href: '/services/areas/harlem', title: 'Harlem', blurb: 'Central Harlem, East Harlem, West Harlem, Apollo Theater, 125th Street & Hamilton Heights.' },
+];
+
+const surrounding = [
+  { href: '/services/areas/long-island', title: 'Long Island', blurb: 'Nassau County, Suffolk County, Garden City, Great Neck, Huntington & all LI communities.' },
+  { href: '/services/areas/westchester', title: 'Westchester County', blurb: 'White Plains, Yonkers, Scarsdale, Tarrytown, New Rochelle, Rye, Bronxville & more.' },
+  { href: '/services/areas/new-jersey', title: 'New Jersey', blurb: 'Hoboken, Jersey City, Newark, Princeton, Morristown, Summit, Short Hills & beyond.' },
+  { href: '/services/areas/connecticut', title: 'Connecticut', blurb: 'Greenwich, Stamford, Westport, Fairfield, New Haven, Hartford & surrounding CT.' },
+  { href: '/services/areas/hamptons', title: 'The Hamptons', blurb: 'East Hampton, Southampton, Bridgehampton, Sag Harbor, Montauk, Quogue & all Hamptons.' },
+  { href: '/services/areas/nassau-county', title: 'Nassau County', blurb: 'Garden City, Great Neck, Hempstead, Mineola, Rockville Centre, Manhasset & more.' },
+  { href: '/services/areas/suffolk-county', title: 'Suffolk County', blurb: 'Huntington, Babylon, Brentwood, Bay Shore, Smithtown, Patchogue & beyond.' },
+  { href: '/services/areas/upstate-ny', title: 'Upstate New York', blurb: 'Hudson Valley, Catskills, Albany, Poughkeepsie, Newburgh & upstate destinations.' },
+];
+
+const westchesterCities = [
+  { href: '/services/areas/white-plains', title: 'White Plains', blurb: 'Westchester County seat, major corporate hub, close to HPN airport.' },
+  { href: '/services/areas/yonkers', title: 'Yonkers', blurb: 'Largest Westchester city, south Westchester, close to NYC & LGA.' },
+  { href: '/services/areas/scarsdale', title: 'Scarsdale', blurb: 'Affluent suburb, finance executives, HPN nearby, Metro-North alternative.' },
+  { href: '/services/areas/new-rochelle', title: 'New Rochelle', blurb: 'Sound Shore waterfront, LGA via Whitestone, Iona University area.' },
+];
+
+const newJerseyCities = [
+  { href: '/services/areas/hoboken', title: 'Hoboken', blurb: 'Waterfront community, Manhattan access, EWR 20–35 min.' },
+  { href: '/services/areas/jersey-city', title: 'Jersey City', blurb: 'Newport/Exchange Place finance district, EWR nearby, Liberty State Park.' },
+  { href: '/services/areas/newark-nj', title: 'Newark', blurb: 'Gateway to EWR, Broad Street corporate corridor, Prudential Center events.' },
+  { href: '/services/areas/princeton-nj', title: 'Princeton', blurb: 'Princeton University, Route 1 pharma/biotech corridor, EWR primary airport.' },
+  { href: '/services/areas/morristown-nj', title: 'Morristown', blurb: 'Morris County Fortune 500 HQs, Florham Park & Madison coverage.' },
+  { href: '/services/areas/short-hills-nj', title: 'Short Hills', blurb: 'Millburn/Essex County, affluent suburb, EWR 20–30 min away.' },
+  { href: '/services/areas/summit-nj', title: 'Summit', blurb: 'Union County, executive commuters, NJ Transit alternative, EWR 25 min.' },
+];
+
+const connecticutCities = [
+  { href: '/services/areas/greenwich-ct', title: 'Greenwich, CT', blurb: 'Hedge funds, private equity, all 4 NYC airports, Back Country estates.' },
+  { href: '/services/areas/stamford-ct', title: 'Stamford, CT', blurb: 'Major corporate hub (UBS, Charter), Merritt 7 corridor, JFK & LGA transfers.' },
+  { href: '/services/areas/norwalk-ct', title: 'Norwalk, CT', blurb: 'SoNo waterfront, Merritt 7 corporate park, Westport-adjacent, I-95 corridor.' },
+];
+
+const airports = [
+  { href: '/services/areas/jfk-airport', title: 'JFK Airport Car Service', blurb: 'All terminals. Meet-and-greet, flight tracking, flat rates to all NYC neighborhoods.' },
+  { href: '/services/areas/lga-airport', title: 'LaGuardia (LGA) Car Service', blurb: 'Terminals B, C & D. Fastest airport to Manhattan — no surge on morning flights.' },
+  { href: '/services/areas/ewr-airport', title: 'Newark (EWR) Car Service', blurb: 'All tolls included. Flat rate from Manhattan, NJ, and Brooklyn to EWR.' },
+  { href: '/services/areas/hpn-airport', title: 'Westchester (HPN) Car Service', blurb: 'Commercial and private terminal. Westchester County Airport service.' },
 ];
 
 export default function AreasIndexPage() {
   return (
-    <div className="bg-brand-offwhite">
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-            NYC Car Service Areas
-          </h1>
-          <p className="text-lg text-brand-grey max-w-3xl">
-            Eagle Eye Chauffeur provides premium black car service across New York City and the surrounding region.
-            Browse local pages for borough coverage and dedicated airport transfer details.
-          </p>
-        </div>
-      </section>
+    <>
+      <BreadcrumbJsonLd items={[
+        { name: 'Home', url: getSiteUrl() },
+        { name: 'Services', url: `${getSiteUrl()}/services` },
+        { name: 'Service Areas', url: `${getSiteUrl()}/services/areas` },
+      ]} />
 
-      <section className="pb-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {areas.map((a) => (
-              <Link
-                key={a.href}
-                href={a.href}
-                className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors"
-              >
-                <h2 className="font-serif text-xl font-semibold text-brand-black mb-2">{a.title}</h2>
-                <p className="text-sm text-brand-grey">{a.blurb}</p>
-                <span className="mt-4 inline-block text-sm font-medium text-brand-black">View page →</span>
+      <div className="bg-brand-offwhite">
+
+        {/* Hero */}
+        <section className="py-16 lg:py-24 bg-brand-black text-brand-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-white mb-4">
+              NYC Black Car Service Areas
+            </h1>
+            <p className="text-lg text-brand-silver max-w-2xl leading-relaxed">
+              Eagle Eye Chauffeur provides flat-rate black car service across New York City and the entire surrounding region — all five boroughs, Long Island, Westchester, New Jersey, Connecticut, and the Hamptons. Professional, licensed, 24/7.
+            </p>
+          </div>
+        </section>
+
+        {/* NYC Boroughs */}
+        <section className="py-16 lg:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              New York City Boroughs
+            </h2>
+            <p className="text-brand-grey text-sm mb-8">All five boroughs served with flat-rate black car service, 24/7 availability.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {boroughs.map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
+                >
+                  <h2 className="font-serif text-xl font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-4 inline-block text-sm font-medium text-brand-black">View service page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Manhattan Neighborhoods */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Manhattan Neighborhoods
+            </h2>
+            <p className="text-brand-grey text-sm mb-8">Dedicated service pages for every major Manhattan neighborhood — corporate, residential, and event travel.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {manhattanNeighborhoods.map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group"
+                >
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
+                  <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-xs font-medium text-brand-black">View page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Airport Services */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              NYC Airport Black Car Service
+            </h2>
+            <p className="text-brand-grey text-sm mb-8">Dedicated pages for JFK, LaGuardia, Newark, and Westchester airports — meet-and-greet, flight tracking, flat rates.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {airports.map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
+                >
+                  <h2 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-brand-black">Learn more →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Surrounding Region */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              NYC &amp; Surrounding Region
+            </h2>
+            <p className="text-brand-grey text-sm mb-8">Long Island, Westchester, New Jersey, Connecticut, the Hamptons, and upstate New York. Same professional service, same flat rates.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {surrounding.map((a) => (
+                <Link
+                  key={a.href}
+                  href={a.href}
+                  className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
+                >
+                  <h2 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-brand-black">Learn more →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Westchester Cities */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Westchester Cities</h2>
+            <p className="text-brand-grey text-sm mb-8">Dedicated pages for key Westchester communities — close to HPN airport, Metro-North corridor, and Manhattan.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {westchesterCities.map((a) => (
+                <Link key={a.href} href={a.href} className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group">
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
+                  <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-xs font-medium text-brand-black">View page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* New Jersey Cities */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">New Jersey Cities</h2>
+            <p className="text-brand-grey text-sm mb-8">Flat-rate black car service from Hoboken to Princeton — airport transfers, corporate travel, and door-to-door rides.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {newJerseyCities.map((a) => (
+                <Link key={a.href} href={a.href} className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group">
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
+                  <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-xs font-medium text-brand-black">View page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Connecticut Cities */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Connecticut Cities</h2>
+            <p className="text-brand-grey text-sm mb-8">Fairfield County communities with direct service to all NYC airports and Manhattan — flat rates, no surprise charges.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {connecticutCities.map((a) => (
+                <Link key={a.href} href={a.href} className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group">
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
+                  <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-xs font-medium text-brand-black">View page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust section */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-brand-white border border-brand-light p-8">
+              <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+                Why Eagle Eye Chauffeur in Every Area
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { title: 'Flat Rates, No Surge', desc: 'Your quoted price is locked at booking. Traffic, weather, and demand never change it — no matter the area.' },
+                  { title: 'TLC Licensed & Insured', desc: 'Every vehicle and driver is licensed and fully insured. We operate as a professional black car service under NYC regulations.' },
+                  { title: 'Driver Confirmed in Advance', desc: 'You receive your driver\'s name, photo, and vehicle details the evening before your trip — not minutes before pickup.' },
+                  { title: '24/7 Availability', desc: 'Early morning JFK flights, late-night returns from the Hamptons — we operate around the clock, every day of the year.' },
+                  { title: 'Door-to-Door Service', desc: 'Your chauffeur comes to your building entrance — hotel lobbies, co-ops, doorman buildings, and private residences.' },
+                  { title: '24/7 Support', desc: 'Call or WhatsApp any time before, during, or after your ride. A real person answers.' },
+                ].map((item) => (
+                  <div key={item.title}>
+                    <h3 className="font-semibold text-brand-black mb-1 text-sm">{item.title}</h3>
+                    <p className="text-brand-grey text-sm">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section className="pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-brand-black p-8 text-center">
+              <h2 className="font-serif text-2xl font-semibold text-brand-white mb-3">
+                Book Your Black Car — Any Area
+              </h2>
+              <p className="text-brand-silver mb-6">Flat rate. Professional chauffeur. No surge pricing — ever.</p>
+              <Link href="/book" className="inline-block py-3 px-8 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors">
+                Get an Instant Quote
               </Link>
-            ))}
+            </div>
           </div>
+        </section>
 
-          <div className="mt-10">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center px-8 py-4 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors"
-            >
-              Request a Ride
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+      </div>
+    </>
   );
 }
-

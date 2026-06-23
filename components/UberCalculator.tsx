@@ -12,13 +12,15 @@ interface RouteData {
   uberSurge: number;
 }
 
+// Prices reflect Eagle Eye's pricing model: $120 base + $5/mi (Business Class Sedan).
+// Route distances: JFK~17.4mi, LGA~8.95mi, EWR~16.7mi, JFK→BK~13mi, JFK→WS~18.5mi, Mid→BK~9mi.
 const ROUTES: Record<RouteKey, RouteData> = {
-  'jfk-midtown':      { label: 'JFK → Midtown Manhattan',      eagleEyeBase: 95,  uberTypical: 65,  uberSurge: 155 },
-  'lga-midtown':      { label: 'LaGuardia → Midtown Manhattan', eagleEyeBase: 65,  uberTypical: 40,  uberSurge: 110 },
-  'ewr-midtown':      { label: 'Newark → Midtown Manhattan',    eagleEyeBase: 85,  uberTypical: 55,  uberSurge: 140 },
-  'jfk-brooklyn':     { label: 'JFK → Brooklyn',               eagleEyeBase: 85,  uberTypical: 55,  uberSurge: 130 },
-  'jfk-wallst':       { label: 'JFK → Wall Street / FiDi',      eagleEyeBase: 95,  uberTypical: 70,  uberSurge: 160 },
-  'midtown-brooklyn':  { label: 'Midtown → Brooklyn',           eagleEyeBase: 60,  uberTypical: 35,  uberSurge: 95 },
+  'jfk-midtown':      { label: 'JFK → Midtown Manhattan',      eagleEyeBase: 207, uberTypical: 75,  uberSurge: 190 },
+  'lga-midtown':      { label: 'LaGuardia → Midtown Manhattan', eagleEyeBase: 165, uberTypical: 45,  uberSurge: 130 },
+  'ewr-midtown':      { label: 'Newark → Midtown Manhattan',    eagleEyeBase: 204, uberTypical: 65,  uberSurge: 170 },
+  'jfk-brooklyn':     { label: 'JFK → Brooklyn',               eagleEyeBase: 185, uberTypical: 60,  uberSurge: 150 },
+  'jfk-wallst':       { label: 'JFK → Wall Street / FiDi',      eagleEyeBase: 213, uberTypical: 80,  uberSurge: 200 },
+  'midtown-brooklyn':  { label: 'Midtown → Brooklyn',           eagleEyeBase: 165, uberTypical: 40,  uberSurge: 110 },
 };
 
 export default function UberCalculator() {

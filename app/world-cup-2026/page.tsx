@@ -100,7 +100,7 @@ export default function WorldCupPage() {
                 FIFA World Cup 2026 — June 11 to July 19
               </div>
               <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-white leading-tight">
-                World Cup 2026 in NYC
+                World Cup 2026 NYC — MetLife Stadium Chauffeur Service
               </h1>
               <p className="mt-4 text-lg text-brand-silver max-w-2xl">
                 Premium chauffeur service for every match at MetLife Stadium. Luxury sedans, SUVs, flight tracking, and fixed pricing — so you can focus on the beautiful game.
@@ -296,7 +296,7 @@ export default function WorldCupPage() {
               </div>
               <div>
                 <h3 className="font-medium text-brand-black mb-1">Fixed Pricing, No Surge</h3>
-                <p className="text-sm text-brand-grey">While Uber surges 3-4x on match days, our prices stay the same. Book with confidence.</p>
+                <p className="text-sm text-brand-grey">Flat rates guaranteed on every match day — no surprise charges, ever. Book with confidence.</p>
               </div>
             </div>
             <div className="flex gap-4">

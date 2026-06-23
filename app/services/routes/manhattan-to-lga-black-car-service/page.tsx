@@ -4,16 +4,16 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Manhattan to LGA Black Car Service | Eagle Eye Chauffeur',
+  title: 'Manhattan to LaGuardia Car Service | LGA Airport Transfers | Eagle Eye Chauffeur',
   description:
-    'Manhattan to LaGuardia black car service — flat rates from $75, door-to-door pickup. NYC closest major airport, fast professional transfers. Book Eagle Eye Chauffeur 24/7.',
+    'Manhattan to LaGuardia (LGA) car service — flat rates, door-to-door pickup from any Manhattan address. NYC\'s closest major airport. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-lga-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from Manhattan to LGA?',
-    a: 'Black car service from Manhattan to LaGuardia starts at $75 from Midtown. LGA is NYC\'s closest major airport — the ride is typically 20-30 minutes in normal traffic.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your Manhattan address and LGA as the destination.',
   },
   {
     q: 'How early should I leave Manhattan for a LGA flight?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Will my chauffeur come to my hotel or apartment in Manhattan?',
-    a: 'Yes. Your driver picks you up directly at your Manhattan address — no rideshare corner, no curbside zone. Just step outside when your driver arrives.',
+    a: 'Yes. Your driver picks you up directly at your Manhattan address. Just step outside when your driver arrives and you are on your way.',
   },
   {
     q: 'Do you cover early morning departures from LGA?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate from $75 — locked at booking', uber: 'Surge pricing — doubles during rush hour' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Pickup', blackCar: 'Door-to-door — chauffeur comes to your address', uber: 'Pin-drop, may not reach your exact door' },
-  { feature: 'Reliability', blackCar: 'Driver confirmed the evening before departure', uber: 'Driver assigned close to pickup time' },
-  { feature: 'Early Mornings', blackCar: 'Pre-dawn availability guaranteed', uber: 'Surge pricing spikes on early departures' },
-];
 
 export default function ManhattanToLGABlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function ManhattanToLGABlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Manhattan to LGA Black Car Service"
-        description="Premium black car service from Manhattan to LaGuardia Airport. Flat rates from $75, door-to-door pickup, 24/7 availability."
+        description="Premium black car service from Manhattan to LaGuardia Airport. Flat rates, door-to-door pickup, 24/7 availability."
         areaServed="Manhattan, New York City, NY"
         url={`${getSiteUrl()}/services/routes/manhattan-to-lga-black-car-service`}
       />
@@ -63,7 +55,7 @@ export default function ManhattanToLGABlackCarPage() {
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-              Manhattan to LGA Black Car Service
+              Manhattan to LaGuardia Car Service
             </h1>
             <p className="text-lg text-brand-grey mb-6">
               LaGuardia is the closest major airport to Manhattan — and with Eagle Eye Chauffeur,
@@ -84,53 +76,51 @@ export default function ManhattanToLGABlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Manhattan to LGA Black Car Pricing
+              Popular Routes from Manhattan to LGA
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'Midtown Manhattan → LGA', price: '$75', time: '20–30 min', miles: '9 mi' },
-                { from: 'Financial District / Wall Street → LGA', price: '$80', time: '25–40 min', miles: '12 mi' },
-                { from: 'Times Square / Theater District → LGA', price: '$75', time: '20–30 min', miles: '9 mi' },
-                { from: 'Upper East Side → LGA', price: '$75', time: '20–30 min', miles: '8 mi' },
-                { from: 'Upper West Side → LGA', price: '$80', time: '25–35 min', miles: '10 mi' },
-                { from: 'Chelsea / Meatpacking District → LGA', price: '$80', time: '25–35 min', miles: '10 mi' },
-                { from: 'SoHo / Tribeca → LGA', price: '$80', time: '25–40 min', miles: '11 mi' },
-                { from: 'Harlem → LGA', price: '$75', time: '20–30 min', miles: '8 mi' },
+                { from: 'Midtown Manhattan → LGA', time: '20–30 min' },
+                { from: 'Financial District / Wall Street → LGA', time: '25–40 min' },
+                { from: 'Times Square / Theater District → LGA', time: '20–30 min' },
+                { from: 'Upper East Side → LGA', time: '20–30 min' },
+                { from: 'Upper West Side → LGA', time: '25–35 min' },
+                { from: 'Chelsea / Meatpacking District → LGA', time: '25–35 min' },
+                { from: 'SoHo / Tribeca → LGA', time: '25–40 min' },
+                { from: 'Harlem → LGA', time: '20–30 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Gratuity and tolls included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat and confirmed at booking. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Manhattan to LGA
+              Why Eagle Eye for Manhattan to LGA
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no surprises during rush hour.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Door-to-Door Pickup', body: 'Your driver comes directly to your Manhattan address — no walking to a corner or curbside zone.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, number, and vehicle details the night before departure.' },
+                { title: 'Pre-Dawn Availability Guaranteed', body: 'Early morning LGA departures are fully covered. Your flat rate never changes regardless of the hour.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -161,7 +151,7 @@ export default function ManhattanToLGABlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/lga-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">LGA to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $75</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/lga" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">LGA Airport Service</div>

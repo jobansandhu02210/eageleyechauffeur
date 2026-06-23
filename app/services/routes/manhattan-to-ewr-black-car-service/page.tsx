@@ -4,16 +4,16 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Manhattan to Newark Airport Black Car Service | Eagle Eye Chauffeur',
+  title: 'Manhattan to Newark Airport Car Service | EWR Transfers, Tolls Included | Eagle Eye',
   description:
-    'Manhattan to EWR black car service — flat rates from $95, all tolls included, door-to-door pickup. Professional chauffeurs, no hidden fees. Book Eagle Eye Chauffeur 24/7.',
+    'Manhattan to Newark Airport (EWR) car service — flat rates, all tolls included, door-to-door pickup from any address. Professional chauffeur. No hidden fees. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-ewr-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from Manhattan to Newark Airport?',
-    a: 'Black car service from Manhattan to EWR starts at $95. This flat rate includes all tolls — Lincoln Tunnel or Holland Tunnel. No fees added at the end of your ride.',
+    a: 'All rates are flat and confirmed at booking — all tolls included, no hidden fees. Get an instant quote on our booking page by entering your Manhattan address and EWR as the destination.',
   },
   {
     q: 'How far in advance should I leave Manhattan for a EWR flight?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate from $95 — all tolls included', uber: 'Base fare + surge + tolls added on top' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Pickup', blackCar: 'Door-to-door — chauffeur at your address', uber: 'Pin-drop, may not reach your exact building' },
-  { feature: 'Reliability', blackCar: 'Driver confirmed the evening before departure', uber: 'Driver assigned close to pickup time' },
-  { feature: 'Hidden Fees', blackCar: 'None — tolls and tips all included', uber: 'Tolls charged separately on top of fare' },
-];
 
 export default function ManhattanToEWRBlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function ManhattanToEWRBlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Manhattan to Newark Airport Black Car Service"
-        description="Premium black car service from Manhattan to Newark Liberty Airport (EWR). Flat rates from $95, all tolls included, door-to-door pickup, 24/7 availability."
+        description="Premium black car service from Manhattan to Newark Liberty Airport (EWR). Flat rates, all tolls included, door-to-door pickup, 24/7 availability."
         areaServed="Manhattan, New York City, NY"
         url={`${getSiteUrl()}/services/routes/manhattan-to-ewr-black-car-service`}
       />
@@ -63,7 +55,7 @@ export default function ManhattanToEWRBlackCarPage() {
         <section className="py-16 lg:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-4">
-              Manhattan to Newark Airport Black Car Service
+              Manhattan to Newark Airport Car Service
             </h1>
             <p className="text-lg text-brand-grey mb-6">
               Getting from Manhattan to EWR without the stress of surge pricing or hidden tunnel fees.
@@ -84,53 +76,51 @@ export default function ManhattanToEWRBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Manhattan to EWR Black Car Pricing
+              Popular Routes from Manhattan to EWR
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'Midtown Manhattan → EWR', price: '$95', time: '30–45 min', miles: '16 mi' },
-                { from: 'Financial District / Wall Street → EWR', price: '$95', time: '30–45 min', miles: '15 mi' },
-                { from: 'Times Square / Theater District → EWR', price: '$95', time: '30–45 min', miles: '16 mi' },
-                { from: 'Chelsea / Meatpacking District → EWR', price: '$95', time: '30–45 min', miles: '16 mi' },
-                { from: 'Upper East Side → EWR', price: '$100', time: '40–55 min', miles: '19 mi' },
-                { from: 'Upper West Side → EWR', price: '$100', time: '40–55 min', miles: '19 mi' },
-                { from: 'SoHo / Tribeca → EWR', price: '$95', time: '30–45 min', miles: '15 mi' },
-                { from: 'Harlem → EWR', price: '$105', time: '45–60 min', miles: '21 mi' },
+                { from: 'Midtown Manhattan → EWR', time: '30–45 min' },
+                { from: 'Financial District / Wall Street → EWR', time: '30–45 min' },
+                { from: 'Times Square / Theater District → EWR', time: '30–45 min' },
+                { from: 'Chelsea / Meatpacking District → EWR', time: '30–45 min' },
+                { from: 'Upper East Side → EWR', time: '40–55 min' },
+                { from: 'Upper West Side → EWR', time: '40–55 min' },
+                { from: 'SoHo / Tribeca → EWR', time: '30–45 min' },
+                { from: 'Harlem → EWR', time: '45–60 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Tolls and gratuity included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat. Tolls included. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Manhattan to Newark Airport
+              Why Eagle Eye for Manhattan to Newark Airport
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — All Tolls Included', body: 'Your price includes all tunnel and toll costs. What you see at booking is what you pay — nothing added at the end.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Door-to-Door Pickup', body: 'Your driver comes to your exact Manhattan address — building entrance, hotel, or office door.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, number, and vehicle details the night before departure.' },
+                { title: 'No Hidden Fees', body: 'All tolls and tips are included in your flat rate. No surprise charges when you reach the terminal.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -161,7 +151,7 @@ export default function ManhattanToEWRBlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/ewr-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">EWR to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $95</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/ewr" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">EWR Airport Service</div>

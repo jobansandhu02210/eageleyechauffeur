@@ -1,6 +1,9 @@
 /**
- * Server-only pricing: per-mile rates are NOT exposed to the client bundle.
+ * Server-only pricing: rates are NOT exposed to the client bundle.
  * Customer UI receives only totals and generic line labels via /api/booking/estimate.
+ *
+ * Pricing model: Flat base fare + per-mile charge based on Google Maps driving distance.
+ *   Total = BASE_FARE_USD + (driving_miles × vehicle_per_mile_rate)
  */
 import { resolveDrivingMilesForPricing } from '@/lib/google-driving-distance';
 import { getPlacesServerApiKey } from '@/lib/places-env';
@@ -8,17 +11,43 @@ import { prisma } from '@/lib/prisma';
 import { isKnownDriverPromoCode } from '@/lib/referral-driver-list';
 import { normalizePromoCode } from '@/lib/referral-utils';
 
+/**
+ * Pricing — read from Vercel env vars so rates can be updated without a code deploy.
+ * Set these in Vercel → Settings → Environment Variables.
+ * Defaults below are the production baseline — change env vars to override.
+ *
+ *   PRICING_BASE_FARE          — flat base fare for every trip (default: 120)
+ *   PRICING_SEDAN              — per-mile rate, Business Sedan (default: 5)
+ *   PRICING_SUV                — per-mile rate, Business SUV (default: 6.5)
+ *   PRICING_FIRST_SUV          — per-mile rate, First Class SUV (default: 8)
+ *   PRICING_FIRST_SEDAN        — per-mile rate, First Class Sedan (default: 16)
+ *   PRICING_EXTRA_PASSENGER    — charge per extra passenger above included (default: 15)
+ *   PRICING_INCLUDED_PASSENGERS — passengers included in base fare (default: 4)
+ *   PRICING_EXTRA_LUGGAGE      — charge per extra bag above included (default: 8)
+ *   PRICING_INCLUDED_LUGGAGE   — bags included in base fare (default: 3)
+ */
+function envNum(key: string, fallback: number): number {
+  const raw = process.env[key];
+  if (!raw) return fallback;
+  const n = parseFloat(raw);
+  return Number.isFinite(n) && n >= 0 ? n : fallback;
+}
+
+/** Base fare applied to every trip (point-to-point and airport transfers). */
+const BASE_FARE_USD = envNum('PRICING_BASE_FARE', 120);
+
+/** Per-mile rate charged on top of the base fare, by vehicle type. */
 const VEHICLE_PER_MILE_USD: Record<string, number> = {
-  'business-sedan': 7.5,
-  'business-suv': 9.5,
-  'first-suv': 11.5,
-  'first-sedan': 15,
+  'business-sedan': envNum('PRICING_SEDAN', 5),
+  'business-suv':   envNum('PRICING_SUV', 6.5),
+  'first-suv':      envNum('PRICING_FIRST_SUV', 8),
+  'first-sedan':    envNum('PRICING_FIRST_SEDAN', 16),
 };
 
-const EXTRA_PASSENGER = 15;
-const INCLUDED_PASSENGERS = 4;
-const EXTRA_LUGGAGE = 8;
-const INCLUDED_LUGGAGE = 3;
+const EXTRA_PASSENGER    = envNum('PRICING_EXTRA_PASSENGER', 15);
+const INCLUDED_PASSENGERS = envNum('PRICING_INCLUDED_PASSENGERS', 4);
+const EXTRA_LUGGAGE      = envNum('PRICING_EXTRA_LUGGAGE', 8);
+const INCLUDED_LUGGAGE   = envNum('PRICING_INCLUDED_LUGGAGE', 3);
 
 const AIRPORT_DEST: Record<string, string> = {
   'JFK - John F. Kennedy': 'John F. Kennedy International Airport, Jamaica, NY, USA',
@@ -121,14 +150,23 @@ export async function computeBookingEstimate(input: {
     distanceSource = resolved.source;
   }
 
-  const tripCharge = roundUsd2(Math.max(0, miles * rate));
-  const tripLineLabel =
-    input.service === 'hourly'
-      ? 'Trip estimate'
-      : distanceSource === 'straight_line_approx'
-        ? `Trip estimate (~${Math.round(miles)} mi, route approximate)`
-        : `Trip estimate (${Math.round(miles)} mi)`;
-  const lines: { label: string; amount: number }[] = [{ label: tripLineLabel, amount: tripCharge }];
+  const lines: { label: string; amount: number }[] = [];
+
+  if (input.service === 'hourly') {
+    // Hourly: show a single combined estimate (base + mileage model, no breakdown)
+    const hourlyCharge = roundUsd2(BASE_FARE_USD + miles * rate);
+    lines.push({ label: 'Trip estimate', amount: hourlyCharge });
+  } else {
+    // Point-to-point & airport: show base fare + distance charge separately
+    const distanceMiles = Math.max(0, miles);
+    const distanceCharge = roundUsd2(distanceMiles * rate);
+    const distLabel =
+      distanceSource === 'straight_line_approx'
+        ? `Distance charge (~${Math.round(distanceMiles)} mi, route approximate)`
+        : `Distance charge (${Math.round(distanceMiles)} mi)`;
+    lines.push({ label: 'Base fare', amount: BASE_FARE_USD });
+    lines.push({ label: distLabel, amount: distanceCharge });
+  }
 
   if (input.passengers > INCLUDED_PASSENGERS) {
     const n = input.passengers - INCLUDED_PASSENGERS;

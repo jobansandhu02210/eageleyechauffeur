@@ -6,14 +6,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Midtown Manhattan to JFK Black Car Service | Eagle Eye Chauffeur',
   description:
-    'Midtown to JFK black car service — $85 flat rate, door-to-door pickup from hotels, offices, apartments. No surge pricing. Professional chauffeurs. Book Eagle Eye Chauffeur 24/7.',
+    'Midtown to JFK black car service — door-to-door pickup from hotels, offices, apartments. No surge pricing. Professional chauffeurs. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/midtown-to-jfk-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from Midtown to JFK?',
-    a: 'Black car service from Midtown Manhattan to JFK is $85 flat. This covers all Midtown neighborhoods — Times Square, Grand Central, Penn Station, Hudson Yards, Rockefeller Center. No surge pricing, ever.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Get an instant quote on our booking page by entering your Midtown address and JFK as the destination.',
   },
   {
     q: 'How long does the drive from Midtown to JFK take?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Do you pick up from Midtown hotels?',
-    a: 'Yes. We pick up directly at hotel entrances, apartment buildings, and offices throughout Midtown. Your driver pulls up to your exact address — no rideshare zones.',
+    a: 'Yes. We pick up directly at hotel entrances, apartment buildings, and offices throughout Midtown. Your driver pulls up to your exact address.',
   },
   {
     q: 'Can I book a black car for a corporate departure from Midtown?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: '$85 flat — locked at booking', uber: 'Surge pricing — unpredictable, especially peak hours' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Pickup', blackCar: 'Hotel entrance or building door', uber: 'Rideshare zone — may require walking with luggage' },
-  { feature: 'Corporate Use', blackCar: 'Invoicing, corporate accounts, multi-passenger', uber: 'Expense reports only — no dedicated account management' },
-  { feature: 'Reliability', blackCar: 'Driver confirmed the evening before departure', uber: 'Driver assigned minutes before pickup' },
-];
 
 export default function MidtownToJFKBlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function MidtownToJFKBlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Midtown Manhattan to JFK Black Car Service"
-        description="Premium black car service from Midtown Manhattan to JFK Airport. $85 flat rate, hotel and office pickup, 24/7 availability."
+        description="Premium black car service from Midtown Manhattan to JFK Airport. Flat-rate pricing, hotel and office pickup, 24/7 availability."
         areaServed="Midtown Manhattan, New York City, NY"
         url={`${getSiteUrl()}/services/routes/midtown-to-jfk-black-car-service`}
       />
@@ -67,7 +59,7 @@ export default function MidtownToJFKBlackCarPage() {
             </h1>
             <p className="text-lg text-brand-grey mb-6">
               The most requested departure route in NYC — Midtown to JFK, done professionally.
-              An $85 flat rate, pickup directly at your hotel or office entrance, and a confirmed
+              Flat-rate pricing, pickup directly at your hotel or office entrance, and a confirmed
               chauffeur the night before your flight. No surge. No uncertainty.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -84,51 +76,49 @@ export default function MidtownToJFKBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Midtown to JFK Pricing by Area
+              Popular Routes from Midtown to JFK
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'Times Square / Theater District → JFK', price: '$85', time: '40–50 min', miles: '17 mi' },
-                { from: 'Grand Central / Murray Hill → JFK', price: '$85', time: '35–45 min', miles: '16 mi' },
-                { from: 'Penn Station / Hudson Yards → JFK', price: '$85', time: '40–55 min', miles: '17 mi' },
-                { from: 'Rockefeller Center / Fifth Ave → JFK', price: '$85', time: '40–50 min', miles: '16 mi' },
-                { from: 'Park Avenue / Midtown East → JFK', price: '$85', time: '35–45 min', miles: '16 mi' },
-                { from: 'Javits Center / West Side → JFK', price: '$85', time: '40–55 min', miles: '18 mi' },
+                { from: 'Times Square / Theater District → JFK', time: '40–50 min' },
+                { from: 'Grand Central / Murray Hill → JFK', time: '35–45 min' },
+                { from: 'Penn Station / Hudson Yards → JFK', time: '40–55 min' },
+                { from: 'Rockefeller Center / Fifth Ave → JFK', time: '40–50 min' },
+                { from: 'Park Avenue / Midtown East → JFK', time: '35–45 min' },
+                { from: 'Javits Center / West Side → JFK', time: '40–55 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Gratuity and tolls included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat. Gratuity and tolls included. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Midtown to JFK
+              Why Eagle Eye for Midtown to JFK
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no unpredictability at peak hours.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Hotel Entrance or Building Door Pickup', body: 'Your driver picks you up directly at your address — no walking to a curbside zone with luggage.' },
+                { title: 'Invoicing & Corporate Accounts', body: 'We support corporate accounts, multi-passenger bookings, and detailed invoicing for business travel.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, vehicle, and contact details the night before departure.' }
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -141,7 +131,7 @@ export default function MidtownToJFKBlackCarPage() {
               </h2>
               <ul className="space-y-4 text-brand-grey">
                 <li><strong className="text-brand-black">Hotel and office door pickup</strong> — your chauffeur pulls up directly to your Midtown entrance.</li>
-                <li><strong className="text-brand-black">Flat-rate pricing</strong> — $85 from Midtown to JFK, confirmed at booking. Traffic does not change it.</li>
+                <li><strong className="text-brand-black">Flat-rate pricing</strong> — your price is confirmed at booking. Traffic does not change it.</li>
                 <li><strong className="text-brand-black">Driver confirmed in advance</strong> — you receive your driver details the evening before your trip.</li>
                 <li><strong className="text-brand-black">Luxury vehicle</strong> — business sedan or SUV, always clean and well-maintained.</li>
                 <li><strong className="text-brand-black">Luggage assistance</strong> — your chauffeur helps load bags from hotel lobby or building entrance.</li>
@@ -159,7 +149,7 @@ export default function MidtownToJFKBlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/jfk-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $85</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/jfk" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK Airport Service</div>
@@ -195,7 +185,7 @@ export default function MidtownToJFKBlackCarPage() {
               <h2 className="font-serif text-2xl font-semibold text-brand-white mb-3">
                 Book Your Midtown to JFK Black Car
               </h2>
-              <p className="text-brand-silver mb-6">$85 flat. No surge. Professional chauffeur at your Midtown address.</p>
+              <p className="text-brand-silver mb-6">Flat rate. No surge. Professional chauffeur at your Midtown address.</p>
               <Link href="/book" className="inline-block py-3 px-8 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors">
                 Reserve Now
               </Link>

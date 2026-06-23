@@ -40,6 +40,34 @@ model Referral {
   @@index([driverId, createdAt])
 }
 
+model Invoice {
+  id            String    @id @default(cuid())
+  token         String    @unique @default(cuid())
+
+  customerName  String
+  customerEmail String
+
+  rideDate      String?
+  rideFrom      String?
+  rideTo        String?
+
+  lineItems     Json      // [{label: string, amount: number}]
+
+  status        String    @default("unpaid")  // unpaid | paid
+
+  tipAmount     Float?
+  stripePaymentIntentId String?
+
+  notes         String?
+
+  createdAt     DateTime  @default(now())
+  paidAt        DateTime?
+
+  @@index([token])
+  @@index([customerEmail])
+  @@index([createdAt])
+}
+
 model Booking {
   id              String   @id @default(cuid())
   createdAt       DateTime @default(now())

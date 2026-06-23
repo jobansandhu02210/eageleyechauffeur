@@ -6,14 +6,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Brooklyn to JFK Black Car Service | Eagle Eye Chauffeur',
   description:
-    'Brooklyn to JFK black car service — flat rates from $75, door-to-door pickup, real-time flight tracking. Professional chauffeurs from DUMBO, Williamsburg, Park Slope. Book 24/7.',
+    'Brooklyn to JFK black car service — door-to-door pickup, real-time flight tracking. Professional chauffeurs from DUMBO, Williamsburg, Park Slope. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/brooklyn-to-jfk-black-car-service` },
 };
 
 const faqs = [
   {
     q: 'How much is a black car from Brooklyn to JFK?',
-    a: 'Black car service from Brooklyn to JFK starts at $75, depending on your neighborhood. DUMBO, Brooklyn Heights, and Park Slope are typically $75. Farther neighborhoods like Sheepshead Bay or Bay Ridge may be slightly higher.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your Brooklyn address and JFK as the destination.',
   },
   {
     q: 'How long does it take from Brooklyn to JFK?',
@@ -33,14 +33,6 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
-  { feature: 'Price', blackCar: 'Flat rate from $75 — locked at booking', uber: 'Surge pricing — spikes on early mornings and peak hours' },
-  { feature: 'Driver', blackCar: 'Licensed, TLC-certified professional chauffeur', uber: 'Variable — no luxury standard required' },
-  { feature: 'Vehicle', blackCar: 'Luxury sedan or SUV, always clean', uber: 'Unknown vehicle class until assigned' },
-  { feature: 'Pickup', blackCar: 'Door-to-door from your Brooklyn address', uber: 'Pin-drop, may require walking to corner' },
-  { feature: 'vs. AirTrain', blackCar: '20-35 min direct, door-to-terminal', uber: 'Similar to AirTrain in timing with surge risk' },
-  { feature: 'Reliability', blackCar: 'Driver confirmed the evening before', uber: 'Driver assigned close to pickup time' },
-];
 
 export default function BrooklynToJFKBlackCarPage() {
   return (
@@ -54,7 +46,7 @@ export default function BrooklynToJFKBlackCarPage() {
       ]} />
       <ServiceJsonLd
         name="Brooklyn to JFK Black Car Service"
-        description="Premium black car service from Brooklyn to JFK Airport. Flat rates from $75, door-to-door pickup from all Brooklyn neighborhoods. 24/7 availability."
+        description="Premium black car service from Brooklyn to JFK Airport. Flat rates, door-to-door pickup from all Brooklyn neighborhoods. 24/7 availability."
         areaServed="Brooklyn, New York City, NY"
         url={`${getSiteUrl()}/services/routes/brooklyn-to-jfk-black-car-service`}
       />
@@ -84,53 +76,51 @@ export default function BrooklynToJFKBlackCarPage() {
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Brooklyn to JFK Black Car Pricing by Neighborhood
+              Popular Routes from Brooklyn to JFK
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'DUMBO / Brooklyn Heights → JFK', price: '$75', time: '20–30 min', miles: '10 mi' },
-                { from: 'Williamsburg / Greenpoint → JFK', price: '$75', time: '20–30 min', miles: '11 mi' },
-                { from: 'Park Slope / Prospect Heights → JFK', price: '$75', time: '20–30 min', miles: '10 mi' },
-                { from: 'Downtown Brooklyn / Fort Greene → JFK', price: '$75', time: '20–30 min', miles: '10 mi' },
-                { from: 'Crown Heights / Flatbush → JFK', price: '$75', time: '15–25 min', miles: '8 mi' },
-                { from: 'Bay Ridge / Dyker Heights → JFK', price: '$80', time: '25–35 min', miles: '13 mi' },
-                { from: 'Sheepshead Bay / Marine Park → JFK', price: '$80', time: '20–30 min', miles: '11 mi' },
-                { from: 'Bushwick / East New York → JFK', price: '$75', time: '15–25 min', miles: '8 mi' },
+                { from: 'DUMBO / Brooklyn Heights → JFK', time: '20–30 min' },
+                { from: 'Williamsburg / Greenpoint → JFK', time: '20–30 min' },
+                { from: 'Park Slope / Prospect Heights → JFK', time: '20–30 min' },
+                { from: 'Downtown Brooklyn / Fort Greene → JFK', time: '20–30 min' },
+                { from: 'Crown Heights / Flatbush → JFK', time: '15–25 min' },
+                { from: 'Bay Ridge / Dyker Heights → JFK', time: '25–35 min' },
+                { from: 'Sheepshead Bay / Marine Park → JFK', time: '20–30 min' },
+                { from: 'Bushwick / East New York → JFK', time: '15–25 min' },
               ].map((r) => (
                 <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.price} flat · {r.time}</span>
+                  <span className="text-brand-grey text-sm">{r.time}</span>
                 </div>
               ))}
             </div>
-            <p className="text-sm text-brand-grey mt-4">All prices are flat rate. Gratuity and tolls included. No surge pricing — ever.</p>
+            <p className="text-sm text-brand-grey mt-4">All rates are flat and confirmed at booking. No surge pricing — ever. <Link href="/book" className="underline">Get an instant quote →</Link></p>
           </div>
         </section>
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Black Car Service vs. Uber for Brooklyn to JFK
+              Why Eagle Eye for Brooklyn to JFK
             </h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="bg-brand-black text-brand-white">
-                    <th className="text-left p-3 font-medium">Feature</th>
-                    <th className="text-left p-3 font-medium">Eagle Eye Black Car</th>
-                    <th className="text-left p-3 font-medium">Uber / Rideshare</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, i) => (
-                    <tr key={row.feature} className={i % 2 === 0 ? 'bg-brand-white' : 'bg-brand-offwhite'}>
-                      <td className="p-3 font-medium text-brand-black">{row.feature}</td>
-                      <td className="p-3 text-brand-grey">{row.blackCar}</td>
-                      <td className="p-3 text-brand-grey">{row.uber}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                { title: 'Flat Rate — Locked at Booking', body: 'Your price is confirmed when you book and never changes — no surprises on early mornings or peak hours.' },
+                { title: 'TLC-Licensed Professional Chauffeur', body: 'Every driver holds a NYC TLC license and meets a professional hospitality standard on every trip.' },
+                { title: 'Luxury Sedan or SUV', body: 'You travel in a clean, premium black car every time — not an unknown vehicle assigned at the last minute.' },
+                { title: 'Door-to-Door from Your Brooklyn Address', body: 'Your driver picks you up at your exact address and takes you directly to your JFK terminal.' },
+                { title: 'Driver Confirmed the Evening Before', body: 'You receive your chauffeur\'s name, number, and vehicle details the night before — full peace of mind.' },
+                { title: 'Real-Time Flight Tracking', body: 'For JFK arrivals, we monitor your flight and adjust pickup timing automatically — no calls needed.' },
+              ].map((item) => (
+                <div key={item.title} className="bg-brand-white border border-brand-light p-4">
+                  <div className="flex items-start gap-3 mb-1">
+                    <span className="text-brand-black font-bold mt-0.5 shrink-0">✓</span>
+                    <h3 className="font-semibold text-brand-black text-sm">{item.title}</h3>
+                  </div>
+                  <p className="text-brand-grey text-sm pl-6">{item.body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -161,7 +151,7 @@ export default function BrooklynToJFKBlackCarPage() {
             <div className="grid sm:grid-cols-3 gap-4">
               <Link href="/services/routes/jfk-to-manhattan-black-car-service" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK to Manhattan</div>
-                <div className="text-sm text-brand-grey mt-1">Arrivals — black car from $85</div>
+                <div className="text-sm text-brand-grey mt-1">Arrivals — meet &amp; greet service</div>
               </Link>
               <Link href="/services/airport/jfk" className="bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors">
                 <div className="font-semibold text-brand-black">JFK Airport Service</div>
