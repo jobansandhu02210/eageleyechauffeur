@@ -6,7 +6,7 @@ import { blogPosts } from '@/lib/blog-data';
 export const metadata: Metadata = {
   title: 'Sitemap | Eagle Eye Chauffeur NYC',
   description: 'Full sitemap for Eagle Eye Chauffeur — NYC black car service, airport transfers, service areas, routes, and blog.',
-  alternates: { canonical: `${getSiteUrl()}/sitemap` },
+  alternates: { canonical: `${getSiteUrl()}/site-map` },
   robots: { index: true, follow: true },
 };
 
