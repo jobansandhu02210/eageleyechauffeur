@@ -6,6 +6,15 @@ const nextConfig = {
       { protocol: 'https', hostname: 'placehold.co' },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/bookings',
+        destination: '/book',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
