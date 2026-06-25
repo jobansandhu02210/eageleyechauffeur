@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { getSiteUrl } from '@/lib/site';
 import { blogPosts } from '@/lib/blog-data';
+import { getAllHamptonsRouteSlugs } from '@/lib/hamptons-routes-data';
 
 const base = getSiteUrl();
 
@@ -193,12 +194,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: highValueBlogSlugs.has(post.slug) ? 0.85 : 0.7,
   }));
 
+  const hamptonsRoutePages: MetadataRoute.Sitemap = getAllHamptonsRouteSlugs().map((slug) => ({
+    url: `${base}/services/routes/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.85,
+  }));
+
   return [
     ...pages,
     ...servicePages,
     ...airportPages,
     ...areaPages,
     ...routePages,
+    ...hamptonsRoutePages,
     ...blogPages,
   ];
 }
