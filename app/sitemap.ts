@@ -24,7 +24,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/sitemap`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/world-cup-2026`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/world-cup-2026`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/world-cup-2026/final`, lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
+    { url: `${base}/world-cup-2026/manhattan-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/world-cup-2026/newark-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/world-cup-2026/jfk-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/world-cup-2026/lga-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/world-cup-2026/long-island-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/world-cup-2026/nyc-hotel-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/referrals`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   ];
 
