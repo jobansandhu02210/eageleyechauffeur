@@ -155,11 +155,11 @@ export default function WorldCup2026Page() {
             Serving Manhattan, JFK, Newark (EWR), LaGuardia (LGA), Long Island, and all NYC hotels.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/book" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors text-center">
-              Book My World Cup Ride
+            <Link href="/contact" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors text-center">
+              Request a World Cup Quote
             </Link>
             <Link href="/world-cup-2026/final" className="inline-block bg-green-700 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-600 transition-colors text-center">
-              🏆 Book the Final — July 19
+              🏆 Final Transport — July 19
             </Link>
             <a href={`tel:${CONTACT_PHONE_E164}`} className="inline-block border border-brand-silver text-brand-white font-semibold px-8 py-4 text-sm tracking-wide hover:border-brand-white transition-colors text-center">
               Call {CONTACT_PHONE_DISPLAY}
@@ -209,11 +209,11 @@ export default function WorldCup2026Page() {
                 </div>
                 {m.highlight ? (
                   <Link href="/world-cup-2026/final" className="shrink-0 text-xs bg-green-600 text-white font-semibold px-3 py-1.5 hover:bg-green-500 transition-colors">
-                    Book Final →
+                    Final Quote →
                   </Link>
                 ) : (
-                  <Link href="/book" className="shrink-0 text-xs border border-brand-dark text-brand-black font-medium px-3 py-1.5 hover:bg-brand-black hover:text-white transition-colors">
-                    Book Ride →
+                  <Link href="/contact" className="shrink-0 text-xs border border-brand-dark text-brand-black font-medium px-3 py-1.5 hover:bg-brand-black hover:text-white transition-colors">
+                    Get Quote →
                   </Link>
                 )}
               </div>
@@ -297,10 +297,10 @@ export default function WorldCup2026Page() {
             🏆 World Cup Final — July 19, 2026
           </h2>
           <p className="text-green-200 max-w-xl mx-auto leading-relaxed mb-8">
-            MetLife Stadium. The biggest match on earth. Rideshares will surge to $300+. Trains will be sold out. Book your Final transport now before spots fill.
+            MetLife Stadium. The biggest match on earth. Rideshares will surge to $300+. Trains will be sold out. Request a custom Final quote before spots fill.
           </p>
           <Link href="/world-cup-2026/final" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors">
-            Reserve World Cup Final Transport →
+            Request Final Transport Quote →
           </Link>
         </div>
       </section>
@@ -325,11 +325,11 @@ export default function WorldCup2026Page() {
       {/* BOTTOM CTA */}
       <section className="bg-brand-black text-brand-white py-14 lg:py-18">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-semibold mb-4">Book Your World Cup Transfer Today</h2>
-          <p className="text-brand-silver mb-8">Flat-rate pricing · No surge · Door-to-door · Pre-arranged post-match pickup</p>
+          <h2 className="font-serif text-3xl font-semibold mb-4">Request Your World Cup Transfer Quote</h2>
+          <p className="text-brand-silver mb-8">Custom World Cup pricing · No surge · Door-to-door · Pre-arranged post-match pickup</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors">
-              Get Instant Quote
+            <Link href="/contact" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors">
+              Request a Quote
             </Link>
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block border border-brand-silver text-brand-white font-semibold px-8 py-4 text-sm tracking-wide hover:border-brand-white transition-colors">
               WhatsApp Us

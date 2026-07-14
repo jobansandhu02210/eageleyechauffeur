@@ -279,6 +279,90 @@ export default function HarlemPage() {
         </div>
       </section>
 
+      {/* ── Routes Table ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Harlem</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">45–60 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">LaGuardia Airport (LGA)</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">55–70 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Westchester</td>
+                  <td className="p-4 text-brand-grey">25–40 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">The Bronx</td>
+                  <td className="p-4 text-brand-grey">20–35 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+            Harlem Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Harlem&apos;s main avenues — Frederick Douglass Boulevard (Eighth Avenue), Adam Clayton Powell Jr. Boulevard (Seventh Avenue), Malcolm X Boulevard (Lenox Avenue), and Fifth Avenue — run north–south and are all accessible for staged pickups. The 125th Street crosstown is the main east–west artery and becomes congested around the Apollo Theater on event nights — your chauffeur stages on a parallel block (124th or 126th) and confirms your exact meet point. For Columbia University pickups at 116th Street and Broadway, the Broadway median and Riverside Drive offer clean staging. Residential side streets like Strivers&apos; Row on 138th–139th are narrow but quiet — your chauffeur positions on the avenue (Adam Clayton Powell or Frederick Douglass) and walks luggage if needed. For LGA transfers, the Triborough Bridge via the RFK approach from East 125th Street is the standard route.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">Key pickup locations</h3>
+              <ul className="space-y-2">
+                {[
+                  'Apollo Theater — W 125th St & Frederick Douglass Blvd',
+                  'Columbia University — Broadway & 116th St',
+                  '125th Street corridor — main east–west spine',
+                  'Marcus Garvey Park — 5th Ave & 122nd St',
+                  'Morningside Heights — Broadway & 120th St',
+                  'East 125th St & Park Ave — RFK/Triborough access',
+                  'Hamilton Heights — Amsterdam Ave & 145th St',
+                ].map(loc => (
+                  <li key={loc} className="text-sm text-brand-grey flex gap-2">
+                    <span className="text-brand-charcoal">→</span>{loc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

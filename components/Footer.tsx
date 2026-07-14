@@ -2,12 +2,14 @@ import Link from 'next/link';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_PHONE_2_DISPLAY, CONTACT_PHONE_2_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 const services = [
-  { href: '/services/point-to-point', label: 'Point-to-Point' },
-  { href: '/services/hourly', label: 'Hourly Service' },
-  { href: '/services/airport', label: 'Airport Transfers' },
-  { href: '/services/corporate', label: 'Corporate Travel' },
-  { href: '/services/special-events', label: 'Special Events' },
-  { href: '/services/areas', label: 'Service Areas' },
+  { href: '/services/chauffeur-service', label: 'Chauffeur Service' },
+  { href: '/services/airport', label: 'Airport Car Service' },
+  { href: '/services/corporate', label: 'Corporate Car Service' },
+  { href: '/services/hourly', label: 'Hourly Chauffeur Service' },
+  { href: '/services/limousine-service', label: 'Limousine Service' },
+  { href: '/services/sprinter-van-service', label: 'Sprinter Van Service' },
+  { href: '/services/long-distance', label: 'Long-Distance Car Service' },
+  { href: '/services/wedding-car-service', label: 'Wedding Car Service' },
 ];
 
 const company = [

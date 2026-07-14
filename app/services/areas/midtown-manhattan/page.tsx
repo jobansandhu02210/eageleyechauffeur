@@ -43,6 +43,14 @@ const faqs = [
     q: 'How far in advance should I book a Midtown Manhattan black car?',
     a: 'For scheduled airport transfers and corporate bookings, 24 hours in advance is recommended. For same-day or on-demand Midtown rides, contact us via WhatsApp or phone and we&apos;ll confirm availability promptly. Pre-booking is always advisable for early morning departures, major events, and roadshow days.',
   },
+  {
+    q: 'Do you pick up from the Javits Center on the west side of Midtown?',
+    a: 'Yes. The Jacob K. Javits Convention Center on Eleventh Avenue between 34th and 40th Streets is a regular Eagle Eye pickup point. We handle arrivals from all three major airports before convention openings, and departures back to JFK, LGA, and EWR at the end of convention days. For multi-day events, we can set up a recurring daily schedule so you have a confirmed car without re-booking each morning.',
+  },
+  {
+    q: 'Can I book a black car from a Midtown hotel for an early morning JFK departure?',
+    a: 'Yes. Early morning airport pickups from Midtown hotels — The Plaza, The St. Regis, Four Seasons on 57th, Park Hyatt, and all other Midtown properties — are one of our most common bookings. Your chauffeur is confirmed the evening before, coordinates with the hotel bell desk, and arrives precisely at your requested time. Visit /book to reserve your transfer.',
+  },
 ];
 
 const eaglEyeBenefits = [
@@ -274,6 +282,94 @@ export default function MidtownManhattanPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Midtown Manhattan Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Midtown&apos;s grid is dense and heavily trafficked. Your chauffeur monitors conditions on Fifth Avenue, Sixth Avenue, and the cross-streets between 34th and 59th in real time. For hotel pickups at the Midtown Hilton, The Peninsula, or Four Seasons on 57th Street, drivers use the designated hotel loading zones and coordinate with the bell desk. For office buildings on Park Avenue or Avenue of the Americas, your chauffeur holds a nearby legal standing spot and texts you when on-site — avoiding the double-park chaos common with app services. Post-MSG or post-Broadway pickups are handled from a pre-agreed cross-street to keep you clear of the pedestrian surge.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Grand Central Terminal — 42nd St &amp; Vanderbilt Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Penn Station — 7th Ave &amp; 32nd St entrance</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Rockefeller Center — 49th or 50th &amp; Fifth Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Times Square hotels — 7th Ave drop zone, W 45th–47th</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Hudson Yards — 10th Ave &amp; 30th St, mall entrance</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Madison Square Garden — 7th Ave &amp; 31st St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Park Avenue offices — lobby coordination, 45th–55th</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from Midtown Manhattan</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Midtown to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Midtown to Westchester (HPN)</td>
+                  <td className="p-4 text-brand-grey">50–70 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–3 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Midtown to Greenwich, CT</td>
+                  <td className="p-4 text-brand-grey">55–80 min</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown to Brooklyn</td>
+                  <td className="p-4 text-brand-grey">20–35 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Midtown to Newark City</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
         </div>
       </section>
 

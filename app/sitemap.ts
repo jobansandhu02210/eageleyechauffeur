@@ -12,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'airport',
     'corporate',
     'special-events',
+    'chauffeur-service',
+    'long-distance',
+    'limousine-service',
+    'sprinter-van-service',
+    'wedding-car-service',
   ];
 
   const pages: MetadataRoute.Sitemap = [
@@ -36,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/world-cup-2026/long-island-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/world-cup-2026/nyc-hotel-to-metlife`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/referrals`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/corporate-accounts`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/executive-vip`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
   ];
 
   const servicePages: MetadataRoute.Sitemap = services.map((slug) => ({
@@ -63,6 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/areas/lga-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/areas/ewr-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
     { url: `${base}/services/areas/hpn-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/areas/teb-airport`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
     { url: `${base}/services/areas/westchester`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services/areas/long-island`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/services/areas/new-jersey`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
@@ -174,9 +182,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/routes/lga-to-long-island-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/routes/lga-to-westchester-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/routes/ewr-to-queens-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    // Teterboro Airport (TEB) routes
+    { url: `${base}/services/routes/manhattan-to-teterboro-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/teterboro-to-manhattan-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/new-jersey-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/routes/teterboro-to-new-jersey-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
+    { url: `${base}/services/routes/brooklyn-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/long-island-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/westchester-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/connecticut-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/services/routes/queens-bronx-to-teterboro-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/routes/nyc-to-boston`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/routes/nyc-to-philadelphia`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/services/routes/nyc-to-washington-dc`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    // Corporate corridor routes
+    { url: `${base}/services/routes/wall-street-to-jfk-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/park-avenue-to-jfk-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/midtown-to-lga-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/midtown-to-ewr-black-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 1.0 },
+    { url: `${base}/services/routes/nyc-to-princeton-nj-car-service`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.95 },
   ];
 
   const highValueBlogSlugs = new Set([
@@ -190,6 +214,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'nyc-chauffeur-service-cost-pricing-guide',
     'black-car-service-vs-taxi-nyc-which-is-better',
     'nyc-corporate-black-car-service-executive-guide',
+    'corporate-car-service-account-nyc-guide',
+    'executive-chauffeur-vs-rideshare-for-business-travel',
+    'nyc-roadshow-car-service-guide-investment-banking',
+    'best-car-service-for-wall-street-executives-nyc',
+    'executive-airport-transfer-guide-nyc',
+    'best-airport-to-fly-into-nyc-jfk-lga-ewr-guide',
+    'jfk-to-laguardia-transfer-distance-options',
+    'jfk-to-newark-airport-transfer-options',
+    'laguardia-to-newark-airport-transfer-guide',
+    'how-far-is-jfk-from-manhattan-travel-times-guide',
+    'luxury-chauffeur-service-near-me-nyc-guide',
   ]);
 
   const blogPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({

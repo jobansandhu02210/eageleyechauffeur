@@ -31,6 +31,22 @@ const faqs = [
     q: 'Do you track flights at Newark Liberty Airport?',
     a: 'Yes. We monitor your EWR flight in real time and adjust pickup automatically for any delays or early arrivals — at no extra charge.',
   },
+  {
+    q: 'Which route do you take from EWR to Manhattan?',
+    a: 'Your chauffeur selects the fastest route based on real-time traffic — typically the New Jersey Turnpike to the Lincoln Tunnel for Midtown destinations, or the Holland Tunnel for lower Manhattan and the Financial District. All tunnel tolls are included in your flat rate.',
+  },
+  {
+    q: 'Is the EWR airport toll included in the price?',
+    a: 'Yes. All tolls — including the EWR airport toll, the Lincoln Tunnel, and the Holland Tunnel — are included in your quoted flat rate. There are no hidden fees or add-ons when you arrive at your destination.',
+  },
+  {
+    q: 'Are tolls included in the EWR to Manhattan rate?',
+    a: 'Yes. All tolls — whether via the Holland Tunnel or Lincoln Tunnel — are included in your flat rate. There are no toll surcharges added to your bill. The price you see at booking is the price you pay.',
+  },
+  {
+    q: 'How long does it take from Newark Airport to Manhattan?',
+    a: 'Typically 35–50 minutes to Midtown in normal traffic via the New Jersey Turnpike and Lincoln Tunnel. Morning rush (7–9am) and evening peak (4–7pm) can add 20–30 minutes. Your driver monitors traffic and selects the fastest tunnel or bridge approach.',
+  },
 ];
 
 
@@ -161,6 +177,68 @@ export default function EWRToManhattanBlackCarPage() {
               During peak hours, the approach to the Lincoln Tunnel can add 20–30 minutes. We build this
               into our scheduling so your driver is never rushed.
             </p>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-offwhite">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Newark Airport — Terminal Guide
+            </h2>
+            <p className="text-brand-grey mb-6 text-sm">Your driver meets you at Ground Transportation Level 1 of your terminal. Provide your terminal and flight number at booking — we track your flight live and adjust for delays.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-black text-brand-white">
+                    <th className="text-left p-3 font-semibold">Terminal</th>
+                    <th className="text-left p-3 font-semibold">Airlines</th>
+                    <th className="text-left p-3 font-semibold">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">Terminal A</td>
+                    <td className="p-3 text-brand-grey">United domestic short-haul, some international</td>
+                    <td className="p-3 text-brand-grey">Ground Transportation Level 1 — AirTrain connects all terminals</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">Terminal B</td>
+                    <td className="p-3 text-brand-grey">United international, Air Canada, Lufthansa (some)</td>
+                    <td className="p-3 text-brand-grey">AirTrain accessible — follow signs to Ground Transportation</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">Terminal C</td>
+                    <td className="p-3 text-brand-grey">United hub (majority of flights), most United gates</td>
+                    <td className="p-3 text-brand-grey">Most EWR departures use Terminal C — Ground Transportation Level 1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-brand-grey text-sm mt-4">All tolls (Holland Tunnel or Lincoln Tunnel) are included in your flat rate from EWR to Manhattan. No hidden charges. Your driver meets you at Ground Transportation Level 1.</p>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-charcoal">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-white mb-8">
+              How It Works — EWR to Manhattan
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { step: '1', title: 'Book in advance', body: 'Provide your flight number, terminal, and pickup address. We confirm your driver and flat rate immediately.' },
+                { step: '2', title: 'Driver tracks your flight', body: 'We monitor live flight data. If your flight is early or delayed, your driver adjusts automatically at no extra charge.' },
+                { step: '3', title: 'Meet your driver at arrivals', body: 'Your chauffeur waits at the arrivals level with a name sign. Text us when you land and we&apos;ll confirm the exact meeting point.' },
+                { step: '4', title: 'Door to door to Manhattan', body: 'Flat rate, no meter running, no surprises. Your price was confirmed at booking.' },
+              ].map((item) => (
+                <div key={item.step} className="flex flex-col gap-3">
+                  <div className="w-10 h-10 bg-brand-white text-brand-black font-bold flex items-center justify-center text-lg shrink-0">{item.step}</div>
+                  <div>
+                    <div className="font-semibold text-brand-white mb-1">{item.title}</div>
+                    <p className="text-brand-silver text-sm">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

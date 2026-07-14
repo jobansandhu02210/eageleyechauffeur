@@ -304,6 +304,62 @@ export default function GreenwichCTPage() {
           </div>
         </section>
 
+        {/* Common Routes Table */}
+        <section className="py-14 bg-brand-offwhite">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Greenwich</h2>
+            <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-black text-brand-white">
+                    <th className="text-left p-4 font-medium">Destination</th>
+                    <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                    <th className="text-left p-4 font-medium">Service</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-4 text-brand-black font-medium">HPN Airport (Westchester)</td>
+                    <td className="p-4 text-brand-grey">25–35 min</td>
+                    <td className="p-4 text-brand-grey">Closest Airport</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-4 text-brand-black font-medium">JFK Airport</td>
+                    <td className="p-4 text-brand-grey">70–90 min</td>
+                    <td className="p-4 text-brand-grey">Airport Transfer</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-4 text-brand-black font-medium">LGA Airport</td>
+                    <td className="p-4 text-brand-grey">60–80 min</td>
+                    <td className="p-4 text-brand-grey">Airport Transfer</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-4 text-brand-black font-medium">EWR Airport</td>
+                    <td className="p-4 text-brand-grey">75–95 min</td>
+                    <td className="p-4 text-brand-grey">Airport Transfer</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-4 text-brand-black font-medium">Manhattan (Midtown)</td>
+                    <td className="p-4 text-brand-grey">50–70 min</td>
+                    <td className="p-4 text-brand-grey">Point-to-Point</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-4 text-brand-black font-medium">Teterboro Airport (TEB)</td>
+                    <td className="p-4 text-brand-grey">45–60 min</td>
+                    <td className="p-4 text-brand-grey">Private Aviation</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-4 text-brand-black font-medium">White Plains</td>
+                    <td className="p-4 text-brand-grey">20–35 min</td>
+                    <td className="p-4 text-brand-grey">Point-to-Point</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

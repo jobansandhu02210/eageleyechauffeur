@@ -10,9 +10,9 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK Airport Car Service NYC | Flat Rate Black Car & Meet & Greet | Eagle Eye',
+  title: 'JFK Car Service NYC | Black Car & Chauffeur Transfers | Eagle Eye',
   description:
-    'JFK Airport car service NYC — flat rates, real-time flight tracking, meet & greet at every terminal. Professional chauffeur. No surge pricing, ever. Book Eagle Eye Chauffeur 24/7.',
+    'JFK car service NYC — flat-rate black car, private JFK to Manhattan transfers, meet & greet at all terminals. Kennedy car service, real-time flight tracking. No surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/jfk` },
 };
 
@@ -48,6 +48,14 @@ const jfkFaqs = [
   {
     q: 'Do you handle multiple passengers or groups at JFK?',
     a: 'Yes. Our business sedans comfortably seat up to 3 passengers with luggage, and our SUVs accommodate 5–7 passengers. For larger groups, contact us and we will arrange multiple vehicles.',
+  },
+  {
+    q: 'What is a Kennedy car service and how does it work?',
+    a: '"Kennedy car service" refers to professional black car and chauffeur service to and from John F. Kennedy International Airport (JFK). Eagle Eye provides private, door-to-door Kennedy car service with a flat rate confirmed at booking — no meter, no surge pricing. Your chauffeur meets you at arrivals with a name sign and drives you directly to your destination.',
+  },
+  {
+    q: 'How do I book a private transfer from JFK to Manhattan?',
+    a: 'Book online at /book or WhatsApp us with your flight details and Manhattan destination. Your private transfer from JFK is confirmed at a flat rate instantly — limousine sedan or luxury SUV, professional chauffeur, meet & greet at your terminal. We cover all Manhattan neighborhoods: Midtown, FiDi, Upper East Side, Upper West Side, and more.',
   },
 ];
 
@@ -197,11 +205,10 @@ export default function JFKPage() {
             Airport Service
           </p>
           <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-white mb-6">
-            JFK Airport Car Service NYC
+            JFK Car Service
           </h1>
           <p className="text-lg text-brand-silver max-w-2xl mb-10">
-            New York&apos;s busiest airport — flat-rate, flight tracking, meet &amp; greet at
-            every terminal. Door-to-door, no surge pricing, 24/7.
+            New York&apos;s busiest airport — flat-rate black car and chauffeur service, private transfers JFK to Manhattan, meet &amp; greet at every terminal. Professional Kennedy car service, no surge pricing, 24/7.
           </p>
 
           {/* Stats bar */}
@@ -240,7 +247,7 @@ export default function JFKPage() {
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-brand-black mb-10">
-            How JFK Airport Service Works
+            How JFK Car Service Works
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {howItWorks.map((item) => (

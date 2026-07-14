@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LaGuardia Airport Car Service NYC | LGA Black Car & Meet & Greet | Eagle Eye',
+  title: 'LGA Car Service | LaGuardia Airport Transfers NYC | Eagle Eye',
   description:
-    'LaGuardia Airport car service — flat rates, real-time flight tracking, meet & greet at Terminal B & C. Professional chauffeur. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
+    'LGA car service — flat-rate LaGuardia airport pickup, meet & greet at Terminal B & C. Real-time flight tracking. No surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/lga` },
 };
 
@@ -35,6 +35,14 @@ const faqs = [
   {
     q: 'How long does LGA to Manhattan take?',
     a: 'LaGuardia is only 9 miles from Midtown — off-peak, expect 20 to 30 minutes. During rush hour (7–10 am and 4–7 pm), allow 30 to 45 minutes. Your chauffeur knows LGA routes well and will choose the fastest path.',
+  },
+  {
+    q: 'How does LGA airport pickup work with Eagle Eye?',
+    a: 'We monitor your flight live and time your LGA airport pickup to your actual landing — not your scheduled arrival. Your chauffeur is waiting at the arrivals level of your terminal with a name sign. You receive a WhatsApp message with the exact meeting spot before you land. Walk out, spot your name, and your luggage is loaded. That is it.',
+  },
+  {
+    q: 'What is the best airport transfer service at LaGuardia?',
+    a: 'The best airport transfer service at LGA is one that offers a flat rate confirmed at booking, real-time flight tracking, and a professional chauffeur waiting inside the terminal. Eagle Eye provides all three — no surge pricing, no meter surprises, and no waiting at the curb for a driver to show up.',
   },
 ];
 
@@ -65,7 +73,7 @@ export default function LGAPage() {
             Airport Service
           </p>
           <h1 className="font-serif text-4xl lg:text-6xl font-semibold text-brand-white mb-6 leading-tight">
-            LaGuardia Airport Car Service NYC
+            LGA Car Service
           </h1>
           <p className="text-brand-silver text-lg lg:text-xl max-w-2xl mb-10 leading-relaxed">
             NYC&apos;s most-used airport for domestic flights — flat-rate black car service,
@@ -259,6 +267,16 @@ export default function LGAPage() {
               {
                 label: 'LGA to Westchester',
                 time: '50–65 min',
+                href: '/book',
+              },
+              {
+                label: 'LGA Airport Pickup — Long Island',
+                time: '35–60 min',
+                href: '/services/areas/long-island',
+              },
+              {
+                label: 'LGA to New Jersey',
+                time: '35–55 min',
                 href: '/book',
               },
             ].map((route) => (

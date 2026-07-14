@@ -279,6 +279,90 @@ export default function LowerManhattanPage() {
         </div>
       </section>
 
+      {/* ── Routes Table ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Lower Manhattan</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">LaGuardia Airport (LGA)</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Brooklyn</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+            Lower Manhattan Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Lower Manhattan&apos;s street layout is the oldest in New York — narrow, winding streets that predate the grid system. Broadway, Church Street, and Water Street are the main vehicle corridors running roughly north–south; Fulton Street, Wall Street, and Chambers Street are the main cross-streets with reasonable vehicle access. For courthouse and Foley Square pickups, your chauffeur stages on Centre Street or Lafayette Street near the courthouse steps. For Wall Street and Financial District pickups, Broad Street or Exchange Place are often the cleanest staging points. South Street Seaport pickups use Fulton Street between Water Street and the river. For EWR-bound trips, the Holland Tunnel via West Street is typically the fastest route from Lower Manhattan — often faster than going through the Brooklyn Battery Tunnel.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">Key pickup locations</h3>
+              <ul className="space-y-2">
+                {[
+                  'Foley Square / Federal Courthouse — Centre St & Worth St',
+                  'City Hall — Broadway & Murray St',
+                  'Wall Street — Broad St & Exchange Place',
+                  'South Street Seaport — Fulton St & Front St',
+                  'One World Trade Center — Fulton St & West St',
+                  'Brooklyn Bridge pedestrian access — Park Row',
+                  'Pier 17 / Seaport District — Fulton & Water St',
+                ].map(loc => (
+                  <li key={loc} className="text-sm text-brand-grey flex gap-2">
+                    <span className="text-brand-charcoal">→</span>{loc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

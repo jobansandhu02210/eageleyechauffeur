@@ -79,11 +79,43 @@ const connecticutCities = [
   { href: '/services/areas/norwalk-ct', title: 'Norwalk, CT', blurb: 'SoNo waterfront, Merritt 7 corporate park, Westport-adjacent, I-95 corridor.' },
 ];
 
+const longIslandCities = [
+  { href: '/services/areas/garden-city', title: 'Garden City', blurb: 'Affluent Nassau village, Roosevelt Field, Adelphi University, close to LGA & JFK.' },
+  { href: '/services/areas/great-neck', title: 'Great Neck', blurb: 'North Shore estates, LIRR Port Washington branch, minutes from LGA.' },
+  { href: '/services/areas/manhasset', title: 'Manhasset', blurb: 'North Shore village, Miracle Mile shopping, Long Island Jewish Medical Center nearby.' },
+  { href: '/services/areas/roslyn', title: 'Roslyn', blurb: 'North Shore village, Nassau County, close to Port Washington & LGA.' },
+  { href: '/services/areas/port-washington', title: 'Port Washington', blurb: 'North Shore, LIRR branch terminus, Sands Point estates.' },
+  { href: '/services/areas/hempstead', title: 'Hempstead', blurb: "Nassau County's largest village, Hofstra University, central Long Island hub." },
+  { href: '/services/areas/mineola', title: 'Mineola', blurb: 'Nassau County seat, major LIRR hub, Winthrop Hospital.' },
+  { href: '/services/areas/hicksville', title: 'Hicksville', blurb: 'Central Nassau, one of the busiest LIRR stations on Long Island.' },
+  { href: '/services/areas/westbury', title: 'Westbury', blurb: 'Central Nassau, NYCB Theatre, close to Roosevelt Field & major highways.' },
+  { href: '/services/areas/floral-park', title: 'Floral Park', blurb: 'Nassau/Queens border village, LIRR access, minutes from JFK.' },
+  { href: '/services/areas/new-hyde-park', title: 'New Hyde Park', blurb: 'Queens border, Long Island Jewish Medical Center, close to JFK & LGA.' },
+  { href: '/services/areas/elmont', title: 'Elmont', blurb: 'Home of Belmont Park & UBS Arena, Nassau/Queens border, closest LI town to JFK.' },
+  { href: '/services/areas/valley-stream', title: 'Valley Stream', blurb: 'Nassau/Queens border community, minutes from JFK Airport.' },
+  { href: '/services/areas/rockville-centre', title: 'Rockville Centre', blurb: 'South Shore Nassau village, Mercy Hospital, LIRR Babylon branch.' },
+  { href: '/services/areas/freeport', title: 'Freeport', blurb: "South Shore, the Nautical Mile, Nassau County's waterfront dining district." },
+  { href: '/services/areas/long-beach', title: 'Long Beach', blurb: 'Barrier island beach city, South Shore Nassau, LIRR direct to Manhattan.' },
+  { href: '/services/areas/massapequa', title: 'Massapequa', blurb: 'South Shore Nassau, Sunrise Highway corridor, Bethpage State Park nearby.' },
+  { href: '/services/areas/levittown', title: 'Levittown', blurb: 'Iconic Nassau County suburb, central Long Island, Hempstead Turnpike corridor.' },
+  { href: '/services/areas/babylon', title: 'Babylon', blurb: 'South Shore Suffolk, LIRR Babylon branch terminus, close to Jones Beach & Robert Moses.' },
+  { href: '/services/areas/bay-shore', title: 'Bay Shore', blurb: 'South Shore Suffolk, Fire Island ferry terminal, Southern State Parkway access.' },
+  { href: '/services/areas/huntington', title: 'Huntington', blurb: 'North Shore Suffolk, Huntington Village & Cold Spring Harbor, LIE corridor.' },
+  { href: '/services/areas/commack', title: 'Commack', blurb: 'Central Suffolk, Sunken Meadow & Northern State Parkway access.' },
+  { href: '/services/areas/smithtown', title: 'Smithtown', blurb: 'Central Suffolk township, Long Island Expressway & Route 25 corridor.' },
+  { href: '/services/areas/hauppauge', title: 'Hauppauge', blurb: "Long Island's largest industrial/business park, central Suffolk corporate hub." },
+  { href: '/services/areas/ronkonkoma', title: 'Ronkonkoma', blurb: 'Long Island MacArthur Airport (ISP), major LIRR hub, central Suffolk.' },
+  { href: '/services/areas/patchogue', title: 'Patchogue', blurb: 'South Shore Suffolk, Fire Island ferry access, revitalized downtown waterfront.' },
+  { href: '/services/areas/hampton-bays', title: 'Hampton Bays', blurb: 'Gateway to the Hamptons, western Suffolk South Fork.' },
+  { href: '/services/areas/westhampton-beach', title: 'Westhampton Beach', blurb: 'Western Hamptons gateway village, Suffolk County South Fork.' },
+];
+
 const airports = [
   { href: '/services/areas/jfk-airport', title: 'JFK Airport Car Service', blurb: 'All terminals. Meet-and-greet, flight tracking, flat rates to all NYC neighborhoods.' },
   { href: '/services/areas/lga-airport', title: 'LaGuardia (LGA) Car Service', blurb: 'Terminals B, C & D. Fastest airport to Manhattan — no surge on morning flights.' },
   { href: '/services/areas/ewr-airport', title: 'Newark (EWR) Car Service', blurb: 'All tolls included. Flat rate from Manhattan, NJ, and Brooklyn to EWR.' },
   { href: '/services/areas/hpn-airport', title: 'Westchester (HPN) Car Service', blurb: 'Commercial and private terminal. Westchester County Airport service.' },
+  { href: '/services/areas/teb-airport', title: 'Teterboro (TEB) Car Service', blurb: 'Private aviation only. FBO lobby meet & greet at Signature, Atlantic & Meridian. 12 miles from Midtown.' },
 ];
 
 export default function AreasIndexPage() {
@@ -242,6 +274,23 @@ export default function AreasIndexPage() {
             <p className="text-brand-grey text-sm mb-8">Fairfield County communities with direct service to all NYC airports and Manhattan — flat rates, no surprise charges.</p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {connecticutCities.map((a) => (
+                <Link key={a.href} href={a.href} className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group">
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
+                  <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>
+                  <span className="mt-3 inline-block text-xs font-medium text-brand-black">View page →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Long Island Communities */}
+        <section className="pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Long Island Communities</h2>
+            <p className="text-brand-grey text-sm mb-8">Dedicated pages for Nassau &amp; Suffolk County towns — flat-rate airport transfers and Manhattan car service.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {longIslandCities.map((a) => (
                 <Link key={a.href} href={a.href} className="block bg-brand-white border border-brand-light p-5 hover:border-brand-dark transition-colors group">
                   <h3 className="font-semibold text-brand-black group-hover:underline mb-2 text-sm">{a.title}</h3>
                   <p className="text-xs text-brand-grey leading-relaxed">{a.blurb}</p>

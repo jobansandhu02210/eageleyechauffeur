@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Cormorant_Garamond } from 'next/font/google';
+import { Poppins, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -14,14 +14,15 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 import { getSiteUrl } from '@/lib/site';
 import { defaultSiteDescription, siteKeywords } from '@/lib/seo';
 
-const inter = Inter({
+const poppins = Poppins({
+  weight: ['300', '400', '500'],
   subsets: ['latin'],
   variable: '--font-sans',
   display: 'swap',
 });
 
-const cormorant = Cormorant_Garamond({
-  weight: ['400', '500', '600', '700'],
+const playfair = Playfair_Display({
+  weight: ['400', '500'],
   subsets: ['latin'],
   variable: '--font-serif',
   display: 'swap',
@@ -85,7 +86,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${playfair.variable}`}>
       <body className="font-sans min-h-screen flex flex-col">
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />

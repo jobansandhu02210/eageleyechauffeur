@@ -1,6 +1,11 @@
 export const dynamic = 'force-dynamic';
 
+import type { Metadata } from 'next';
 import { headers } from 'next/headers';
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 type Row = {
   id: string;

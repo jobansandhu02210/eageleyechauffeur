@@ -261,6 +261,44 @@ export default function PrincetonNJPage() {
         </div>
       </section>
 
+      {/* Transit Comparison */}
+      <section className="bg-brand-black text-brand-white py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold mb-3">
+            Black Car vs. NJ Transit from Princeton
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-2xl">
+            Princeton is served by the NJ Transit Princeton Junction station on the Northeast Corridor. For some trips, the train works well. For airport transfers and professional travel, the comparison changes.
+          </p>
+          <div className="space-y-4">
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">EWR via NJ Transit — viable in limited scenarios</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                NJ Transit connects Princeton Junction to Newark Liberty Airport via the Northeast Corridor with a transfer to the AirTrain at the EWR station. This works for mid-day travel with minimal luggage. Total journey time is typically 55–70 minutes from Princeton Junction to the terminal — similar to a black car. However, the train requires parking at Princeton Junction, scheduling around train times, managing luggage on platforms, and hoping the service runs on time. Eagle Eye picks you up at your exact address — home, office, or campus building.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">JFK and LGA — no practical transit option</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Reaching JFK from Princeton by transit requires NJ Transit to Newark Penn Station, then NJ Transit to Manhattan Penn Station, then the A train to Howard Beach and the JFK AirTrain — a 2.5-to-3-hour journey. There is no practical transit route to LaGuardia from Central NJ. A black car from Princeton to JFK takes 60–80 minutes door-to-terminal.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Princeton to Manhattan</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                The NJ Transit Princeton Junction to New York Penn Station train takes approximately 70–80 minutes and requires a walk or ride to the station. A black car from Princeton to Midtown takes 60–75 minutes door-to-door, with no parking, no transfers, and no luggage handling. For executives, university guests, and visitors arriving or departing from specific Manhattan addresses, the black car is often the faster and always the more comfortable option.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Corporate and campus travel</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Route 1 pharmaceutical and biotech campuses are not served by NJ Transit at the campus level — they are typically a drive from any station. Eagle Eye provides door-to-campus pickup and drop-off for Route 1 executives and Princeton University visitors, eliminating the need for a rental car or parking at the station.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Eagle Eye */}
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -364,6 +402,62 @@ export default function PrincetonNJPage() {
                 {area.name}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common Routes Table */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Princeton</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">EWR Airport</td>
+                  <td className="p-4 text-brand-grey">45–60 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer (closest airport to Princeton)</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">75–90 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">LGA Airport</td>
+                  <td className="p-4 text-brand-grey">75–90 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Midtown)</td>
+                  <td className="p-4 text-brand-grey">65–80 min</td>
+                  <td className="p-4 text-brand-grey">Long Distance</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Financial District)</td>
+                  <td className="p-4 text-brand-grey">65–80 min</td>
+                  <td className="p-4 text-brand-grey">Long Distance</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Newark (city)</td>
+                  <td className="p-4 text-brand-grey">45–60 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Philadelphia (PHL area)</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Long Distance</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

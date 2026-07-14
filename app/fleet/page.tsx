@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { SafeFleetImage } from '@/components/SafeFleetImage';
 import { getSiteUrl } from '@/lib/site';
@@ -11,21 +12,21 @@ export const metadata: Metadata = {
       'NYC Luxury Fleet | Business & First Class Sedans & SUVs | Eagle Eye Chauffeur',
   },
   description:
-    "Eagle Eye Chauffeur's luxury fleet — Business Class Volvo Sedan, Chevrolet Suburban, First Class Cadillac Escalade & Mercedes-Benz S-Class. Professional chauffeurs. Book NYC's finest black car service.",
+    "Eagle Eye Chauffeur's luxury fleet — Business Class Cadillac & Mercedes Sedans, Chevrolet Suburban & GMC Yukon XL, First Class Cadillac Escalade & Lincoln Navigator, Mercedes-Benz S-Class & BMW 7 Series. Professional chauffeurs. Book NYC's finest black car service.",
   alternates: { canonical: `${getSiteUrl()}/fleet` },
   openGraph: {
     url: `${getSiteUrl()}/fleet`,
     title:
       'NYC Luxury Fleet | Business & First Class Sedans & SUVs | Eagle Eye Chauffeur',
     description:
-      "Eagle Eye Chauffeur's luxury fleet — Business Class Volvo Sedan, Chevrolet Suburban, First Class Cadillac Escalade & Mercedes-Benz S-Class. Professional chauffeurs. Book NYC's finest black car service.",
+      "Eagle Eye Chauffeur's luxury fleet — Business Class Cadillac & Mercedes Sedans, Chevrolet Suburban & GMC Yukon XL, First Class Cadillac Escalade & Lincoln Navigator, Mercedes-Benz S-Class & BMW 7 Series. Professional chauffeurs. Book NYC's finest black car service.",
   },
 };
 
 const vehicles = [
   {
     name: 'Business Class Sedan',
-    subtitle: 'Volvo',
+    subtitle: 'Cadillac CT6',
     category: 'Sedan',
     capacity: '3 passengers',
     luggage: '3 bags',
@@ -33,7 +34,46 @@ const vehicles = [
     fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
     features: ['Leather interior', 'Climate control', 'USB charging', 'Premium sound'],
     description:
-      'Our Volvo sedan delivers understated luxury and reliability. Ideal for business travel and point-to-point transfers—discreet, comfortable, and professional.',
+      'The Cadillac CT6 delivers a smooth, confident ride with an upscale cabin. Ideal for business travel and point-to-point transfers—discreet, comfortable, and professional.',
+    bestFor: 'Corporate airport transfers, solo executive travel',
+  },
+  {
+    name: 'Business Class Sedan',
+    subtitle: 'Mercedes-Benz E-Class',
+    category: 'Sedan',
+    capacity: '3 passengers',
+    luggage: '3 bags',
+    local: '/fleet-business-sedan-eclass.png',
+    fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+    features: ['Leather interior', 'Climate control', 'USB charging', 'Premium sound'],
+    description:
+      'The Mercedes-Benz E-Class blends classic Mercedes refinement with a comfortable, business-ready cabin. A dependable choice for everyday corporate travel.',
+    bestFor: 'Corporate airport transfers, solo executive travel',
+  },
+  {
+    name: 'Business Class Sedan',
+    subtitle: 'Cadillac XT6',
+    category: 'Sedan',
+    capacity: '3 passengers',
+    luggage: '3 bags',
+    local: '/fleet-business-sedan-xt6.png',
+    fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+    features: ['Leather interior', 'Climate control', 'USB charging', 'Premium sound'],
+    description:
+      'The Cadillac XT6 pairs a commanding presence with a comfortable, well-appointed cabin. A versatile choice for business travel with a bit more road presence.',
+    bestFor: 'Corporate airport transfers, solo executive travel',
+  },
+  {
+    name: 'Business Class Sedan',
+    subtitle: 'Cadillac Lyriq',
+    category: 'Sedan',
+    capacity: '3 passengers',
+    luggage: '3 bags',
+    local: '/fleet-business-sedan-lyriq.png',
+    fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+    features: ['Leather interior', 'Climate control', 'USB charging', 'Premium sound'],
+    description:
+      'The Cadillac Lyriq brings a quiet, all-electric ride with a modern, tech-forward cabin. A refined option for clients who prefer a sustainable choice.',
     bestFor: 'Corporate airport transfers, solo executive travel',
   },
   {
@@ -50,6 +90,19 @@ const vehicles = [
     bestFor: 'Group airport runs, family transfers, corporate groups',
   },
   {
+    name: 'Business Class SUV',
+    subtitle: 'GMC Yukon XL',
+    category: 'SUV',
+    capacity: '5–7 passengers',
+    luggage: '5+ bags',
+    local: '/fleet-business-suv-yukon.png',
+    fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80',
+    features: ['Spacious cabin', 'Premium sound', 'Rear climate', 'All-wheel drive'],
+    description:
+      'The GMC Yukon XL offers a bold, upscale interior with generous cargo room. A great alternative for executives and small groups.',
+    bestFor: 'Group airport runs, family transfers, corporate groups',
+  },
+  {
     name: 'First Class SUV',
     subtitle: 'Cadillac Escalade',
     category: 'SUV',
@@ -60,6 +113,19 @@ const vehicles = [
     features: ['Full-size luxury', 'Premium interior', 'Chrome accents', 'Tinted privacy glass'],
     description:
       'The Cadillac Escalade defines first-class SUV travel. Sophisticated, spacious, and built for executives who expect the best.',
+    bestFor: 'High-profile arrivals, VIP group travel, executive presence',
+  },
+  {
+    name: 'First Class SUV',
+    subtitle: 'Lincoln Navigator',
+    category: 'SUV',
+    capacity: '5–7 passengers',
+    luggage: '6+ bags',
+    local: '/fleet-first-suv-navigator.png',
+    fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80',
+    features: ['Full-size luxury', 'Premium interior', 'Chrome accents', 'Tinted privacy glass'],
+    description:
+      'The Lincoln Navigator delivers a commanding presence with a serene, tech-forward cabin. A refined choice for executives who expect the best.',
     bestFor: 'High-profile arrivals, VIP group travel, executive presence',
   },
   {
@@ -75,13 +141,66 @@ const vehicles = [
       'The Mercedes-Benz S-Class sets the standard for luxury sedans. Maximum comfort and refinement for high-profile and corporate travel.',
     bestFor: 'C-suite travel, roadshows, VIP client transport',
   },
+  {
+    name: 'First Class Sedan',
+    subtitle: 'BMW 7 Series',
+    category: 'Sedan',
+    capacity: '3 passengers',
+    luggage: '3 bags',
+    local: '/fleet-first-sedan-bmw.png',
+    fallback: 'https://images.unsplash.com/photo-1523983388277-336a66bafde1?w=800&q=80',
+    features: ['Executive rear seating', 'Premium interior', 'Ambient lighting', 'Refreshments'],
+    description:
+      'The BMW 7 Series pairs commanding presence with a refined, tech-forward cabin. An equally exceptional choice for executives who value modern luxury.',
+    bestFor: 'C-suite travel, roadshows, VIP client transport',
+  },
+];
+
+const vehicleGroups = Object.entries(
+  vehicles.reduce<Record<string, typeof vehicles>>((acc, v) => {
+    (acc[v.name] ??= []).push(v);
+    return acc;
+  }, {})
+);
+
+const sprinters = [
+  {
+    name: 'Executive Sprinter',
+    capacity: 'Up to 14 passengers',
+    luggage: '14 standard bags',
+    rate: '$175/hr',
+    local: '/fleet-sprinter-executive.png',
+    description:
+      'Our most versatile group vehicle — forward-facing seating and generous luggage room make it the go-to choice for corporate groups, conference shuttles, and roadshows.',
+    bestFor: 'Corporate groups, conference shuttles, roadshows',
+  },
+  {
+    name: 'Limo Sprinter',
+    capacity: 'Up to 18 passengers',
+    luggage: 'Limited luggage space',
+    rate: '$200/hr',
+    local: '/fleet-sprinter-limo.png',
+    description:
+      'A limo-style lounge interior with bar seating, built for the party, not the packing list — the pick for nights out, bachelor/bachelorette parties, and celebrations.',
+    bestFor: 'Nightlife, bachelor/bachelorette parties, celebrations',
+  },
+  {
+    name: 'Jet Sprinter',
+    capacity: 'Up to 13 passengers',
+    luggage: 'Limited luggage space',
+    rate: '$250/hr',
+    local: '/fleet-sprinter-jet.png',
+    description:
+      'Our most exclusive ride — a private-jet-inspired lounge cabin for clients who want the ultimate in privacy and presence for VIP travel and special occasions.',
+    bestFor: 'VIP travel, celebrity clients, special occasions',
+  },
 ];
 
 const selectionGuide = [
   {
     title: 'Solo Executive or Couple',
     recommendation: 'Business Class Sedan',
-    vehicle: 'Volvo Sedan',
+    vehicle: 'Cadillac CT6, E-Class, XT6 or Lyriq',
     icon: '👤',
     forList: [
       'Corporate rides & airport transfers',
@@ -93,7 +212,7 @@ const selectionGuide = [
   {
     title: 'Small Group or Family',
     recommendation: 'Business Class SUV',
-    vehicle: 'Chevrolet Suburban',
+    vehicle: 'Chevrolet Suburban or GMC Yukon XL',
     icon: '👨‍👩‍👧‍👦',
     forList: [
       '3–6 passengers',
@@ -105,7 +224,7 @@ const selectionGuide = [
   {
     title: 'VIP Group Travel',
     recommendation: 'First Class SUV',
-    vehicle: 'Cadillac Escalade',
+    vehicle: 'Cadillac Escalade or Lincoln Navigator',
     icon: '⭐',
     forList: [
       'Executive presence required',
@@ -117,7 +236,7 @@ const selectionGuide = [
   {
     title: 'Maximum Luxury, Solo or Couple',
     recommendation: 'First Class Sedan',
-    vehicle: 'Mercedes-Benz S-Class',
+    vehicle: 'Mercedes-Benz S-Class or BMW 7 Series',
     icon: '💎',
     forList: [
       'C-suite & executive travel',
@@ -142,7 +261,7 @@ const faqs = [
   {
     question: 'What is the difference between Business Class and First Class?',
     answer:
-      'Business Class delivers professional luxury comfort at a high standard — ideal for corporate travel and airport transfers. First Class adds premium vehicle brands (Mercedes-Benz S-Class, Cadillac Escalade) and an elevated interior quality for VIP and executive clients who require the very best.',
+      'Business Class delivers professional luxury comfort at a high standard — ideal for corporate travel and airport transfers. First Class adds premium vehicle brands (Mercedes-Benz S-Class, BMW 7 Series, Cadillac Escalade, Lincoln Navigator) and an elevated interior quality for VIP and executive clients who require the very best.',
   },
   {
     question: 'How many passengers fit in each vehicle?',
@@ -177,51 +296,217 @@ export default function FleetPage() {
       />
 
       {/* ── HERO ── */}
-      <section className="bg-brand-black text-brand-white py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-brand-silver text-sm font-medium uppercase tracking-widest mb-4">
-            Our Fleet
-          </p>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-white leading-tight max-w-3xl">
-            Luxury Fleet — Business &amp; First Class Vehicles
-          </h1>
-          <p className="mt-6 text-lg text-brand-silver max-w-2xl leading-relaxed">
-            Every Eagle Eye vehicle is professionally maintained, TLC-compliant, and paired
-            with a trained chauffeur. Choose the right class for your trip.
-          </p>
+      <section className="relative bg-brand-black text-brand-white overflow-hidden">
+        <div className="relative h-[62vh] min-h-[460px] max-h-[720px] w-full">
+          <Image
+            src="/fleet-hero.png"
+            alt="Eagle Eye Chauffeur's full luxury fleet — Sprinter vans, Cadillac Escalades, and Mercedes-Benz sedans lined up against the New York City skyline"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-black/90 via-brand-black/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-black/55 via-brand-black/5 to-transparent" />
 
-          {/* CTA buttons */}
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center px-8 py-4 bg-brand-white text-brand-black font-medium hover:bg-brand-silver transition-colors"
-            >
-              Book Now
-            </Link>
-            <a
-              href="#fleet"
-              className="inline-flex items-center justify-center px-8 py-4 border border-brand-white/30 text-brand-white font-medium hover:border-brand-white/70 transition-colors"
-            >
-              View Vehicles
-            </a>
+          <div className="absolute inset-0 flex items-end">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16 w-full">
+              <p className="text-brand-silver text-sm font-medium uppercase tracking-widest mb-4">
+                Our Fleet
+              </p>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-semibold text-brand-white leading-tight max-w-3xl text-balance">
+                The Eagle Eye Collection
+              </h1>
+              <p className="mt-6 text-lg text-brand-silver max-w-2xl leading-relaxed">
+                Executive sedans, premium SUVs, and VIP Sprinter vans — every vehicle
+                professionally maintained, TLC-compliant, and paired with a trained chauffeur.
+              </p>
+
+              {/* CTA buttons */}
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/book"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-brand-white text-brand-black font-medium hover:bg-brand-silver transition-colors"
+                >
+                  Book Now
+                </Link>
+                <a
+                  href="#fleet"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-brand-white/40 text-brand-white font-medium backdrop-blur-sm hover:border-brand-white/70 transition-colors"
+                >
+                  View Vehicles
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div className="relative border-t border-brand-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-brand-white/10">
+              {[
+                { stat: '4 Vehicle Classes', sub: 'Sedan & SUV options' },
+                { stat: 'Spotless & Inspected', sub: 'Before every trip' },
+                { stat: 'TLC Compliant', sub: 'Fully licensed & insured' },
+                { stat: 'Professional Chauffeurs', sub: 'Trained & vetted drivers' },
+              ].map((item) => (
+                <div
+                  key={item.stat}
+                  className="bg-brand-black px-6 py-8 text-center"
+                >
+                  <p className="font-serif text-xl font-semibold text-brand-white">
+                    {item.stat}
+                  </p>
+                  <p className="mt-1 text-sm text-brand-silver">{item.sub}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FLEET GALLERY ── */}
+      <section id="fleet" className="bg-brand-white py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <p className="text-brand-silver text-sm font-medium uppercase tracking-widest mb-3">
+              The Fleet
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-black">
+              Choose Your Ride
+            </h2>
+            <p className="mt-4 text-brand-grey text-lg">
+              Four distinct vehicle classes — all maintained to an uncompromising standard
+              and driven by Eagle Eye&apos;s professional chauffeurs.
+            </p>
           </div>
 
-          {/* Stats bar */}
-          <div className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-px bg-brand-white/10">
-            {[
-              { stat: '4 Vehicle Classes', sub: 'Sedan & SUV options' },
-              { stat: 'Spotless & Inspected', sub: 'Before every trip' },
-              { stat: 'TLC Compliant', sub: 'Fully licensed & insured' },
-              { stat: 'Professional Chauffeurs', sub: 'Trained & vetted drivers' },
-            ].map((item) => (
+          {vehicleGroups.map(([groupName, group]) => (
+            <div key={groupName} className="mb-14 last:mb-0">
+              <div className="flex items-baseline gap-6 mb-5">
+                <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-black shrink-0">
+                  {groupName}
+                </h3>
+                <div className="flex-1 h-px bg-brand-light" />
+                <span className="text-xs text-brand-silver uppercase tracking-wide shrink-0">
+                  {group.length} {group.length === 1 ? 'option' : 'options'}
+                </span>
+              </div>
+
+              <div className="border border-brand-light divide-y divide-brand-light">
+                {group.map((v, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 hover:bg-brand-offwhite transition-colors"
+                  >
+                    <div className="relative w-full sm:w-32 aspect-[3/2] shrink-0 bg-brand-offwhite">
+                      <SafeFleetImage
+                        localSrc={v.local}
+                        fallbackSrc={v.fallback}
+                        alt={`${v.subtitle} — ${v.name} | Eagle Eye Chauffeur NYC`}
+                        className="absolute inset-0 w-full h-full object-contain p-2"
+                      />
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <p className="font-serif text-lg font-semibold text-brand-black">
+                        {v.subtitle}
+                      </p>
+                      <p className="text-xs font-medium text-brand-silver uppercase tracking-wide mt-0.5">
+                        {v.name}
+                      </p>
+                      <p className="mt-2 text-sm text-brand-grey hidden sm:block truncate">
+                        {v.bestFor}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between sm:justify-end gap-6 sm:gap-10 shrink-0">
+                      <p className="text-sm text-brand-grey whitespace-nowrap">
+                        <span className="text-brand-black font-medium">{v.capacity}</span>
+                      </p>
+                      <Link
+                        href="/book"
+                        className="text-sm font-medium text-brand-black underline underline-offset-4 hover:text-brand-charcoal transition-colors whitespace-nowrap"
+                      >
+                        View Details →
+                      </Link>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── SPRINTER VANS ── */}
+      <section className="bg-brand-white py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <p className="text-brand-silver text-sm font-medium uppercase tracking-widest mb-3">
+              Group & Specialty Travel
+            </p>
+            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-black">
+              Sprinter Vans
+            </h2>
+            <p className="mt-4 text-brand-grey text-lg">
+              For groups, nights out, and clients who want something beyond a sedan or SUV —
+              three Sprinter builds, each for a different purpose. Priced hourly with a 2-hour
+              minimum; contact us for a custom quote.
+            </p>
+          </div>
+
+          <div className="flex items-baseline gap-6 mb-5">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-brand-black shrink-0">
+              Sprinters
+            </h3>
+            <div className="flex-1 h-px bg-brand-light" />
+            <span className="text-xs text-brand-silver uppercase tracking-wide shrink-0">
+              {sprinters.length} options
+            </span>
+          </div>
+
+          <div className="border border-brand-light divide-y divide-brand-light">
+            {sprinters.map((s, i) => (
               <div
-                key={item.stat}
-                className="bg-brand-black px-6 py-8 text-center"
+                key={i}
+                className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-5 sm:p-6 hover:bg-brand-offwhite transition-colors"
               >
-                <p className="font-serif text-xl font-semibold text-brand-white">
-                  {item.stat}
-                </p>
-                <p className="mt-1 text-sm text-brand-silver">{item.sub}</p>
+                <div className="relative w-full sm:w-32 aspect-[3/2] shrink-0 bg-brand-offwhite">
+                  <SafeFleetImage
+                    localSrc={s.local}
+                    fallbackSrc={s.local}
+                    alt={`${s.name} — Eagle Eye Chauffeur NYC`}
+                    className="absolute inset-0 w-full h-full object-contain p-2"
+                  />
+                </div>
+
+                <div className="flex-1 min-w-0">
+                  <p className="font-serif text-lg font-semibold text-brand-black">
+                    {s.name}
+                  </p>
+                  <p className="text-xs font-medium text-brand-silver uppercase tracking-wide mt-0.5">
+                    Sprinter · {s.rate}
+                  </p>
+                  <p className="mt-2 text-sm text-brand-grey hidden sm:block truncate">
+                    {s.bestFor}
+                  </p>
+                </div>
+
+                <div className="flex items-center justify-between sm:justify-end gap-6 sm:gap-10 shrink-0">
+                  <p className="text-sm text-brand-grey whitespace-nowrap">
+                    <span className="text-brand-black font-medium">{s.capacity}</span>
+                  </p>
+                  <a
+                    href={WHATSAPP_BOOKING_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-brand-black underline underline-offset-4 hover:text-brand-charcoal transition-colors whitespace-nowrap"
+                  >
+                    Request a Quote →
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -278,90 +563,6 @@ export default function FleetPage() {
                   Book this class →
                 </Link>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FLEET GALLERY ── */}
-      <section id="fleet" className="bg-brand-white py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-12">
-            <p className="text-brand-silver text-sm font-medium uppercase tracking-widest mb-3">
-              The Fleet
-            </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-brand-black">
-              Choose Your Ride
-            </h2>
-            <p className="mt-4 text-brand-grey text-lg">
-              Four distinct vehicle classes — all maintained to an uncompromising standard
-              and driven by Eagle Eye&apos;s professional chauffeurs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
-            {vehicles.map((v, i) => (
-              <article
-                key={i}
-                className="bg-brand-white border border-brand-light overflow-hidden flex flex-col hover:border-brand-dark transition-colors"
-              >
-                <div className="aspect-[16/10] relative">
-                  <SafeFleetImage
-                    localSrc={v.local}
-                    fallbackSrc={v.fallback}
-                    alt={`${v.name} — ${v.subtitle} | Eagle Eye Chauffeur NYC`}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 left-4 bg-brand-black/80 text-brand-white text-xs font-medium px-3 py-1 uppercase tracking-wide">
-                    {v.category}
-                  </div>
-                </div>
-
-                <div className="p-6 lg:p-8 flex-1 flex flex-col">
-                  <h2 className="font-serif text-2xl font-semibold text-brand-black">
-                    {v.name}
-                  </h2>
-                  <p className="mt-1 text-brand-grey font-medium">{v.subtitle}</p>
-                  <p className="mt-3 text-brand-grey leading-relaxed">{v.description}</p>
-
-                  {/* Capacity & luggage */}
-                  <dl className="mt-5 flex gap-8 text-sm border-t border-brand-light pt-5">
-                    <div>
-                      <dt className="text-brand-silver mb-0.5">Capacity</dt>
-                      <dd className="font-semibold text-brand-black">{v.capacity}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-brand-silver mb-0.5">Luggage</dt>
-                      <dd className="font-semibold text-brand-black">{v.luggage}</dd>
-                    </div>
-                  </dl>
-
-                  {/* Feature tags */}
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {v.features.map((f, j) => (
-                      <li
-                        key={j}
-                        className="bg-brand-offwhite text-brand-black text-xs px-3 py-1.5 font-medium"
-                      >
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Best for */}
-                  <p className="mt-5 text-sm text-brand-grey">
-                    <span className="font-semibold text-brand-black">Best for: </span>
-                    {v.bestFor}
-                  </p>
-
-                  <Link
-                    href="/book"
-                    className="mt-6 inline-flex items-center justify-center px-6 py-3 bg-brand-black text-brand-white text-sm font-medium hover:bg-brand-charcoal transition-colors self-start"
-                  >
-                    Choose This Vehicle
-                  </Link>
-                </div>
-              </article>
             ))}
           </div>
         </div>

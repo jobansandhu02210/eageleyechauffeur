@@ -278,6 +278,89 @@ export default function GreenwichVillagePage() {
         </div>
       </section>
 
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Greenwich Village Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Greenwich Village&apos;s irregular street grid — a legacy of its pre-grid settlement — means many blocks don&apos;t follow Manhattan&apos;s numbered pattern. Streets like Grove, Commerce, Bedford, and Barrow curve and intersect at odd angles, and several blocks are one-way in non-obvious directions. Your chauffeur will confirm the exact pickup corner via text — often the nearest accessible avenue (Hudson, Seventh Avenue South, or Sixth Avenue) rather than a narrow side street. The West Village section west of Hudson Street is particularly narrow; pickups are usually staged on West Street or Washington Street near the waterfront. For restaurant departure pickups on Bleecker or Christopher, your chauffeur confirms a block in advance and stays in contact so you walk out to a waiting car rather than waiting on a busy sidewalk.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Washington Square Park — 5th Ave &amp; Washington Square North</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>NYU Bobst Library — 70 Washington Square South</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Bleecker Street restaurant row — 6th Ave to 7th Ave South</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Carbone / Commerce Street area — Bedford St &amp; Commerce St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Hudson Street corridor — full north–south spine</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Jane Hotel — Jane St &amp; West St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Meatpacking District — Gansevoort St &amp; 9th Ave</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from Greenwich Village</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Greenwich Village to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Greenwich Village to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Greenwich Village to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Greenwich Village to Teterboro (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Greenwich Village to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Greenwich Village to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">Greenwich Village to Brooklyn</td>
+                  <td className="p-4 text-brand-grey">20–35 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

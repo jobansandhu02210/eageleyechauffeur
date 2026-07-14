@@ -260,6 +260,44 @@ export default function JerseyCityPage() {
         </div>
       </section>
 
+      {/* Transit Comparison */}
+      <section className="bg-brand-black text-brand-white py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold mb-3">
+            Black Car vs. NJ Transit &amp; PATH from Jersey City
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-2xl">
+            Jersey City is served by PATH, NJ Transit, and the Hudson-Bergen Light Rail. Each has its role — but for airport transfers and professional travel, the calculation is different.
+          </p>
+          <div className="space-y-4">
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">No direct transit to JFK or LGA</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                There is no direct rail connection from Jersey City to JFK or LaGuardia. Reaching JFK via PATH requires a transfer in Manhattan to the A train and then the AirTrain — easily 90 minutes or more with luggage. LGA is bus-accessible but requires multiple steps. Eagle Eye picks up at your address and delivers directly to the terminal curb.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">EWR via NJ Transit — a real alternative, with limits</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                NJ Transit does connect Jersey City to Newark Liberty Airport via the Northeast Corridor and AirTrain. This works well for mid-day travel with one bag. But for early morning departures before 6 AM, heavy luggage, international travel with long check-in times, or any trip where timing is non-negotiable, a confirmed black car is more reliable.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Corporate and client travel</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Finance and tech executives in Jersey City&apos;s Newport and Exchange Place districts routinely use black car service for client transportation, road show logistics, and any trip where showing up in a professional vehicle matters. A black car provides door-to-door service and a consistent, professional impression that transit cannot.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">When transit makes sense</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                PATH and the Hudson-Bergen Light Rail are excellent for daily Midtown commutes during peak hours — efficient and cost-effective. Eagle Eye is the right choice for airport runs, pre-dawn departures, heavy baggage, client-facing travel, and any journey where a missed connection is not an option.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Eagle Eye */}
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -361,6 +399,62 @@ export default function JerseyCityPage() {
                 {area.name}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common Routes Table */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Jersey City</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">EWR Airport</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">LGA Airport</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Midtown)</td>
+                  <td className="p-4 text-brand-grey">20–35 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Financial District)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Newark (city center)</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

@@ -279,6 +279,90 @@ export default function BatteryParkCityPage() {
         </div>
       </section>
 
+      {/* ── Routes Table ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Battery Park City</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">LaGuardia Airport (LGA)</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Wall Street / Financial District</td>
+                  <td className="p-4 text-brand-grey">5–10 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+            Battery Park City Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Battery Park City is a largely self-contained residential enclave with its own internal street grid running along the Hudson River. West Street (Route 9A) forms the eastern boundary and is the main vehicle artery — your chauffeur will typically stage on West Street at the agreed cross-street rather than inside the BPC complex, where through-traffic is limited. North End Avenue and South End Avenue carry internal traffic and work for building-front pickups within BPC. For Brookfield Place corporate pickups, the designated vehicle drop-off on Vesey Street between West Street and North End Avenue is the cleanest approach. For EWR transfers, the Holland Tunnel via West Street is a fast and direct route — often the quickest airport run from any downtown Manhattan address.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">Key pickup locations</h3>
+              <ul className="space-y-2">
+                {[
+                  'Brookfield Place — Vesey St & West St vehicle lane',
+                  'One World Trade Center — Fulton St & West St',
+                  'North End Avenue residential buildings',
+                  'South End Avenue — southern BPC corridor',
+                  'West Street / Route 9A — main vehicle artery',
+                  'Liberty Street & West St — FiDi border',
+                  'Hudson River Esplanade — Rector Place entry',
+                ].map(loc => (
+                  <li key={loc} className="text-sm text-brand-grey flex gap-2">
+                    <span className="text-brand-charcoal">→</span>{loc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

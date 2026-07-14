@@ -43,6 +43,14 @@ const faqs = [
     q: 'Can I get a black car from the Upper East Side to the Hamptons or Connecticut?',
     a: 'Yes. UES-to-Hamptons and UES-to-Connecticut runs are popular on Friday afternoons and holiday weekends. Your flat rate is confirmed at booking and never changes regardless of traffic. We recommend booking at least 24 hours in advance for Hamptons and Connecticut transfers, especially during peak summer season.',
   },
+  {
+    q: 'Do you pick up from the Carlyle Hotel on the Upper East Side?',
+    a: 'Yes. The Carlyle at 35 East 76th Street is a regular Eagle Eye pickup point. Your chauffeur coordinates with the hotel&apos;s front desk and stages in the motor court area on 76th Street for a clean, unhurried departure. The same applies to The Mark at 77th and Madison and all other Upper East Side hotel properties.',
+  },
+  {
+    q: 'How long does it take to get from the Upper East Side to JFK on a weekday morning?',
+    a: 'On a typical weekday morning between 7–9 a.m., expect 40–55 minutes from the Upper East Side to JFK. The Queens-Midtown Tunnel and Grand Central Parkway approach tend to move well in the outbound direction at that hour. We recommend allowing 2.5 hours before your departure time for domestic flights and 3 hours for international — your flat rate is confirmed at booking regardless of how traffic develops.',
+  },
 ];
 
 const eaglEyeBenefits = [
@@ -274,6 +282,89 @@ export default function UpperEastSidePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Upper East Side Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">The Upper East Side&apos;s residential streets run one-way east–west between Park, Madison, and Fifth Avenues, with Park and Fifth carrying most of the north–south traffic. Your chauffeur will confirm which entrance to use for your building — most pre-war co-ops on Park Avenue have a service lane alongside the building, while Fifth Avenue residences overlook the park with limited stopping. For hotel pickups at The Carlyle on 76th Street or The Mark on 77th, drivers use the hotel motor court. We coordinate with building doormen in advance so your car is staged by the time you step out.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>The Carlyle Hotel — 76th St &amp; Madison Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>The Mark Hotel — 77th St &amp; Madison Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Metropolitan Museum of Art — Fifth Ave &amp; 82nd St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Lenox Hill Hospital — 77th St &amp; Park Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Park Avenue co-ops — 70th to 90th St corridor</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Guggenheim Museum — Fifth Ave &amp; 89th St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>East 86th Street corridor — major cross-street hub</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from the Upper East Side</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper East Side to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper East Side to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">20–28 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper East Side to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper East Side to Westchester</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper East Side to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper East Side to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper East Side to JFK via Midtown Tunnel</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
         </div>
       </section>
 

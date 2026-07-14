@@ -126,11 +126,11 @@ export default function WorldCupFinalPage() {
             Eagle Eye Chauffeur: Flat rate locked at booking · No surge pricing · Pre-arranged post-Final pickup
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/book" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors text-center">
-              Reserve My Final Transport
+            <Link href="/contact" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors text-center">
+              Request a Final Quote
             </Link>
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block border border-green-500 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:border-green-300 transition-colors text-center">
-              WhatsApp — Book Now
+              WhatsApp — Get Quote
             </a>
             <a href={`tel:${CONTACT_PHONE_E164}`} className="inline-block border border-green-700 text-green-300 font-semibold px-8 py-4 text-sm tracking-wide hover:border-green-500 transition-colors text-center">
               Call {CONTACT_PHONE_DISPLAY}
@@ -146,7 +146,7 @@ export default function WorldCupFinalPage() {
             <div><div className="font-bold text-green-400 text-lg">July 19, 2026</div><div className="text-brand-silver mt-1">Match Date</div></div>
             <div><div className="font-bold text-green-400 text-lg">MetLife Stadium</div><div className="text-brand-silver mt-1">East Rutherford, NJ</div></div>
             <div><div className="font-bold text-green-400 text-lg">~82,500</div><div className="text-brand-silver mt-1">Capacity</div></div>
-            <div><div className="font-bold text-green-400 text-lg">Book Now</div><div className="text-brand-silver mt-1">Spots filling fast</div></div>
+            <div><div className="font-bold text-green-400 text-lg">Get a Quote</div><div className="text-brand-silver mt-1">Spots filling fast</div></div>
           </div>
         </div>
       </section>
@@ -216,8 +216,8 @@ export default function WorldCupFinalPage() {
             ))}
           </div>
           <div className="mt-6">
-            <Link href="/book" className="inline-block bg-green-700 text-white font-semibold px-8 py-4 text-sm hover:bg-green-600 transition-colors">
-              Get Instant Final Quote →
+            <Link href="/contact" className="inline-block bg-green-700 text-white font-semibold px-8 py-4 text-sm hover:bg-green-600 transition-colors">
+              Request a Final Quote →
             </Link>
           </div>
         </div>
@@ -251,8 +251,8 @@ export default function WorldCupFinalPage() {
             Flat-rate pricing · No surge · Door-to-door · Post-Final pickup included
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/book" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors">
-              Book Final Transport Now
+            <Link href="/contact" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors">
+              Request a Final Quote
             </Link>
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block border border-green-500 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:border-green-300 transition-colors">
               WhatsApp Us

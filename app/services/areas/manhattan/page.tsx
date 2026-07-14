@@ -80,7 +80,7 @@ export default function ManhattanPage() {
             NYC&apos;s Premier Luxury Black Car
           </p>
           <h1 className="font-serif text-4xl lg:text-6xl font-semibold text-brand-white mb-5 leading-tight">
-            Manhattan Black Car Service
+            Black Car Service in New York
           </h1>
           <p className="text-brand-silver text-lg lg:text-xl max-w-2xl mb-10 leading-relaxed">
             Professional chauffeur service across every Manhattan neighborhood — from Midtown boardrooms
@@ -131,7 +131,7 @@ export default function ManhattanPage() {
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3">
-            Manhattan Black Car Services
+            Black Car Service Manhattan
           </h2>
           <p className="text-brand-grey mb-8 max-w-2xl">
             Whether you need a one-way transfer, a full day with a chauffeur, or coordinated corporate

@@ -31,6 +31,26 @@ const faqs = [
     q: 'Do you cover early morning flights from JFK?',
     a: 'Yes. Eagle Eye Chauffeur operates 24/7. Pre-dawn pickups — even 3am or 4am — are fully available. Your driver will be confirmed the evening before your trip.',
   },
+  {
+    q: 'How early should I leave for JFK from Midtown?',
+    a: 'We recommend scheduling pickup at least 3 hours before your departure time. The drive is typically 35–50 minutes, but during peak hours (7–9am and 5–8pm) allow 60–75 minutes. We help you plan the right departure time when you book.',
+  },
+  {
+    q: 'What is the best route to JFK from Manhattan?',
+    a: 'Your chauffeur selects the fastest route in real time — typically the Queens-Midtown Tunnel to the Van Wyck Expressway, or the Brooklyn Bridge to the Belt Parkway, depending on your pickup location and current traffic conditions.',
+  },
+  {
+    q: 'Do you track my departing flight for drop-off timing?',
+    a: 'Yes. For departures we monitor flight status so if your flight time changes we can adjust pickup if needed. Your confirmed driver will also have your flight details and will reach out if anything requires attention.',
+  },
+  {
+    q: 'How early should I leave for JFK from Manhattan?',
+    a: 'Allow 90 minutes for off-peak travel, 2+ hours for morning rush (7–9am) or afternoon peak (3–6pm). For international flights, add extra buffer. Your driver will advise on departure time when you confirm your flight details.',
+  },
+  {
+    q: 'Which route do you take from Manhattan to JFK?',
+    a: 'The route depends on traffic — typically the Queens-Midtown Tunnel and the Van Wyck Expressway, or the Brooklyn-Queens Expressway depending on your Manhattan location. Your driver monitors live traffic and selects the fastest approach.',
+  },
 ];
 
 
@@ -160,6 +180,80 @@ export default function ManhattanToJFKBlackCarPage() {
             <p className="text-brand-grey">
               Terminal drop-off is curbside at departures. Your driver pulls directly to your airline terminal.
             </p>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-black">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-white mb-2">
+              JFK Terminal Guide — Where Your Driver Drops You Off
+            </h2>
+            <p className="text-brand-silver mb-6 text-sm">Curbside drop-off at the departures level. Your driver goes directly to your airline&apos;s terminal.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-charcoal text-brand-white">
+                    <th className="text-left p-3 font-semibold">Terminal</th>
+                    <th className="text-left p-3 font-semibold">Airlines</th>
+                    <th className="text-left p-3 font-semibold">Departures Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T1</td>
+                    <td className="p-3 text-brand-grey">Lufthansa, JAL, Air Canada &amp; international carriers</td>
+                    <td className="p-3 text-brand-grey">Curbside drop at departures level</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">T4</td>
+                    <td className="p-3 text-brand-grey">Delta (main hub), Air France, KLM, Cathay Pacific</td>
+                    <td className="p-3 text-brand-grey">Large multi-airline terminal — check your airline&apos;s counter</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T5</td>
+                    <td className="p-3 text-brand-grey">JetBlue (all domestic &amp; Caribbean flights)</td>
+                    <td className="p-3 text-brand-grey">Compact, single-airline terminal</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">T7</td>
+                    <td className="p-3 text-brand-grey">British Airways, Finnair, Korean Air</td>
+                    <td className="p-3 text-brand-grey">Departures Level — follow terminal signs</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T8</td>
+                    <td className="p-3 text-brand-grey">American Airlines, British Airways (shared with T7)</td>
+                    <td className="p-3 text-brand-grey">Departures Level — American check-in on Level 3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-offwhite">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Manhattan Neighborhoods We Pick Up From
+            </h2>
+            <p className="text-brand-grey mb-6 text-sm">We pick up from any Manhattan address. Browse popular neighborhoods below.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { name: 'Midtown Manhattan', desc: 'Hotels, offices, and business addresses in the heart of NYC.', href: '/services/areas/midtown-manhattan' },
+                { name: 'Upper East Side', desc: 'Residential buildings, consulates, and luxury hotels.', href: '/services/areas/upper-east-side' },
+                { name: 'Financial District', desc: 'Wall Street, World Trade Center, and lower Manhattan.', href: '/services/areas/financial-district' },
+                { name: 'SoHo', desc: 'Cast-iron loft buildings and boutique hotels.', href: '/services/areas/soho' },
+                { name: 'Tribeca', desc: 'Celebrity-favored residential neighborhood in lower Manhattan.', href: '/services/areas/tribeca' },
+                { name: 'Upper West Side', desc: 'Columbus Circle area to the Hudson River.', href: '/services/areas/upper-west-side' },
+                { name: 'Chelsea', desc: 'Gallery district and west side residential and hotel corridor.', href: '/services/areas/chelsea' },
+                { name: 'Greenwich Village', desc: 'NYU area and west village townhouses.', href: '/services/areas/greenwich-village' },
+                { name: 'Brooklyn', desc: 'DUMBO, Brooklyn Heights, Park Slope, and beyond.', href: '/services/areas/brooklyn' },
+              ].map((area) => (
+                <Link key={area.name} href={area.href} className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+                  <div className="font-semibold text-brand-black text-sm mb-1">{area.name}</div>
+                  <p className="text-brand-grey text-xs">{area.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -26,11 +26,11 @@ const VEHICLE_LABELS: Record<VehicleType, string> = {
   'first-sedan': 'First Class Sedan',
 };
 
-const VEHICLE_META: Record<VehicleType, { image: string; passengers: number; luggage: number; description: string }> = {
-  'business-sedan': { image: '/fleet-business-sedan.png', passengers: 3, luggage: 3, description: 'Perfect for solo & executive travel' },
-  'business-suv': { image: '/fleet-business-suv.png', passengers: 5, luggage: 5, description: 'Extra room for groups & luggage' },
-  'first-suv': { image: '/fleet-first-suv.png', passengers: 6, luggage: 6, description: 'Top-tier luxury for VIP travel' },
-  'first-sedan': { image: '/fleet-first-sedan.png', passengers: 3, luggage: 3, description: 'Premium comfort with elegant style' },
+const VEHICLE_META: Record<VehicleType, { image: string; passengers: number; luggage: number; description: string; hourlyRate: number }> = {
+  'business-sedan': { image: '/fleet-business-sedan.png', passengers: 3, luggage: 3, description: 'Perfect for solo & executive travel', hourlyRate: 110 },
+  'business-suv':   { image: '/fleet-business-suv.png',  passengers: 5, luggage: 5, description: 'Extra room for groups & luggage',    hourlyRate: 120 },
+  'first-suv':      { image: '/fleet-first-suv.png',     passengers: 6, luggage: 6, description: 'Top-tier luxury for VIP travel',      hourlyRate: 130 },
+  'first-sedan':    { image: '/fleet-first-sedan.png',   passengers: 3, luggage: 3, description: 'Premium comfort with elegant style',  hourlyRate: 210 },
 };
 
 const AIRPORTS = ['JFK - John F. Kennedy', 'LGA - LaGuardia', 'EWR - Newark Liberty', 'HPN - Westchester County'];
@@ -56,6 +56,12 @@ export default function BookPage() {
   const [dropoff, setDropoff] = useState('');
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
+
+  // Minimum pickup = now + 2 hours. Recomputed each render so it stays current.
+  const minPickupMs = Date.now() + 2 * 60 * 60 * 1000;
+  const minPickupDate = new Date(minPickupMs);
+  const minDateStr = minPickupDate.toLocaleDateString('en-CA'); // YYYY-MM-DD in local time
+  const minTimeStr = minPickupDate.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }); // HH:MM local
   const [vehicle, setVehicle] = useState<VehicleType | null>(null);
   const [passengers, setPassengers] = useState(1);
   const [luggage, setLuggage] = useState(0);
@@ -192,6 +198,15 @@ export default function BookPage() {
     });
     return () => { cancelled = true; };
   }, [step, service, pickup, dropoff, airport, hours, passengers, luggage, hasRequiredLocations]);
+
+  // Auto-default date & time to the minimum allowed (now + 3 h) when user reaches Step 2.
+  useEffect(() => {
+    if (step === 2 && !date && !time) {
+      setDate(minDateStr);
+      setTime(minTimeStr);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [step]);
 
   useEffect(() => {
     let cancelled = false;
@@ -376,6 +391,8 @@ export default function BookPage() {
           </p>
         </div>
 
+        <h2 className="sr-only">Booking Form</h2>
+
         {/* Step indicator */}
         <ol className="flex justify-between mb-10 text-xs sm:text-sm" aria-label="Progress">
           {STEPS.map((label, i) => (
@@ -486,22 +503,34 @@ export default function BookPage() {
                   id="date"
                   type="date"
                   value={date}
-                  onChange={(e) => setDate(e.target.value)}
-                  min={new Date().toISOString().slice(0, 10)}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                    // Reset time when date changes so user doesn't keep a now-invalid time
+                    if (e.target.value === minDateStr) setTime(minTimeStr);
+                    else setTime('');
+                  }}
+                  min={minDateStr}
                   className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-black"
                 />
               </div>
               <div>
                 <label htmlFor="time" className="block text-sm font-medium text-brand-black mb-2">
-                  Time
+                  Pick-up Time
                 </label>
                 <input
                   id="time"
                   type="time"
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
+                  min={date === minDateStr ? minTimeStr : undefined}
                   className="w-full px-4 py-3 border border-brand-light bg-brand-offwhite text-brand-black focus:outline-none focus:ring-2 focus:ring-brand-black"
                 />
+                <p className="mt-1.5 text-xs text-brand-grey">
+                  We require at least 2 hours&apos; notice. Earliest available:{' '}
+                  <span className="font-medium text-brand-black">
+                    {minPickupDate.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}
+                  </span>
+                </p>
               </div>
             </div>
           )}
@@ -513,7 +542,9 @@ export default function BookPage() {
                 <label className="block text-sm font-medium text-brand-black mb-1">
                   Choose your vehicle
                 </label>
-                {service !== 'hourly' && (
+                {service === 'hourly' ? (
+                  <p className="text-xs text-brand-silver mb-4">Flat hourly rate — minimum 2 hours</p>
+                ) : (
                   <p className="text-xs text-brand-silver mb-4">Prices calculated automatically for your route</p>
                 )}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -560,9 +591,14 @@ export default function BookPage() {
                           {/* Price display */}
                           <div className={`mt-3 pt-3 border-t ${ isSelected ? 'border-white/20' : 'border-brand-light' }`}>
                             {service === 'hourly' ? (
-                              <p className={`text-sm font-medium ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
-                                Contact for hourly rate
-                              </p>
+                              <div className="flex items-baseline gap-1">
+                                <span className={`text-2xl font-semibold tabular-nums ${ isSelected ? 'text-brand-white' : 'text-brand-black' }`}>
+                                  ${meta.hourlyRate}
+                                </span>
+                                <span className={`text-xs ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
+                                  / hr
+                                </span>
+                              </div>
                             ) : !hasRequiredLocations ? (
                               <p className={`text-sm ${ isSelected ? 'text-brand-silver' : 'text-brand-grey' }`}>
                                 Enter your route to see estimate

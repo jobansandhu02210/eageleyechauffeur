@@ -261,6 +261,44 @@ export default function HobokenPage() {
         </div>
       </section>
 
+      {/* Transit Comparison */}
+      <section className="bg-brand-black text-brand-white py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold mb-3">
+            Black Car vs. NJ Transit &amp; PATH from Hoboken
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-2xl">
+            Hoboken is one of the best-connected towns in New Jersey — but the math changes quickly when you factor in airport transfers, early departures, and professional travel.
+          </p>
+          <div className="space-y-4">
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Airport runs — transit has no direct option</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                There is no direct transit link from Hoboken to JFK or LGA. Reaching JFK via PATH requires transferring to the subway in Manhattan and then the A train or AirTrain — a 90-minute journey minimum with luggage. EWR is reachable by NJ Transit, but involves a transfer at Newark Penn Station. A black car picks you up at your door and arrives at the terminal curb — no transfers, no luggage hauling, no schedules to manage.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Early morning and late-night travel</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                PATH trains run 24/7 but with reduced frequency overnight. A 4 AM EWR departure means leaving Hoboken by 3 AM — and there may not be a PATH train running at that time that connects to a workable NJ Transit link. Eagle Eye operates 24/7 with a confirmed driver the evening before.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">Reliability for professional and client travel</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                PATH delays, signal issues, and service changes can make transit unpredictable on time-critical trips. For client pickups, business meetings, and non-negotiable flights, a confirmed black car with real-time driver tracking provides certainty that mass transit cannot. Your driver contacts you if anything changes.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">When transit makes sense</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                The PATH train is excellent for routine Hoboken-to-Midtown commuting during business hours — fast, frequent, inexpensive. Eagle Eye is the right call for airport transfers, early departures, heavy luggage, client trips, and any journey where reliability is non-negotiable.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Eagle Eye */}
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -362,6 +400,62 @@ export default function HobokenPage() {
                 {area.name}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Common Routes Table */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Hoboken</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">EWR Airport</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer (closest airport to Hoboken)</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">LGA Airport</td>
+                  <td className="p-4 text-brand-grey">45–60 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Midtown)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Downtown)</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black font-medium">Manhattan (Financial District)</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>

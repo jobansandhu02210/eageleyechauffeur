@@ -277,6 +277,89 @@ export default function TribecaPage() {
         </div>
       </section>
 
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Tribeca Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">TriBeCa&apos;s residential character means relatively low foot traffic on most blocks — North Moore, Laight, Hubert, and Harrison Streets are quiet and easy for a staged pickup. Greenwich Street and Hudson Street run north–south and have more stopping opportunity than the east–west cross-streets. For loft buildings with freight elevator lobbies, your chauffeur confirms the correct entrance by text. West Broadway (TriBeCa section, south of Canal) and Church Street are usable for brief stops. The proximity to the Holland Tunnel means EWR trips are often routed west on Varick or West Street, avoiding Midtown entirely — a real advantage for early-morning flights.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Nobu Tribeca — Hudson St &amp; Franklin St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Tribeca Grill — Greenwich St &amp; Franklin St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>North Moore Street loft corridor</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Harrison Street — landmark row, easy access</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Duane Street &amp; West Broadway</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Greenwich Street — full north–south spine</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Chambers Street — southern boundary near City Hall</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from Tribeca</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Tribeca to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Tribeca to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Tribeca to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Tribeca to Teterboro (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Tribeca to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–20 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Tribeca to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">Tribeca to Financial District</td>
+                  <td className="p-4 text-brand-grey">10–15 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

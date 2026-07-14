@@ -353,6 +353,336 @@ const services: Record<string, ServiceEntry> = {
     ctaHeading: 'Book Your Event Chauffeur',
     ctaSubline: 'Elegant vehicle. Professional chauffeur. Perfect timing.',
   },
+
+  'chauffeur-service': {
+    title: 'Chauffeur Service',
+    h1: 'NYC Chauffeur Service | Professional Black Car Chauffeur New York',
+    seoTitle: 'NYC Chauffeur Service | Professional Black Car Chauffeur | Eagle Eye',
+    description: 'Professional NYC chauffeur service with TLC-licensed drivers, luxury black cars, and flat-rate pricing across New York City.',
+    metaDescription:
+      'NYC chauffeur service you can trust. Professional, background-checked chauffeurs in luxury black cars across all five boroughs, Long Island, NJ & CT. Flat rates. Book Eagle Eye Chauffeur 24/7.',
+    keywords: [
+      'nyc chauffeur service',
+      'chauffeur service new york',
+      'professional chauffeur nyc',
+      'black car chauffeur service manhattan',
+      'luxury chauffeur new york city',
+      'private chauffeur nyc',
+      'chauffeur service near me nyc',
+    ],
+    image: '/service-point-to-point.png',
+    heroSubtitle: 'A professional, uniformed chauffeur — at your door, on time, every time. Eagle Eye delivers the gold standard of chauffeur service across New York City and the entire tri-state area.',
+    includes: [
+      'TLC-licensed, uniformed professional chauffeur',
+      'Late-model luxury sedan or SUV — spotless, every trip',
+      'Real-time traffic monitoring and optimal routing',
+      'Door-to-door luggage assistance',
+      'Driver confirmed the evening before your trip',
+      'Flat-rate pricing — no surge, no hidden fees',
+      '24/7 booking and support via phone or WhatsApp',
+    ],
+    useCases: [
+      { title: 'Daily Executive Commute', desc: 'Start every workday in a luxury sedan with a professional chauffeur — no parking, no stress, just comfort from door to desk.' },
+      { title: 'Client & VIP Transport', desc: 'Impress your clients with a uniformed chauffeur at arrivals. Name-sign greeting, luggage handled, seamless experience.' },
+      { title: 'Airport Transfers', desc: 'JFK, LGA, EWR, and HPN — your chauffeur monitors your flight and is there when you land, no matter the delay.' },
+      { title: 'Hotel to Hotel', desc: 'Between properties in Manhattan or across boroughs — a discreet chauffeur who knows the city as well as you do.' },
+      { title: 'Medical Appointments', desc: 'Reliable, punctual chauffeur service for hospital visits, specialist appointments, and treatments across NYC and NJ.' },
+      { title: 'After Events & Galas', desc: 'Late-night returns from Lincoln Center, Carnegie Hall, or midtown events — your chauffeur waits, no surge pricing ever.' },
+    ],
+    faqs: [
+      {
+        q: 'What is a chauffeur service and how is it different from a taxi or rideshare?',
+        a: 'A chauffeur service provides a professional, uniformed driver in a pre-booked luxury vehicle at a flat rate. Unlike taxis or rideshares, there is no surge pricing, no app matching uncertainty, and no shared rides. Your driver is confirmed in advance and held to a higher standard of professionalism.',
+      },
+      {
+        q: 'Are your chauffeurs TLC-licensed?',
+        a: 'Yes. Every Eagle Eye chauffeur holds a valid NYC TLC (Taxi & Limousine Commission) license, has passed a thorough background check, and is professionally trained for executive-level service.',
+      },
+      {
+        q: 'Can I book a regular chauffeur for daily use?',
+        a: 'Absolutely. We offer recurring bookings for executives, business travelers, and residents who need reliable daily transport. Contact us to set up a corporate or personal account with consolidated invoicing.',
+      },
+      {
+        q: 'What vehicles are available for chauffeur service?',
+        a: 'We offer Business Class Sedans (Cadillac CT6, Mercedes E-Class), Business Class SUVs (Chevrolet Suburban, GMC Yukon XL), First Class Sedans (Mercedes S-Class, BMW 7 Series), and First Class SUVs (Cadillac Escalade, Lincoln Navigator).',
+      },
+      {
+        q: 'How far in advance should I book a chauffeur?',
+        a: 'We recommend at least 4–6 hours in advance for standard rides, and 24 hours for peak times, airport transfers, or recurring bookings. Last-minute bookings are accepted based on availability.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Hourly Chauffeur Service', href: '/services/hourly', sub: 'Book your chauffeur by the hour' },
+      { label: 'Corporate Car Service', href: '/services/corporate', sub: 'Accounts & executive travel' },
+      { label: 'Airport Car Service', href: '/services/airport', sub: 'JFK, LGA, EWR & HPN' },
+    ],
+    ctaHeading: 'Book a Professional NYC Chauffeur',
+    ctaSubline: 'Flat-rate pricing. Uniformed driver. Luxury vehicle confirmed.',
+  },
+
+  'long-distance': {
+    title: 'Long-Distance Car Service',
+    h1: 'Long-Distance Car Service NYC | Luxury Out-of-State Black Car Transfers',
+    seoTitle: 'Long-Distance Car Service NYC | Hamptons, CT, NJ, Philadelphia | Eagle Eye',
+    description: 'Luxury long-distance car service from NYC to the Hamptons, Connecticut, New Jersey, Philadelphia, Washington D.C., and beyond.',
+    metaDescription:
+      'Long-distance car service from NYC. Flat-rate luxury transfers to the Hamptons, Greenwich, Stamford, Princeton, Philadelphia & D.C. No surge pricing. Professional chauffeurs. Book Eagle Eye 24/7.',
+    keywords: [
+      'long distance car service nyc',
+      'nyc to hamptons car service',
+      'nyc to connecticut car service',
+      'long distance chauffeur service new york',
+      'nyc to philadelphia car service',
+      'nyc to washington dc car service',
+      'luxury out of state car service nyc',
+    ],
+    image: '/service-long-distance.png',
+    heroSubtitle: 'Comfortable, flat-rate long-distance black car transfers from New York City to the Hamptons, Connecticut, New Jersey, Philadelphia, and beyond — no surprise fees, no surge pricing.',
+    includes: [
+      'Flat-rate pricing confirmed at booking — no surprises at drop-off',
+      'Luxury sedan or full-size SUV for extended comfort',
+      'Professional TLC-licensed chauffeur for the full journey',
+      'Complimentary bottled water and luggage assistance',
+      'Tolls and highway fees included in quoted rate',
+      'Real-time traffic routing for fastest, smoothest route',
+      '24/7 support via phone or WhatsApp throughout your journey',
+    ],
+    useCases: [
+      { title: 'NYC to the Hamptons', desc: 'Flat-rate transfers to East Hampton, Southampton, Bridgehampton, Sag Harbor, and Montauk. No Uber surge on summer Fridays — ever.' },
+      { title: 'NYC to Greenwich & Stamford', desc: 'Corporate and residential transfers to Greenwich, Stamford, Westport, Norwalk, and the Gold Coast of Connecticut.' },
+      { title: 'NYC to Princeton & Morristown NJ', desc: 'Executive transfers to Princeton, Morristown, Parsippany, and the NJ pharma corridor — flat rate, no detours.' },
+      { title: 'NYC to Philadelphia', desc: 'Direct luxury sedan or SUV service between Manhattan and Philadelphia — 95 miles, no stops, door-to-door comfort.' },
+      { title: 'NYC to Washington D.C.', desc: 'Long-haul executive transfers to D.C. for federal meetings, lobbying, and government affairs. Discretion guaranteed.' },
+      { title: 'NYC to Boston', desc: 'Door-to-door transfers from Manhattan or the airports to Boston — business class comfort the entire way.' },
+    ],
+    faqs: [
+      {
+        q: 'How is long-distance pricing calculated?',
+        a: 'All long-distance rates are flat and confirmed at booking. You enter your pickup and destination, see the quote, and that price is locked in — no tolls added at the end, no surge for Friday evenings or holiday weekends.',
+      },
+      {
+        q: 'What is the most popular long-distance route from NYC?',
+        a: 'NYC to the Hamptons is our most popular long-distance route, especially during summer. We cover all Hamptons destinations — East Hampton, Southampton, Bridgehampton, Sag Harbor, Westhampton, and Montauk.',
+      },
+      {
+        q: 'Can I make stops along the way on a long-distance trip?',
+        a: 'Yes. Additional stops can be added to your booking. For multiple stops or a full-day itinerary, our hourly chauffeur service may be more cost-effective — contact us to discuss the best option.',
+      },
+      {
+        q: 'Do you include tolls in your long-distance rates?',
+        a: 'Yes. Our quoted flat rates include expected tolls and highway fees for the journey. There are no add-ons at drop-off.',
+      },
+      {
+        q: 'Can I book a round-trip long-distance transfer?',
+        a: 'Yes. Round-trip bookings are available and can be scheduled in advance. Your return driver will be confirmed separately so you have full coverage both ways.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'NYC to Hamptons', href: '/services/routes/manhattan-to-hamptons-car-service', sub: 'Summer & year-round' },
+      { label: 'NYC to Connecticut', href: '/services/routes/manhattan-to-connecticut-car-service', sub: 'Greenwich, Stamford & beyond' },
+      { label: 'NYC to Philadelphia', href: '/services/routes/nyc-to-philadelphia', sub: 'Flat-rate direct transfer' },
+    ],
+    ctaHeading: 'Book Your Long-Distance Car Service',
+    ctaSubline: 'Flat rate, confirmed at booking. No surge — ever.',
+  },
+
+  'limousine-service': {
+    title: 'Limousine Service',
+    h1: 'NYC Limousine Service | Luxury Limo & Car Service New York',
+    seoTitle: 'NYC Limousine Service | Luxury Limo Car Service Manhattan | Eagle Eye',
+    description: 'Premium NYC limousine service for special occasions, corporate events, airport transfers, and VIP nights out in New York City.',
+    metaDescription:
+      'NYC limousine service — premium limo and luxury car service in Manhattan and all five boroughs. Corporate, airport, weddings, galas & nights out. TLC-licensed. Book Eagle Eye Chauffeur 24/7.',
+    keywords: [
+      'nyc limousine service',
+      'limo service new york',
+      'limousine service nyc',
+      'luxury limo service manhattan',
+      'limo car service new york city',
+      'nyc limo service near me',
+      'limousine company new york',
+    ],
+    image: '/service-limousine.png',
+    heroSubtitle: 'New York City\'s premier limousine service — luxury vehicles, professional chauffeurs, and seamless service for every occasion. From corporate events to galas, airport transfers to VIP nights out.',
+    includes: [
+      'TLC-licensed professional chauffeur — uniformed and discreet',
+      'Luxury sedan, SUV, or Sprinter Van based on your group size',
+      'Flat-rate pricing — no meter, no surge, no hidden fees',
+      'Meet-and-greet service with name sign at airports',
+      'Complimentary bottled water and luggage assistance',
+      'Real-time flight tracking for airport limousine pickups',
+      '24/7 booking and dispatch support',
+    ],
+    useCases: [
+      { title: 'Corporate & Business Limo', desc: 'Professional limousine service for executives, client transport, roadshows, and investor meetings across Manhattan and NYC.' },
+      { title: 'Airport Limo Service', desc: 'JFK, LGA, EWR, and HPN — luxury limo pickup with meet-and-greet, name sign, and real-time flight tracking.' },
+      { title: 'Wedding Limousine', desc: 'Arrive in elegance on your most important day. Luxury sedan or SUV for the bridal party, guests, and couple.' },
+      { title: 'Gala & Black-Tie Events', desc: 'Lincoln Center, Metropolitan Museum, Carnegie Hall — make your arrival as impressive as the event itself.' },
+      { title: 'Prom Limo Service', desc: 'Safe, reliable, and stylish prom night transportation for students across NYC, Long Island, and Westchester.' },
+      { title: 'VIP & Celebrity Transport', desc: 'Discreet, NDA-capable limousine service for high-profile clients, executives, and entertainment industry professionals.' },
+    ],
+    faqs: [
+      {
+        q: 'What is the difference between a limousine service and a regular car service?',
+        a: 'A limousine service provides premium, pre-booked transportation with a professional chauffeur in a luxury vehicle — sedan, SUV, or Sprinter Van. Unlike standard car services or rideshares, limousine service is characterized by higher vehicle standards, professional uniformed drivers, and a focus on the passenger experience.',
+      },
+      {
+        q: 'Do you offer stretch limousines?',
+        a: 'Eagle Eye specializes in luxury black cars, SUVs, and Sprinter Vans rather than stretch limos. Our vehicles offer a more refined, modern luxury experience preferred by executives and discerning clients. For large groups, our Luxury Sprinter Van accommodates up to 14 passengers.',
+      },
+      {
+        q: 'Can I book a limousine service for an airport pickup?',
+        a: 'Yes. Our airport limousine service includes real-time flight tracking, meet-and-greet with a name sign, and luggage assistance at JFK, LGA, EWR, and HPN. Flat rate, no surge on delays.',
+      },
+      {
+        q: 'How far in advance should I book a limousine for a special event?',
+        a: 'For weddings, galas, and major events, we recommend booking at least 48–72 hours in advance. For high-demand dates (New Year\'s Eve, Met Gala, prom season), book as early as possible to secure availability.',
+      },
+      {
+        q: 'Is limousine service available 24/7 in NYC?',
+        a: 'Yes. Eagle Eye Chauffeur operates 24 hours a day, 7 days a week, 365 days a year — including holidays, early-morning airport runs, and late-night event returns.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Wedding Car Service', href: '/services/wedding-car-service', sub: 'Luxury bridal transportation' },
+      { label: 'Airport Car Service', href: '/services/airport', sub: 'JFK, LGA, EWR & HPN' },
+      { label: 'Hourly Chauffeur Service', href: '/services/hourly', sub: 'Book by the hour' },
+    ],
+    ctaHeading: 'Book NYC Limousine Service',
+    ctaSubline: 'Premium limo and luxury car service. Flat rate. Professional chauffeur.',
+  },
+
+  'sprinter-van-service': {
+    title: 'Sprinter Van Service',
+    h1: 'NYC Sprinter Van Service | Luxury Group Transportation New York',
+    seoTitle: 'NYC Sprinter Van Service | Luxury Group Transport Manhattan | Eagle Eye',
+    description: 'Luxury Mercedes-Benz Sprinter van service in NYC for corporate groups, airport shuttles, events, and VIP group transportation.',
+    metaDescription:
+      'NYC Sprinter van service — luxury group transportation for up to 14 passengers. Corporate shuttles, airport groups, conference transfers & event coordination. TLC-licensed. Book Eagle Eye 24/7.',
+    keywords: [
+      'sprinter van service nyc',
+      'luxury sprinter van new york',
+      'group transportation nyc',
+      'mercedes sprinter van service manhattan',
+      'sprinter van rental nyc',
+      'corporate shuttle service nyc',
+      'group airport transfer nyc',
+    ],
+    image: '/service-sprinter-van.png',
+    heroSubtitle: 'Mercedes-Benz Sprinter van service for groups of up to 14 passengers — corporate shuttles, airport group transfers, conference transportation, and event coordination across NYC and the tri-state area.',
+    includes: [
+      'Mercedes-Benz Sprinter Van — luxury-appointed, climate controlled',
+      'Professional TLC-licensed driver with group transport experience',
+      'Up to 14 passengers and 10+ pieces of luggage',
+      'Flat-rate group pricing — split among passengers for excellent value',
+      'Event coordination for multi-stop and multi-vehicle bookings',
+      'Wi-Fi available on request for corporate groups',
+      '24/7 support and real-time driver communication',
+    ],
+    useCases: [
+      { title: 'Corporate Group Shuttles', desc: 'Office-to-airport, conference center transfers, and daily corporate commuter shuttles for NYC business teams.' },
+      { title: 'Airport Group Transfers', desc: 'Groups arriving at JFK, LGA, EWR, or HPN — one vehicle, everyone together, no rideshare chaos at arrivals.' },
+      { title: 'Conference & Convention Transport', desc: 'Jacob Javits Center, Midtown hotels, and convention venues — on-time Sprinter service for your entire team.' },
+      { title: 'Wedding Party Transportation', desc: 'Move the entire bridal party in one luxury Sprinter. Coordinated pickup and drop-off for the whole wedding day.' },
+      { title: 'Sports & Event Groups', desc: 'Yankees, Mets, Giants games — or concerts at MSG and Barclays Center. Group Sprinter service, door-to-venue.' },
+      { title: 'Hamptons & Long Island Groups', desc: 'Summer Hamptons group transfers — one Sprinter beats five separate cars and saves everyone money.' },
+    ],
+    faqs: [
+      {
+        q: 'How many passengers does your Sprinter van hold?',
+        a: 'Our Executive Sprinter Van holds up to 14 passengers with 10+ bags. For larger groups or multiple vehicles, contact us for a coordinated multi-vehicle quote.',
+      },
+      {
+        q: 'Is Sprinter van service more cost-effective than multiple sedans?',
+        a: 'Yes, for groups of 7 or more passengers, a single Sprinter Van is significantly more cost-effective than two or three separate vehicles — and keeps the group together.',
+      },
+      {
+        q: 'Do you offer Sprinter van service for airport group pickups?',
+        a: 'Yes. We provide meet-and-greet group airport service at JFK, LGA, EWR, and HPN. Your driver coordinates the luggage and ensures everyone is accounted for before departure.',
+      },
+      {
+        q: 'Can you coordinate multiple Sprinter vans for large events?',
+        a: 'Absolutely. For large conferences, weddings, or corporate events requiring multiple vehicles, we offer full fleet coordination with synchronized scheduling and dedicated dispatch support.',
+      },
+      {
+        q: 'Is the Sprinter van available for long-distance group trips?',
+        a: 'Yes. Our Sprinter Van is ideal for long-distance group transfers to the Hamptons, Connecticut, Philadelphia, and other destinations. Flat-rate group pricing confirmed at booking.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Corporate Car Service', href: '/services/corporate', sub: 'Executive & group accounts' },
+      { label: 'Long-Distance Car Service', href: '/services/long-distance', sub: 'Hamptons, CT & beyond' },
+      { label: 'View Full Fleet', href: '/fleet', sub: 'Sedans, SUVs & Sprinters' },
+    ],
+    ctaHeading: 'Book NYC Sprinter Van Service',
+    ctaSubline: 'Luxury group transportation. Up to 14 passengers. Flat-rate pricing.',
+  },
+
+  'wedding-car-service': {
+    title: 'Wedding Car Service',
+    h1: 'NYC Wedding Car Service | Luxury Bridal Transportation New York',
+    seoTitle: 'NYC Wedding Car Service | Luxury Bridal & Wedding Limo | Eagle Eye',
+    description: 'Luxury wedding car service in NYC — professional chauffeurs, elegant vehicles, and coordinated bridal party transportation for your perfect day.',
+    metaDescription:
+      'NYC wedding car service — luxury bridal transportation in New York City. Elegant black cars, SUVs & Sprinter vans for weddings, rehearsal dinners & receptions. TLC-licensed. Book Eagle Eye 24/7.',
+    keywords: [
+      'wedding car service nyc',
+      'luxury wedding transportation new york',
+      'bridal car service manhattan',
+      'wedding limo service nyc',
+      'wedding chauffeur new york city',
+      'wedding black car service nyc',
+      'bridal party transportation nyc',
+    ],
+    image: '/service-point-to-point.png',
+    heroSubtitle: 'Arrive at your wedding in understated elegance. Eagle Eye Chauffeur provides luxury wedding car service across New York City — professional chauffeurs, pristine vehicles, and flawless coordination for your most important day.',
+    includes: [
+      'Uniformed, professional chauffeur — discreet and punctual',
+      'Pristine luxury sedan, SUV, or Sprinter Van for the bridal party',
+      'Coordinated multi-vehicle scheduling for the full wedding day',
+      'Ribbons and decoration on request (white ribbon standard)',
+      'Complimentary bottled water and luggage assistance',
+      'Rehearsal dinner and next-day brunch transportation available',
+      'Dedicated wedding coordinator for multi-stop logistics',
+    ],
+    useCases: [
+      { title: 'Bride & Groom Transport', desc: 'A private luxury sedan or SUV exclusively for the couple — to the venue, from the reception, and to the hotel.' },
+      { title: 'Bridal Party Shuttle', desc: 'Keep the entire bridal party together in a luxury Sprinter Van — hair & makeup to the ceremony, stress-free.' },
+      { title: 'Guest Shuttle Service', desc: 'Hotel-to-venue and venue-to-hotel guest shuttles ensure every guest arrives on time and in comfort.' },
+      { title: 'Rehearsal Dinner Transport', desc: 'The evening before the big day — professional transportation for the wedding party and immediate family.' },
+      { title: 'Long Island & Westchester Weddings', desc: 'Catering halls, vineyards, and waterfront venues across Long Island, Westchester, and New Jersey — we cover them all.' },
+      { title: 'NYC Venue Weddings', desc: 'The Plaza, Rainbow Room, Cipriani, and all Manhattan venues — your chauffeur knows every loading dock and entrance.' },
+    ],
+    faqs: [
+      {
+        q: 'How far in advance should I book wedding car service?',
+        a: 'We strongly recommend booking 2–4 weeks in advance for weddings, and even earlier for peak seasons (May–October and December). Popular Saturday dates fill quickly — confirm your vehicles as soon as your venue is booked.',
+      },
+      {
+        q: 'Can you handle transportation for the entire wedding party?',
+        a: 'Yes. We specialize in coordinated multi-vehicle wedding transportation. From the bridal party to guest shuttles, we assign dedicated vehicles and a dispatch coordinator for the full day.',
+      },
+      {
+        q: 'What vehicles are available for wedding transportation?',
+        a: 'We offer Business Class Sedans, First Class Sedans (Mercedes S-Class, BMW 7 Series), First Class SUVs (Cadillac Escalade, Lincoln Navigator), and Luxury Sprinter Vans for groups. All vehicles are immaculately presented for your wedding day.',
+      },
+      {
+        q: 'Do you decorate the vehicles for weddings?',
+        a: 'Yes. A white ribbon bow on the hood is provided as standard. Additional decorations can be arranged on request — contact us when booking to discuss specifics.',
+      },
+      {
+        q: 'Can you also arrange transportation for the rehearsal dinner?',
+        a: 'Absolutely. We frequently provide transportation for rehearsal dinners, morning-after brunches, and honeymoon airport transfers as part of the full wedding weekend package.',
+      },
+    ],
+    relatedLinks: [
+      { label: 'Limousine Service', href: '/services/limousine-service', sub: 'Luxury limo for any occasion' },
+      { label: 'Sprinter Van Service', href: '/services/sprinter-van-service', sub: 'Group bridal party transport' },
+      { label: 'View Our Fleet', href: '/fleet', sub: 'Sedans, SUVs & Sprinters' },
+    ],
+    ctaHeading: 'Book Your NYC Wedding Car Service',
+    ctaSubline: 'Luxury vehicles. Flawless coordination. Your perfect day deserves the best.',
+  },
 };
 
 const slugs = Object.keys(services);

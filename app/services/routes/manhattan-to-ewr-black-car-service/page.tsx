@@ -31,6 +31,22 @@ const faqs = [
     q: 'Do you handle large luggage for EWR departures?',
     a: 'Yes. Our SUV option (Escalade or similar) accommodates large bags and multiple passengers comfortably. Mention your luggage count when booking.',
   },
+  {
+    q: 'Which route do you take from Manhattan to Newark Airport?',
+    a: 'Your chauffeur selects the optimal route in real time — the Lincoln Tunnel is the primary route for Midtown pickups, while the Holland Tunnel serves lower Manhattan and Tribeca pickups most efficiently. All toll costs are included in your flat rate.',
+  },
+  {
+    q: 'How long does it take from Manhattan to EWR?',
+    a: 'The drive from Manhattan to Newark Airport takes 30–45 minutes in normal traffic. During peak hours — weekday mornings (7–9am) and evenings (5–8pm) — the Lincoln Tunnel approach can add 20–30 minutes. We recommend allowing 3 hours before your departure for stress-free travel.',
+  },
+  {
+    q: 'Why do some travelers prefer EWR over JFK?',
+    a: 'Newark Airport often has more United Airlines international connections, lower fares on certain routes, and can be faster to reach from Midtown via the Lincoln Tunnel than JFK via Queens. EWR is also the closest airport for Hudson Yards and west Midtown clients.',
+  },
+  {
+    q: 'Are tolls included in the Manhattan to EWR rate?',
+    a: 'Yes — all Holland Tunnel or Lincoln Tunnel tolls are included in your flat rate. No surprise charges at the end of the ride.',
+  },
 ];
 
 
@@ -140,6 +156,44 @@ export default function ManhattanToEWRBlackCarPage() {
                 <li><strong className="text-brand-black">24/7 support</strong> — call or WhatsApp any time before, during, or after your ride.</li>
               </ul>
             </div>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-offwhite">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Newark Airport — Terminal Guide
+            </h2>
+            <p className="text-brand-grey mb-6 text-sm">Your driver drops you at the departures level of your terminal. Confirm your airline when booking and we go directly to the right terminal.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-black text-brand-white">
+                    <th className="text-left p-3 font-semibold">Terminal</th>
+                    <th className="text-left p-3 font-semibold">Airlines</th>
+                    <th className="text-left p-3 font-semibold">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">Terminal A</td>
+                    <td className="p-3 text-brand-grey">United domestic short-haul, some international</td>
+                    <td className="p-3 text-brand-grey">Ground Transportation Level 1 — AirTrain connects all terminals</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">Terminal B</td>
+                    <td className="p-3 text-brand-grey">United international, Air Canada, Lufthansa (some)</td>
+                    <td className="p-3 text-brand-grey">AirTrain accessible — follow signs to Ground Transportation</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">Terminal C</td>
+                    <td className="p-3 text-brand-grey">United hub (majority of flights), most United gates</td>
+                    <td className="p-3 text-brand-grey">Most EWR departures use Terminal C — Ground Transportation Level 1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-brand-grey text-sm mt-4">All tolls (Holland Tunnel or Lincoln Tunnel) are included in your flat rate from Manhattan to EWR. No hidden charges.</p>
           </div>
         </section>
 

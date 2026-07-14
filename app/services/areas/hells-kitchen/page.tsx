@@ -278,6 +278,90 @@ export default function HellsKitchenPage() {
         </div>
       </section>
 
+      {/* ── Routes Table ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Hell&apos;s Kitchen</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">LaGuardia Airport (LGA)</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">25–35 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown East</td>
+                  <td className="p-4 text-brand-grey">10–15 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">The Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hrs</td>
+                  <td className="p-4 text-brand-grey">Long Distance</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+            Hell&apos;s Kitchen Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Hell&apos;s Kitchen&apos;s avenues — Eighth, Ninth, Tenth, and Eleventh — run north–south with good vehicle flow, while the cross-streets between 42nd and 57th tend to be less congested than the Broadway-Times Square blocks to the east. Your chauffeur will stage on the agreed avenue and text you the precise cross-street. For Broadway Theater District pickups after curtain, your chauffeur positions away from the main 45th–47th Street surge and meets you at a pre-agreed point one block west — typically on Eighth Avenue. For Javits Center and Hudson Yards pickups, Eleventh Avenue staging is standard. Post-dinner departures on Ninth Avenue are handled smoothly at off-peak hours, though popular Friday and Saturday nights may require confirming a half-block meet point in advance.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">Key pickup locations</h3>
+              <ul className="space-y-2">
+                {[
+                  'Jacob Javits Center — 11th Ave, 34th to 40th St',
+                  'Broadway Theater District — 8th Ave & 44th–47th St',
+                  'Times Square hotels — 8th Ave & 42nd–49th St',
+                  'Ninth Avenue restaurant row — 44th to 54th St',
+                  'Hudson Yards plaza — 10th Ave & 30th St',
+                  'Intrepid Museum — 12th Ave & 46th St',
+                  'Penn Station / 34th St — 8th Ave entrance',
+                ].map(loc => (
+                  <li key={loc} className="text-sm text-brand-grey flex gap-2">
+                    <span className="text-brand-charcoal">→</span>{loc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

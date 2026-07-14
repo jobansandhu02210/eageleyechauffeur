@@ -73,6 +73,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Missing required booking fields.' }, { status: 400 });
   }
 
+  // Flag last-minute bookings (under 2 hours) — allow through but mark URGENT in the email.
+  const pickupDatetime = new Date(`${date}T${time}`);
+  const twoHoursFromNow = new Date(Date.now() + 2 * 60 * 60 * 1000);
+  const isLastMinute = !isNaN(pickupDatetime.getTime()) && pickupDatetime < twoHoursFromNow;
+
   const promoDisplay =
     promoCode && promoDriverName
       ? `${promoCode} (${promoDriverName})`
@@ -108,13 +113,17 @@ export async function POST(request: NextRequest) {
     )
     .join('');
 
-  const html = `<p><strong>New booking request</strong> — a client submitted the booking form on your website with the details below.</p>
+  const urgentBanner = isLastMinute
+    ? `<div style="background:#dc2626;color:#fff;padding:14px 16px;font-size:15px;font-weight:700;margin-bottom:16px;border-radius:4px">⚠️ LAST-MINUTE BOOKING — pick-up is within 2 hours. Respond immediately.</div>`
+    : '';
+
+  const html = `${urgentBanner}<p><strong>New booking request</strong> — a client submitted the booking form on your website with the details below.</p>
 <p style="margin:12px 0;font-size:14px"><strong>Your workflow:</strong> Reply to this message to email the client directly, then send them your <strong>official invoice</strong> with the final ride price when you&apos;re ready.</p>
 <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">${tableHtml}</table>
 <p style="margin-top:16px;font-size:13px;color:#666">Reply-to is set to the guest&apos;s address.</p>`;
 
   const resend = new Resend(apiKey);
-  const subject = `Booking request — ${oneLine(customerName, 80)} — ${oneLine(service || 'Ride', 50)}${
+  const subject = `${isLastMinute ? '⚠️ URGENT — ' : ''}Booking request — ${oneLine(customerName, 80)} — ${oneLine(service || 'Ride', 50)}${
     promoCode ? ` — Promo ${promoCode}` : ''
   }`;
 

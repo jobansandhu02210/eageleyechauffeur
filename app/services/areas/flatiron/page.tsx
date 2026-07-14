@@ -278,6 +278,90 @@ export default function FlatironPage() {
         </div>
       </section>
 
+      {/* ── Routes Table ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">Common Routes from Flatiron</h2>
+          <p className="text-brand-grey text-sm mb-6">Estimated drive times in normal traffic — flat rate confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Destination</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">JFK Airport</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">LaGuardia Airport (LGA)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Teterboro Airport (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Private Aviation</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">10–20 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">The Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hrs</td>
+                  <td className="p-4 text-brand-grey">Long Distance</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+            Flatiron Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">The Flatiron District sits at the convergence of Broadway, Fifth Avenue, and Sixth Avenue — all of which see heavy traffic during commute hours and around Madison Square Garden events. Broadway between 14th and 26th Street has loading zones alongside office buildings; Fifth Avenue and Park Avenue South are the cleanest staging corridors for a timed pickup. Your chauffeur will confirm a precise avenue and cross-street by text and hold the position until you arrive — never double-parked, always accessible. For MSG event pickups, your chauffeur stages on Sixth Avenue south of 32nd Street or on 29th Street between Sixth and Seventh, avoiding the post-event pedestrian surge on 33rd and Seventh Avenue. For NoMad hotel pickups, drivers use the Nomad Hotel&apos;s designated loading area on Broadway.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-3">Key pickup locations</h3>
+              <ul className="space-y-2">
+                {[
+                  'Flatiron Building — 23rd St & Fifth Ave',
+                  'Madison Square Park — 23rd St & Madison Ave',
+                  'NoMad Hotel — Broadway & 28th St',
+                  'Union Square — 14th St & Park Ave South',
+                  'Madison Square Garden — 7th Ave & 33rd St',
+                  'Park Avenue South corridor — 18th to 26th St',
+                  'Irving Place & Gramercy border — 20th St',
+                ].map(loc => (
+                  <li key={loc} className="text-sm text-brand-grey flex gap-2">
+                    <span className="text-brand-charcoal">→</span>{loc}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

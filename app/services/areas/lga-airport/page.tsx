@@ -46,15 +46,15 @@ const eaglEyeBenefits = [
 const lgaTerminals = [
   {
     name: 'Terminal B',
-    airlines: 'Delta, American Airlines, Southwest Airlines',
+    airlines: 'American Airlines, United Airlines, Southwest Airlines, Alaska Airlines — the primary terminal at the new LGA',
     detail:
-      'The larger of LGA\'s two active terminals. Ground transportation pickup is on the lower level. Your driver waits with a name sign at the arrivals exit.',
+      'The main rebuilt terminal at LaGuardia. Ground transportation pickup is on the lower level, clearly marked. Your driver waits with a name sign at the arrivals exit. Terminal B handles the majority of LGA traffic.',
   },
   {
     name: 'Terminal C',
-    airlines: 'United Airlines, Frontier, Spirit, and other carriers',
+    airlines: 'Delta Air Lines (primary Delta hub at LGA)',
     detail:
-      'Modern terminal opened as part of the 2022 rebuild. Ground level arrivals area — driver positioned at the exit with a name sign.',
+      'Delta&apos;s dedicated terminal at the rebuilt LaGuardia. Modern, compact, and easy to navigate. Ground level arrivals area — driver positioned at the exit with a name sign.',
   },
 ];
 
@@ -187,6 +187,95 @@ export default function LGAAreaPage() {
         </div>
       </section>
 
+      {/* Arrival Pickup Protocol */}
+      <section className="py-16 lg:py-20 bg-brand-black text-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold mb-3">
+            LGA Arrivals: How Pickup Works
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-2xl">
+            The rebuilt LaGuardia is significantly easier to navigate than the old airport. Here is exactly what to expect when you land.
+          </p>
+          <div className="space-y-5">
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">1. Flight tracking &amp; driver staging</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Your driver monitors your flight from departure through landing. As you approach baggage claim, you will receive a WhatsApp message with your driver&apos;s name, vehicle, and the exact pickup location at your terminal.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">2. Terminal B (main building)</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Terminal B is the primary building at the new LGA, serving American, United, Southwest, and Alaska. The ride-share and black car waiting area is on the lower arrivals level. Your driver holds your name sign at the designated ground transportation exit — clearly marked from baggage claim.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">3. Terminal C (Delta)</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Delta&apos;s Terminal C is compact and easy to exit. Ground transportation pickup is at the lower level. Your driver is positioned with your name sign just outside the arrivals doors — one of the fastest pickups at any NY area airport.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">4. Wait time included</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                60 minutes of complimentary wait time is included from when your flight lands. LGA is domestic-only, so there is no customs wait — most passengers clear baggage claim in 15–25 minutes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods We Serve From LGA */}
+      <section className="py-16 lg:py-20 bg-brand-offwhite">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            Neighborhoods We Serve From LGA
+          </h2>
+          <p className="text-brand-grey mb-8">
+            LaGuardia&apos;s location in Queens makes it the closest airport to Midtown, the Upper East Side, and much of Brooklyn. Eagle Eye covers every destination from LGA at a flat rate with tolls included.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/services/areas/midtown-manhattan" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Midtown Manhattan</div>
+              <div className="text-sm text-brand-grey">Closest major airport to Midtown — 20–30 min</div>
+            </Link>
+            <Link href="/services/areas/upper-east-side" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Upper East Side</div>
+              <div className="text-sm text-brand-grey">20–30 min — among the fastest pickups at LGA</div>
+            </Link>
+            <Link href="/services/areas/upper-west-side" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Upper West Side</div>
+              <div className="text-sm text-brand-grey">25–40 min via the Triborough approach</div>
+            </Link>
+            <Link href="/services/areas/harlem" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Harlem</div>
+              <div className="text-sm text-brand-grey">20–35 min — one of the closest Manhattan neighborhoods</div>
+            </Link>
+            <Link href="/services/areas/westchester" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Westchester</div>
+              <div className="text-sm text-brand-grey">35–50 min — White Plains, Scarsdale, New Rochelle</div>
+            </Link>
+            <Link href="/services/areas/brooklyn" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Brooklyn</div>
+              <div className="text-sm text-brand-grey">30–45 min — Park Slope, DUMBO, Williamsburg</div>
+            </Link>
+            <Link href="/services/areas/queens" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Queens</div>
+              <div className="text-sm text-brand-grey">15–25 min — Astoria, LIC, Flushing, Forest Hills</div>
+            </Link>
+            <Link href="/services/areas/bronx" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Bronx</div>
+              <div className="text-sm text-brand-grey">20–35 min — Riverdale, Fordham, Co-op City</div>
+            </Link>
+          </div>
+          <div className="mt-6">
+            <Link href="/book" className="inline-flex items-center justify-center px-8 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
+              Book LGA Transfer
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* What's Included */}
       <section className="py-16 lg:py-20 bg-brand-offwhite">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -237,6 +326,40 @@ export default function LGAAreaPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* LGA Terminal Quick-Reference */}
+      <section className="py-14 bg-brand-black text-brand-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-white mb-2">LGA Terminal Quick-Reference</h2>
+          <p className="text-brand-silver text-sm mb-6">Airlines and pickup zones at the rebuilt LaGuardia Airport.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-charcoal text-brand-white">
+                  <th className="text-left p-4 font-medium">Terminal</th>
+                  <th className="text-left p-4 font-medium">Key Airlines</th>
+                  <th className="text-left p-4 font-medium">Pickup Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-brand-charcoal bg-opacity-40">
+                  <td className="p-4 font-medium text-brand-white">Terminal B</td>
+                  <td className="p-4 text-brand-silver">American, United, Southwest, Alaska, Spirit</td>
+                  <td className="p-4 text-brand-silver">New 2022 building — car service at designated ground-level zones</td>
+                </tr>
+                <tr className="bg-brand-charcoal bg-opacity-20">
+                  <td className="p-4 font-medium text-brand-white">Terminal C</td>
+                  <td className="p-4 text-brand-silver">Delta (all Delta flights)</td>
+                  <td className="p-4 text-brand-silver">Separate building — confirm terminal before arrival</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-silver text-sm mt-6">
+            LGA is the closest commercial airport to Midtown Manhattan — approximately 8 miles, 20–30 min. Designated car service pickup zones are at the arrivals ground level.
+          </p>
         </div>
       </section>
 

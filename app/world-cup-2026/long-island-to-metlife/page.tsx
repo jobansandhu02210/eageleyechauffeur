@@ -58,7 +58,7 @@ export default function LongIslandToMetLifePage() {
             <span>🔒 Flat rate — no surge</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/book" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm hover:bg-brand-offwhite transition-colors text-center">Get Instant Quote</Link>
+            <Link href="/contact" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm hover:bg-brand-offwhite transition-colors text-center">Request a World Cup Quote</Link>
             <a href={WHATSAPP_BOOKING_URL} target="_blank" rel="noopener noreferrer" className="inline-block border border-brand-silver text-brand-white font-semibold px-8 py-4 text-sm hover:border-brand-white transition-colors text-center">WhatsApp</a>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function LongIslandToMetLifePage() {
           <h2 className="font-serif text-2xl font-semibold mb-3">Book Long Island → MetLife Now</h2>
           <p className="text-green-200 text-sm mb-6">All LI communities · Flat-rate · No surge · Group SUVs available</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <Link href="/book" className="inline-block bg-white text-green-900 font-semibold px-8 py-3 text-sm hover:bg-green-100 transition-colors">Get Quote</Link>
+            <Link href="/contact" className="inline-block bg-white text-green-900 font-semibold px-8 py-3 text-sm hover:bg-green-100 transition-colors">Request a Quote</Link>
             <a href={`tel:${CONTACT_PHONE_E164}`} className="inline-block border border-green-500 text-white font-semibold px-8 py-3 text-sm hover:border-green-300 transition-colors">Call {CONTACT_PHONE_DISPLAY}</a>
           </div>
           <Link href="/world-cup-2026" className="text-green-400 text-xs underline hover:text-green-200">← All World Cup routes & match schedule</Link>

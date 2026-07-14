@@ -6,36 +6,88 @@ import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHAT
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
 import { FaqJsonLd, LocalBusinessJsonLd, SpeakableJsonLd } from '@/components/JsonLd';
+import AnimatedHeadline from '@/components/AnimatedHeadline';
 
 export const metadata: Metadata = {
   title: {
     absolute:
-      'NYC Black Car Service | Airport Transfers JFK LGA EWR | Eagle Eye Chauffeur',
+      'NYC Black Car Service | JFK LGA EWR Airport Transfers | Eagle Eye',
   },
   description:
-    'Eagle Eye Chauffeur — NYC black car service. Airport transfers to JFK, LGA & EWR. Corporate chauffeur, hourly hire & point-to-point. Flat rates, no surge pricing. Professional TLC-licensed drivers. Book 24/7.',
+    'Eagle Eye Chauffeur — NYC black car & chauffeur service. Flat-rate airport transfers to JFK, LGA & EWR. Executive chauffeur hire, corporate car service & hourly hire. No surge pricing. TLC-licensed. Book 24/7.',
   keywords: siteKeywords,
   alternates: { canonical: getSiteUrl() },
   openGraph: {
     url: getSiteUrl(),
-    title: 'NYC Black Car Service | Airport Transfers JFK LGA EWR | Eagle Eye Chauffeur',
+    title: 'NYC Black Car Service | JFK LGA EWR Airport Transfers | Eagle Eye',
     description:
       'Eagle Eye Chauffeur — NYC black car service. Airport transfers to JFK, LGA & EWR. Corporate chauffeur, hourly hire & point-to-point. Flat rates, no surge pricing. Book 24/7.',
     images: [{ url: `${getSiteUrl()}/og-image.jpg`, width: 1200, height: 630, alt: 'Eagle Eye Chauffeur NYC Black Car Service' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NYC Black Car Service | Airport Transfers JFK LGA EWR | Eagle Eye Chauffeur',
+    title: 'NYC Black Car Service | JFK LGA EWR Airport Transfers | Eagle Eye',
     description: 'Eagle Eye Chauffeur — NYC black car service. Airport transfers to JFK, LGA & EWR. Flat rates, no surge pricing. Book 24/7.',
   },
 };
 
 // Fleet
 const fleet = [
-  { title: 'Business Class Sedan', desc: 'Executive comfort for corporate rides & airport transfers', alt: 'Business class luxury sedan for chauffeur service in NYC', local: '/fleet-business-sedan.png', fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80' },
-  { title: 'Business Class SUV', desc: 'Spacious SUV for groups up to 6 passengers', alt: 'Business class luxury SUV for corporate and airport transfers NYC', local: '/fleet-business-suv.png', fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80' },
-  { title: 'First Class SUV', desc: 'Premium SUV with maximum comfort & luggage room', alt: 'First class premium SUV chauffeur service New York City', local: '/fleet-first-suv.png', fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80' },
-  { title: 'First Class Sedan', desc: 'Top-tier executive sedan for VIP and corporate clients', alt: 'First class executive sedan luxury car service NYC', local: '/fleet-first-sedan.png', fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80' },
+  {
+    title: 'Luxury Black Car',
+    badge: 'Business Class Sedan',
+    capacity: 'Up to 3 passengers',
+    luggage: '2–3 bags',
+    desc: 'Late-model executive sedan — spotless interior, climate controlled, ideal for solo and duo airport transfers and corporate rides.',
+    driver: 'TLC Licensed · Uniformed · Background Checked',
+    alt: 'Luxury black car sedan chauffeur service NYC',
+    local: '/fleet-business-sedan.png',
+    fallback: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+  },
+  {
+    title: 'Luxury Black SUV',
+    badge: 'Business Class SUV',
+    capacity: 'Up to 5 passengers',
+    luggage: '4–5 bags',
+    desc: 'Full-size luxury SUV for groups, families, and executives who need extra space without compromising on comfort.',
+    driver: 'TLC Licensed · Uniformed · Background Checked',
+    alt: 'Luxury black SUV chauffeur service NYC',
+    local: '/fleet-business-suv.png',
+    fallback: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80',
+  },
+  {
+    title: 'First Class SUV',
+    badge: 'Premium SUV',
+    capacity: 'Up to 6 passengers',
+    luggage: '5–6 bags',
+    desc: 'Top-tier SUV with premium leather, extended legroom, and maximum luggage capacity. The choice for VIP clients and roadshows.',
+    driver: 'TLC Licensed · Executive Chauffeur · NDA Available',
+    alt: 'First class premium SUV chauffeur service New York City',
+    local: '/fleet-first-suv.png',
+    fallback: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80',
+  },
+  {
+    title: 'First Class Sedan',
+    badge: 'Premium Sedan',
+    capacity: 'Up to 3 passengers',
+    luggage: '2–3 bags',
+    desc: 'The pinnacle of executive sedan travel — reserved for C-suite, VIP, and clients who demand the absolute best.',
+    driver: 'TLC Licensed · Executive Chauffeur · NDA Available',
+    alt: 'First class executive sedan luxury car service NYC',
+    local: '/fleet-first-sedan.png',
+    fallback: 'https://images.unsplash.com/photo-1563720360172-67b8f3dce741?w=800&q=80',
+  },
+  {
+    title: 'Sprinter Van',
+    badge: 'Luxury Sprinter',
+    capacity: 'Up to 14 passengers',
+    luggage: '10+ bags',
+    desc: 'Mercedes-Benz Sprinter for large groups, corporate events, airport shuttles, and multi-stop team travel across the tri-state area.',
+    driver: 'TLC Licensed · Professional Driver · Event Coordination',
+    alt: 'Luxury sprinter van group transport NYC chauffeur service',
+    local: '/fleet-sprinter-executive.png',
+    fallback: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80',
+  },
 ];
 
 const HERO_IMAGE = '/hero.jpg';
@@ -72,6 +124,14 @@ const faqs = [
   {
     q: 'What vehicles are available for large groups?',
     a: 'Our Business Class and First Class SUVs accommodate up to 6 passengers with luggage. For larger groups or multi-vehicle events, contact us for a custom quote and coordination plan.',
+  },
+  {
+    q: 'What is the difference between a black car service and a chauffeur service?',
+    a: 'A black car service and a chauffeur service are closely related. Black car service refers to the vehicle category — a luxury sedan or SUV, typically black. Chauffeur service emphasizes the professional driver experience: a uniformed, background-checked chauffeur who handles luggage, opens doors, and provides a premium experience. Eagle Eye offers both — a luxury black car with a professional executive chauffeur on every booking.',
+  },
+  {
+    q: 'Do you offer hourly chauffeur service in NYC?',
+    a: 'Yes. Hourly chauffeur hire is available for half-day and full-day bookings — ideal for executives with multiple stops, roadshows, corporate events, or clients who want a dedicated driver available throughout the day. Book by the hour with a professional chauffeur and a luxury vehicle of your choice.',
   },
 ];
 
@@ -115,11 +175,12 @@ export default function HomePage() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-brand-silver text-sm font-medium tracking-widest uppercase mb-4">New York City · 24/7 Service</p>
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-tight">
-            NYC Black Car Service —<br className="hidden sm:block" /> Airport Transfers, Corporate &amp; Chauffeur
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
+            <span className="block text-brand-white">NYC</span>
+            <AnimatedHeadline />
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-brand-silver max-w-2xl mx-auto leading-relaxed">
-            Professional black car and chauffeur service across New York City. JFK, LGA, EWR &amp; HPN airport transfers. Corporate travel. Flat rates — no surge pricing, ever.
+            Professional black car and chauffeur service across New York City. JFK, LGA, EWR &amp; HPN airport transfers. Executive chauffeur hire, corporate car service &amp; hourly. Flat rates — no surge pricing, ever.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -139,7 +200,7 @@ export default function HomePage() {
             {[
               { stat: '4 Airports', label: 'JFK · LGA · EWR · HPN' },
               { stat: '24/7', label: 'Always Available' },
-              { stat: '5-Star', label: 'Rated Service' },
+              { stat: '5★ Rated', label: 'Google Reviews' },
               { stat: 'TLC Licensed', label: 'Certified & Insured' },
             ].map((item) => (
               <div key={item.stat}>
@@ -154,88 +215,110 @@ export default function HomePage() {
       {/* ── SERVICES ─────────────────────────────────────── */}
       <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="services-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-3">
-            NYC Black Car Services
+          <p className="text-brand-grey text-xs font-medium tracking-widest uppercase text-center mb-3">What We Offer</p>
+          <h2 id="services-heading" className="font-serif text-3xl lg:text-4xl text-brand-black text-center mb-3">
+            Black Car &amp; Chauffeur Services
           </h2>
-          <p className="text-brand-grey text-center max-w-2xl mx-auto mb-12">
-            From airport transfers and corporate travel to weddings and hourly chauffeur hire — we deliver premium service across every need.
+          <p className="text-brand-grey text-center max-w-2xl mx-auto mb-14">
+            Professional chauffeurs, luxury vehicles, and seamless service — across NYC and beyond.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               {
-                title: 'Airport Transfers',
-                desc: 'JFK, LGA, EWR, HPN — meet-and-greet, real-time flight tracking, flat rates. No surge on early flights or delays.',
+                title: 'Chauffeur Service',
+                desc: 'Professional, background-checked chauffeurs for door-to-door transfers across all five NYC boroughs, Long Island, NJ, and CT.',
+                href: '/services/chauffeur-service',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Airport Car Service',
+                desc: 'Seamless airport transfers to JFK, LGA, EWR & HPN with real-time flight tracking, meet-and-greet, and flat rates. No surge pricing.',
                 href: '/services/airport',
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                   </svg>
                 ),
               },
               {
-                title: 'Corporate Chauffeur',
-                desc: 'Executive transport for boardrooms, roadshows, client visits, and corporate accounts. Discretion guaranteed.',
-                href: '/services/corporate',
+                title: 'Long-Distance Car Service',
+                desc: 'Comfortable long-distance travel from NYC to the Hamptons, Boston, Philadelphia, Washington D.C., and beyond. Flat rates, no surprises.',
+                href: '/services/long-distance',
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
                   </svg>
                 ),
               },
               {
-                title: 'Point-to-Point Transfers',
-                desc: 'Door-to-door across Manhattan, all 5 boroughs, Long Island, NJ, CT, Westchester, and the Hamptons.',
-                href: '/services/point-to-point',
-                icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                ),
-              },
-              {
-                title: 'Hourly Chauffeur Hire',
-                desc: 'Book by the hour for meetings, events, roadshows, or sightseeing. Your driver stays with you all day.',
+                title: 'Hourly Chauffeur Service',
+                desc: 'Flexible private chauffeur service tailored to your schedule. Book by the hour for meetings, events, roadshows, or a full day of travel.',
                 href: '/services/hourly',
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 ),
               },
               {
-                title: 'Weddings & Special Events',
-                desc: 'Arrive in style. Weddings, proms, galas, concerts, and milestone events with coordinated vehicle logistics.',
-                href: '/services/special-events',
+                title: 'Corporate Car Service',
+                desc: 'Executive transportation solutions for businesses, roadshows, investor tours, and corporate accounts. Discreet, punctual, and professional.',
+                href: '/services/corporate',
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Limousine Service',
+                desc: 'Premium NYC limousine service for special occasions, galas, weddings, and VIP nights out. Arrive in elegance — limo and luxury sedan available.',
+                href: '/services/limousine-service',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                   </svg>
                 ),
               },
               {
-                title: 'Long-Distance & Out-of-State',
-                desc: 'NYC to the Hamptons, Connecticut, New Jersey shore, Philadelphia, or upstate. Flat rates, no surprises.',
-                href: '/services/point-to-point',
+                title: 'Sprinter Van Service',
+                desc: 'Luxury group transportation for up to 14 passengers. Corporate shuttles, conference transfers, airport groups, and event coordination across NYC.',
+                href: '/services/sprinter-van-service',
                 icon: (
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 17H5a2 2 0 01-2-2V7a2 2 0 012-2h11l4 4v6a2 2 0 01-2 2h-1m-6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                  </svg>
+                ),
+              },
+              {
+                title: 'Wedding Car Service',
+                desc: 'Arrive in style on your most important day. Weddings, proms, anniversaries, and milestone celebrations with coordinated luxury vehicle logistics.',
+                href: '/services/wedding-car-service',
+                icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                   </svg>
                 ),
               },
             ].map((s) => (
               <Link
-                key={s.href + s.title}
+                key={s.title}
                 href={s.href}
-                className="group block bg-brand-offwhite border border-brand-light p-6 hover:border-brand-dark hover:bg-white transition-colors"
+                className="group flex flex-col bg-brand-white border border-brand-light p-6 hover:border-brand-dark hover:shadow-sm transition-all duration-200"
               >
-                <div className="text-brand-charcoal mb-4">{s.icon}</div>
-                <h3 className="font-serif text-xl font-semibold text-brand-black group-hover:underline mb-2">
+                <div className="w-12 h-12 rounded-full bg-brand-offwhite flex items-center justify-center text-brand-charcoal mb-5 group-hover:bg-brand-black group-hover:text-brand-white transition-colors duration-200">
+                  {s.icon}
+                </div>
+                <h3 className="font-serif text-lg text-brand-black group-hover:text-brand-charcoal mb-2">
                   {s.title}
                 </h3>
-                <p className="text-brand-grey text-sm leading-relaxed">{s.desc}</p>
-                <span className="mt-4 inline-block text-sm font-medium text-brand-black">
-                  Learn more →
+                <p className="text-brand-grey text-sm leading-relaxed flex-1">{s.desc}</p>
+                <span className="mt-5 text-xs font-medium tracking-widest uppercase text-brand-black group-hover:tracking-wider transition-all duration-200">
+                  Learn More →
                 </span>
               </Link>
             ))}
@@ -243,6 +326,58 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Link href="/services" className="font-medium text-brand-black hover:underline text-sm">
               View all services →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FLEET ────────────────────────────────────────── */}
+      <section className="py-16 lg:py-24 bg-brand-offwhite" aria-labelledby="fleet-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-brand-grey text-xs font-medium tracking-widest uppercase text-center mb-3">The Eagle Eye Fleet</p>
+          <h2 id="fleet-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-3">
+            Luxury Black Cars, SUVs &amp; Sprinter Vans
+          </h2>
+          <p className="text-brand-grey text-center max-w-2xl mx-auto mb-12">
+            Every vehicle is late-model, immaculately maintained, and paired with a TLC-licensed professional chauffeur — uniformed, background-checked, and trained to executive standards.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {fleet.map((v) => (
+              <Link
+                key={v.title}
+                href="/fleet"
+                className="group block bg-brand-white border border-brand-light overflow-hidden hover:border-brand-dark transition-colors"
+              >
+                <div className="aspect-[16/9] relative">
+                  <SafeFleetImage
+                    localSrc={v.local}
+                    fallbackSrc={v.fallback}
+                    alt={v.alt}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <span className="absolute top-3 left-3 bg-brand-black text-brand-white text-xs font-medium px-2 py-1">
+                    {v.badge}
+                  </span>
+                </div>
+                <div className="p-5">
+                  <h3 className="font-serif text-lg font-semibold text-brand-black group-hover:underline mb-1">
+                    {v.title}
+                  </h3>
+                  <div className="flex gap-4 text-xs text-brand-silver mb-3">
+                    <span>👤 {v.capacity}</span>
+                    <span>🧳 {v.luggage}</span>
+                  </div>
+                  <p className="text-brand-grey text-xs leading-relaxed mb-3">{v.desc}</p>
+                  <div className="border-t border-brand-light pt-3">
+                    <p className="text-xs text-brand-charcoal font-medium">{v.driver}</p>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/fleet" className="font-medium text-brand-black hover:underline text-sm">
+              View full fleet details →
             </Link>
           </div>
         </div>
@@ -379,60 +514,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FLEET ────────────────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-brand-offwhite" aria-labelledby="fleet-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="fleet-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-3">
-            Our Fleet
-          </h2>
-          <p className="text-brand-grey text-center max-w-2xl mx-auto mb-12">
-            Business Class and First Class luxury vehicles — sedans and SUVs always maintained to the highest standard for your comfort.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {fleet.map((v) => (
-              <Link
-                key={v.title}
-                href="/fleet"
-                className="group block bg-brand-white border border-brand-light overflow-hidden hover:border-brand-dark transition-colors"
-              >
-                <div className="aspect-[4/3] relative">
-                  <SafeFleetImage
-                    localSrc={v.local}
-                    fallbackSrc={v.fallback}
-                    alt={v.alt}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="font-serif text-lg font-semibold text-brand-black group-hover:underline">
-                    {v.title}
-                  </h3>
-                  <p className="text-brand-grey text-xs mt-1">{v.desc}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Link href="/fleet" className="font-medium text-brand-black hover:underline text-sm">
-              View full fleet details →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ── CORPORATE SECTION ────────────────────────────── */}
-      <section className="py-16 lg:py-24 bg-brand-white" aria-labelledby="corporate-heading">
+      <section className="py-16 lg:py-24 bg-brand-black" aria-labelledby="corporate-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Left — copy */}
             <div>
-              <p className="text-brand-grey text-sm font-medium tracking-widest uppercase mb-3">Corporate & Business</p>
-              <h2 id="corporate-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black mb-5">
-                Executive Chauffeur Service for NYC Business Travel
+              <p className="text-brand-silver text-xs font-medium tracking-widest uppercase mb-4">Corporate &amp; Business</p>
+              <h2 id="corporate-heading" className="font-serif text-3xl lg:text-4xl text-brand-white mb-6 leading-snug">
+                Corporate Car Service &amp; Executive Chauffeur Hire
               </h2>
-              <p className="text-brand-grey mb-6 leading-relaxed">
-                From single executive transfers to multi-vehicle roadshows and board meeting logistics, Eagle Eye Chauffeur supports corporate travel with discretion, punctuality, and a consistent premium experience.
+              <div className="w-12 h-px bg-brand-silver mb-6" />
+              <p className="text-brand-silver leading-relaxed mb-8">
+                From single executive chauffeur transfers to multi-vehicle roadshows and board meeting logistics, Eagle Eye Chauffeur delivers corporate car service and professional chauffeur hire with discretion, punctuality, and a consistent premium standard — every trip, every time.
               </p>
-              <ul className="space-y-3 text-brand-grey mb-8">
+              <ul className="space-y-4 mb-10">
                 {[
                   'Corporate accounts with consolidated monthly invoicing',
                   'Dedicated driver relationships for recurring clients',
@@ -440,8 +536,8 @@ export default function HomePage() {
                   'Executive assistants and travel managers — we handle the details',
                   'Strict confidentiality and professional conduct',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm">
-                    <svg className="w-5 h-5 shrink-0 mt-0.5 text-brand-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <li key={item} className="flex items-start gap-3 text-sm text-brand-silver">
+                    <svg className="w-4 h-4 shrink-0 mt-0.5 text-brand-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                     {item}
@@ -449,26 +545,48 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/services/corporate" className="inline-flex items-center justify-center px-6 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors text-sm">
+                <Link href="/services/corporate" className="inline-flex items-center justify-center px-6 py-3 bg-brand-white text-brand-black font-medium hover:bg-brand-offwhite transition-colors text-sm">
                   Corporate Services
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-brand-black text-brand-black font-medium hover:bg-brand-offwhite transition-colors text-sm">
+                <Link href="/contact" className="inline-flex items-center justify-center px-6 py-3 border border-brand-white/30 text-brand-white font-medium hover:border-brand-white/70 transition-colors text-sm">
                   Set Up an Account
                 </Link>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+
+            {/* Right — service cards */}
+            <div className="grid grid-cols-2 gap-3">
               {[
-                { label: 'Roadshows & Investor Tours', icon: '📊' },
-                { label: 'Board Meeting Transfers', icon: '🏢' },
-                { label: 'Client & VIP Airport Pickups', icon: '✈️' },
-                { label: 'Executive Day Drivers', icon: '🚗' },
-                { label: 'Conference & Event Shuttles', icon: '🎤' },
-                { label: 'Corporate Account Billing', icon: '📋' },
+                {
+                  label: 'Roadshows & Investor Tours',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
+                },
+                {
+                  label: 'Board Meeting Transfers',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>,
+                },
+                {
+                  label: 'Client & VIP Airport Pickups',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>,
+                },
+                {
+                  label: 'Executive Day Drivers',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>,
+                },
+                {
+                  label: 'Conference & Event Shuttles',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
+                },
+                {
+                  label: 'Corporate Account Billing',
+                  icon: <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+                },
               ].map((item) => (
-                <div key={item.label} className="bg-brand-offwhite border border-brand-light p-4">
-                  <div className="text-2xl mb-2">{item.icon}</div>
-                  <p className="font-medium text-brand-black text-sm">{item.label}</p>
+                <div key={item.label} className="border border-brand-white/10 p-5 hover:border-brand-white/30 transition-colors group">
+                  <div className="text-brand-silver mb-3 group-hover:text-brand-white transition-colors">
+                    {item.icon}
+                  </div>
+                  <p className="text-brand-white text-sm font-medium leading-snug">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -545,6 +663,70 @@ export default function HomePage() {
           <div className="mt-12 text-center">
             <Link href="/book" className="inline-flex items-center justify-center px-8 py-4 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
               Book Your Ride Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── INDUSTRIES WE SERVE ──────────────────────────── */}
+      <section className="py-16 lg:py-20 bg-brand-white" aria-labelledby="industries-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="industries-heading" className="font-serif text-3xl lg:text-4xl font-semibold text-brand-black text-center mb-3">
+            Industries We Serve
+          </h2>
+          <p className="text-brand-grey text-center max-w-2xl mx-auto mb-10">
+            Eagle Eye Chauffeur is the preferred black car service for professionals across New York&apos;s leading industries.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              {
+                title: 'Finance &amp; Investment Banking',
+                desc: 'Roadshows, investor meetings, airport transfers and daily executive travel for Wall Street firms.',
+              },
+              {
+                title: 'Law Firms',
+                desc: 'Depositions, client meetings, courthouse transfers and partner-level discretion across Manhattan.',
+              },
+              {
+                title: 'Management Consulting',
+                desc: 'Multi-stop client visits, office-to-airport, and hourly hire for consulting teams in NYC.',
+              },
+              {
+                title: 'Entertainment &amp; Media',
+                desc: 'Studio arrivals, set transfers, premiere nights and celebrity-level discretion guaranteed.',
+              },
+              {
+                title: 'Healthcare &amp; Pharma',
+                desc: 'Executive travel across the NYC-NJ pharma corridor — Princeton, Parsippany, Morristown.',
+              },
+              {
+                title: 'Real Estate',
+                desc: 'Client site tours, closing-day transfers and high-net-worth residential clients across the tri-state area.',
+              },
+              {
+                title: 'Technology',
+                desc: 'Hudson Yards, Midtown, and downtown NYC tech offices — executive and team travel, 24/7.',
+              },
+              {
+                title: 'Private Equity &amp; Hedge Funds',
+                desc: 'Greenwich, Midtown, and FiDi fund managers — TEB private aviation and Manhattan transfers.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="bg-brand-offwhite border border-brand-light p-5">
+                <p
+                  className="font-semibold text-brand-black text-sm"
+                  dangerouslySetInnerHTML={{ __html: item.title }}
+                />
+                <p
+                  className="text-xs text-brand-grey mt-1 leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: item.desc }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/corporate-accounts" className="text-sm font-medium text-brand-black underline hover:no-underline">
+              Set up a corporate account →
             </Link>
           </div>
         </div>

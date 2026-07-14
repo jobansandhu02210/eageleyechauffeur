@@ -46,33 +46,28 @@ const eaglEyeBenefits = [
 const terminals = [
   {
     name: 'Terminal 1',
-    airlines: 'Lufthansa, Korean Air, Japan Airlines, Air France',
-    detail: 'Driver waits in the ground floor arrivals area with a name sign, just past baggage claim.',
-  },
-  {
-    name: 'Terminal 2',
-    airlines: 'Delta (domestic routes)',
-    detail: 'Arrivals level ground floor — driver holds sign at the exit from baggage claim.',
+    airlines: 'Lufthansa, Korean Air, Japan Airlines, Air France, and other foreign carriers',
+    detail: 'Driver waits in the ground floor arrivals area with a name sign, just past baggage claim. Long customs queues common on transatlantic flights — your 60-minute wait time covers it.',
   },
   {
     name: 'Terminal 4',
-    airlines: 'Delta (main international hub), Emirates, Etihad, Virgin Atlantic, many others',
-    detail: "JFK's largest terminal. Driver meets you on the ground level arrivals hall with a name sign.",
+    airlines: 'Delta (main international hub), KLM, Air France, Cathay Pacific, Emirates, Etihad, Virgin Atlantic, and many others',
+    detail: "JFK's largest and busiest terminal. Long walk from gates to baggage claim is common. Driver meets you on the ground level arrivals hall. Allow extra time at immigration.",
   },
   {
     name: 'Terminal 5',
     airlines: 'JetBlue (main hub)',
-    detail: 'Arrivals ground floor — driver positioned just past baggage claim exit with name sign.',
+    detail: 'Compact, well-organized terminal — one of the easiest to navigate at JFK. Arrivals ground floor. Driver positioned just past baggage claim exit with name sign.',
   },
   {
     name: 'Terminal 7',
-    airlines: 'British Airways, Iberia',
-    detail: 'Ground level arrivals — driver waits with name sign past baggage claim and customs.',
+    airlines: 'British Airways, Finnair, Korean Air (select routes)',
+    detail: 'Ground level arrivals — driver waits with name sign past baggage claim and customs. International arrivals only, so customs wait time applies.',
   },
   {
     name: 'Terminal 8',
-    airlines: 'American Airlines (main hub)',
-    detail: 'Arrivals level — chauffeur is positioned past baggage claim and customs with name sign.',
+    airlines: 'American Airlines (main hub), British Airways (oneworld partner)',
+    detail: 'Arrivals on Level 1. Chauffeur is positioned past baggage claim and customs with name sign. Larger terminal — allow time to walk from gates to ground transportation.',
   },
 ];
 
@@ -203,6 +198,92 @@ export default function JFKAreaPage() {
         </div>
       </section>
 
+      {/* Arrival Pickup Protocol */}
+      <section className="py-16 lg:py-20 bg-brand-black text-brand-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold mb-3">
+            JFK Arrivals: How Pickup Works
+          </h2>
+          <p className="text-brand-silver mb-8 max-w-2xl">
+            JFK arrivals are always on the Ground level of each terminal. Here is exactly what happens when you land.
+          </p>
+          <div className="space-y-5">
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">1. Cell lot &amp; flight tracking</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Your driver monitors your flight from wheels-down. They wait in the JFK cell lot until your flight is confirmed on the ground, then move to your terminal. You receive a WhatsApp message with your driver&apos;s name, vehicle, and exact pickup location before you reach baggage claim.
+              </p>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">2. Terminal-specific notes</div>
+              <ul className="text-brand-silver text-sm space-y-2 mt-2">
+                <li><strong className="text-brand-white">T4:</strong> JFK&apos;s largest terminal — the walk from gates to baggage claim and ground transportation is long. Allow extra time. Driver waits on the Ground level arrivals hall.</li>
+                <li><strong className="text-brand-white">T5 (JetBlue):</strong> Compact and well-signed — fastest exit at JFK. Driver is steps from the baggage claim exit.</li>
+                <li><strong className="text-brand-white">T8 (American):</strong> Arrivals on Level 1. Follow signs to Ground Transportation on Level 1 — driver holds your name sign at the exit.</li>
+                <li><strong className="text-brand-white">T1 &amp; T7:</strong> International only. Customs can take 30–60 minutes. Your 60-minute complimentary wait covers it — no rush.</li>
+              </ul>
+            </div>
+            <div className="border border-brand-charcoal p-5">
+              <div className="font-semibold text-brand-white mb-2">3. Meet your driver</div>
+              <p className="text-brand-silver text-sm leading-relaxed">
+                Your chauffeur holds a name sign at the designated arrivals exit of your terminal. No need to find a pickup zone or walk to a remote lot. 60 minutes of complimentary wait time is included — the clock starts when your flight lands.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods We Serve From JFK */}
+      <section className="py-16 lg:py-20 bg-brand-offwhite">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-3">
+            Neighborhoods We Serve From JFK
+          </h2>
+          <p className="text-brand-grey mb-8">
+            Eagle Eye covers the full metro area from JFK — Manhattan, Brooklyn, Queens, Long Island, Westchester, and beyond. Your flat rate covers the entire journey, tolls included.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/services/areas/midtown-manhattan" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Midtown Manhattan</div>
+              <div className="text-sm text-brand-grey">40–55 min — most direct via Belt &amp; FDR</div>
+            </Link>
+            <Link href="/services/areas/upper-east-side" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Upper East Side</div>
+              <div className="text-sm text-brand-grey">40–55 min — via Queens Midtown Tunnel</div>
+            </Link>
+            <Link href="/services/areas/financial-district" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Financial District</div>
+              <div className="text-sm text-brand-grey">35–50 min — direct via BQE &amp; Battery Tunnel</div>
+            </Link>
+            <Link href="/services/areas/brooklyn" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Brooklyn</div>
+              <div className="text-sm text-brand-grey">25–40 min — Park Slope, DUMBO, Williamsburg</div>
+            </Link>
+            <Link href="/services/areas/queens" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Queens</div>
+              <div className="text-sm text-brand-grey">15–30 min — Astoria, Forest Hills, Flushing</div>
+            </Link>
+            <Link href="/services/areas/long-island" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Long Island</div>
+              <div className="text-sm text-brand-grey">20–90 min — Nassau, Suffolk, The Hamptons</div>
+            </Link>
+            <Link href="/services/areas/westchester" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">Westchester</div>
+              <div className="text-sm text-brand-grey">55–80 min — White Plains, Scarsdale, Rye</div>
+            </Link>
+            <Link href="/services/areas/hamptons" className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+              <div className="font-semibold text-brand-black mb-1">The Hamptons</div>
+              <div className="text-sm text-brand-grey">90–120 min — Southampton, East Hampton</div>
+            </Link>
+          </div>
+          <div className="mt-6">
+            <Link href="/book" className="inline-flex items-center justify-center px-8 py-3 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors">
+              Book JFK Transfer
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* What's Included */}
       <section className="py-16 lg:py-20 bg-brand-offwhite">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -253,6 +334,55 @@ export default function JFKAreaPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* JFK Terminal Quick-Reference */}
+      <section className="py-14 bg-brand-black text-brand-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-white mb-2">JFK Terminal Quick-Reference</h2>
+          <p className="text-brand-silver text-sm mb-6">Airlines and pickup notes by terminal — confirmed at booking.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-charcoal text-brand-white">
+                  <th className="text-left p-4 font-medium">Terminal</th>
+                  <th className="text-left p-4 font-medium">Key Airlines</th>
+                  <th className="text-left p-4 font-medium">Pickup Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-brand-charcoal bg-opacity-40">
+                  <td className="p-4 font-medium text-brand-white">Terminal 1</td>
+                  <td className="p-4 text-brand-silver">Lufthansa, JAL, Air Canada, Air China</td>
+                  <td className="p-4 text-brand-silver">International — longer customs walk</td>
+                </tr>
+                <tr className="bg-brand-charcoal bg-opacity-20">
+                  <td className="p-4 font-medium text-brand-white">Terminal 4</td>
+                  <td className="p-4 text-brand-silver">Delta (hub), Air France, KLM, Cathay Pacific</td>
+                  <td className="p-4 text-brand-silver">Largest terminal — allow extra time</td>
+                </tr>
+                <tr className="bg-brand-charcoal bg-opacity-40">
+                  <td className="p-4 font-medium text-brand-white">Terminal 5</td>
+                  <td className="p-4 text-brand-silver">JetBlue (all flights)</td>
+                  <td className="p-4 text-brand-silver">Most compact terminal — quickest exit</td>
+                </tr>
+                <tr className="bg-brand-charcoal bg-opacity-20">
+                  <td className="p-4 font-medium text-brand-white">Terminal 7</td>
+                  <td className="p-4 text-brand-silver">British Airways, Finnair, Korean Air</td>
+                  <td className="p-4 text-brand-silver">Ground Transportation Level 1</td>
+                </tr>
+                <tr className="bg-brand-charcoal bg-opacity-40">
+                  <td className="p-4 font-medium text-brand-white">Terminal 8</td>
+                  <td className="p-4 text-brand-silver">American Airlines, British Airways (shared)</td>
+                  <td className="p-4 text-brand-silver">Renovated, efficient arrivals</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-silver text-sm mt-6">
+            Your driver meets you at Ground Transportation / Arrivals level of your terminal. Provide your terminal and flight number at booking — we track your flight live and adjust for any delays.
+          </p>
         </div>
       </section>
 

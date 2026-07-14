@@ -278,6 +278,89 @@ export default function SohoPage() {
         </div>
       </section>
 
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            SoHo Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">SoHo&apos;s cast-iron district has narrow cobblestone blocks — especially on Wooster, Greene, and Mercer Streets — that make double-parking difficult during peak hours. West Broadway and Spring Street are the main commercial corridors with more vehicle throughput, while Prince Street and Broome Street are also workable. Your chauffeur will text you a precise corner to walk to if the exact address isn&apos;t stoppable. For hotel pickups at the Crosby Street Hotel on Crosby Street or 11 Howard on Howard Street, drivers coordinate with the front desk for a clean lobby pull-up. Weekend afternoons and Fashion Week periods see heavy pedestrian traffic, so your chauffeur arrives 5 minutes early to secure a spot.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Crosby Street Hotel — Crosby St between Spring &amp; Prince</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>11 Howard Hotel — Howard St &amp; Lafayette St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>The James New York — Grand St &amp; Thompson St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>West Broadway — main spine, Spring to Canal</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Spring Street &amp; Sixth Avenue intersection</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Prince Street &amp; Broadway — busy but accessible</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Houston Street — northern boundary, easy access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from SoHo</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">SoHo to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">SoHo to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">SoHo to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">SoHo to Teterboro (TEB)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">SoHo to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">SoHo to Brooklyn</td>
+                  <td className="p-4 text-brand-grey">20–30 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">SoHo to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

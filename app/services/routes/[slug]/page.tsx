@@ -234,6 +234,67 @@ export default async function HamptonsRoutePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ABOUT DESTINATION */}
+      <section className="bg-brand-black text-brand-white py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold mb-8">About {destination.name}</h2>
+          <div className="grid lg:grid-cols-3 gap-8 mb-10">
+            <div>
+              <h3 className="font-semibold text-brand-silver uppercase tracking-widest text-xs mb-4">Beaches</h3>
+              <ul className="space-y-2">
+                {destination.beaches.map((b) => (
+                  <li key={b} className="text-brand-silver text-sm border-b border-brand-charcoal pb-2">{b}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-silver uppercase tracking-widest text-xs mb-4">Key Areas</h3>
+              <ul className="space-y-2">
+                {destination.areas.map((a) => (
+                  <li key={a} className="text-brand-silver text-sm border-b border-brand-charcoal pb-2">{a}</li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-silver uppercase tracking-widest text-xs mb-4">Where Guests Stay</h3>
+              <ul className="space-y-2">
+                {destination.hotels.map((h) => (
+                  <li key={h} className="text-brand-silver text-sm border-b border-brand-charcoal pb-2">{h}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-brand-charcoal pt-8 grid sm:grid-cols-2 gap-6">
+            <div>
+              <p className="text-brand-silver text-xs uppercase tracking-widest font-semibold mb-2">Main Road</p>
+              <p className="text-brand-silver text-sm">{destination.mainRoad}</p>
+            </div>
+            <div>
+              <p className="text-brand-silver text-xs uppercase tracking-widest font-semibold mb-2">Traffic & Timing Tip</p>
+              <p className="text-brand-silver text-sm">{destination.drivingTip}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PICKUP FROM ORIGIN */}
+      <section className="bg-brand-offwhite py-14 lg:py-18">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Getting Picked Up in {origin.name}
+          </h2>
+          <p className="text-brand-grey text-sm max-w-2xl mb-8 leading-relaxed">{origin.pickupNotes}</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {origin.landmarks.map((lm) => (
+              <div key={lm} className="bg-brand-white border border-brand-light px-4 py-3 text-sm text-brand-black flex gap-2">
+                <span className="text-brand-charcoal shrink-0">→</span>
+                <span>{lm}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

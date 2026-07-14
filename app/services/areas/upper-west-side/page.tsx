@@ -277,6 +277,89 @@ export default function UpperWestSidePage() {
         </div>
       </section>
 
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Upper West Side Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">The Upper West Side&apos;s residential avenues — Central Park West, West End Avenue, Riverside Drive, Amsterdam, and Columbus — all run north–south and are generally accessible for staged pickups. Broadway diagonals through the neighborhood and can be congested near 72nd and 86th Street subway stations. For doorman buildings on Central Park West, your chauffeur coordinates with building staff and waits in the service lane or a nearby spot rather than double-parking on the park-side. Lincoln Center pickups require timing around performance curtains — your chauffeur monitors show times and positions near the Columbus Avenue or Amsterdam Avenue exits, not directly on Broadway, to avoid the post-curtain taxi rush.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Lincoln Center — Columbus Ave &amp; 65th St (main plaza)</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>American Museum of Natural History — 79th St &amp; Central Park West</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>The Beacon Theatre — Broadway &amp; 74th St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Central Park West co-ops — 72nd to 96th corridor</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Riverside Drive buildings — 80th–100th St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Columbia University — 116th St &amp; Broadway</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>The Apthorp — Broadway &amp; 79th St</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from the Upper West Side</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper West Side to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">45–60 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper West Side to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper West Side to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">50–65 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper West Side to Westchester</td>
+                  <td className="p-4 text-brand-grey">35–50 min</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper West Side to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2.5–3 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Upper West Side to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–25 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">Upper West Side to Lower Manhattan / FiDi</td>
+                  <td className="p-4 text-brand-grey">25–40 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

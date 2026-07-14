@@ -277,6 +277,89 @@ export default function ChelseaPage() {
         </div>
       </section>
 
+      {/* ── Pickup Guide ── */}
+      <section className="bg-brand-white py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Chelsea Pickup — What to Expect
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">How pickup works</h3>
+              <p className="text-sm text-brand-grey leading-relaxed">Chelsea&apos;s West Side location gives it good access to the West Side Highway and the Lincoln Tunnel approach, making it one of the faster neighborhoods to exit toward EWR and TEB. Tenth and Eleventh Avenues are the primary north–south corridors for vehicle movement; Eighth and Ninth Avenues have more local traffic and bus lanes. For gallery strip pickups along West 21st–26th Streets between Tenth and Eleventh, your chauffeur will stage on Eleventh Avenue and text you the cross-street to meet. Javits Center pickups use the designated vehicle staging area on Eleventh Avenue between 34th and 39th — your chauffeur tracks your convention schedule and positions accordingly. Chelsea Market pickups on Ninth Avenue are managed from the north or south entrance on 15th or 16th Street.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold text-brand-black mb-2">Notable pickup points</h3>
+              <ul className="space-y-1">
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Javits Center — 11th Ave, 34th to 40th St vehicle lane</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Chelsea Market — 9th Ave, 15th or 16th St entrance</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>High Line northern access — 10th Ave &amp; 30th St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Chelsea gallery strip — 11th Ave &amp; 22nd–24th St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Chelsea Piers — West Side Highway &amp; 23rd St</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Meatpacking District — Gansevoort St &amp; 9th Ave</li>
+                <li className="text-sm text-brand-grey flex gap-2"><span>→</span>Hudson Yards Shops — 10th Ave &amp; 30th St plaza</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Key Routes ── */}
+      <section className="bg-brand-offwhite py-14">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">Common Routes from Chelsea</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-brand-black text-brand-white">
+                  <th className="text-left p-4 font-medium">Route</th>
+                  <th className="text-left p-4 font-medium">Est. Drive Time</th>
+                  <th className="text-left p-4 font-medium">Service</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Chelsea to JFK Airport</td>
+                  <td className="p-4 text-brand-grey">40–55 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Chelsea to LaGuardia (LGA)</td>
+                  <td className="p-4 text-brand-grey">30–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Chelsea to Newark Airport (EWR)</td>
+                  <td className="p-4 text-brand-grey">30–45 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Chelsea to Teterboro (TEB)</td>
+                  <td className="p-4 text-brand-grey">25–40 min</td>
+                  <td className="p-4 text-brand-grey">Airport Transfer</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-white">
+                  <td className="p-4 text-brand-black">Chelsea to Midtown Manhattan</td>
+                  <td className="p-4 text-brand-grey">15–20 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+                <tr className="border-b border-brand-light bg-brand-offwhite">
+                  <td className="p-4 text-brand-black">Chelsea to the Hamptons</td>
+                  <td className="p-4 text-brand-grey">2–2.5 hr</td>
+                  <td className="p-4 text-brand-grey">Out-of-Town Transfer</td>
+                </tr>
+                <tr className="bg-brand-white">
+                  <td className="p-4 text-brand-black">Chelsea to Greenwich Village / SoHo</td>
+                  <td className="p-4 text-brand-grey">10–20 min</td>
+                  <td className="p-4 text-brand-grey">Point-to-Point</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-brand-grey text-xs mt-3">Times are estimates in normal traffic. Flat rate confirmed at booking.</p>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="bg-brand-white py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

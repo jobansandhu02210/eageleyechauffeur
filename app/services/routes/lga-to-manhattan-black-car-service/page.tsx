@@ -31,6 +31,26 @@ const faqs = [
     q: 'Can I book LGA black car service for early morning arrivals?',
     a: 'Yes. Eagle Eye Chauffeur operates 24/7. Red-eye and early morning arrivals at LaGuardia are fully covered.',
   },
+  {
+    q: 'How long is LGA to Manhattan by car?',
+    a: 'LaGuardia to Midtown Manhattan is just 9 miles — typically 20–30 minutes in normal traffic. During peak hours (7–9am and 5–8pm), allow 35–50 minutes. It is the shortest airport-to-Manhattan drive of any NYC area airport.',
+  },
+  {
+    q: 'Is LGA the closest airport to Midtown Manhattan?',
+    a: 'Yes. LaGuardia is the closest major airport to Midtown at just 9 miles. JFK is about 16 miles and EWR is about 16 miles via the Lincoln Tunnel. For Midtown or Upper Manhattan destinations, LGA is often the most convenient choice.',
+  },
+  {
+    q: 'Which LGA terminal will I arrive in?',
+    a: 'LaGuardia has two main terminals: Terminal B serves American, United, Southwest, Alaska, and most carriers. Terminal C serves Delta exclusively. When you book, provide your airline and we will confirm your terminal and send the exact meeting point via WhatsApp before you land.',
+  },
+  {
+    q: 'Is LaGuardia the closest airport to Midtown?',
+    a: 'Yes. LGA is approximately 8 miles from Midtown Manhattan — the closest of New York&apos;s three major commercial airports. Travel time is typically 20–30 minutes in normal traffic, significantly faster than JFK (40–55 min) or EWR (35–50 min) for Midtown destinations.',
+  },
+  {
+    q: 'Which LGA terminal should I tell my driver?',
+    a: 'Terminal B serves American, United, Southwest, and Alaska. Terminal C is Delta only. Check your ticket or airline app for your terminal before landing — your driver will be at the correct terminal based on what you provide at booking.',
+  },
 ];
 
 
@@ -160,6 +180,89 @@ export default function LGAToManhattanBlackCarPage() {
               The route to Manhattan typically uses the Grand Central Parkway to the Queens-Midtown Tunnel or
               the Triborough Bridge, depending on your destination and real-time traffic.
             </p>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-black">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-white mb-2">
+              LaGuardia Terminal Guide — Where Your Driver Meets You
+            </h2>
+            <p className="text-brand-silver mb-6 text-sm">LGA has two terminals. Your chauffeur sends the exact meeting spot via WhatsApp before you land.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-charcoal text-brand-white">
+                    <th className="text-left p-3 font-semibold">Terminal</th>
+                    <th className="text-left p-3 font-semibold">Airlines</th>
+                    <th className="text-left p-3 font-semibold">Arrivals Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">Terminal B</td>
+                    <td className="p-3 text-brand-grey">American, United, Southwest, Alaska &amp; most carriers</td>
+                    <td className="p-3 text-brand-grey">New 2022 building — ride-share &amp; car service at designated zones</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">Terminal C</td>
+                    <td className="p-3 text-brand-grey">Delta (all Delta flights)</td>
+                    <td className="p-3 text-brand-grey">Separate building from Terminal B — separate pickup area</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              How Your LGA Arrival Pickup Works
+            </h2>
+            <div className="space-y-4">
+              {[
+                { step: '1', title: 'Book in advance', body: 'Provide your flight number, LGA terminal, and arrival time when booking. Your flat rate is confirmed instantly.' },
+                { step: '2', title: 'Driver tracks your flight live', body: 'We monitor your LaGuardia arrival in real time — early or delayed, your chauffeur adjusts automatically at no extra charge.' },
+                { step: '3', title: 'Meet your driver at arrivals', body: 'Your chauffeur waits with a name sign in the arrivals area. You receive a WhatsApp message with the exact meeting point before you land.' },
+                { step: '4', title: 'Door-to-door to your Manhattan destination', body: 'Ride in a luxury black car to any Manhattan address. Flat rate — confirmed at booking, never changes.' },
+              ].map((item) => (
+                <div key={item.step} className="bg-brand-white border border-brand-light p-5 flex gap-5 items-start">
+                  <div className="shrink-0 w-8 h-8 bg-brand-black text-brand-white font-semibold flex items-center justify-center text-sm">{item.step}</div>
+                  <div>
+                    <div className="font-semibold text-brand-black mb-1">{item.title}</div>
+                    <p className="text-brand-grey text-sm">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-offwhite">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Manhattan Neighborhoods We Serve from LGA
+            </h2>
+            <p className="text-brand-grey mb-6 text-sm">We serve every Manhattan neighborhood. Browse popular destinations below.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { name: 'Midtown Manhattan', desc: 'Hotels, offices, and business addresses in the heart of NYC.', href: '/services/areas/midtown-manhattan' },
+                { name: 'Upper East Side', desc: 'Residential buildings, consulates, and luxury hotels.', href: '/services/areas/upper-east-side' },
+                { name: 'Financial District', desc: 'Wall Street, World Trade Center, and lower Manhattan.', href: '/services/areas/financial-district' },
+                { name: 'SoHo', desc: 'Cast-iron loft buildings and boutique hotels.', href: '/services/areas/soho' },
+                { name: 'Tribeca', desc: 'Celebrity-favored residential neighborhood in lower Manhattan.', href: '/services/areas/tribeca' },
+                { name: 'Upper West Side', desc: 'Columbus Circle area to the Hudson River.', href: '/services/areas/upper-west-side' },
+                { name: 'Chelsea', desc: 'Gallery district and west side residential and hotel corridor.', href: '/services/areas/chelsea' },
+                { name: 'Greenwich Village', desc: 'NYU area and west village townhouses.', href: '/services/areas/greenwich-village' },
+                { name: 'Brooklyn', desc: 'DUMBO, Brooklyn Heights, Park Slope, and beyond.', href: '/services/areas/brooklyn' },
+              ].map((area) => (
+                <Link key={area.name} href={area.href} className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+                  <div className="font-semibold text-brand-black text-sm mb-1">{area.name}</div>
+                  <p className="text-brand-grey text-xs">{area.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Newark Airport Car Service NYC | EWR to Manhattan Black Car | Eagle Eye',
+  title: 'Newark Car Service EWR | NJ Airport Transfers NYC | Eagle Eye',
   description:
-    'Newark Airport (EWR) car service — flat rates including all NJ Turnpike tolls, real-time flight tracking, meet & greet at Terminal A, B & C. No surge pricing. Book Eagle Eye 24/7.',
+    'Newark car service EWR — all NJ Turnpike tolls included, meet & greet at Terminals A, B & C. NJ to JFK transfers available. Real-time tracking. No surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/ewr` },
 };
 
@@ -35,6 +35,14 @@ const faqs = [
   {
     q: 'Do you track flights for EWR arrivals?',
     a: 'Yes. We monitor your EWR flight in real-time and update your driver automatically if there are delays, early arrivals, or gate changes. No extra charge, no phone calls needed. Your chauffeur is always timed to your actual landing.',
+  },
+  {
+    q: 'Do you provide car service from New Jersey to JFK airport?',
+    a: 'Yes. Eagle Eye provides car service from New Jersey to JFK Airport — including from Newark, Hoboken, Jersey City, Princeton, and all NJ locations. Flat rate confirmed at booking, all tolls included (Lincoln Tunnel, Holland Tunnel, or Goethals Bridge). Book online or WhatsApp us with your NJ pickup address and JFK terminal.',
+  },
+  {
+    q: 'Can I book a car service from JFK to Newark Airport?',
+    a: 'Yes. We run direct JFK to Newark (EWR) transfers — a common route for travelers with connections at different airports. Flat rate, one pickup, door-to-door. JFK to Newark takes approximately 40–60 minutes depending on traffic and which terminals you are using.',
   },
 ];
 
@@ -65,7 +73,7 @@ export default function EWRPage() {
             Airport Service
           </p>
           <h1 className="font-serif text-4xl lg:text-6xl font-semibold text-brand-white mb-6 leading-tight">
-            Newark Airport Car Service — EWR to NYC
+            Newark Car Service
           </h1>
           <p className="text-brand-silver text-lg lg:text-xl max-w-2xl mb-10 leading-relaxed">
             Newark Liberty is one of NYC&apos;s three main airports — all tolls included in your

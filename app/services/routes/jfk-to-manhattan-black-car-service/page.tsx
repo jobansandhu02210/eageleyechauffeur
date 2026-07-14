@@ -31,6 +31,26 @@ const faqs = [
     q: 'Can I book a JFK to Manhattan black car for early morning or late night?',
     a: 'Yes. Eagle Eye Chauffeur operates 24 hours a day, 7 days a week. Red-eye arrivals and pre-dawn departures are fully covered.',
   },
+  {
+    q: 'How long does JFK to Manhattan take?',
+    a: 'The drive from JFK to Midtown Manhattan is typically 35–50 minutes in normal traffic. During peak hours — weekday mornings (7–9am) and evenings (5–8pm) — allow 60–75 minutes. JFK is 16 miles from Midtown via the Van Wyck Expressway.',
+  },
+  {
+    q: 'Do you pick up at all JFK terminals?',
+    a: 'Yes. Eagle Eye Chauffeur covers all JFK terminals — T1, T4, T5, T7, and T8. When you book, provide your terminal and airline and your chauffeur will meet you at the correct arrivals area with a name sign.',
+  },
+  {
+    q: 'Is there a meet and greet at JFK arrivals?',
+    a: 'Yes. Every Eagle Eye pickup at JFK includes a full meet and greet. Your chauffeur waits in the arrivals hall past baggage claim with a sign bearing your name. You also receive a WhatsApp message with the exact meeting point before you land.',
+  },
+  {
+    q: 'What happens if my JFK flight is delayed?',
+    a: 'We track your incoming flight in real time. If your arrival is delayed, your driver adjusts their pickup time automatically — no rebooking, no extra charge. Your flat rate applies regardless of how long the delay is.',
+  },
+  {
+    q: 'Do you meet at all JFK terminals?',
+    a: 'Yes. We serve Terminal 1, 4, 5, 7, and 8 at JFK. Provide your terminal and flight number at booking. Your driver meets you at the Ground Transportation level of your specific terminal with a name sign.',
+  },
 ];
 
 
@@ -162,6 +182,104 @@ export default function JFKToManhattanBlackCarPage() {
               All JFK terminal pickups are handled at the arrivals level. Your driver will send you the exact
               meeting spot via WhatsApp before you land.
             </p>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-black">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-white mb-2">
+              JFK Terminal Guide — Where Your Driver Meets You
+            </h2>
+            <p className="text-brand-silver mb-6 text-sm">All pickups are at the arrivals level. Your chauffeur sends the exact meeting spot via WhatsApp before you land.</p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-brand-charcoal text-brand-white">
+                    <th className="text-left p-3 font-semibold">Terminal</th>
+                    <th className="text-left p-3 font-semibold">Airlines</th>
+                    <th className="text-left p-3 font-semibold">Arrivals Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T1</td>
+                    <td className="p-3 text-brand-grey">Lufthansa, JAL, Air Canada &amp; international carriers</td>
+                    <td className="p-3 text-brand-grey">Ground floor arrivals — follow signs to exits</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">T4</td>
+                    <td className="p-3 text-brand-grey">Delta (main hub), Air France, KLM, Cathay Pacific</td>
+                    <td className="p-3 text-brand-grey">Follow signs to Ground Transportation after baggage claim</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T5</td>
+                    <td className="p-3 text-brand-grey">JetBlue (all domestic &amp; Caribbean flights)</td>
+                    <td className="p-3 text-brand-grey">Compact terminal — quick exit to arrivals</td>
+                  </tr>
+                  <tr className="bg-brand-offwhite">
+                    <td className="p-3 font-medium text-brand-black">T7</td>
+                    <td className="p-3 text-brand-grey">British Airways, Finnair, Korean Air</td>
+                    <td className="p-3 text-brand-grey">Ground Transportation Level 1</td>
+                  </tr>
+                  <tr className="bg-brand-white">
+                    <td className="p-3 font-medium text-brand-black">T8</td>
+                    <td className="p-3 text-brand-grey">American Airlines, British Airways (shared with T7)</td>
+                    <td className="p-3 text-brand-grey">Level 1 pickup area — follow arrivals signage</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
+              How Your JFK Arrival Pickup Works
+            </h2>
+            <div className="space-y-4">
+              {[
+                { step: '1', title: 'Book in advance', body: 'Provide your flight number, JFK terminal, and arrival time when booking. Your flat rate is confirmed instantly.' },
+                { step: '2', title: 'Driver tracks your flight live', body: 'We monitor your JFK arrival in real time — if your flight is early or delayed, your chauffeur adjusts automatically at no extra charge.' },
+                { step: '3', title: 'Meet your driver at arrivals', body: 'Your chauffeur waits in the arrivals hall with a name sign, just past baggage claim. You also receive a WhatsApp message with the exact meeting point before you land.' },
+                { step: '4', title: 'Door-to-door to your Manhattan destination', body: 'Sit back and ride in a luxury black car to any Manhattan address. Flat rate — confirmed at booking, never changes.' },
+              ].map((item) => (
+                <div key={item.step} className="bg-brand-white border border-brand-light p-5 flex gap-5 items-start">
+                  <div className="shrink-0 w-8 h-8 bg-brand-black text-brand-white font-semibold flex items-center justify-center text-sm">{item.step}</div>
+                  <div>
+                    <div className="font-semibold text-brand-black mb-1">{item.title}</div>
+                    <p className="text-brand-grey text-sm">{item.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="pb-16 bg-brand-offwhite">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
+              Manhattan Neighborhoods We Serve from JFK
+            </h2>
+            <p className="text-brand-grey mb-6 text-sm">We serve every Manhattan neighborhood and beyond. Browse popular destinations below.</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {[
+                { name: 'Midtown Manhattan', desc: 'Hotels, offices, and business addresses in the heart of NYC.', href: '/services/areas/midtown-manhattan' },
+                { name: 'Upper East Side', desc: 'Residential buildings, consulates, and luxury hotels.', href: '/services/areas/upper-east-side' },
+                { name: 'Financial District', desc: 'Wall Street, World Trade Center, and lower Manhattan.', href: '/services/areas/financial-district' },
+                { name: 'SoHo', desc: 'Cast-iron loft buildings and boutique hotels.', href: '/services/areas/soho' },
+                { name: 'Tribeca', desc: 'Celebrity-favored residential neighborhood in lower Manhattan.', href: '/services/areas/tribeca' },
+                { name: 'Upper West Side', desc: 'Columbus Circle area to the Hudson River.', href: '/services/areas/upper-west-side' },
+                { name: 'Chelsea', desc: 'Gallery district and west side residential and hotel corridor.', href: '/services/areas/chelsea' },
+                { name: 'Greenwich Village', desc: 'NYU area and west village townhouses.', href: '/services/areas/greenwich-village' },
+                { name: 'Brooklyn', desc: 'DUMBO, Brooklyn Heights, Park Slope, and beyond.', href: '/services/areas/brooklyn' },
+              ].map((area) => (
+                <Link key={area.name} href={area.href} className="bg-brand-white border border-brand-light p-4 hover:border-brand-dark transition-colors">
+                  <div className="font-semibold text-brand-black text-sm mb-1">{area.name}</div>
+                  <p className="text-brand-grey text-xs">{area.desc}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 
