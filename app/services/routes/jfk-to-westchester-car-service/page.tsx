@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK to Westchester Car Service | Black Car Airport Transfer | Eagle Eye Chauffeur',
+  title: 'JFK to Westchester Car Service | Airport Transfer | Eagle Eye',
   description:
     'JFK Airport to Westchester car service — flat rates, real-time flight tracking, 60-min free wait, meet & greet at arrivals. White Plains, Scarsdale, Yonkers, Greenwich. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-westchester-car-service` },

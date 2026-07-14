@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Nassau County Car Service | Black Car & Airport Transfers Long Island | Eagle Eye',
+  title: 'Nassau County Car Service | JFK LGA EWR Transfers | Eagle Eye',
   description:
-    'Nassau County black car service — JFK & LGA airport transfers from Garden City, Great Neck, Hempstead, Mineola, Manhasset, Rockville Centre. Flat rates. Book Eagle Eye Chauffeur 24/7.',
+    'Nassau County black car service — JFK & LGA airport transfers from Garden City, Great Neck, Hempstead, Mineola, Manhasset, Rockville Centre. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/nassau-county` },
 };
 

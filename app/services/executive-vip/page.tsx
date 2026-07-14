@@ -6,14 +6,14 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Executive VIP Chauffeur Service NYC | Private Car for VIPs | Eagle Eye',
+    absolute: 'Executive VIP Car Service NYC | Private Chauffeur | Eagle Eye',
   },
   description:
     'Executive VIP chauffeur service NYC — discreet, professional black car for C-suite executives, celebrities, dignitaries & private clients. NDA available. 24/7. Eagle Eye Chauffeur.',
   alternates: { canonical: `${getSiteUrl()}/services/executive-vip` },
   openGraph: {
     url: `${getSiteUrl()}/services/executive-vip`,
-    title: 'Executive VIP Chauffeur Service NYC | Private Car for VIPs | Eagle Eye',
+    title: 'Executive VIP Car Service NYC | Private Chauffeur | Eagle Eye',
     description:
       'Executive VIP chauffeur service NYC — discreet, professional black car for C-suite executives, celebrities, dignitaries & private clients. NDA available. 24/7. Eagle Eye Chauffeur.',
   },

@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Stamford CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Stamford CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Stamford to NYC Midtown door-to-door. TLC-licensed chauffeur for corporate & executive travel. Book 24/7.',
+    'Stamford CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Stamford to NYC Midtown door-to-door. TLC-licensed chauffeur for.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/stamford-ct` },
   openGraph: {
     title: 'Stamford CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Stamford CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Stamford to NYC Midtown door-to-door. TLC-licensed chauffeur for corporate & executive travel. Book 24/7.',
+      'Stamford CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Stamford to NYC Midtown door-to-door. TLC-licensed chauffeur for.',
     url: `${getSiteUrl()}/services/areas/stamford-ct`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

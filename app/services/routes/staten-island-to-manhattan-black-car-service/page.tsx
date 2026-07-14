@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Staten Island to Manhattan Black Car Service | Eagle Eye Chauffeur NYC',
+  title: 'Staten Island to Manhattan Car Service | Eagle Eye NYC',
   description:
     'Staten Island to Manhattan black car service — flat rate including Verrazano toll, professional chauffeur, door-to-door to Midtown, Financial District, Wall Street. TLC licensed. 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/staten-island-to-manhattan-black-car-service` },

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Suffolk County Car Service | Black Car & Airport Transfers Long Island | Eagle Eye',
+  title: 'Suffolk County Car Service | JFK LGA EWR Transfers | Eagle Eye',
   description:
-    'Suffolk County black car service — JFK & LGA airport transfers from Huntington, Babylon, Brentwood, Bay Shore, Smithtown, Patchogue. Flat rates. Professional chauffeur 24/7.',
+    'Suffolk County black car service — JFK & LGA airport transfers from Huntington, Babylon, Brentwood, Bay Shore, Smithtown, Patchogue. Flat rates.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/suffolk-county` },
 };
 

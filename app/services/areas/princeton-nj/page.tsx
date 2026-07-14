@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Princeton NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Princeton NJ black car service — airport transfers to EWR & JFK, NYC rides, Princeton University & Route 1 corporate campuses. TLC-licensed chauffeurs, flat rates. Book 24/7.',
+    'Princeton NJ black car service — airport transfers to EWR & JFK, NYC rides, Princeton University & Route 1 corporate campuses. TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/princeton-nj` },
   openGraph: {
     title: 'Princeton NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Princeton NJ black car service — airport transfers to EWR & JFK, NYC rides, Princeton University & Route 1 corporate campuses. TLC-licensed chauffeurs, flat rates. Book 24/7.',
+      'Princeton NJ black car service — airport transfers to EWR & JFK, NYC rides, Princeton University & Route 1 corporate campuses. TLC-licensed.',
     url: `${getSiteUrl()}/services/areas/princeton-nj`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

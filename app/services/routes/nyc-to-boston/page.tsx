@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Boston Car Service | Private Chauffeur | Eagle Eye Chauffeur',
+  title: 'NYC to Boston Car Service | Private Chauffeur | Eagle Eye',
   description:
     'NYC to Boston car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Boston. ~4 hours door-to-door. No surge pricing. Business and First Class vehicles. Book Eagle Eye Chauffeur.',
   keywords: [

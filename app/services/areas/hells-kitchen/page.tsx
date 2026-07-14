@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: "Hell's Kitchen Black Car Service NYC | Eagle Eye Chauffeur",
+  title: "Hell's Kitchen Black Car Service NYC | Eagle Eye",
   description:
-    "Hell's Kitchen black car service NYC — luxury chauffeur for Theater District and Broadway pickups, Javits Center transfers, Penn Station area, JFK & LGA airport runs, and late-night service. Flat rates, TLC-licensed, 24/7.",
+    "Hell's Kitchen black car — Broadway pickups, Javits Center, Penn Station, JFK & LGA airport runs. Flat rates, TLC-licensed. Book Eagle Eye 24/7.",
   alternates: { canonical: `${getSiteUrl()}/services/areas/hells-kitchen` },
   openGraph: {
-    title: "Hell's Kitchen Black Car Service NYC | Eagle Eye Chauffeur",
-    description: "Luxury black car in Hell's Kitchen and the Theater District. Broadway pickups, Javits Center transfers, Penn Station area, late-night service, and airport runs to JFK and LGA. Flat rates, no surge.",
+    title: "Hell's Kitchen Black Car Service NYC | Eagle Eye",
+    description: "Luxury black car in Hell's Kitchen and the Theater District. Broadway pickups, Javits Center transfers, Penn Station area, late-night service, and.",
     url: `${getSiteUrl()}/services/areas/hells-kitchen`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

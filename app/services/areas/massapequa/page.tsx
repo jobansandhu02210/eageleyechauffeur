@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Massapequa Car Service | Black Car & JFK Airport Transfers Nassau | Eagle Eye',
+  title: 'Massapequa Car Service | JFK Transfers Nassau | Eagle Eye',
   description:
-    'Massapequa black car service — flat-rate JFK, LGA & EWR airport transfers from the Nassau County South Shore. Massapequa Park also served. No surge pricing. Book Eagle Eye 24/7.',
+    'Massapequa black car service — flat-rate JFK, LGA & EWR airport transfers from the Nassau County South Shore. Massapequa Park also served. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/massapequa` },
 };
 

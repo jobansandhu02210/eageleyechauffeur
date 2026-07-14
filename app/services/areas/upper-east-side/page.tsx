@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Upper East Side Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Upper East Side Black Car Service NYC | Eagle Eye',
   description:
-    'Upper East Side black car service — TLC-licensed chauffeurs for residential UES pickups, JFK & LGA airport transfers, school and event transport, and hourly hire on Park Avenue & Fifth Avenue. Flat rates, no surge, 24/7.',
+    'Black car on the Upper East Side — residential building pickups, JFK/LGA transfers, Museum Mile events, hourly hire. Flat rates, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upper-east-side` },
   openGraph: {
-    title: 'Upper East Side Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car service on the Upper East Side. Residential building pickups, JFK/LGA airport transfers, Museum Mile events, and hourly hire throughout UES. Flat rates, TLC-licensed, 24/7.',
+    title: 'Upper East Side Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car service on the Upper East Side. Residential building pickups, JFK/LGA airport transfers, Museum Mile events, and hourly hire.',
     url: `${getSiteUrl()}/services/areas/upper-east-side`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

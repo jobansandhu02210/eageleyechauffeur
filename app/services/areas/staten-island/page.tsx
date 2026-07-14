@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Staten Island Car Service | Black Car & Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Staten Island Car Service | JFK EWR Airport Transfers | Eagle Eye',
   description:
-    'Staten Island black car service — airport transfers to JFK, LGA & EWR. Flat rates, no surge pricing. Professional chauffeur 24/7. Book Eagle Eye for premium Staten Island rides.',
+    'Staten Island black car service — airport transfers to JFK, LGA & EWR. Flat rates, no surge pricing. Professional chauffeur 24/7. Book Eagle Eye for.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/staten-island` },
 };
 

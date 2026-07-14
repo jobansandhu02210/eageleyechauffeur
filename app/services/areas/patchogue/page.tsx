@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Patchogue Car Service | Black Car & JFK Airport Transfers Suffolk County | Eagle Eye',
+  title: 'Patchogue Car Service | JFK Transfers Suffolk County | Eagle Eye',
   description:
-    'Patchogue black car service — flat-rate JFK, LGA & EWR airport transfers from the Suffolk County South Shore. Medford & Blue Point also covered. No surge pricing. Book Eagle Eye 24/7.',
+    'Patchogue black car service — flat-rate JFK, LGA & EWR airport transfers from the Suffolk County South Shore. Medford & Blue Point also covered. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/patchogue` },
 };
 

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Philadelphia Car Service | Private Chauffeur | Eagle Eye Chauffeur',
+  title: 'NYC to Philadelphia Car Service | Private Chauffeur | Eagle Eye',
   description:
     'NYC to Philadelphia car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Philadelphia. ~1.5–2 hours door-to-door. No surge pricing. Business and First Class vehicles. Book Eagle Eye.',
   keywords: [
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-philadelphia` },
   openGraph: {
     url: `${getSiteUrl()}/services/routes/nyc-to-philadelphia`,
-    title: 'NYC to Philadelphia Car Service | Eagle Eye Chauffeur',
+    title: 'NYC to Philadelphia Car Service | Eagle Eye',
     description: 'Flat-rate private chauffeur from NYC to Philadelphia. ~1.5–2 hours door-to-door. No surge. Book now.',
   },
 };

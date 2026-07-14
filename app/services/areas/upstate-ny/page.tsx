@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Upstate New York Car Service | NYC Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Upstate New York Car Service | NYC Airport Transfers | Eagle Eye',
   description:
-    'Upstate New York black car service — NYC airport transfers from Hudson Valley, Catskills, Albany, Poughkeepsie, Newburgh, Kingston. Flat rates. Professional chauffeur. Book 24/7.',
+    'Upstate New York black car service — NYC airport transfers from Hudson Valley, Catskills, Albany, Poughkeepsie, Newburgh, Kingston. Flat rates.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upstate-ny` },
 };
 

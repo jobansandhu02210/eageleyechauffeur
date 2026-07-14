@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'White Plains NY Black Car Service | Airport & NYC | Eagle Eye',
   description:
-    'White Plains black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door from White Plains to NYC Midtown. TLC-licensed chauffeur. Book 24/7.',
+    'White Plains black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door from White Plains to NYC Midtown. TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/white-plains` },
   openGraph: {
     title: 'White Plains NY Black Car Service | Airport & NYC | Eagle Eye',
     description:
-      'White Plains black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door from White Plains to NYC Midtown. TLC-licensed chauffeur. Book 24/7.',
+      'White Plains black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door from White Plains to NYC Midtown. TLC-licensed.',
     url: `${getSiteUrl()}/services/areas/white-plains`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

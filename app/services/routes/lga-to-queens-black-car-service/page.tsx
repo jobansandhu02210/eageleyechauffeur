@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LaGuardia to Queens Black Car Service | LGA Arrivals | Eagle Eye Chauffeur',
+  title: 'LaGuardia to Queens Car Service | LGA Arrivals | Eagle Eye',
   description:
     'LaGuardia Airport to Queens black car service — flat rate, flight tracking, meet & greet at Terminal B & C. Astoria, Flushing, Jamaica, Forest Hills & all Queens. TLC licensed. 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-queens-black-car-service` },

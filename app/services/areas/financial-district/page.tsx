@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Financial District Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Financial District Black Car Service NYC | Eagle Eye',
   description:
-    'Financial District black car service NYC — Wall Street chauffeurs for early airport runs to JFK, LGA & EWR, FiDi corporate accounts, hourly hire for finance professionals, and downtown Manhattan transfers. Flat rates, TLC-licensed, 24/7.',
+    'Financial District black car service NYC — Wall Street chauffeurs for early airport runs to JFK, LGA & EWR, FiDi corporate accounts, hourly hire for.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/financial-district` },
   openGraph: {
-    title: 'Financial District Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Wall Street black car service for finance professionals. Early morning JFK runs, FiDi corporate accounts, hourly hire, and downtown Manhattan transfers. Flat rates, no surge.',
+    title: 'Financial District Black Car Service NYC | Eagle Eye',
+    description: 'Wall Street black car service for finance professionals. Early morning JFK runs, FiDi corporate accounts, hourly hire, and downtown Manhattan.',
     url: `${getSiteUrl()}/services/areas/financial-district`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

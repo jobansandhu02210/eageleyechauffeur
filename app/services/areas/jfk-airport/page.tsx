@@ -7,7 +7,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'JFK Airport Car Service NYC | Black Car Transfers All Terminals | Eagle Eye',
   description:
-    'JFK Airport black car service — meet & greet, real-time flight tracking, all terminals. Flat rates from Manhattan, Brooklyn, Queens, Long Island & NJ. Book Eagle Eye Chauffeur 24/7.',
+    'JFK Airport black car service — meet & greet, real-time flight tracking, all terminals. Flat rates from Manhattan, Brooklyn, Queens, Long Island &.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/jfk-airport` },
 };
 

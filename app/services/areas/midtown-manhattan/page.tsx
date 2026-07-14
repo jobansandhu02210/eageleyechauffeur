@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Midtown Manhattan Black Car Service | Eagle Eye Chauffeur',
+  title: 'Midtown Manhattan Black Car Service | Eagle Eye',
   description:
-    'Midtown Manhattan black car service — TLC-licensed chauffeurs for corporate travel, airport transfers to JFK, LGA & EWR, hourly hire, Penn Station pickups, and Times Square events. Flat rates, no surge. Eagle Eye Chauffeur available 24/7.',
+    'Corporate black car Midtown Manhattan — flat-rate airport transfers, hourly roadshows, Penn Station pickups, Times Square events. TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/midtown-manhattan` },
   openGraph: {
-    title: 'Midtown Manhattan Black Car Service | Eagle Eye Chauffeur',
-    description: 'Corporate car service in Midtown Manhattan. Flat-rate airport transfers, hourly hire for roadshows, Penn Station pickups, and Times Square event transport. TLC-licensed, 24/7.',
+    title: 'Midtown Manhattan Black Car Service | Eagle Eye',
+    description: 'Corporate car service in Midtown Manhattan. Flat-rate airport transfers, hourly hire for roadshows, Penn Station pickups, and Times Square event.',
     url: `${getSiteUrl()}/services/areas/midtown-manhattan`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

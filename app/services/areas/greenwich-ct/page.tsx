@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Greenwich CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Greenwich CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Greenwich to NYC Midtown, door-to-door. TLC-licensed chauffeur for hedge fund & corporate travel. Book 24/7.',
+    'Greenwich CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Greenwich to NYC Midtown, door-to-door. TLC-licensed chauffeur for hedge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/greenwich-ct` },
   openGraph: {
     title: 'Greenwich CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Greenwich CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Greenwich to NYC Midtown, door-to-door. TLC-licensed chauffeur for hedge fund & corporate travel. Book 24/7.',
+      'Greenwich CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Greenwich to NYC Midtown, door-to-door. TLC-licensed chauffeur for hedge.',
     url: `${getSiteUrl()}/services/areas/greenwich-ct`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

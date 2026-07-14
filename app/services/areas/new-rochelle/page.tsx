@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'New Rochelle NY Black Car Service | Airport & NYC | Eagle Eye',
   description:
-    'New Rochelle black car service — flat-rate airport transfers to LGA, JFK & EWR. Door-to-door from New Rochelle to Manhattan. TLC-licensed chauffeur. Book 24/7.',
+    'New Rochelle black car service — flat-rate airport transfers to LGA, JFK & EWR. Door-to-door from New Rochelle to Manhattan. TLC-licensed chauffeur.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/new-rochelle` },
   openGraph: {
     title: 'New Rochelle NY Black Car Service | Airport & NYC | Eagle Eye',
     description:
-      'New Rochelle black car service — flat-rate airport transfers to LGA, JFK & EWR. Door-to-door from New Rochelle to Manhattan. TLC-licensed chauffeur. Book 24/7.',
+      'New Rochelle black car service — flat-rate airport transfers to LGA, JFK & EWR. Door-to-door from New Rochelle to Manhattan. TLC-licensed chauffeur.',
     url: `${getSiteUrl()}/services/areas/new-rochelle`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

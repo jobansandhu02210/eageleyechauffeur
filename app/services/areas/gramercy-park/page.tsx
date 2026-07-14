@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Gramercy Park Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Gramercy Park Black Car Service NYC | Eagle Eye',
   description:
-    'Gramercy Park black car service NYC — luxury chauffeur for residential building pickups, JFK & LGA airport transfers, Murray Hill and Kips Bay corporate travel, and hourly hire in Gramercy, Murray Hill & Irving Place. Flat rates, TLC-licensed, 24/7.',
+    'Black car in Gramercy Park and Murray Hill — residential pickups, JFK & LGA transfers, corporate travel, hourly hire. Flat rates, no surge. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/gramercy-park` },
   openGraph: {
-    title: 'Gramercy Park Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car in Gramercy Park, Murray Hill, and Kips Bay. Residential building pickups, JFK & LGA airport transfers, corporate travel, and hourly hire. Flat rates, no surge, TLC-licensed.',
+    title: 'Gramercy Park Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car in Gramercy Park, Murray Hill, and Kips Bay. Residential building pickups, JFK & LGA airport transfers, corporate travel, and hourly.',
     url: `${getSiteUrl()}/services/areas/gramercy-park`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

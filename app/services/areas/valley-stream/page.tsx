@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Valley Stream Car Service | Black Car & JFK Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Valley Stream Car Service | JFK Airport Transfers NYC | Eagle Eye',
   description:
-    'Valley Stream black car service — flat-rate JFK airport transfers in as little as 15 minutes. LGA & EWR also covered. TLC-licensed chauffeur. No surge pricing. Book Eagle Eye 24/7.',
+    'Valley Stream black car service — flat-rate JFK airport transfers in as little as 15 minutes. LGA & EWR also covered. TLC-licensed chauffeur. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/valley-stream` },
 };
 

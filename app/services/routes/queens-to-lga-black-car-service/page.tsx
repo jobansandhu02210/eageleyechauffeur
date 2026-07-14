@@ -5,14 +5,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Queens to LaGuardia (LGA) Black Car Service | Airport Transfer | Eagle Eye',
+  title: 'Queens to LaGuardia Car Service | LGA Transfer | Eagle Eye',
   description:
     'Queens to LaGuardia Airport black car service — flat rates, professional chauffeur, door-to-door from Astoria, Flushing, Jamaica & all Queens. TLC licensed. Book Eagle Eye Chauffeur 24/7.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/queens-to-lga-black-car-service`,
   },
   openGraph: {
-    title: 'Queens to LaGuardia (LGA) Black Car Service | Eagle Eye Chauffeur',
+    title: 'Queens to LaGuardia (LGA) Car Service | Eagle Eye',
     description: 'Flat-rate black car service from any Queens neighborhood to LaGuardia Airport. TLC licensed, no surge pricing, 24/7.',
     url: `${getSiteUrl()}/services/routes/queens-to-lga-black-car-service`,
     siteName: 'Eagle Eye Chauffeur',

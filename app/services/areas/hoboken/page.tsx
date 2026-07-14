@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Hoboken NJ Black Car Service | NYC Chauffeur | Eagle Eye',
   description:
-    'Hoboken NJ black car service — flat-rate airport transfers to JFK, EWR & LGA. TLC-licensed chauffeurs, door-to-door pickup, tolls included. Skip the PATH — book Eagle Eye 24/7.',
+    'Hoboken NJ black car service — flat-rate airport transfers to JFK, EWR & LGA. TLC-licensed chauffeurs, door-to-door pickup, tolls included. Skip the.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hoboken` },
   openGraph: {
     title: 'Hoboken NJ Black Car Service | NYC Chauffeur | Eagle Eye',
     description:
-      'Hoboken NJ black car service — flat-rate airport transfers to JFK, EWR & LGA. TLC-licensed chauffeurs, door-to-door pickup, tolls included. Skip the PATH — book Eagle Eye 24/7.',
+      'Hoboken NJ black car service — flat-rate airport transfers to JFK, EWR & LGA. TLC-licensed chauffeurs, door-to-door pickup, tolls included. Skip the.',
     url: `${getSiteUrl()}/services/areas/hoboken`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

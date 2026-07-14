@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Newark Airport to Queens Car Service | Eagle Eye Chauffeur',
+  title: 'Newark Airport to Queens Car Service | Eagle Eye',
   description:
     'Newark Airport (EWR) to Queens car service — flat rate, all tolls included, TLC licensed. Astoria, Flushing, Jamaica, Forest Hills, Long Island City, Bayside, Jackson Heights, Ozone Park and more.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/ewr-to-queens-car-service` },

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Bronx Car Service | Black Car & Airport Transfers NYC | Eagle Eye Chauffeur',
+  title: 'Bronx Car Service | NYC Airport Transfers | Eagle Eye',
   description:
-    'Bronx black car service — airport transfers to JFK, LGA & EWR from all Bronx neighborhoods. Flat-rate, no surge pricing. Professional TLC-licensed chauffeurs 24/7.',
+    'Bronx black car service — airport transfers to JFK, LGA & EWR from all Bronx neighborhoods. Flat-rate, no surge pricing. Professional TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/bronx` },
 };
 

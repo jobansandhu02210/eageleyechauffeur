@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Long Island Car Service | Black Car & JFK Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Long Island Car Service | JFK Airport Transfers NYC | Eagle Eye',
   description:
-    'Long Island black car service — JFK & LGA airport transfers from Nassau and Suffolk Counties. Garden City, Great Neck, Huntington, Hampton Bays. Flat rates. Book 24/7.',
+    'Long Island black car service — JFK & LGA airport transfers from Nassau and Suffolk Counties. Garden City, Great Neck, Huntington, Hampton Bays. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/long-island` },
 };
 

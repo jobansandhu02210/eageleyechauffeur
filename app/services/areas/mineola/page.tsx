@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Mineola Car Service | Black Car & JFK Airport Transfers Nassau County | Eagle Eye',
+  title: 'Mineola Car Service | JFK Transfers Nassau County | Eagle Eye',
   description:
-    'Mineola black car and chauffeur service — flat-rate JFK, LGA & EWR airport transfers from the Nassau County seat. TLC-licensed driver. No surge pricing. Book Eagle Eye 24/7.',
+    'Mineola black car and chauffeur service — flat-rate JFK, LGA & EWR airport transfers from the Nassau County seat. TLC-licensed driver. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/mineola` },
 };
 

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Ronkonkoma Car Service | Black Car, JFK & MacArthur Airport Transfers | Eagle Eye',
+  title: 'Ronkonkoma Car Service | JFK & MacArthur Transfers | Eagle Eye',
   description:
-    'Ronkonkoma black car service — flat-rate JFK, LGA, EWR & MacArthur (ISP) airport transfers from central Suffolk County. No surge pricing. TLC-licensed. Book Eagle Eye 24/7.',
+    'Ronkonkoma black car service — flat-rate JFK, LGA, EWR & MacArthur (ISP) airport transfers from central Suffolk County. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/ronkonkoma` },
 };
 

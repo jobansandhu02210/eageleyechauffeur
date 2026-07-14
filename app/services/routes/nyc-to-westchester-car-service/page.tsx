@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Westchester Car Service | Black Car to Westchester County | Eagle Eye Chauffeur',
+  title: 'NYC to Westchester Car Service | Airport Transfers | Eagle Eye',
   description:
     'NYC to Westchester car service — flat-rate black car, professional chauffeur, door-to-door from Manhattan, Brooklyn, Queens or the Bronx. White Plains, Scarsdale, Greenwich, Stamford. Corporate accounts available. No surge pricing. Book Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-westchester-car-service` },

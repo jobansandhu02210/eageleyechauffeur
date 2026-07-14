@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Summit NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Summit NJ black car service — airport transfers to EWR & JFK, door-to-door Manhattan rides. Union County luxury chauffeur, flat rates, TLC-licensed drivers, tolls included. Book 24/7.',
+    'Summit NJ black car service — airport transfers to EWR & JFK, door-to-door Manhattan rides. Union County luxury chauffeur, flat rates, TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/summit-nj` },
   openGraph: {
     title: 'Summit NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Summit NJ black car service — airport transfers to EWR & JFK, door-to-door Manhattan rides. Union County luxury chauffeur, flat rates, TLC-licensed drivers, tolls included. Book 24/7.',
+      'Summit NJ black car service — airport transfers to EWR & JFK, door-to-door Manhattan rides. Union County luxury chauffeur, flat rates, TLC-licensed.',
     url: `${getSiteUrl()}/services/areas/summit-nj`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

@@ -7,11 +7,11 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Manhattan Black Car Service | Luxury Chauffeur NYC | Eagle Eye',
   description:
-    'Manhattan black car service — professional TLC-licensed chauffeurs, flat-rate pricing, no surge. Airport transfers to JFK, LGA, EWR & HPN. Hourly hire, corporate travel, and point-to-point rides throughout all Manhattan neighborhoods. Book Eagle Eye Chauffeur 24/7.',
+    'Luxury black car across Manhattan — flat rates, TLC-licensed chauffeurs, JFK/LGA/EWR airport transfers, hourly hire. No surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/manhattan` },
   openGraph: {
-    title: 'Manhattan Black Car Service | Eagle Eye Chauffeur',
-    description: 'Luxury black car service across all Manhattan neighborhoods. Flat rates, TLC-licensed chauffeurs, airport transfers, hourly hire, and corporate travel. No surge pricing.',
+    title: 'Manhattan Black Car Service | Eagle Eye',
+    description: 'Luxury black car service across all Manhattan neighborhoods. Flat rates, TLC-licensed chauffeurs, airport transfers, hourly hire, and corporate.',
     url: `${getSiteUrl()}/services/areas/manhattan`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

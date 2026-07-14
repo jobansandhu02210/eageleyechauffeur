@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Yonkers NY Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Yonkers black car and chauffeur service — flat-rate airport transfers to LGA, JFK & EWR. Yonkers to Manhattan door-to-door. TLC-licensed. No surge pricing. Book 24/7.',
+    'Yonkers black car and chauffeur service — flat-rate airport transfers to LGA, JFK & EWR. Yonkers to Manhattan door-to-door. TLC-licensed. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/yonkers` },
   openGraph: {
     title: 'Yonkers NY Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Yonkers black car and chauffeur service — flat-rate airport transfers to LGA, JFK & EWR. Yonkers to Manhattan door-to-door. TLC-licensed. No surge pricing. Book 24/7.',
+      'Yonkers black car and chauffeur service — flat-rate airport transfers to LGA, JFK & EWR. Yonkers to Manhattan door-to-door. TLC-licensed. No surge.',
     url: `${getSiteUrl()}/services/areas/yonkers`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Norwalk CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Norwalk CT black car service — flat-rate transfers to JFK, LGA & EWR. South Norwalk (SoNo) to NYC Midtown, door-to-door. TLC-licensed chauffeur. Corporate & event service. Book 24/7.',
+    'Norwalk CT black car service — flat-rate transfers to JFK, LGA & EWR. South Norwalk (SoNo) to NYC Midtown, door-to-door. TLC-licensed chauffeur.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/norwalk-ct` },
   openGraph: {
     title: 'Norwalk CT Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Norwalk CT black car service — flat-rate transfers to JFK, LGA & EWR. South Norwalk (SoNo) to NYC Midtown, door-to-door. TLC-licensed chauffeur. Corporate & event service. Book 24/7.',
+      'Norwalk CT black car service — flat-rate transfers to JFK, LGA & EWR. South Norwalk (SoNo) to NYC Midtown, door-to-door. TLC-licensed chauffeur.',
     url: `${getSiteUrl()}/services/areas/norwalk-ct`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

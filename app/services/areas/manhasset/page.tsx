@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Manhasset Car Service | Black Car & Airport Transfers Gold Coast | Eagle Eye',
   description:
-    'Manhasset black car and chauffeur service — flat-rate JFK & LGA airport transfers from Nassau County\'s Gold Coast. Miracle Mile area. No surge pricing. Book Eagle Eye 24/7.',
+    'Manhasset black car and chauffeur service — flat-rate JFK & LGA airport transfers from Nassau County\'s Gold Coast. Miracle Mile area. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/manhasset` },
 };
 

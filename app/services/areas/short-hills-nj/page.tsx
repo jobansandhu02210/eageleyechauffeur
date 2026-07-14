@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Short Hills NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
-    'Short Hills NJ black car service — EWR airport transfers (very close), JFK & NYC rides. Millburn luxury car service, flat rates, TLC-licensed chauffeurs, tolls included. Book 24/7.',
+    'Short Hills NJ black car service — EWR airport transfers (very close), JFK & NYC rides. Millburn luxury car service, flat rates, TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/short-hills-nj` },
   openGraph: {
     title: 'Short Hills NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
-      'Short Hills NJ black car service — EWR airport transfers (very close), JFK & NYC rides. Millburn luxury car service, flat rates, TLC-licensed chauffeurs, tolls included. Book 24/7.',
+      'Short Hills NJ black car service — EWR airport transfers (very close), JFK & NYC rides. Millburn luxury car service, flat rates, TLC-licensed.',
     url: `${getSiteUrl()}/services/areas/short-hills-nj`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

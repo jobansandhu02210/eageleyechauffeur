@@ -7,11 +7,11 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Harlem Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
   description:
-    'Harlem black car service NYC — luxury chauffeur for JFK & LGA airport transfers, corporate travel from upper Manhattan, Apollo Theater event pickups, and Columbia University area service. Flat rates, TLC-licensed, 24/7.',
+    'Black car in Harlem — JFK & LGA airport transfers, Apollo Theater events, Columbia University pickups. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/harlem` },
   openGraph: {
     title: 'Harlem Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
-    description: 'Luxury black car service in Harlem and upper Manhattan. JFK & LGA airport transfers, Apollo Theater events, Columbia University pickups, and 125th Street corridor. Flat rates, no surge, TLC-licensed.',
+    description: 'Luxury black car service in Harlem and upper Manhattan. JFK & LGA airport transfers, Apollo Theater events, Columbia University pickups, and 125th.',
     url: `${getSiteUrl()}/services/areas/harlem`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

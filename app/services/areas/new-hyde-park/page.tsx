@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'New Hyde Park Car Service | Black Car & JFK Airport Transfers | Eagle Eye Chauffeur',
+  title: 'New Hyde Park Car Service | JFK Airport Transfers NYC | Eagle Eye',
   description:
-    'New Hyde Park black car service — flat-rate JFK, LGA & EWR airport transfers from central Nassau County. Locally based chauffeur company. No surge pricing. Book Eagle Eye 24/7.',
+    'New Hyde Park black car service — flat-rate JFK, LGA & EWR airport transfers from central Nassau County. Locally based chauffeur company. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/new-hyde-park` },
 };
 

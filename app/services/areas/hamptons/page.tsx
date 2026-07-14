@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hamptons Car Service | NYC & JFK Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Hamptons Car Service | NYC & JFK Airport Transfers | Eagle Eye',
   description:
-    'Hamptons black car service — NYC & JFK airport transfers from East Hampton, Southampton, Bridgehampton, Sag Harbor, Montauk. Flat rates. Professional chauffeur. Book 24/7.',
+    'Hamptons black car service — NYC & JFK airport transfers from East Hampton, Southampton, Bridgehampton, Sag Harbor, Montauk. Flat rates. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hamptons` },
 };
 

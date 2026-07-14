@@ -5,12 +5,12 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Roslyn Car Service | Black Car & LGA Airport Transfers Nassau County | Eagle Eye',
+  title: 'Roslyn Car Service | LGA & JFK Transfers Nassau County | Eagle Eye',
   description:
-    'Roslyn NY black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s North Shore. Roslyn Village, Roslyn Harbor & Roslyn Heights covered. No surge pricing. Book Eagle Eye 24/7.',
+    'Roslyn NY black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s North Shore. Roslyn Village, Roslyn Harbor & Roslyn.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/roslyn` },
   openGraph: {
-    title: 'Roslyn Car Service | Black Car & LGA Airport Transfers Nassau County | Eagle Eye',
+    title: 'Roslyn Car Service | LGA & JFK Transfers Nassau County | Eagle Eye',
     description:
       'Roslyn NY black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s North Shore. No surge pricing. Book Eagle Eye 24/7.',
     url: `${getSiteUrl()}/services/areas/roslyn`,

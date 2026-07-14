@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK to Upper East Side Black Car Service | NYC Airport Transfer | Eagle Eye',
+  title: 'JFK to Upper East Side Car Service | Eagle Eye NYC',
   description:
     'JFK Airport to Upper East Side black car service — flat rate, meet &amp; greet at arrivals, flight tracking. Park Ave, 5th Ave, Lenox Hill, Yorkville &amp; Carnegie Hill. TLC licensed. 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-upper-east-side-car-service` },

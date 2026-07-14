@@ -5,14 +5,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Queens Car Service | Black Car JFK & LaGuardia Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Queens Car Service | JFK & LGA Airport Transfers | Eagle Eye',
   description:
-    'Queens black car service — professional chauffeurs, flat-rate airport transfers from JFK & LaGuardia to all Queens neighborhoods. No surge pricing. TLC licensed. Book Eagle Eye Chauffeur 24/7.',
+    'Queens black car service — professional chauffeurs, flat-rate airport transfers from JFK & LaGuardia to all Queens neighborhoods. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/queens` },
   openGraph: {
-    title: 'Queens Car Service | Black Car JFK & LaGuardia Airport Transfers | Eagle Eye Chauffeur',
+    title: 'Queens Car Service | JFK & LGA Airport Transfers | Eagle Eye',
     description:
-      'Premium black car service across Queens. Astoria, Flushing, Jamaica, Forest Hills, Long Island City and more. Flat-rate JFK & LGA transfers, no surge pricing, driver confirmed night before.',
+      'Premium black car service across Queens. Astoria, Flushing, Jamaica, Forest Hills, Long Island City and more. Flat-rate JFK & LGA transfers, no surge.',
     url: `${getSiteUrl()}/services/areas/queens`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Elmont Car Service | Black Car & JFK Airport Transfers Nassau | Eagle Eye',
+  title: 'Elmont Car Service | JFK Transfers Nassau | Eagle Eye',
   description:
-    'Elmont black car service — flat-rate JFK airport transfers in as little as 15 minutes. UBS Arena area served. TLC-licensed chauffeur. No surge pricing. Book Eagle Eye 24/7.',
+    'Elmont black car service — flat-rate JFK airport transfers in as little as 15 minutes. UBS Arena area served. TLC-licensed chauffeur. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/elmont` },
 };
 

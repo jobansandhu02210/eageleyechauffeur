@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Scarsdale NY Black Car Service | Airport & NYC | Eagle Eye',
   description:
-    'Scarsdale black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door to NYC Midtown. Executive chauffeur for Scarsdale estates & offices. Book 24/7.',
+    'Scarsdale black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door to NYC Midtown. Executive chauffeur for Scarsdale estates &.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/scarsdale` },
   openGraph: {
     title: 'Scarsdale NY Black Car Service | Airport & NYC | Eagle Eye',
     description:
-      'Scarsdale black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door to NYC Midtown. Executive chauffeur for Scarsdale estates & offices. Book 24/7.',
+      'Scarsdale black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door to NYC Midtown. Executive chauffeur for Scarsdale estates &.',
     url: `${getSiteUrl()}/services/areas/scarsdale`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

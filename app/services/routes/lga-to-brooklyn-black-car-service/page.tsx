@@ -4,7 +4,7 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'LGA to Brooklyn Car Service | LaGuardia Black Car | Eagle Eye Chauffeur',
+  title: 'LGA to Brooklyn Car Service | LaGuardia Car | Eagle Eye',
   description:
     'LaGuardia to Brooklyn car service — flat rates, real-time flight tracking, meet & greet at arrivals. Professional TLC-licensed chauffeur, no surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-brooklyn-black-car-service` },

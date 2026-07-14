@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Greenwich Village Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Greenwich Village Black Car Service NYC | Eagle Eye',
   description:
-    'Greenwich Village black car service NYC — luxury chauffeur for West Village and NYU area pickups, JFK & LGA airport transfers, restaurant and nightlife departures, and late-night village service. Flat rates, TLC-licensed, 24/7.',
+    'Black car in Greenwich Village — NYU area, restaurant pickups, JFK & LGA transfers, late-night West Village service. Flat rates, no surge. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/greenwich-village` },
   openGraph: {
-    title: 'Greenwich Village Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car in Greenwich Village and the West Village. NYU campus area, restaurant pickups, JFK & LGA airport transfers, and late-night Village service. Flat rates, no surge, TLC-licensed.',
+    title: 'Greenwich Village Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car in Greenwich Village and the West Village. NYU campus area, restaurant pickups, JFK & LGA airport transfers, and late-night Village.',
     url: `${getSiteUrl()}/services/areas/greenwich-village`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

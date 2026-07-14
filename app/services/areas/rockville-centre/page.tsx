@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Rockville Centre Car Service | Black Car & Airport Transfers Nassau | Eagle Eye',
   description:
-    'Rockville Centre black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s South Shore. TLC-licensed chauffeur. No surge pricing. Book Eagle Eye 24/7.',
+    'Rockville Centre black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s South Shore. TLC-licensed chauffeur. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/rockville-centre` },
 };
 

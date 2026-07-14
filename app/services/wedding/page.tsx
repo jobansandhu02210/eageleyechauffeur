@@ -10,7 +10,7 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Wedding Car Service NYC | Luxury Bridal Chauffeur | Eagle Eye Chauffeur',
+  title: 'Wedding Car Service NYC | Luxury Bridal Chauffeur | Eagle Eye',
   description:
     'Wedding car service NYC — luxury black car and chauffeur for the bride, groom, bridal party, and guests. Flat-rate pricing, TLC licensed, available across all five boroughs, Long Island, and New Jersey. Book Eagle Eye Chauffeur for your wedding day.',
   keywords: [

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Washington DC Car Service | Private Chauffeur | Eagle Eye Chauffeur',
+  title: 'NYC to Washington DC Car Service | Private Chauffeur | Eagle Eye',
   description:
     'NYC to Washington DC car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Washington DC. ~4–5 hours door-to-door. All tolls included, no surge pricing. Book Eagle Eye Chauffeur.',
   keywords: [
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-washington-dc` },
   openGraph: {
     url: `${getSiteUrl()}/services/routes/nyc-to-washington-dc`,
-    title: 'NYC to Washington DC Car Service | Eagle Eye Chauffeur',
+    title: 'NYC to Washington DC Car Service | Eagle Eye',
     description: 'Flat-rate private chauffeur NYC to Washington DC. ~4–5 hours door-to-door. All tolls, no surge. Book now.',
   },
 };

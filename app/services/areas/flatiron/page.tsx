@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Flatiron District Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Flatiron District Black Car Service NYC | Eagle Eye',
   description:
-    'Flatiron District black car service NYC — luxury chauffeur for Madison Square Garden events, tech company corporate accounts, JFK & LGA airport transfers, and hourly hire in Flatiron, NoMad & Union Square. Flat rates, TLC-licensed, 24/7.',
+    'Black car in Flatiron and NoMad — MSG events, tech corporate accounts, JFK & LGA airport runs, hourly hire. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/flatiron` },
   openGraph: {
-    title: 'Flatiron District Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car in Flatiron, NoMad, and Union Square. MSG event transport, tech corporate accounts, JFK & LGA airport runs, and hourly hire. Flat rates, no surge, TLC-licensed.',
+    title: 'Flatiron District Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car in Flatiron, NoMad, and Union Square. MSG event transport, tech corporate accounts, JFK & LGA airport runs, and hourly hire. Flat.',
     url: `${getSiteUrl()}/services/areas/flatiron`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

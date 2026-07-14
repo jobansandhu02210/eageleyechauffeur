@@ -5,14 +5,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Brooklyn Black Car Service | Airport Transfers JFK LGA EWR | Eagle Eye Chauffeur',
+  title: 'Brooklyn Black Car Service | JFK LGA EWR Transfers | Eagle Eye',
   description:
-    'Brooklyn black car service — professional chauffeurs, flat-rate airport transfers to JFK, LGA & EWR from every Brooklyn neighborhood. No surge pricing. TLC licensed. Book Eagle Eye Chauffeur 24/7.',
+    'Brooklyn black car service — professional chauffeurs, flat-rate airport transfers to JFK, LGA & EWR from every Brooklyn neighborhood. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/brooklyn` },
   openGraph: {
-    title: 'Brooklyn Black Car Service | Airport Transfers JFK LGA EWR | Eagle Eye Chauffeur',
+    title: 'Brooklyn Black Car Service | JFK LGA EWR Transfers | Eagle Eye',
     description:
-      'Premium black car service across all Brooklyn neighborhoods. Flat-rate airport transfers, chauffeur for events and corporate travel. No surge pricing, driver confirmed evening before.',
+      'Premium black car service across all Brooklyn neighborhoods. Flat-rate airport transfers, chauffeur for events and corporate travel. No surge.',
     url: `${getSiteUrl()}/services/areas/brooklyn`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Teterboro Airport to Manhattan Black Car Service | Eagle Eye Chauffeur',
+  title: 'Teterboro Airport to Manhattan Car Service | Eagle Eye',
   description:
     'Teterboro Airport (TEB) to Manhattan black car service — FBO lobby pickup, flat rates, door-to-door delivery. Private jet arrivals to any Manhattan address. Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/teterboro-to-manhattan-black-car-service` },

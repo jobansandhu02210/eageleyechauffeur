@@ -4,7 +4,7 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Brooklyn to JFK Black Car Service | Eagle Eye Chauffeur',
+  title: 'Brooklyn to JFK Car Service | Eagle Eye',
   description:
     'Brooklyn to JFK black car service — door-to-door pickup, real-time flight tracking. Professional chauffeurs from DUMBO, Williamsburg, Park Slope. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/brooklyn-to-jfk-black-car-service` },

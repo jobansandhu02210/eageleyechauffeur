@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Great Neck Car Service | Black Car & Airport Transfers Nassau County | Eagle Eye',
+  title: 'Great Neck Car Service | JFK & LGA Transfers Nassau | Eagle Eye',
   description:
-    'Great Neck black car and chauffeur service — flat-rate JFK, LGA & EWR airport transfers from the Gold Coast North Shore. No surge pricing. TLC-licensed driver. Book Eagle Eye 24/7.',
+    'Great Neck black car and chauffeur service — flat-rate JFK, LGA & EWR airport transfers from the Gold Coast North Shore. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/great-neck` },
 };
 

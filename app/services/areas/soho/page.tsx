@@ -7,11 +7,11 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'SoHo NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
   description:
-    'SoHo black car service NYC — luxury chauffeur for hotel pickups, shopping trips, airport transfers to JFK & LGA, and event nights in SoHo, NoLIta & Tribeca. TLC-licensed, flat-rate pricing, 24/7. Eagle Eye Chauffeur.',
+    'Black car in SoHo and NoLIta — hotel pickups, shopping, JFK & LGA airport transfers, evening events. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/soho` },
   openGraph: {
     title: 'SoHo NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
-    description: 'Luxury black car service in SoHo, NoLIta, and lower Manhattan. Hotel pickups, shopping, airport transfers, and evening event transport. Flat rates, no surge, TLC-licensed.',
+    description: 'Luxury black car service in SoHo, NoLIta, and lower Manhattan. Hotel pickups, shopping, airport transfers, and evening event transport. Flat rates.',
     url: `${getSiteUrl()}/services/areas/soho`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

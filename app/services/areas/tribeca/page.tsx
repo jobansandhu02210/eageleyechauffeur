@@ -7,11 +7,11 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Tribeca Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
   description:
-    'Tribeca black car service NYC — luxury chauffeur for residential pickups, private events, airport transfers to JFK & EWR, and VIP-discreet transport throughout TriBeCa & Hudson Square. Flat rates, TLC-licensed, 24/7. Eagle Eye Chauffeur.',
+    'Black car in Tribeca — residential pickups, private events, JFK & LGA transfers, discreet VIP transport. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/tribeca` },
   openGraph: {
     title: 'Tribeca Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
-    description: 'Luxury black car service in Tribeca, NYC. Residential pickups, private events, airport transfers, and discreet VIP transport throughout TriBeCa and lower Manhattan. Flat rates, no surge.',
+    description: 'Luxury black car service in Tribeca, NYC. Residential pickups, private events, airport transfers, and discreet VIP transport throughout TriBeCa and.',
     url: `${getSiteUrl()}/services/areas/tribeca`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

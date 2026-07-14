@@ -7,11 +7,11 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Chelsea NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
   description:
-    'Chelsea black car service NYC — luxury chauffeur for High Line & Chelsea Market area pickups, JFK & LGA airport transfers, Javits Center transfers, and event nights in Meatpacking & Flatiron. Flat rates, TLC-licensed, 24/7.',
+    'Chelsea black car NYC — High Line & Javits Center pickups, JFK & LGA transfers, Meatpacking event nights. Flat rates, no surge, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/chelsea` },
   openGraph: {
     title: 'Chelsea NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
-    description: 'Luxury black car service in Chelsea and Meatpacking District, NYC. High Line area pickups, Javits Center transfers, airport runs, and event nights. Flat rates, no surge, TLC-licensed.',
+    description: 'Luxury black car service in Chelsea and Meatpacking District, NYC. High Line area pickups, Javits Center transfers, airport runs, and event nights.',
     url: `${getSiteUrl()}/services/areas/chelsea`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Lower Manhattan Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Lower Manhattan Black Car Service NYC | Eagle Eye',
   description:
-    'Lower Manhattan black car service NYC — luxury chauffeur for court and City Hall area pickups, finance client early-morning airport runs, JFK transfers from downtown, and corporate accounts in downtown NYC. Flat rates, TLC-licensed, 24/7.',
+    'Downtown NYC black car — City Hall, finance accounts, JFK & EWR transfers, Lower Manhattan coverage. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/lower-manhattan` },
   openGraph: {
-    title: 'Lower Manhattan Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Downtown NYC black car service. City Hall and court area pickups, finance corporate accounts, early-morning JFK and EWR transfers, and full Lower Manhattan coverage. Flat rates, no surge, TLC-licensed.',
+    title: 'Lower Manhattan Black Car Service NYC | Eagle Eye',
+    description: 'Downtown NYC black car service. City Hall and court area pickups, finance corporate accounts, early-morning JFK and EWR transfers, and full Lower.',
     url: `${getSiteUrl()}/services/areas/lower-manhattan`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

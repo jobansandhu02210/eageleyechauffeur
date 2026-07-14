@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Upper West Side Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Upper West Side Black Car Service NYC | Eagle Eye',
   description:
-    'Upper West Side black car service — TLC-licensed chauffeurs for Lincoln Center pickups, JFK & LGA airport transfers, Columbia University area transport, and hourly hire throughout UWS, Central Park West & Amsterdam Ave. Flat rates, 24/7.',
+    'Black car on the Upper West Side — Lincoln Center pickups, JFK/LGA airport transfers, Columbia University area. Flat rates, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upper-west-side` },
   openGraph: {
-    title: 'Upper West Side Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car service on the Upper West Side. Lincoln Center pickups, JFK/LGA airport transfers, Columbia University area, and residential building service throughout UWS. Flat rates, TLC-licensed.',
+    title: 'Upper West Side Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car service on the Upper West Side. Lincoln Center pickups, JFK/LGA airport transfers, Columbia University area, and residential.',
     url: `${getSiteUrl()}/services/areas/upper-west-side`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

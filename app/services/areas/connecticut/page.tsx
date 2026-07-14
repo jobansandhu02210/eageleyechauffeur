@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Connecticut Black Car Service | NYC Airport Transfers from CT | Eagle Eye Chauffeur',
+  title: 'Connecticut Black Car Service | NYC Airport Transfers | Eagle Eye',
   description:
-    'Connecticut black car service — NYC airport transfers from Greenwich, Stamford, Westport, Fairfield, New Haven, Hartford. Flat rates. Professional chauffeur door-to-door. Book 24/7.',
+    'Connecticut black car service — NYC airport transfers from Greenwich, Stamford, Westport, Fairfield, New Haven, Hartford. Flat rates. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/connecticut` },
 };
 

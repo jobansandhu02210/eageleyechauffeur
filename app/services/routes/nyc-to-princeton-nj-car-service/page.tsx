@@ -5,14 +5,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Princeton NJ Car Service | Black Car | Eagle Eye Chauffeur',
+  title: 'NYC to Princeton NJ Car Service | Eagle Eye',
   description:
     'New York City to Princeton NJ black car service — flat rate from Manhattan, JFK, EWR & all NYC. Corporate & university transfers to Princeton. Eagle Eye Chauffeur 24/7.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/nyc-to-princeton-nj-car-service`,
   },
   openGraph: {
-    title: 'NYC to Princeton NJ Car Service | Black Car | Eagle Eye Chauffeur',
+    title: 'NYC to Princeton NJ Car Service | Eagle Eye',
     description: 'Flat-rate black car service from New York City to Princeton NJ. Manhattan, JFK, EWR, LGA and all NYC boroughs to Princeton. Corporate campus, pharma, university transfers. Eagle Eye Chauffeur 24/7.',
     url: `${getSiteUrl()}/services/routes/nyc-to-princeton-nj-car-service`,
     siteName: 'Eagle Eye Chauffeur',

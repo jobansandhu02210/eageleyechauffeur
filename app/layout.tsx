@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   title: {
     default:
       'Eagle Eye Chauffeur | NYC Luxury Chauffeur & Black Car — JFK LGA EWR Airport',
-    template: '%s | Eagle Eye Chauffeur',
+    template: '%s | Eagle Eye',
   },
   description: defaultSiteDescription,
   keywords: [...siteKeywords],

@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Westchester Car Service | Black Car & NYC Airport Transfers | Eagle Eye Chauffeur',
+  title: 'Westchester Car Service | NYC Airport Transfers | Eagle Eye',
   description:
-    'Westchester black car service — airport transfers to JFK, LGA & EWR from White Plains, Scarsdale, Yonkers, New Rochelle, Tarrytown, Bronxville. Flat rates. Book 24/7.',
+    'Westchester black car service — airport transfers to JFK, LGA & EWR from White Plains, Scarsdale, Yonkers, New Rochelle, Tarrytown, Bronxville. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/westchester` },
 };
 

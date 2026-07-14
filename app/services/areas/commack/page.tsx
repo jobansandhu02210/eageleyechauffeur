@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Commack Car Service | Black Car & JFK Airport Transfers Suffolk County | Eagle Eye',
+  title: 'Commack Car Service | JFK Transfers Suffolk County | Eagle Eye',
   description:
-    'Commack black car service — flat-rate JFK, LGA & EWR airport transfers from central Suffolk County. Kings Park & Dix Hills also covered. No surge pricing. Book Eagle Eye 24/7.',
+    'Commack black car service — flat-rate JFK, LGA & EWR airport transfers from central Suffolk County. Kings Park & Dix Hills also covered. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/commack` },
 };
 

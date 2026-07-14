@@ -5,13 +5,13 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Battery Park City Black Car Service NYC | Eagle Eye Chauffeur',
+  title: 'Battery Park City Black Car Service NYC | Eagle Eye',
   description:
-    'Battery Park City black car service NYC — luxury chauffeur for early JFK & EWR airport runs, Brookfield Place corporate clients, World Trade Center area transfers, and ferry terminal alternatives. Flat rates, TLC-licensed, 24/7.',
+    'Black car in Battery Park City — Brookfield Place pickups, JFK & EWR transfers, World Trade Center area. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/battery-park-city` },
   openGraph: {
-    title: 'Battery Park City Black Car Service NYC | Eagle Eye Chauffeur',
-    description: 'Luxury black car in Battery Park City and Lower Manhattan. Brookfield Place corporate pickups, JFK & EWR airport transfers, World Trade Center area, and ferry terminal alternatives. Flat rates, no surge.',
+    title: 'Battery Park City Black Car Service NYC | Eagle Eye',
+    description: 'Luxury black car in Battery Park City and Lower Manhattan. Brookfield Place corporate pickups, JFK & EWR airport transfers, World Trade Center area.',
     url: `${getSiteUrl()}/services/areas/battery-park-city`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',

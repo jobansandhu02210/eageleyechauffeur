@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Port Washington Car Service | Black Car & Airport Transfers Nassau | Eagle Eye',
   description:
-    'Port Washington black car service — flat-rate JFK & LGA airport transfers from Nassau County\'s North Shore waterfront. TLC-licensed chauffeur. No surge pricing. Book Eagle Eye 24/7.',
+    'Port Washington black car service — flat-rate JFK & LGA airport transfers from Nassau County\'s North Shore waterfront. TLC-licensed chauffeur. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/port-washington` },
 };
 

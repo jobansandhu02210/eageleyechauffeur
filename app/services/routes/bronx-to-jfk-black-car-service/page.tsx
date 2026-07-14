@@ -5,14 +5,14 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Bronx to JFK Airport Black Car Service | Eagle Eye Chauffeur NYC',
+  title: 'Bronx to JFK Airport Car Service | Eagle Eye NYC',
   description:
     'Bronx to JFK Airport black car service — flat rates, professional chauffeur, door-to-door from Riverdale, Fordham, Co-op City, Parkchester & all Bronx neighborhoods. TLC licensed 24/7.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/bronx-to-jfk-black-car-service`,
   },
   openGraph: {
-    title: 'Bronx to JFK Airport Black Car Service | Eagle Eye Chauffeur',
+    title: 'Bronx to JFK Airport Car Service | Eagle Eye',
     description: 'Flat-rate black car service from any Bronx neighborhood to JFK Airport. TLC licensed, all tolls included, no surge pricing, 24/7.',
     url: `${getSiteUrl()}/services/routes/bronx-to-jfk-black-car-service`,
     siteName: 'Eagle Eye Chauffeur',

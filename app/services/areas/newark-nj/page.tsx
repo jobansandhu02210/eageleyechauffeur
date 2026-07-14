@@ -7,12 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Newark NJ Black Car Service | Airport Transfers EWR | Eagle Eye',
   description:
-    'Newark NJ black car service — EWR airport transfers, JFK & LGA rides, corporate travel, Prudential Center events. TLC-licensed chauffeurs, flat rates, tolls included. Book 24/7.',
+    'Newark NJ black car service — EWR airport transfers, JFK & LGA rides, corporate travel, Prudential Center events. TLC-licensed chauffeurs, flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/newark-nj` },
   openGraph: {
     title: 'Newark NJ Black Car Service | Airport Transfers EWR | Eagle Eye',
     description:
-      'Newark NJ black car service — EWR airport transfers, JFK & LGA rides, corporate travel, Prudential Center events. TLC-licensed chauffeurs, flat rates, tolls included. Book 24/7.',
+      'Newark NJ black car service — EWR airport transfers, JFK & LGA rides, corporate travel, Prudential Center events. TLC-licensed chauffeurs, flat.',
     url: `${getSiteUrl()}/services/areas/newark-nj`,
     siteName: 'Eagle Eye Chauffeur',
     type: 'website',
