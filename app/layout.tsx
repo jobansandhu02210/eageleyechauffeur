@@ -3,7 +3,7 @@ import { Poppins, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { AnalyticsPlaceholder } from '@/components/AnalyticsPlaceholder';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { GtagLeadEvents } from '@/components/GtagLeadEvents';
 import { LeadCaptureStrip } from '@/components/LeadCaptureStrip';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
@@ -98,7 +98,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <MobileBottomBar />
-        <AnalyticsPlaceholder />
+        {gaMeasurementId && <GoogleAnalytics gaId={gaMeasurementId} />}
       </body>
     </html>
   );
