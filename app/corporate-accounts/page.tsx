@@ -1,5 +1,6 @@
-import { getSiteUrl } from '@/lib/site';
 'use client';
+
+import { getSiteUrl } from '@/lib/site';
 
 import { useState } from 'react';
 import Link from 'next/link';
