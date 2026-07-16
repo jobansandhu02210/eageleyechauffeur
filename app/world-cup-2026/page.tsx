@@ -6,10 +6,10 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'World Cup 2026 MetLife Stadium Car Service | Transportation Guide | Eagle Eye',
+    absolute: 'World Cup 2026 MetLife Car Service | NYC & NJ | Eagle Eye',
   },
   description:
-    'World Cup 2026 MetLife Stadium car service — flat-rate chauffeur from Manhattan, JFK, EWR, LGA & Long Island. Full match schedule, transit comparison, and dedicated Final (July 19) packages. Book now.',
+    'World Cup 2026 MetLife Stadium car service — flat-rate from Manhattan, JFK, LGA & EWR. Full match schedule, Final packages & July 19 book-ahead.',
   keywords: [
     'World Cup 2026 MetLife car service',
     'MetLife Stadium transportation World Cup',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/world-cup-2026` },
   openGraph: {
     url: `${getSiteUrl()}/world-cup-2026`,
-    title: 'World Cup 2026 MetLife Stadium Car Service | Eagle Eye Chauffeur',
+    title: 'World Cup 2026 MetLife Stadium Car Service | Eagle Eye',
     description:
       'Flat-rate chauffeur service for every World Cup match at MetLife Stadium. Manhattan, JFK, EWR, LGA & Long Island pickups. Book before spots fill — the Final is July 19.',
     images: [{ url: `${getSiteUrl()}/og-image.jpg`, width: 1200, height: 630, alt: 'World Cup 2026 MetLife Stadium Car Service' }],

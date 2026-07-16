@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Queens to LaGuardia Car Service | LGA Transfer | Eagle Eye',
   description:
-    'Queens to LaGuardia Airport black car service — flat rates, professional chauffeur, door-to-door from Astoria, Flushing, Jamaica & all Queens. TLC licensed. Book Eagle Eye Chauffeur 24/7.',
+    'Queens to LaGuardia Airport black car service — flat rates, professional chauffeur, door-to-door from Astoria, Flushing, Jamaica & all Queens. TLC.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/queens-to-lga-black-car-service`,
   },
@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     title: 'Queens to LaGuardia (LGA) Car Service | Eagle Eye',
     description: 'Flat-rate black car service from any Queens neighborhood to LaGuardia Airport. TLC licensed, no surge pricing, 24/7.',
     url: `${getSiteUrl()}/services/routes/queens-to-lga-black-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
   },
 };
 

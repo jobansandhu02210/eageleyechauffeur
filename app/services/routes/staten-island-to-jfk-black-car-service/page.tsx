@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Staten Island to JFK Car Service | Airport Transfer | Eagle Eye',
   description:
-    'Staten Island to JFK Airport black car service — flat rates including Verrazano toll, professional chauffeur, door-to-door. St. George, Tottenville, Great Kills & all SI. TLC licensed 24/7.',
+    'Staten Island to JFK Airport black car service — flat rates including Verrazano toll, professional chauffeur, door-to-door. St. George.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/staten-island-to-jfk-black-car-service` },
 };
 

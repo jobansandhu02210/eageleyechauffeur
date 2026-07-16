@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Teterboro Airport to New Jersey Car Service | Eagle Eye',
   description:
-    'Teterboro Airport (TEB) to New Jersey black car service — FBO arrivals to Hoboken, Jersey City, Morristown, Short Hills, Princeton & all NJ. Flat rates, 24/7. Eagle Eye Chauffeur.',
+    'Teterboro Airport (TEB) to New Jersey black car service — FBO arrivals to Hoboken, Jersey City, Morristown, Short Hills, Princeton & all NJ. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/teterboro-to-new-jersey-car-service` },
   keywords: 'teterboro airport to new jersey car service, TEB to NJ car service, teterboro to hoboken, teterboro to jersey city',
 };

@@ -98,7 +98,7 @@ export default function SuffolkCountyPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <p className="text-brand-silver text-sm uppercase tracking-widest mb-3">Service Areas</p>
             <h1 className="font-serif text-4xl lg:text-5xl font-semibold mb-5">
-              Suffolk County Car Service | Airport Transfers &amp; Black Car Long Island
+              Suffolk County Car Service | JFK, LGA &amp; EWR Transfers Long Island
             </h1>
             <p className="text-lg text-brand-silver max-w-2xl mb-4">
               Professional black car service from every Suffolk County community — Huntington and

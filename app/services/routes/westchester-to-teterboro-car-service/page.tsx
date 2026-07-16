@@ -7,15 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Westchester to Teterboro Airport Car Service | TEB | Eagle Eye',
   description:
-    'Westchester to Teterboro Airport (TEB) car service — White Plains, Scarsdale, Yonkers, New Rochelle & all Westchester. Flat-rate private jet transfers. Eagle Eye Chauffeur 24/7.',
+    'Westchester to Teterboro Airport (TEB) car service — White Plains, Scarsdale, Yonkers, New Rochelle & all Westchester. Flat-rate private jet.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/westchester-to-teterboro-car-service` },
   openGraph: {
     title: 'Westchester to Teterboro Airport Car Service | TEB | Eagle Eye',
     description:
-      'Westchester to Teterboro Airport (TEB) car service — White Plains, Scarsdale, Yonkers, New Rochelle & all Westchester. Flat-rate private jet transfers. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/westchester-to-teterboro-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+      'Westchester to Teterboro Airport (TEB) car service — White Plains, Scarsdale, Yonkers, New Rochelle & all Westchester. Flat-rate private jet.',
   },
 };
 

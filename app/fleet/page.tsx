@@ -9,7 +9,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: {
     absolute:
-      'NYC Luxury Fleet | Business & First Class Sedans & SUVs | Eagle Eye Chauffeur',
+      'NYC Luxury Fleet | Black Cars, SUVs & Sprinter Vans | Eagle Eye',
   },
   description:
     "Eagle Eye Chauffeur's luxury fleet — Business Class Cadillac & Mercedes Sedans, Chevrolet Suburban & GMC Yukon XL, First Class Cadillac Escalade & Lincoln Navigator, Mercedes-Benz S-Class & BMW 7 Series. Professional chauffeurs. Book NYC's finest black car service.",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     url: `${getSiteUrl()}/fleet`,
     title:
-      'NYC Luxury Fleet | Business & First Class Sedans & SUVs | Eagle Eye Chauffeur',
+      'NYC Luxury Fleet | Black Cars, SUVs & Sprinter Vans | Eagle Eye',
     description:
       "Eagle Eye Chauffeur's luxury fleet — Business Class Cadillac & Mercedes Sedans, Chevrolet Suburban & GMC Yukon XL, First Class Cadillac Escalade & Lincoln Navigator, Mercedes-Benz S-Class & BMW 7 Series. Professional chauffeurs. Book NYC's finest black car service.",
   },

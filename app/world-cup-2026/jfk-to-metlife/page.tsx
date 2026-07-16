@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK Airport to MetLife Stadium World Cup 2026 | Car Service | Eagle Eye Chauffeur',
+  title: 'JFK to MetLife Stadium | World Cup 2026 Car Service | Eagle Eye',
   description:
-    'JFK Airport to MetLife Stadium car service for World Cup 2026. Direct international arrivals transfer to MetLife — ~50 minutes. Meet & greet, flight tracking, flat-rate pricing. Book your JFK World Cup transfer.',
+    'JFK Airport to MetLife Stadium car service for World Cup 2026. Direct international arrivals transfer to MetLife — ~50 minutes. Meet & greet.',
   keywords: [
     'JFK to MetLife Stadium World Cup 2026',
     'JFK airport MetLife Stadium car service',

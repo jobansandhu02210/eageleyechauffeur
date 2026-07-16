@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: 'Refer a Friend — Earn $50 | Eagle Eye Chauffeur NYC',
   },
   description:
-    'Refer a friend to Eagle Eye Chauffeur and earn $50 credit when they book their first ride. Perfect for World Cup 2026 groups, corporate clients, and airport transfers.',
+    'Refer a friend to Eagle Eye Chauffeur and earn $50 credit on their first booking. Great for corporate clients & airport transfers.',
   keywords: [
     'refer a friend car service',
     'Eagle Eye referral program',

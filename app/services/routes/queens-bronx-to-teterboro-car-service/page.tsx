@@ -12,10 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Queens & Bronx to Teterboro Airport Car Service | Eagle Eye',
     description:
-      'Queens and Bronx to Teterboro Airport (TEB) black car service — flat rate, FBO meet & greet, door-to-door private jet transfers. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/queens-bronx-to-teterboro-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+      'Queens and Bronx to Teterboro Airport (TEB) black car service — flat rate, FBO meet & greet, door-to-door private jet transfers. Eagle Eye.',
   },
 };
 

@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'LGA to Westchester Car Service | Airport Transfers | Eagle Eye',
   description:
-    'LaGuardia Airport to Westchester car service — flat rate, flight tracking, TLC licensed. White Plains, Scarsdale, Yonkers, New Rochelle, Rye, Greenwich CT, Tarrytown and more.',
+    'LaGuardia Airport to Westchester car service — flat rate, flight tracking, TLC licensed. White Plains, Scarsdale, Yonkers, New Rochelle, Rye.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-westchester-car-service` },
 };
 

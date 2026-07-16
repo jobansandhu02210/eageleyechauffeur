@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'LGA to Long Island Car Service | Nassau & Suffolk | Eagle Eye',
   description:
-    'LaGuardia Airport to Long Island car service — flat rate, flight tracking, TLC licensed. Nassau County, Suffolk County, and the Hamptons. Garden City, Great Neck, Huntington, Southampton and more.',
+    'LaGuardia Airport to Long Island car service — flat rate, flight tracking, TLC licensed. Nassau County, Suffolk County, and the Hamptons. Garden.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-long-island-car-service` },
 };
 

@@ -5,9 +5,9 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HPN Airport Car Service | Westchester County Airport Black Car | Eagle Eye',
+  title: 'HPN Airport Car Service | Westchester County | Eagle Eye',
   description:
-    'HPN Westchester County Airport car service — flat rates from Manhattan, Westchester, Fairfield County CT. Meet & greet, professional chauffeur. No surge pricing. Book 24/7.',
+    'HPN Westchester County Airport car service — flat rates from Manhattan, Westchester, Fairfield County CT. Meet & greet, professional chauffeur. No.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/hpn` },
 };
 

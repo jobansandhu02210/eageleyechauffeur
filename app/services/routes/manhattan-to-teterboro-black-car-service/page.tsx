@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Manhattan to Teterboro Airport Car Service | TEB Car | Eagle Eye',
   description:
-    'Manhattan to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet. Private jet transfers from all Manhattan neighborhoods. Eagle Eye Chauffeur 24/7.',
+    'Manhattan to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet. Private jet transfers from all Manhattan.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-teterboro-black-car-service` },
   keywords: 'manhattan to teterboro airport car service, manhattan to TEB car service, NYC to teterboro black car',
 };

@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: 'JFK Car Service NYC | Black Car & Chauffeur Transfers | Eagle Eye',
   description:
-    'JFK car service NYC — flat-rate black car, private JFK to Manhattan transfers, meet & greet at all terminals. Kennedy car service, real-time flight tracking. No surge. Book Eagle Eye 24/7.',
+    'JFK car service NYC — flat-rate black car, JFK to Manhattan transfers, meet & greet all terminals. Real-time flight tracking. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/jfk` },
 };
 

@@ -7,15 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Brooklyn to Teterboro Airport Car Service | TEB | Eagle Eye',
   description:
-    'Brooklyn to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet from all Brooklyn neighborhoods. Private jet transfers. Eagle Eye Chauffeur 24/7.',
+    'Brooklyn to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet from all Brooklyn neighborhoods. Private jet.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/brooklyn-to-teterboro-car-service` },
   openGraph: {
     title: 'Brooklyn to Teterboro Airport Car Service | TEB | Eagle Eye',
     description:
-      'Brooklyn to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet from all Brooklyn neighborhoods. Private jet transfers. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/brooklyn-to-teterboro-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+      'Brooklyn to Teterboro Airport (TEB) black car service — flat rate, door-to-door, FBO meet & greet from all Brooklyn neighborhoods. Private jet.',
   },
 };
 

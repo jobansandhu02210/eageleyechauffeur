@@ -2,20 +2,13 @@ import type { Metadata } from 'next';
 import { getSiteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Book NYC Chauffeur Service Online | Instant Quote | Eagle Eye',
-  },
+  title: 'Book NYC Black Car Service | Instant Quote | Eagle Eye',
   description:
-    'Book your luxury NYC chauffeur online in seconds. Get instant quotes for airport transfers, hourly hire & point-to-point rides. 24/7 booking available.',
+    'Book your NYC black car service online — flat-rate airport transfers to JFK, LGA & EWR. Instant quote, no surge pricing. Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/book` },
-  openGraph: {
-    url: `${getSiteUrl()}/book`,
-    title: 'Book NYC Chauffeur Service Online | Instant Quote | Eagle Eye',
-    description:
-      'Book your luxury NYC chauffeur online in seconds. Get instant quotes for airport transfers, hourly hire & point-to-point rides. 24/7 booking available.',
-  },
+  robots: { index: true, follow: true },
 };
 
 export default function BookLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return <>{children}</>;
 }

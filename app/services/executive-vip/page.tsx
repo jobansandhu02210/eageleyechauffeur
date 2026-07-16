@@ -9,13 +9,13 @@ export const metadata: Metadata = {
     absolute: 'Executive VIP Car Service NYC | Private Chauffeur | Eagle Eye',
   },
   description:
-    'Executive VIP chauffeur service NYC — discreet, professional black car for C-suite executives, celebrities, dignitaries & private clients. NDA available. 24/7. Eagle Eye Chauffeur.',
+    'Executive VIP chauffeur service NYC — discreet black car for C-suite executives, celebrities & private clients. NDA available. 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/executive-vip` },
   openGraph: {
     url: `${getSiteUrl()}/services/executive-vip`,
     title: 'Executive VIP Car Service NYC | Private Chauffeur | Eagle Eye',
     description:
-      'Executive VIP chauffeur service NYC — discreet, professional black car for C-suite executives, celebrities, dignitaries & private clients. NDA available. 24/7. Eagle Eye Chauffeur.',
+      'Executive VIP chauffeur service NYC — discreet black car for C-suite executives, celebrities & private clients. NDA available. 24/7.',
   },
 };
 

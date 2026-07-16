@@ -10,9 +10,9 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Corporate Roadshow Car Service NYC | Executive Chauffeur | Eagle Eye',
+  title: 'Corporate Roadshow Car Service NYC | Executive | Eagle Eye',
   description:
-    'Corporate roadshow car service NYC — dedicated executive chauffeur for IPO roadshows, investor meetings, and multi-stop corporate travel. Flat-rate, TLC licensed, confidential. Book Eagle Eye for your next roadshow.',
+    'Corporate roadshow car service NYC — dedicated executive chauffeur for IPO roadshows, investor meetings, and multi-stop corporate travel.',
   keywords: [
     'roadshow car service NYC',
     'corporate roadshow chauffeur New York',

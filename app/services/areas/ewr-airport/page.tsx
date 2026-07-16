@@ -5,7 +5,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Newark Airport Car Service NYC | EWR Black Car, Tolls Included | Eagle Eye',
+  title: 'Newark Airport Car Service NYC | EWR Tolls Included | Eagle Eye',
   description:
     'Newark Airport (EWR) black car service — meet & greet, all tolls included, real-time flight tracking. Flat rates from Manhattan, Brooklyn, New.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/ewr-airport` },
@@ -109,7 +109,7 @@ export default function EWRAreaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-brand-silver text-sm uppercase tracking-widest mb-3">Newark Airport · EWR · All Tolls Included</p>
           <h1 className="font-serif text-4xl lg:text-5xl font-semibold mb-5">
-            Newark Airport Car Service | All Tolls Included, Meet &amp; Greet, Flat Rates
+            Newark Airport Car Service | EWR Black Car — All Tolls Included
           </h1>
           <p className="text-lg text-brand-silver max-w-2xl mb-4">
             Newark Liberty International is 16 miles from Midtown Manhattan — across the Hudson River via the Lincoln or Holland Tunnel. Eagle Eye includes every toll in your flat rate, confirmed before you book — no itemized surprises at drop-off.

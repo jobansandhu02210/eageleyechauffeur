@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Newark Car Service EWR | NJ Airport Transfers NYC | Eagle Eye',
   description:
-    'Newark car service EWR — all NJ Turnpike tolls included, meet & greet at Terminals A, B & C. NJ to JFK transfers available. Real-time tracking. No surge. Book Eagle Eye 24/7.',
+    'Newark car service EWR — all NJ tolls included, meet & greet Terminals A, B & C. NJ to JFK transfers available. No surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/ewr` },
 };
 

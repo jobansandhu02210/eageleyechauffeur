@@ -9,14 +9,14 @@ export const metadata: Metadata = {
     absolute: 'Blog | Eagle Eye Chauffeur — NYC Travel & Transportation Tips',
   },
   description:
-    'Expert guides, tips, and insights about NYC chauffeur services, airport transfers, luxury travel, and transportation across New York City and the tri-state area.',
+    'Expert guides and tips on NYC chauffeur services, airport transfers, luxury travel & tri-state transportation from Eagle Eye Chauffeur.',
   keywords: [...siteKeywords, 'NYC chauffeur blog', 'airport transfer tips', 'NYC travel guide', 'car service NYC blog'],
   alternates: { canonical: `${getSiteUrl()}/blog` },
   openGraph: {
     url: `${getSiteUrl()}/blog`,
     title: 'Blog | Eagle Eye Chauffeur — NYC Travel & Transportation Tips',
     description:
-      'Expert guides, tips, and insights about NYC chauffeur services, airport transfers, luxury travel, and transportation across New York City and the tri-state area.',
+      'Expert guides and tips on NYC chauffeur services, airport transfers, luxury travel & tri-state transportation from Eagle Eye Chauffeur.',
   },
 };
 

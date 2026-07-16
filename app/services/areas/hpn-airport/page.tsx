@@ -5,7 +5,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Westchester Airport Car Service | HPN Airport Transfers | Eagle Eye',
+  title: 'HPN Westchester Airport Car Service | Transfers | Eagle Eye',
   description:
     'Westchester County Airport (HPN) car service — professional black car transfers. Flat rates from White Plains, Westchester, Manhattan, and Fairfield.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hpn-airport` },

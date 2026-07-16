@@ -4,9 +4,9 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Newark Airport to Manhattan Car Service | EWR Black Car, Tolls Included | Eagle Eye',
+  title: 'Newark Airport to Manhattan Car Service | EWR Tolls | Eagle Eye',
   description:
-    'Newark Airport (EWR) to Manhattan car service — flat rates, all tolls included, real-time flight tracking, meet & greet at arrivals. Professional chauffeur. No hidden fees. Book 24/7.',
+    'Newark Airport (EWR) to Manhattan car service — flat rates, all tolls included, real-time flight tracking, meet & greet at arrivals. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/ewr-to-manhattan-black-car-service` },
 };
 

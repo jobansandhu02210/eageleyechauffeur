@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Manhattan to Hamptons Car Service | Flat Rate | Eagle Eye',
   description:
-    'Manhattan to Hamptons car service — flat-rate black car, professional chauffeur, door-to-door service. No summer surge pricing. Southampton, East Hampton, Bridgehampton, Sag Harbor, Montauk & all Hamptons villages. Book Eagle Eye Chauffeur 24/7.',
+    'Manhattan to Hamptons car service — flat-rate black car, professional chauffeur, door-to-door service. No summer surge pricing. Southampton, East.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/manhattan-to-hamptons-car-service`,
   },
@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     title: 'Manhattan to Hamptons Car Service | Eagle Eye',
     description: 'Flat-rate black car service from Manhattan to all Hamptons villages. No summer surge pricing — ever. Professional chauffeur, door-to-door, 24/7.',
     url: `${getSiteUrl()}/services/routes/manhattan-to-hamptons-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
   },
 };
 

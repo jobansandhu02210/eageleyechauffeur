@@ -7,15 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Long Island to Teterboro Airport Car Service | TEB | Eagle Eye',
   description:
-    'Long Island to Teterboro Airport (TEB) car service — Garden City, Great Neck, Huntington, Hamptons & all LI communities. Flat-rate private jet transfers. Eagle Eye Chauffeur 24/7.',
+    'Long Island to Teterboro Airport (TEB) car service — Garden City, Great Neck, Huntington, Hamptons & all LI communities. Flat-rate private jet.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/long-island-to-teterboro-car-service` },
   openGraph: {
     title: 'Long Island to Teterboro Airport Car Service | TEB | Eagle Eye',
     description:
-      'Long Island to Teterboro Airport (TEB) car service — Garden City, Great Neck, Huntington, Hamptons & all LI communities. Flat-rate private jet transfers. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/long-island-to-teterboro-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+      'Long Island to Teterboro Airport (TEB) car service — Garden City, Great Neck, Huntington, Hamptons & all LI communities. Flat-rate private jet.',
   },
 };
 

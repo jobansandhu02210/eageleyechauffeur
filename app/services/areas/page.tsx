@@ -9,12 +9,12 @@ export const metadata: Metadata = {
     absolute: 'NYC Black Car Service Areas | Manhattan, Brooklyn, Queens, LI, NJ & More | Eagle Eye',
   },
   description:
-    'Eagle Eye Chauffeur serves all NYC boroughs (Manhattan, Brooklyn, Queens, Bronx, Staten Island), Long Island, Westchester, New Jersey, Connecticut, and the Hamptons. Flat-rate black car service 24/7.',
+    'Eagle Eye Chauffeur serves NYC boroughs, Long Island, Westchester, NJ, Connecticut & the Hamptons. Flat-rate black car & airport transfers, 24/7.',
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/services/areas` },
   openGraph: {
     url: `${getSiteUrl()}/services/areas`,
-    title: 'NYC Black Car Service Areas | Manhattan, Brooklyn, Queens & More | Eagle Eye',
+    title: 'NYC Service Areas | Manhattan, Brooklyn & Beyond | Eagle Eye',
     description:
       'Eagle Eye Chauffeur serves all NYC boroughs, Long Island, Westchester, NJ & CT. Premium black car service, flat rates, 24/7 availability.',
   },

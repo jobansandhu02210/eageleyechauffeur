@@ -7,16 +7,13 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Midtown Manhattan to LGA Car Service | Eagle Eye',
   description:
-    'Midtown Manhattan to LaGuardia Airport black car service — flat rate, 20–30 min, door-to-door pickup from Times Square, Grand Central & all Midtown. Eagle Eye Chauffeur 24/7.',
+    'Midtown Manhattan to LaGuardia Airport black car service — flat rate, 20–30 min, door-to-door pickup from Times Square, Grand Central & all.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/midtown-to-lga-black-car-service`,
   },
   openGraph: {
     title: 'Midtown Manhattan to LGA Car Service | Eagle Eye',
-    description: 'Midtown to LaGuardia Airport — the shortest airport run in NYC. Flat-rate black car, 20–30 min, door-to-door from Times Square, Grand Central & all Midtown. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/midtown-to-lga-black-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+    description: 'Midtown to LaGuardia Airport — the shortest airport run in NYC. Flat-rate black car, 20–30 min, door-to-door from Times Square, Grand Central & all.',
   },
 };
 

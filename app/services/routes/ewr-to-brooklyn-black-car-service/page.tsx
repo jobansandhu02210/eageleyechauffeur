@@ -6,7 +6,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Newark Airport to Brooklyn Car Service | EWR Car | Eagle Eye',
   description:
-    'Newark Airport (EWR) to Brooklyn car service — flat rates, real-time flight tracking, meet & greet at all terminals. Professional chauffeur, no surge pricing. Book Eagle Eye 24/7.',
+    'Newark Airport (EWR) to Brooklyn car service — flat rates, real-time flight tracking, meet & greet at all terminals. Professional chauffeur, no.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/ewr-to-brooklyn-black-car-service` },
 };
 

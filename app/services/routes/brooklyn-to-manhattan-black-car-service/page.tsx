@@ -6,7 +6,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Brooklyn to Manhattan Car Service | Black Car NYC | Eagle Eye',
   description:
-    'Brooklyn to Manhattan car service — flat rates, professional TLC-licensed chauffeur, door-to-door. No surge pricing. All Brooklyn neighborhoods. Book Eagle Eye Chauffeur 24/7.',
+    'Brooklyn to Manhattan car service — flat rates, professional TLC-licensed chauffeur, door-to-door. No surge pricing. All Brooklyn neighborhoods.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/brooklyn-to-manhattan-black-car-service` },
 };
 

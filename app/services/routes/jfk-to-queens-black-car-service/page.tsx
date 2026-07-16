@@ -6,7 +6,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'JFK to Queens Car Service | Airport Transfer | Eagle Eye',
   description:
-    'JFK Airport to Queens car service — flat rates, real-time flight tracking, meet & greet at all terminals. Professional TLC-licensed chauffeur, no surge pricing. Book Eagle Eye 24/7.',
+    'JFK Airport to Queens car service — flat rates, real-time flight tracking, meet & greet at all terminals. Professional TLC-licensed chauffeur, no.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-queens-black-car-service` },
 };
 

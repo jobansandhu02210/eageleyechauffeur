@@ -9,9 +9,9 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC Car Service Pricing & Rates | Flat-Rate Black Car | Eagle Eye Chauffeur',
+  title: 'NYC Car Service Pricing & Rates | Flat-Rate Black Car | Eagle Eye',
   description:
-    'Eagle Eye Chauffeur NYC pricing guide — flat-rate black car service with no surge pricing. See base rates for JFK, LGA, EWR airport transfers, corporate rides, and hourly hire. Get an instant quote.',
+    'Eagle Eye Chauffeur NYC pricing — flat-rate black car, no surge pricing. Rates for JFK, LGA, EWR airport transfers, corporate rides & hourly hire.',
   alternates: { canonical: `${getSiteUrl()}/pricing` },
   openGraph: {
     url: `${getSiteUrl()}/pricing`,

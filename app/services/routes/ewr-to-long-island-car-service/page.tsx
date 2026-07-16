@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Newark Airport to Long Island Car Service | Eagle Eye',
   description:
-    'Newark Airport (EWR) to Long Island — flat rate, all tolls included (Lincoln Tunnel), flight tracking, meet & greet. Nassau County, Suffolk County & Hamptons. TLC licensed. 24/7.',
+    'Newark Airport (EWR) to Long Island — flat rate, all tolls included (Lincoln Tunnel), flight tracking, meet & greet. Nassau County, Suffolk County.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/ewr-to-long-island-car-service` },
 };
 

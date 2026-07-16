@@ -2,24 +2,13 @@ import type { Metadata } from 'next';
 import { getSiteUrl } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: {
-    absolute: 'Contact Eagle Eye Chauffeur NYC | Book Luxury Car Service 24/7',
-  },
+  title: 'Contact Eagle Eye Chauffeur | NYC Black Car Service',
   description:
-    'Contact Eagle Eye Chauffeur for premium NYC transportation. Call (929) 919-6499 or WhatsApp us 24/7. Quick quotes, instant bookings, professional service.',
+    'Contact Eagle Eye Chauffeur for NYC black car and airport transfer bookings. Call, WhatsApp, or email 24/7. Flat rates, no surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/contact` },
-  openGraph: {
-    url: `${getSiteUrl()}/contact`,
-    title: 'Contact Eagle Eye Chauffeur NYC | Book Luxury Car Service 24/7',
-    description:
-      'Contact Eagle Eye Chauffeur for premium NYC transportation. Call (929) 919-6499 or WhatsApp us 24/7. Quick quotes, instant bookings, professional service.',
-  },
+  robots: { index: true, follow: true },
 };
 
-export default function ContactLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return children;
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
 }

@@ -7,16 +7,13 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Park Avenue to JFK Car Service | Midtown East Car | Eagle Eye',
   description:
-    'Park Avenue to JFK black car service — flat rate from Midtown East, Grand Central area & Park Ave corridor. Door-to-door executive chauffeur. Eagle Eye Chauffeur 24/7.',
+    'Park Avenue to JFK black car service — flat rate from Midtown East, Grand Central area & Park Ave corridor. Door-to-door executive chauffeur. Eagle.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/park-avenue-to-jfk-car-service`,
   },
   openGraph: {
     title: 'Park Avenue to JFK Car Service | Midtown East Car | Eagle Eye',
-    description: 'Flat-rate black car service from Park Avenue and Midtown East to JFK Airport. Door-to-door, no surge pricing, executive chauffeur 24/7. Eagle Eye Chauffeur.',
-    url: `${getSiteUrl()}/services/routes/park-avenue-to-jfk-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+    description: 'Flat-rate black car service from Park Avenue and Midtown East to JFK Airport. Door-to-door, no surge pricing, executive chauffeur 24/7. Eagle Eye.',
   },
 };
 

@@ -1,3 +1,4 @@
+import { getSiteUrl } from '@/lib/site';
 'use client';
 
 import { useState } from 'react';
@@ -12,6 +13,7 @@ const benefits = [
     title: 'Monthly Consolidated Invoicing',
     description:
       'One expense-report-ready invoice at the end of each month with itemized trip details — no chasing receipts.',
+  alternates: { canonical: `${getSiteUrl()}/corporate-accounts` },
   },
   {
     title: 'Dedicated Account Coordinator',

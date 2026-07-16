@@ -9,13 +9,13 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Black Car Service NYC | Luxury Chauffeur & Airport Transfers | Eagle Eye',
+  title: 'Black Car Service NYC | Luxury Chauffeur & Transfers | Eagle Eye',
   description:
-    'NYC black car service — flat-rate luxury sedans and SUVs for airport transfers, corporate travel, and point-to-point rides. Professional TLC-licensed chauffeurs. No surge pricing. Book Eagle Eye 24/7.',
+    'NYC black car service — flat-rate luxury sedans and SUVs for airport transfers, corporate travel, and point-to-point rides. Professional.',
   alternates: { canonical: `${getSiteUrl()}/black-car-service-nyc` },
   openGraph: {
     url: `${getSiteUrl()}/black-car-service-nyc`,
-    title: 'Black Car Service NYC | Luxury Chauffeur & Airport Transfers | Eagle Eye',
+    title: 'Black Car Service NYC | Luxury Chauffeur & Transfers | Eagle Eye',
     description:
       'NYC black car service — flat-rate luxury sedans and SUVs for airport transfers, corporate travel, and point-to-point rides. No surge pricing. Book 24/7.',
   },

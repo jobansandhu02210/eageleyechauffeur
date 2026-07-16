@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'LaGuardia to Queens Car Service | LGA Arrivals | Eagle Eye',
   description:
-    'LaGuardia Airport to Queens black car service — flat rate, flight tracking, meet & greet at Terminal B & C. Astoria, Flushing, Jamaica, Forest Hills & all Queens. TLC licensed. 24/7.',
+    'LaGuardia Airport to Queens black car service — flat rate, flight tracking, meet & greet at Terminal B & C. Astoria, Flushing, Jamaica, Forest.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-queens-black-car-service` },
 };
 

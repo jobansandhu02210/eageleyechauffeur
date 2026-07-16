@@ -7,22 +7,14 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'NYC to Boston Car Service | Private Chauffeur | Eagle Eye',
   description:
-    'NYC to Boston car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Boston. ~4 hours door-to-door. No surge pricing. Business and First Class vehicles. Book Eagle Eye Chauffeur.',
-  keywords: [
-    'NYC to Boston car service',
-    'New York to Boston chauffeur',
-    'Manhattan to Boston car service',
-    'private driver NYC to Boston',
-    'New York to Boston black car',
-    'NYC Boston luxury car service',
-    'JFK to Boston car service',
-    'New York to Boston private transfer',
-  ],
-  alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-boston` },
+    'NYC to Boston car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Boston. ~4 hours door-to-door. No surge.',
+  alternates: {
+    canonical: `${getSiteUrl()}/services/routes/nyc-to-boston`,
+  },
   openGraph: {
+    title: 'NYC to Boston Car Service | Eagle Eye',
+    description: 'Flat-rate private chauffeur from NYC to Boston. All tolls included, no surge pricing, door-to-door service. 24/7.',
     url: `${getSiteUrl()}/services/routes/nyc-to-boston`,
-    title: 'NYC to Boston Car Service | Private Chauffeur | Eagle Eye',
-    description: 'Flat-rate private chauffeur from NYC to Boston. ~4 hours door-to-door. No surge pricing. Book now.',
   },
 };
 

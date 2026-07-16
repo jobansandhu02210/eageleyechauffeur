@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Queens to JFK Car Service | Airport Transfer | Eagle Eye',
   description:
-    'Queens to JFK Airport black car service — flat rates, real-time flight tracking, door-to-door from Astoria, Flushing, Jamaica, Forest Hills & all Queens neighborhoods. TLC licensed. 24/7.',
+    'Queens to JFK Airport black car service — flat rates, real-time flight tracking, door-to-door from Astoria, Flushing, Jamaica, Forest Hills & all.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/queens-to-jfk-black-car-service`,
   },
@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     title: 'Queens to JFK Car Service | Eagle Eye',
     description: 'Flat-rate black car service from any Queens neighborhood to JFK Airport. No surge pricing — ever. TLC licensed, 24/7.',
     url: `${getSiteUrl()}/services/routes/queens-to-jfk-black-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
   },
 };
 

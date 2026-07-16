@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC Hotel to MetLife Stadium World Cup 2026 | Chauffeur Service | Eagle Eye',
+  title: 'NYC Hotel to MetLife Stadium | World Cup 2026 | Eagle Eye',
   description:
-    'NYC hotel to MetLife Stadium chauffeur service for World Cup 2026. Concierge pickup from any Manhattan hotel — Times Square, Midtown, Tribeca, Upper East Side. Flat-rate, no surge, post-match return. Book now.',
+    'NYC hotel to MetLife Stadium chauffeur service for World Cup 2026. Concierge pickup from any Manhattan hotel — Times Square, Midtown, Tribeca.',
   keywords: [
     'NYC hotel to MetLife Stadium World Cup',
     'Manhattan hotel to MetLife Stadium 2026',

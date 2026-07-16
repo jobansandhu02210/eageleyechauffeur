@@ -7,22 +7,14 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'NYC to Philadelphia Car Service | Private Chauffeur | Eagle Eye',
   description:
-    'NYC to Philadelphia car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Philadelphia. ~1.5–2 hours door-to-door. No surge pricing. Business and First Class vehicles. Book Eagle Eye.',
-  keywords: [
-    'NYC to Philadelphia car service',
-    'New York to Philadelphia chauffeur',
-    'Manhattan to Philadelphia car service',
-    'private driver NYC to Philly',
-    'New York to Philly black car service',
-    'NYC Philadelphia luxury car service',
-    'JFK to Philadelphia car service',
-    'New York to Philadelphia transfer',
-  ],
-  alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-philadelphia` },
+    'NYC to Philadelphia car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Philadelphia. ~1.5–2 hours.',
+  alternates: {
+    canonical: `${getSiteUrl()}/services/routes/nyc-to-philadelphia`,
+  },
   openGraph: {
-    url: `${getSiteUrl()}/services/routes/nyc-to-philadelphia`,
     title: 'NYC to Philadelphia Car Service | Eagle Eye',
-    description: 'Flat-rate private chauffeur from NYC to Philadelphia. ~1.5–2 hours door-to-door. No surge. Book now.',
+    description: 'Flat-rate private chauffeur from NYC to Philadelphia. All tolls included, no surge pricing, door-to-door. 24/7.',
+    url: `${getSiteUrl()}/services/routes/nyc-to-philadelphia`,
   },
 };
 

@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Manhattan to Connecticut Car Service | Eagle Eye',
   description:
-    'Manhattan to Connecticut car service — flat-rate black car to Greenwich, Stamford, Westport, Fairfield & all CT. All tolls included. Professional chauffeur, door-to-door, 24/7.',
+    'Manhattan to Connecticut car service — flat-rate black car to Greenwich, Stamford, Westport, Fairfield & all CT. All tolls included. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-connecticut-car-service` },
 };
 

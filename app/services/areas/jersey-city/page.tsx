@@ -5,12 +5,12 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Jersey City NJ Black Car Service | NYC Airport Transfers | Eagle Eye',
+  title: 'Jersey City NJ Car Service | NYC & Airport Transfers | Eagle Eye',
   description:
     'Jersey City NJ black car service — airport transfers to EWR, JFK & LGA, corporate rides to Manhattan. TLC-licensed chauffeurs, flat rates, all tolls.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/jersey-city` },
   openGraph: {
-    title: 'Jersey City NJ Black Car Service | NYC Airport Transfers | Eagle Eye',
+    title: 'Jersey City NJ Car Service | NYC & Airport Transfers | Eagle Eye',
     description:
       'Jersey City NJ black car service — airport transfers to EWR, JFK & LGA, corporate rides to Manhattan. TLC-licensed chauffeurs, flat rates, all tolls.',
     url: `${getSiteUrl()}/services/areas/jersey-city`,

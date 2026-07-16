@@ -7,15 +7,12 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Connecticut to Teterboro Airport Car Service | TEB | Eagle Eye',
   description:
-    'Connecticut to Teterboro Airport (TEB) car service — Greenwich, Stamford, Westport, Norwalk, Darien & all CT. Flat-rate private jet transfers to TEB. Eagle Eye Chauffeur 24/7.',
+    'Connecticut to Teterboro Airport (TEB) car service — Greenwich, Stamford, Westport, Norwalk, Darien & all CT. Flat-rate private jet transfers to.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/connecticut-to-teterboro-car-service` },
   openGraph: {
     title: 'Connecticut to Teterboro Airport Car Service | TEB | Eagle Eye',
     description:
-      'Connecticut to Teterboro Airport (TEB) car service — Greenwich, Stamford, Westport, Norwalk, Darien & all CT. Flat-rate private jet transfers to TEB. Eagle Eye Chauffeur 24/7.',
-    url: `${getSiteUrl()}/services/routes/connecticut-to-teterboro-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+      'Connecticut to Teterboro Airport (TEB) car service — Greenwich, Stamford, Westport, Norwalk, Darien & all CT. Flat-rate private jet transfers to.',
   },
 };
 

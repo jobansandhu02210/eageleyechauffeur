@@ -8,7 +8,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'NYC Black Car Services | Airport, Corporate, Hourly & More | Eagle Eye Chauffeur',
+    absolute: 'NYC Black Car Services | Airport, Corporate & Hourly | Eagle Eye',
   },
   description:
     "Eagle Eye Chauffeur's full range of NYC black car services: airport transfers (JFK, LGA, EWR), corporate chauffeur, hourly hire, point-to-point, and special events. Flat rates, no surge pricing. Book 24/7.",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/services` },
   openGraph: {
     url: `${getSiteUrl()}/services`,
-    title: 'NYC Black Car Services | Airport, Corporate, Hourly & More | Eagle Eye Chauffeur',
+    title: 'NYC Black Car Services | Airport, Corporate & Hourly | Eagle Eye',
     description:
       "Eagle Eye Chauffeur's full range of NYC black car services: airport transfers (JFK, LGA, EWR), corporate chauffeur, hourly hire, point-to-point, and special events. Book 24/7.",
   },

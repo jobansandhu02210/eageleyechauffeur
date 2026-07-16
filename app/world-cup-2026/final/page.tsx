@@ -6,10 +6,10 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'World Cup Final 2026 Car Service | MetLife Stadium July 19 | Eagle Eye Chauffeur',
+    absolute: 'World Cup Final 2026 | MetLife Stadium Car Service | Eagle Eye',
   },
   description:
-    'World Cup Final 2026 car service to MetLife Stadium on July 19. Flat-rate luxury transport from Manhattan, JFK, EWR, LGA & Long Island. No surge pricing. Pre-arranged post-Final pickup. Book now before spots fill.',
+    'World Cup Final 2026 car service to MetLife Stadium, July 19. Flat-rate from Manhattan, JFK, LGA & EWR. No surge pricing. Pre-arranged post-match pickup.',
   keywords: [
     'World Cup Final 2026 car service',
     'World Cup Final MetLife July 19',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/world-cup-2026/final` },
   openGraph: {
     url: `${getSiteUrl()}/world-cup-2026/final`,
-    title: 'World Cup Final 2026 Car Service | MetLife Stadium July 19 | Eagle Eye',
+    title: 'World Cup Final 2026 | MetLife Stadium Car Service | Eagle Eye',
     description:
       'Book luxury car service for the World Cup Final at MetLife Stadium, July 19, 2026. Flat rate, no surge, pre-arranged post-Final pickup. Spots fill fast.',
   },

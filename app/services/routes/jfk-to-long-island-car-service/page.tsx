@@ -5,9 +5,9 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK to Long Island Car Service | Airport Transfer Nassau & Suffolk | Eagle Eye',
+  title: 'JFK to Long Island Car Service | Nassau & Suffolk | Eagle Eye',
   description:
-    'JFK to Long Island car service — flat rates to Nassau County, Suffolk County & the Hamptons. Garden City, Hempstead, Great Neck, Huntington & more. TLC licensed. Book 24/7.',
+    'JFK to Long Island car service — flat rates to Nassau County, Suffolk County & the Hamptons. Garden City, Hempstead, Great Neck, Huntington & more.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-long-island-car-service` },
 };
 

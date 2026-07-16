@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Westhampton Beach Car Service | Black Car & JFK Airport Transfers | Eagle Eye',
+  title: 'Westhampton Beach Car Service | JFK Airport Transfers | Eagle Eye',
   description:
     'Westhampton Beach black car service — flat-rate JFK & LGA airport transfers from the East End. No surge pricing on summer weekends. TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/westhampton-beach` },

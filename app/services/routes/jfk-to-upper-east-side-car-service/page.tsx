@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'JFK to Upper East Side Car Service | Eagle Eye NYC',
   description:
-    'JFK Airport to Upper East Side black car service — flat rate, meet &amp; greet at arrivals, flight tracking. Park Ave, 5th Ave, Lenox Hill, Yorkville &amp; Carnegie Hill. TLC licensed. 24/7.',
+    'JFK Airport to Upper East Side black car service — flat rate, meet &amp; greet at arrivals, flight tracking. Park Ave, 5th Ave, Lenox Hill.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-upper-east-side-car-service` },
 };
 

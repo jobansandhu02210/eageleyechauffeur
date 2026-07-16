@@ -4,10 +4,10 @@ import { getSiteUrl } from '@/lib/site';
 export const metadata: Metadata = {
   title: {
     absolute:
-      'Corporate Car Service Account NYC | Monthly Billing | Eagle Eye Chauffeur',
+      'Corporate Car Service Account NYC | Monthly Billing | Eagle Eye',
   },
   description:
-    'Set up a corporate car service account with Eagle Eye Chauffeur. Monthly invoicing, dedicated coordinator, executive black car for companies in NYC. Finance, legal, tech & media clients.',
+    'Set up a corporate car service account with Eagle Eye Chauffeur. Monthly invoicing, dedicated coordinator, executive black car for NYC companies.',
   keywords: [
     'corporate car service account NYC',
     'monthly billing black car Manhattan',
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   alternates: { canonical: `${getSiteUrl()}/corporate-accounts` },
   openGraph: {
     url: `${getSiteUrl()}/corporate-accounts`,
-    title: 'Corporate Car Service Account NYC | Monthly Billing | Eagle Eye Chauffeur',
+    title: 'Corporate Car Service Account NYC | Monthly Billing | Eagle Eye',
     description:
-      'Set up a corporate car service account with Eagle Eye Chauffeur. Monthly invoicing, dedicated coordinator, executive black car for companies in NYC. Finance, legal, tech & media clients.',
+      'Set up a corporate car service account with Eagle Eye Chauffeur. Monthly invoicing, dedicated coordinator, executive black car for NYC companies.',
   },
 };
 

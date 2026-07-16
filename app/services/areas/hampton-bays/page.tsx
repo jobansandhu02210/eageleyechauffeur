@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hampton Bays Car Service | Black Car & JFK Airport Transfers East End | Eagle Eye',
+  title: 'Hampton Bays Car Service | JFK Airport East End | Eagle Eye',
   description:
     'Hampton Bays black car service — flat-rate JFK & LGA airport transfers from the East End of Long Island. No surge pricing on summer weekends.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hampton-bays` },

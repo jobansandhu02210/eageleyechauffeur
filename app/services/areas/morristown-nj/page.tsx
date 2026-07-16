@@ -5,12 +5,12 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Morristown NJ Black Car Service | Airport & NYC Transfers | Eagle Eye',
+  title: 'Morristown NJ Car Service | Airport & NYC Transfers | Eagle Eye',
   description:
     'Morristown NJ black car service — airport transfers to EWR & JFK, NYC rides, Morris County corporate travel. TLC-licensed chauffeurs, flat rates.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/morristown-nj` },
   openGraph: {
-    title: 'Morristown NJ Black Car Service | Airport & NYC Transfers | Eagle Eye',
+    title: 'Morristown NJ Car Service | Airport & NYC Transfers | Eagle Eye',
     description:
       'Morristown NJ black car service — airport transfers to EWR & JFK, NYC rides, Morris County corporate travel. TLC-licensed chauffeurs, flat rates.',
     url: `${getSiteUrl()}/services/areas/morristown-nj`,

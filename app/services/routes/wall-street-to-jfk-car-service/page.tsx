@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Wall Street to JFK Car Service | FiDi Car | Eagle Eye',
   description:
-    'Wall Street to JFK black car service — flat rate, door-to-door pickup from Financial District, FiDi & lower Manhattan. Professional chauffeurs, 24/7. Eagle Eye Chauffeur.',
+    'Wall Street to JFK black car service — flat rate, door-to-door pickup from Financial District, FiDi & lower Manhattan. Professional chauffeurs.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/wall-street-to-jfk-car-service`,
   },
@@ -15,8 +15,6 @@ export const metadata: Metadata = {
     title: 'Wall Street to JFK Car Service | FiDi Car | Eagle Eye',
     description: 'Flat-rate black car service from Wall Street, FiDi & lower Manhattan to JFK Airport. No surge pricing — ever. Professional chauffeur, 24/7.',
     url: `${getSiteUrl()}/services/routes/wall-street-to-jfk-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
   },
 };
 

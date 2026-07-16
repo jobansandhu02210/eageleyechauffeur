@@ -7,16 +7,13 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'Midtown Manhattan to Newark Airport Car Service | EWR | Eagle Eye',
   description:
-    'Midtown Manhattan to Newark Airport (EWR) black car service — flat rate, tolls included, door-to-door from all Midtown locations. Professional chauffeurs 24/7. Eagle Eye Chauffeur.',
+    'Midtown Manhattan to Newark Airport (EWR) black car service — flat rate, tolls included, door-to-door from all Midtown locations. Professional.',
   alternates: {
     canonical: `${getSiteUrl()}/services/routes/midtown-to-ewr-black-car-service`,
   },
   openGraph: {
     title: 'Midtown Manhattan to Newark Airport Car Service | EWR | Eagle Eye',
-    description: 'Flat-rate black car service from Midtown Manhattan to Newark Airport (EWR). Tolls included, no surge pricing, door-to-door professional chauffeur 24/7. Eagle Eye Chauffeur.',
-    url: `${getSiteUrl()}/services/routes/midtown-to-ewr-black-car-service`,
-    siteName: 'Eagle Eye Chauffeur',
-    type: 'website',
+    description: 'Flat-rate black car service from Midtown Manhattan to Newark Airport (EWR). Tolls included, no surge pricing, door-to-door professional chauffeur.',
   },
 };
 

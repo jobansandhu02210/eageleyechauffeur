@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTAC
 export const metadata: Metadata = {
   title: 'JFK to Midtown Manhattan Car Service | Eagle Eye NYC',
   description:
-    'JFK Airport to Midtown Manhattan black car service — flat rate, meet &amp; greet at arrivals, real-time flight tracking. Times Square, Park Ave, Grand Central &amp; all Midtown hotels. TLC licensed. 24/7.',
+    'JFK Airport to Midtown Manhattan black car service — flat rate, meet &amp; greet at arrivals, real-time flight tracking. Times Square, Park Ave.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-midtown-manhattan-black-car-service` },
 };
 
