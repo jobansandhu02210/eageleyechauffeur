@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     absolute: 'NYC Black Car Services | Airport, Corporate & Hourly | Eagle Eye',
   },
   description:
-    "Eagle Eye Chauffeur's full range of NYC black car services: airport transfers (JFK, LGA, EWR), corporate chauffeur, hourly hire, point-to-point, and special events. Flat rates, no surge pricing. Book 24/7.",
+    "Eagle Eye Chauffeur's full range of NYC black car services: airport transfers (JFK, LGA, EWR), corporate chauffeur, hourly hire & special events. Flat rates, no surge. Book 24/7.",
   keywords: siteKeywords,
   alternates: { canonical: `${getSiteUrl()}/services` },
   openGraph: {

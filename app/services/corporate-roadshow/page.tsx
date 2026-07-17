@@ -237,6 +237,23 @@ export default function CorporateRoadshowPage() {
 
       {/* CTA */}
       <section className="bg-brand-black text-brand-white py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <h2 className="font-serif text-xl font-semibold text-brand-white mb-6">Corporate Travel Guides</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: '/blog/nyc-roadshow-car-service-guide-investment-banking', title: 'NYC Roadshow Car Service Guide' },
+              { href: '/blog/nyc-corporate-car-service-executive-travel', title: 'Corporate Car Service for Executives' },
+              { href: '/blog/corporate-black-car-service-nyc-executive-guide-2026', title: 'Corporate Black Car Service Guide 2026' },
+              { href: '/blog/best-car-service-for-wall-street-executives-nyc', title: 'Black Car for Wall Street Executives' },
+              { href: '/blog/executive-chauffeur-vs-rideshare-for-business-travel', title: 'Executive Chauffeur vs Rideshare' },
+              { href: '/blog/corporate-car-service-account-nyc-guide', title: 'Corporate Account Setup Guide' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group border border-brand-silver hover:border-brand-white transition-colors p-4 text-sm text-brand-silver hover:text-brand-white">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl lg:text-4xl font-semibold mb-4">
             Book Your Roadshow Chauffeur

@@ -317,6 +317,48 @@ export default function RoutesIndexPage() {
         </div>
       </section>
 
+      {/* Long-Distance Routes */}
+      <section className="bg-brand-offwhite py-12 border-t border-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-xl font-semibold text-brand-black mb-6">Long-Distance & Special Routes</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { href: '/services/routes/nyc-to-boston', title: 'NYC to Boston Car Service' },
+              { href: '/services/routes/nyc-to-philadelphia', title: 'NYC to Philadelphia Car Service' },
+              { href: '/services/routes/nyc-to-washington-dc', title: 'NYC to Washington DC Car Service' },
+              { href: '/services/routes/manhattan-to-teterboro-black-car-service', title: 'Manhattan to Teterboro (TEB)' },
+              { href: '/services/routes/teterboro-to-manhattan-black-car-service', title: 'Teterboro to Manhattan' },
+              { href: '/services/routes/teterboro-to-new-jersey-car-service', title: 'Teterboro to New Jersey' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group bg-brand-white border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related Articles */}
+      <section className="bg-brand-white py-12 border-t border-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-xl font-semibold text-brand-black mb-6">Route Guides & Articles</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: '/blog/hamptons-car-service-from-nyc-best-way', title: 'NYC to Hamptons: Best Way Guide' },
+              { href: '/blog/nyc-to-connecticut-car-service-greenwich-stamford', title: 'NYC to Connecticut Car Service Guide' },
+              { href: '/blog/black-car-vs-rental-car-nyc', title: 'Black Car vs Rental Car NYC' },
+              { href: '/blog/how-to-get-from-manhattan-to-westchester', title: 'Manhattan to Westchester Guide' },
+              { href: '/blog/nyc-to-montauk-car-service-guide', title: 'NYC to Montauk Car Service Guide' },
+              { href: '/blog/summer-hamptons-nyc-transportation-guide-2026', title: 'Summer 2026 Hamptons Transport Guide' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group bg-brand-offwhite border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-brand-black py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

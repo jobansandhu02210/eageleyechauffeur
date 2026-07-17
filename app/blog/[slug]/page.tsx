@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   return {
-    title: { absolute: `${post.title} | Eagle Eye Chauffeur` },
+    title: { absolute: post.seoTitle },
     description: post.metaDescription,
     keywords: post.keywords,
     alternates: { canonical: `${getSiteUrl()}/blog/${post.slug}` },
     openGraph: {
       url: `${getSiteUrl()}/blog/${post.slug}`,
-      title: `${post.title} | Eagle Eye Chauffeur`,
+      title: post.seoTitle,
       description: post.metaDescription,
       images: [{ url: post.image, width: 1200, height: 800, alt: post.title }],
     },
@@ -172,42 +172,47 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Related / Navigation */}
-        <section className="py-12 lg:py-16 bg-brand-white border-t border-brand-light">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-xl font-semibold text-brand-black mb-8 text-center">
-              More from the Blog
-            </h2>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {blogPosts
-                .filter((p) => p.slug !== post.slug)
-                .slice(0, 2)
-                .map((related) => (
-                  <Link
-                    key={related.slug}
-                    href={`/blog/${related.slug}`}
-                    className="group border border-brand-light hover:border-brand-black transition-colors p-6"
-                  >
-                    <div className="text-xs text-brand-silver mb-2">{related.readTime}</div>
-                    <h3 className="font-serif text-base font-semibold text-brand-black group-hover:underline">
-                      {related.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-brand-grey line-clamp-2">
-                      {related.description}
-                    </p>
+        {/* Related Articles */}
+        {(() => {
+          const related = blogPosts
+            .filter((p) => p.slug !== post.slug)
+            .map((p) => ({
+              post: p,
+              score: p.keywords.filter((k) => post.keywords.includes(k)).length,
+            }))
+            .sort((a, b) => b.score - a.score || blogPosts.indexOf(a.post) - blogPosts.indexOf(b.post))
+            .slice(0, 3)
+            .map((r) => r.post);
+          return (
+            <section className="py-12 lg:py-16 bg-brand-white border-t border-brand-light">
+              <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 className="font-serif text-xl font-semibold text-brand-black mb-8 text-center">
+                  Related Articles
+                </h2>
+                <div className="grid sm:grid-cols-3 gap-6">
+                  {related.map((r) => (
+                    <Link
+                      key={r.slug}
+                      href={`/blog/${r.slug}`}
+                      className="group border border-brand-light hover:border-brand-black transition-colors p-5"
+                    >
+                      <div className="text-xs text-brand-silver mb-2">{r.readTime}</div>
+                      <h3 className="font-serif text-sm font-semibold text-brand-black group-hover:underline leading-snug">
+                        {r.title}
+                      </h3>
+                      <p className="mt-2 text-xs text-brand-grey line-clamp-2">{r.description}</p>
+                    </Link>
+                  ))}
+                </div>
+                <div className="text-center mt-8">
+                  <Link href="/blog" className="text-sm font-medium text-brand-black hover:underline">
+                    View All Articles &rarr;
                   </Link>
-                ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link
-                href="/blog"
-                className="text-sm font-medium text-brand-black hover:underline"
-              >
-                View All Articles &rarr;
-              </Link>
-            </div>
-          </div>
-        </section>
+                </div>
+              </div>
+            </section>
+          );
+        })()}
       </article>
     </>
   );

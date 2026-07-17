@@ -482,6 +482,27 @@ export default function EWRPage() {
         </div>
       </section>
 
+      {/* Related Blog Articles */}
+      <section className="bg-brand-offwhite py-12 border-t border-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-xl font-semibold text-brand-black mb-6">Newark Airport Guides</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: '/blog/newark-airport-car-service-ewr-to-manhattan', title: 'Newark Airport Car Service: EWR to Manhattan' },
+              { href: '/blog/ewr-newark-airport-guide-car-service', title: 'Newark Airport (EWR) Complete Guide' },
+              { href: '/blog/jfk-to-newark-airport-transfer-options', title: 'JFK to Newark Airport Transfer Options' },
+              { href: '/blog/laguardia-to-newark-airport-transfer-guide', title: 'LGA to Newark Airport Transfer' },
+              { href: '/blog/best-airport-to-fly-into-nyc-jfk-lga-ewr-guide', title: 'JFK vs LGA vs EWR: Which to Choose?' },
+              { href: '/blog/black-car-service-vs-taxi-nyc-which-is-better', title: 'Black Car vs Taxi NYC: Which Wins?' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group bg-brand-white border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-brand-black py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

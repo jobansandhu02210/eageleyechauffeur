@@ -451,6 +451,27 @@ export default function JFKPage() {
         </div>
       </section>
 
+      {/* Related Blog Articles */}
+      <section className="bg-brand-offwhite py-12 border-t border-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-xl font-semibold text-brand-black mb-6">JFK Airport Guides</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: '/blog/jfk-to-manhattan-best-car-service-airport-transfer', title: 'JFK to Manhattan: Best Car Service Guide' },
+              { href: '/blog/jfk-airport-pickup-meet-and-greet-service', title: 'JFK Meet & Greet: How It Works' },
+              { href: '/blog/jfk-travel-tips-checklist-professional-travelers', title: 'JFK Airport Tips for Professional Travelers' },
+              { href: '/blog/jfk-to-times-square-cheapest-best-way', title: 'JFK to Times Square: Best Ways' },
+              { href: '/blog/jfk-to-wall-street-financial-district-car-service', title: 'JFK to Wall Street Car Service' },
+              { href: '/blog/how-far-is-jfk-from-manhattan-travel-times-guide', title: 'How Far Is JFK from Manhattan?' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group bg-brand-white border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 9. CTA */}
       <section className="bg-brand-black py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

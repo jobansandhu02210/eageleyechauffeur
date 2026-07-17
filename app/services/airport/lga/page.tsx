@@ -483,6 +483,27 @@ export default function LGAPage() {
         </div>
       </section>
 
+      {/* Related Blog Articles */}
+      <section className="bg-brand-offwhite py-12 border-t border-brand-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-xl font-semibold text-brand-black mb-6">LaGuardia Airport Guides</h2>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { href: '/blog/lga-car-service-best-airport-transfer-nyc', title: 'LaGuardia Car Service: Best LGA Transfers' },
+              { href: '/blog/lga-to-brooklyn-car-service-guide', title: 'LGA to Brooklyn Car Service Guide' },
+              { href: '/blog/lga-to-queens-jfk-car-service-guide', title: 'LGA to Queens & JFK Guide' },
+              { href: '/blog/jfk-to-laguardia-transfer-distance-options', title: 'JFK to LaGuardia Transfer Options' },
+              { href: '/blog/laguardia-to-newark-airport-transfer-guide', title: 'LGA to Newark Airport Transfer' },
+              { href: '/blog/best-airport-to-fly-into-nyc-jfk-lga-ewr-guide', title: 'JFK vs LGA vs EWR: Best NYC Airport' },
+            ].map((l) => (
+              <Link key={l.href} href={l.href} className="group bg-brand-white border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
+                {l.title} →
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-brand-black py-20 lg:py-28">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

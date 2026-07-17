@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     absolute: 'About Eagle Eye Chauffeur | TLC Licensed NYC Luxury Car Service',
   },
   description:
-    'Learn about Eagle Eye Chauffeur — NYC\'s TLC-licensed luxury black car service. Serving JFK, LGA, EWR, HPN and all 5 boroughs. Professional chauffeurs, flat-rate pricing, 24/7 availability.',
+    'Eagle Eye Chauffeur — NYC\'s TLC-licensed black car service. JFK, LGA, EWR & HPN airport transfers, all 5 boroughs. Professional chauffeurs, flat rates, 24/7.',
   alternates: { canonical: `${getSiteUrl()}/about` },
   openGraph: {
     url: `${getSiteUrl()}/about`,
     title: 'About Eagle Eye Chauffeur | TLC Licensed NYC Luxury Car Service',
     description:
-      'Learn about Eagle Eye Chauffeur — NYC\'s TLC-licensed luxury black car service. Serving JFK, LGA, EWR, HPN and all 5 boroughs. Professional chauffeurs, flat-rate pricing, 24/7 availability.',
+      'Eagle Eye Chauffeur — NYC\'s TLC-licensed black car service. JFK, LGA, EWR & HPN airport transfers, all 5 boroughs. Professional chauffeurs, flat rates, 24/7.',
   },
 };
 

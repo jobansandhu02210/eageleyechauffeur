@@ -28,10 +28,10 @@ const services: Record<string, ServiceEntry> = {
   'point-to-point': {
     title: 'Point-to-Point Transfers',
     h1: 'Point-to-Point Black Car Service NYC',
-    seoTitle: 'Point-to-Point Car Service NYC | Direct Luxury Transfers | Eagle Eye',
+    seoTitle: 'Point-to-Point Car Service NYC | Direct Transfers | Eagle Eye',
     description: 'Direct, luxurious black car transportation within NYC and surrounding areas.',
     metaDescription:
-      'Direct luxury point-to-point transfers in NYC. Door-to-door black car service across all 5 boroughs, Long Island, NJ & CT. Flat rates, no surge pricing. Professional TLC-certified chauffeurs. Book 24/7.',
+      'Direct luxury point-to-point transfers in NYC. Door-to-door black car across all 5 boroughs, Long Island, NJ & CT. Flat rates, no surge. Book 24/7.',
     keywords: [
       'point to point car service NYC',
       'door to door black car Manhattan',
@@ -93,10 +93,10 @@ const services: Record<string, ServiceEntry> = {
   hourly: {
     title: 'Hourly Chauffeur Service',
     h1: 'Hourly Chauffeur Service NYC | Black Car Hire by the Hour',
-    seoTitle: 'Hourly Chauffeur Service NYC | Luxury Car Hire by the Hour | Eagle Eye',
+    seoTitle: 'Hourly Chauffeur Service NYC | Car Hire by the Hour | Eagle Eye',
     description: 'Flexible hourly black car hire for meetings, events, roadshows, and city tours in NYC.',
     metaDescription:
-      'Hire a professional black car chauffeur by the hour in NYC. Perfect for executive meetings, roadshows, events & city tours. Luxury sedan or SUV. Flexible scheduling. Book Eagle Eye Chauffeur.',
+      'Hire a NYC black car chauffeur by the hour — executive meetings, roadshows, events & city tours. Luxury sedan or SUV. Flexible scheduling. Book 24/7.',
     keywords: [
       'hourly chauffeur NYC',
       'chauffeur by the hour Manhattan',
@@ -158,10 +158,10 @@ const services: Record<string, ServiceEntry> = {
   airport: {
     title: 'NYC Airport Transfers',
     h1: 'NYC Airport Car Service | JFK, LGA, EWR & HPN Black Car Transfers',
-    seoTitle: 'NYC Airport Transfer | JFK, LGA, EWR Black Car Service | Eagle Eye Chauffeur',
+    seoTitle: 'NYC Airport Transfer | JFK, LGA & EWR Car Service | Eagle Eye',
     description: 'Premium airport car service to JFK, LGA, EWR & HPN — meet-and-greet, real-time flight tracking, flat rates.',
     metaDescription:
-      'NYC airport transfers to JFK, LGA, EWR & HPN. Real-time flight tracking, meet & greet, flat rates — no surge pricing. Professional chauffeur at arrivals. Book Eagle Eye Chauffeur 24/7.',
+      'NYC airport transfers to JFK, LGA, EWR & HPN. Real-time tracking, meet & greet, flat rates — no surge. Professional chauffeur at arrivals. 24/7.',
     keywords: [
       'JFK airport car service NYC',
       'LaGuardia black car service',
@@ -227,10 +227,10 @@ const services: Record<string, ServiceEntry> = {
   corporate: {
     title: 'Corporate Car Service NYC',
     h1: 'Corporate Car Service NYC | Executive Chauffeur for Business Travel',
-    seoTitle: 'Corporate Car Service NYC | Executive Chauffeur | Eagle Eye Chauffeur',
+    seoTitle: 'Corporate Car Service NYC | Executive Chauffeur | Eagle Eye',
     description: 'Premium corporate chauffeur service for executives, roadshows, and business travel in NYC.',
     metaDescription:
-      'Corporate car service NYC for executives and business travelers. Roadshows, board meetings, client transfers, corporate accounts. Discreet, punctual TLC-certified chauffeurs. Book Eagle Eye Chauffeur.',
+      'Corporate car service NYC — roadshows, board meetings, client transfers & corporate accounts. Discreet, punctual TLC-certified chauffeurs. Book 24/7.',
     keywords: [
       'corporate car service NYC',
       'executive transportation Manhattan',
@@ -292,10 +292,10 @@ const services: Record<string, ServiceEntry> = {
   'special-events': {
     title: 'Wedding & Event Chauffeur Service',
     h1: 'Wedding & Special Event Chauffeur Service NYC',
-    seoTitle: 'Wedding & Special Event Car Service NYC | Luxury Chauffeur | Eagle Eye',
+    seoTitle: 'Special Event Car Service NYC | Weddings & Galas | Eagle Eye',
     description: 'Luxury chauffeur service for weddings, proms, galas, concerts, and special occasions in NYC.',
     metaDescription:
-      'Luxury car service for weddings, proms, galas, concerts, and special events in NYC. Professional chauffeur, elegant vehicles. No surge pricing. Book Eagle Eye Chauffeur for your special occasion.',
+      'Luxury car service for weddings, proms, galas & concerts in NYC. Professional chauffeur, elegant vehicles, no surge pricing. Book Eagle Eye now.',
     keywords: [
       'wedding car service NYC',
       'prom chauffeur New York',
@@ -357,10 +357,10 @@ const services: Record<string, ServiceEntry> = {
   'chauffeur-service': {
     title: 'Chauffeur Service',
     h1: 'NYC Chauffeur Service | Professional Black Car Chauffeur New York',
-    seoTitle: 'NYC Chauffeur Service | Professional Black Car Chauffeur | Eagle Eye',
+    seoTitle: 'NYC Chauffeur Service | Professional Black Car | Eagle Eye',
     description: 'Professional NYC chauffeur service with TLC-licensed drivers, luxury black cars, and flat-rate pricing across New York City.',
     metaDescription:
-      'NYC chauffeur service you can trust. Professional, background-checked chauffeurs in luxury black cars across all five boroughs, Long Island, NJ & CT. Flat rates. Book Eagle Eye Chauffeur 24/7.',
+      'NYC chauffeur service — professional, background-checked drivers in luxury black cars across all boroughs, Long Island, NJ & CT. Flat rates. 24/7.',
     keywords: [
       'nyc chauffeur service',
       'chauffeur service new york',
@@ -423,10 +423,10 @@ const services: Record<string, ServiceEntry> = {
   'long-distance': {
     title: 'Long-Distance Car Service',
     h1: 'Long-Distance Car Service NYC | Luxury Out-of-State Black Car Transfers',
-    seoTitle: 'Long-Distance Car Service NYC | Hamptons, CT, NJ, Philadelphia | Eagle Eye',
+    seoTitle: 'Long-Distance Car Service NYC | Hamptons, CT, NJ | Eagle Eye',
     description: 'Luxury long-distance car service from NYC to the Hamptons, Connecticut, New Jersey, Philadelphia, Washington D.C., and beyond.',
     metaDescription:
-      'Long-distance car service from NYC. Flat-rate luxury transfers to the Hamptons, Greenwich, Stamford, Princeton, Philadelphia & D.C. No surge pricing. Professional chauffeurs. Book Eagle Eye 24/7.',
+      'Long-distance car service from NYC — flat-rate to the Hamptons, Greenwich, Stamford, Princeton, Philadelphia & DC. No surge pricing. Book 24/7.',
     keywords: [
       'long distance car service nyc',
       'nyc to hamptons car service',
@@ -489,10 +489,10 @@ const services: Record<string, ServiceEntry> = {
   'limousine-service': {
     title: 'Limousine Service',
     h1: 'NYC Limousine Service | Luxury Limo & Car Service New York',
-    seoTitle: 'NYC Limousine Service | Luxury Limo Car Service Manhattan | Eagle Eye',
+    seoTitle: 'NYC Limousine Service | Luxury Limo Manhattan | Eagle Eye',
     description: 'Premium NYC limousine service for special occasions, corporate events, airport transfers, and VIP nights out in New York City.',
     metaDescription:
-      'NYC limousine service — premium limo and luxury car service in Manhattan and all five boroughs. Corporate, airport, weddings, galas & nights out. TLC-licensed. Book Eagle Eye Chauffeur 24/7.',
+      'NYC limousine service — premium luxury car in Manhattan and all five boroughs. Corporate, airport, weddings & nights out. TLC-licensed. Book 24/7.',
     keywords: [
       'nyc limousine service',
       'limo service new york',
@@ -555,10 +555,10 @@ const services: Record<string, ServiceEntry> = {
   'sprinter-van-service': {
     title: 'Sprinter Van Service',
     h1: 'NYC Sprinter Van Service | Luxury Group Transportation New York',
-    seoTitle: 'NYC Sprinter Van Service | Luxury Group Transport Manhattan | Eagle Eye',
+    seoTitle: 'NYC Sprinter Van Service | Luxury Group Transport | Eagle Eye',
     description: 'Luxury Mercedes-Benz Sprinter van service in NYC for corporate groups, airport shuttles, events, and VIP group transportation.',
     metaDescription:
-      'NYC Sprinter van service — luxury group transportation for up to 14 passengers. Corporate shuttles, airport groups, conference transfers & event coordination. TLC-licensed. Book Eagle Eye 24/7.',
+      'NYC Sprinter van service — luxury group transport for up to 14 passengers. Corporate shuttles, airport groups & conference transfers. TLC-licensed. 24/7.',
     keywords: [
       'sprinter van service nyc',
       'luxury sprinter van new york',
@@ -621,10 +621,10 @@ const services: Record<string, ServiceEntry> = {
   'wedding-car-service': {
     title: 'Wedding Car Service',
     h1: 'NYC Wedding Car Service | Luxury Bridal Transportation New York',
-    seoTitle: 'NYC Wedding Car Service | Luxury Bridal & Wedding Limo | Eagle Eye',
+    seoTitle: 'NYC Wedding Car Service | Bridal & Wedding Limo | Eagle Eye',
     description: 'Luxury wedding car service in NYC — professional chauffeurs, elegant vehicles, and coordinated bridal party transportation for your perfect day.',
     metaDescription:
-      'NYC wedding car service — luxury bridal transportation in New York City. Elegant black cars, SUVs & Sprinter vans for weddings, rehearsal dinners & receptions. TLC-licensed. Book Eagle Eye 24/7.',
+      'NYC wedding car service — elegant black cars, SUVs & Sprinter vans for weddings, rehearsal dinners & receptions. TLC-licensed. Book Eagle Eye 24/7.',
     keywords: [
       'wedding car service nyc',
       'luxury wedding transportation new york',
