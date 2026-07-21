@@ -1,14 +1,7 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { loadStripe } from '@stripe/stripe-js';
-import {
-  Elements,
-  PaymentElement,
-  useStripe,
-  useElements,
-} from '@stripe/react-stripe-js';
 import { GooglePlacesAutocomplete } from '@/components/GooglePlacesAutocomplete';
 import { PromoCodeField } from '@/components/PromoCodeField';
 import {
@@ -56,81 +49,6 @@ const STEPS = [
   'Confirm',
 ];
 
-const stripePromise = typeof window !== 'undefined' && process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-  ? loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY)
-  : null;
-
-function BookingPaymentForm({
-  clientSecret,
-  bookingId,
-  bookingPayload,
-  onSuccess,
-}: {
-  clientSecret: string;
-  bookingId: string | null;
-  bookingPayload: Record<string, unknown>;
-  onSuccess: () => void;
-}) {
-  const stripe = useStripe();
-  const elements = useElements();
-  const [paying, setPaying] = useState(false);
-  const [payError, setPayError] = useState<string | null>(null);
-
-  const handlePay = useCallback(async () => {
-    if (!stripe || !elements) return;
-    setPaying(true);
-    setPayError(null);
-    // Card-on-file: save the card via SetupIntent (no charge now).
-    const { error, setupIntent } = await stripe.confirmSetup({
-      elements,
-      redirect: 'if_required',
-    });
-    if (error) {
-      setPayError(error.message ?? 'Could not save your card. Please try again.');
-      setPaying(false);
-      return;
-    }
-    if (setupIntent?.status === 'succeeded') {
-      try {
-        await fetch('/api/booking/payment-complete', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ setupIntentId: setupIntent.id, bookingId, ...bookingPayload }),
-        });
-      } catch {
-        // non-fatal — card already saved
-      }
-      onSuccess();
-    } else {
-      setPayError('Could not save your card. Please try again.');
-      setPaying(false);
-    }
-  }, [stripe, elements, bookingId, bookingPayload, onSuccess]);
-
-  return (
-    <div className="space-y-6">
-      <p className="text-sm text-brand-grey">
-        Enter your card to confirm your booking. <strong className="text-brand-black">You won&apos;t be charged now</strong> — we charge the final fare after your trip is complete.
-      </p>
-      <PaymentElement options={{ layout: 'tabs' }} />
-      <p className="text-xs text-brand-silver">
-        Want to use a different card? Tap the <span aria-hidden="true">•••</span> menu on the saved card and choose “Use a different card,” or enter new card details above.
-      </p>
-      {payError && (
-        <p className="text-sm text-red-600" role="alert">{payError}</p>
-      )}
-      <button
-        type="button"
-        onClick={handlePay}
-        disabled={paying || !stripe || !elements}
-        className="w-full py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {paying ? 'Confirming…' : 'Save card & confirm booking'}
-      </button>
-    </div>
-  );
-}
-
 export default function BookPage() {
   const [step, setStep] = useState(1);
   const [service, setService] = useState<ServiceType>('point-to-point');
@@ -157,8 +75,6 @@ export default function BookPage() {
   const [bookingSubmitted, setBookingSubmitted] = useState(false);
   const [bookingStatus, setBookingStatus] = useState<'idle' | 'sending' | 'error'>('idle');
   const [bookingError, setBookingError] = useState<string | null>(null);
-  const [paymentClientSecret, setPaymentClientSecret] = useState<string | null>(null);
-  const [paymentBookingId, setPaymentBookingId] = useState<string | null>(null);
   const [bookingGuestCopyIssue, setBookingGuestCopyIssue] = useState<string | null>(null);
   const [estimate, setEstimate] = useState<BookingEstimate | null>(null);
   const [estimateLoading, setEstimateLoading] = useState(false);
@@ -342,7 +258,7 @@ export default function BookPage() {
 
   const estimateDisclaimer = (
     <p className="text-xs text-brand-silver mt-3">
-      Estimate updates as details change. Your card is saved securely now and charged the final fare only after your trip.
+      Estimate updates as details change. Your official price will be on the invoice we send after we confirm your trip.
     </p>
   );
 
@@ -365,76 +281,42 @@ export default function BookPage() {
   };
   const prev = () => setStep(Math.max(1, step - 1));
 
-  const bookingPayload = vehicle ? {
-    service: SERVICE_LABELS[service],
-    vehicle: VEHICLE_LABELS[vehicle],
-    pickup,
-    dropoff: service === 'point-to-point' || service === 'hourly' ? dropoff : '',
-    airport: service === 'airport' ? airport : '',
-    date,
-    time,
-    passengers,
-    luggage,
-    hours: service === 'hourly' ? hours : undefined,
-    specialRequests,
-    promoCode: promoResolved?.code || promoCode.trim() || undefined,
-    promoDriverName: promoResolved?.driverName || undefined,
-    quoteAmount: service === 'hourly' ? 0 : quoteAmount,
-    quoteLabel:
-      service === 'hourly'
-        ? `Hourly chauffeur, ${hours} hr (2 hr minimum)`
-        : quoteReady
-          ? quoteLabel
-          : 'Pending estimate',
-    customerName: customerName.trim(),
-    customerEmail: customerEmail.trim(),
-    customerPhone: customerPhone.trim(),
-  } : null;
-
-  const proceedToPayment = async () => {
-    if (!customerName.trim() || !emailOk || !vehicle) return;
+  const submitBooking = async () => {
+    if (!customerName.trim() || !emailOk) return;
+    if (!vehicle) return;
     setBookingStatus('sending');
     setBookingError(null);
     setBookingGuestCopyIssue(null);
-    try {
-      const res = await fetch('/api/booking/create-intent', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'same-origin',
-        body: JSON.stringify(bookingPayload),
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        error?: string;
-        clientSecret?: string;
-        bookingId?: string;
-      };
-      if (!res.ok || !data.clientSecret) {
-        // Stripe not configured — fall back to email-only booking
-        if (res.status === 503) {
-          await submitBookingEmailOnly();
-          return;
-        }
-        setBookingError(typeof data.error === 'string' ? data.error : 'Could not set up payment.');
-        setBookingStatus('error');
-        return;
-      }
-      setPaymentClientSecret(data.clientSecret);
-      setPaymentBookingId(data.bookingId ?? null);
-      setBookingStatus('idle');
-    } catch {
-      setBookingError('Network error. Please try again or call us.');
-      setBookingStatus('error');
-    }
-  };
-
-  const submitBookingEmailOnly = async () => {
-    if (!bookingPayload) return;
     try {
       const res = await fetch('/api/booking/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin',
-        body: JSON.stringify(bookingPayload),
+        body: JSON.stringify({
+          service: SERVICE_LABELS[service],
+          vehicle: VEHICLE_LABELS[vehicle],
+          pickup,
+          dropoff: service === 'point-to-point' || service === 'hourly' ? dropoff : '',
+          airport: service === 'airport' ? airport : '',
+          date,
+          time,
+          passengers,
+          luggage,
+          hours: service === 'hourly' ? hours : undefined,
+          specialRequests,
+          promoCode: promoResolved?.code || promoCode.trim() || undefined,
+          promoDriverName: promoResolved?.driverName || undefined,
+          quoteAmount: service === 'hourly' ? 0 : quoteAmount,
+          quoteLabel:
+            service === 'hourly'
+              ? `Hourly chauffeur, ${hours} hr (2 hr minimum)`
+              : quoteReady
+                ? quoteLabel
+                : 'Pending estimate',
+          customerName: customerName.trim(),
+          customerEmail: customerEmail.trim(),
+          customerPhone: customerPhone.trim(),
+        }),
       });
       const data = (await res.json().catch(() => ({}))) as {
         error?: string;
@@ -453,6 +335,8 @@ export default function BookPage() {
             : 'We could not send a copy to your email. Your request still reached our team.'
         );
       }
+
+      // Best-effort: store referral + booking in DB if a promo code was provided.
       if (promoResolved?.code || promoCode.trim()) {
         fetch('/api/referrals', {
           method: 'POST',
@@ -462,10 +346,31 @@ export default function BookPage() {
             promoCode: promoResolved?.code || promoCode.trim(),
             customerEmail: customerEmail.trim(),
             customerPhone: customerPhone.trim(),
-            booking: bookingPayload,
+            booking: {
+              service: SERVICE_LABELS[service],
+              pickup,
+              dropoff: service === 'point-to-point' || service === 'hourly' ? dropoff : '',
+              airport: service === 'airport' ? airport : '',
+              date,
+              time,
+              vehicle: VEHICLE_LABELS[vehicle],
+              passengers,
+              luggage,
+              hours: service === 'hourly' ? hours : undefined,
+              specialRequests,
+              quoteAmount: service === 'hourly' ? 0 : quoteAmount,
+              quoteLabel:
+                service === 'hourly'
+                  ? `Hourly chauffeur, ${hours} hr (2 hr minimum)`
+                  : quoteReady
+                    ? quoteLabel
+                    : 'Pending estimate',
+              customerName: customerName.trim(),
+            },
           }),
         }).catch(() => {});
       }
+
       setBookingSubmitted(true);
       setBookingStatus('idle');
     } catch {
@@ -473,23 +378,6 @@ export default function BookPage() {
       setBookingStatus('error');
     }
   };
-
-  const handlePaymentSuccess = useCallback(() => {
-    if (promoResolved?.code || promoCode.trim()) {
-      fetch('/api/referrals', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'same-origin',
-        body: JSON.stringify({
-          promoCode: promoResolved?.code || promoCode.trim(),
-          customerEmail: customerEmail.trim(),
-          customerPhone: customerPhone.trim(),
-          booking: bookingPayload,
-        }),
-      }).catch(() => {});
-    }
-    setBookingSubmitted(true);
-  }, [promoResolved, promoCode, customerEmail, customerPhone, bookingPayload]);
 
   return (
     <div className="bg-brand-offwhite min-h-screen py-12 lg:py-20">
@@ -499,7 +387,7 @@ export default function BookPage() {
             Book NYC Black Car Service | Eagle Eye Chauffeur
           </h1>
           <p className="mt-2 text-brand-grey">
-            Enter your trip details and save your card to confirm — you&apos;re not charged until after your trip.
+            Enter your trip details and submit — we confirm by email and send a formal invoice with your final price.
           </p>
         </div>
 
@@ -795,7 +683,7 @@ export default function BookPage() {
               {/* Disclaimer — estimate is now shown inline on each vehicle card */}
               {service !== 'hourly' && (
                 <p className="text-xs text-brand-silver">
-                  Estimates are based on your route and update as you change vehicle or guest details. The final fare is charged to your saved card after the trip.
+                  Estimates are based on your route and update as you change vehicle or guest details. Final price will be on your invoice.
                 </p>
               )}
             </div>
@@ -832,24 +720,25 @@ export default function BookPage() {
                 ) : (
                   <>
                     Add any notes here. The <strong className="text-brand-black">estimate</strong> above is a guide;
-                    the final fare is charged to your saved card after the trip.
+                    your invoice will show the confirmed price.
                   </>
                 )}
               </p>
             </div>
           )}
 
-          {/* Step 5: Confirm & pay */}
+          {/* Step 5: Confirm & notify */}
           {step === 5 && (
             <div className="space-y-6">
               {bookingSubmitted ? (
                 <div className="bg-brand-offwhite border border-brand-light p-6 text-center">
                   <h3 className="font-serif text-xl font-semibold text-brand-black mb-2">
-                    Booking confirmed
+                    Request received
                   </h3>
                   <p className="text-brand-grey text-sm">
                     <>
-                      Your booking is confirmed. We&apos;ll be in touch with your driver details ahead of your trip. Questions?{' '}
+                      Your booking request has been received. Our team will be in touch shortly with your invoice and
+                      confirmed trip details. Questions?{' '}
                       <a href={`mailto:${CONTACT_EMAIL_BOOKINGS}`} className="text-brand-black underline">
                         {CONTACT_EMAIL_BOOKINGS}
                       </a>
@@ -881,7 +770,7 @@ export default function BookPage() {
                       )}
                       {service !== 'hourly' && (
                         <li className="font-medium text-brand-black mt-2">
-                          Website estimate: {quoteReady ? `$${quoteAmount}` : '—'} (final fare charged after trip)
+                          Website estimate: {quoteReady ? `$${quoteAmount}` : '—'} (invoice will show final price)
                         </li>
                       )}
                     </ul>
@@ -891,7 +780,9 @@ export default function BookPage() {
                       Your contact details
                     </h3>
                     <p className="text-brand-grey text-sm mb-4">
-                      Enter your details, then securely save your card to confirm. <strong className="text-brand-black">You won&apos;t be charged now</strong> — the final fare is charged after your trip. A confirmation email is sent immediately.
+                      Submitting notifies our team at {CONTACT_EMAIL_BOOKINGS}. We&apos;ll email you an acknowledgment,
+                      then send your <strong className="text-brand-black">invoice</strong> with the final ride price
+                      after we confirm details.
                     </p>
                     <div className="space-y-4">
                       <div>
@@ -943,29 +834,6 @@ export default function BookPage() {
                       </p>
                     )}
                   </div>
-
-                  {/* Stripe payment form — shown after "Proceed to Payment" */}
-                  {paymentClientSecret && stripePromise && (
-                    <div className="border border-brand-light bg-brand-offwhite p-6">
-                      <h3 className="font-serif text-lg font-semibold text-brand-black mb-4">
-                        Secure payment
-                      </h3>
-                      <Elements
-                        stripe={stripePromise}
-                        options={{
-                          clientSecret: paymentClientSecret,
-                          appearance: { theme: 'stripe' },
-                        }}
-                      >
-                        <BookingPaymentForm
-                          clientSecret={paymentClientSecret}
-                          bookingId={paymentBookingId}
-                          bookingPayload={bookingPayload ?? {}}
-                          onSuccess={handlePaymentSuccess}
-                        />
-                      </Elements>
-                    </div>
-                  )}
                 </>
               )}
             </div>
@@ -995,14 +863,14 @@ export default function BookPage() {
               >
                 Back to home
               </Link>
-            ) : paymentClientSecret ? null : (
+            ) : (
               <button
                 type="button"
-                onClick={proceedToPayment}
+                onClick={submitBooking}
                 disabled={bookingStatus === 'sending' || !customerName.trim() || !emailOk}
                 className="py-3 px-8 bg-brand-black text-brand-white font-medium hover:bg-brand-charcoal transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {bookingStatus === 'sending' ? 'Preparing…' : 'Continue to secure card entry →'}
+                {bookingStatus === 'sending' ? 'Sending…' : 'Submit booking request'}
               </button>
             )}
           </div>
