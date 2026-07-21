@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Connecticut Black Car Service | NYC Airport Transfers | Eagle Eye',
+  title: 'Connecticut Black Car Service | NYC Airport Transfers',
   description:
     'Connecticut black car service — NYC airport transfers from Greenwich, Stamford, Westport, Fairfield, New Haven, Hartford. Flat rates. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/connecticut` },

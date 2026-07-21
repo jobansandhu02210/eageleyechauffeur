@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Teterboro Airport to New Jersey Car Service | Eagle Eye',
+  title: 'Teterboro Airport to New Jersey Car Service',
   description:
     'Teterboro Airport (TEB) to New Jersey black car service — FBO arrivals to Hoboken, Jersey City, Morristown, Short Hills, Princeton & all NJ. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/teterboro-to-new-jersey-car-service` },

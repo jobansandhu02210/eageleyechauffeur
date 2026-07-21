@@ -5,7 +5,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'JFK Airport Car Service NYC | All Terminals | Eagle Eye',
+  title: 'JFK Airport Car Service NYC | All Terminals',
   description:
     'JFK Airport black car service — meet & greet, real-time flight tracking, all terminals. Flat rates from Manhattan, Brooklyn, Queens, Long Island &.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/jfk-airport` },

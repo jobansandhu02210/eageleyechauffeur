@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'New Rochelle NY Black Car Service | Airport & NYC | Eagle Eye',
+  title: 'New Rochelle NY Black Car Service | Airport & NYC',
   description:
     'New Rochelle black car service — flat-rate airport transfers to LGA, JFK & EWR. Door-to-door from New Rochelle to Manhattan. TLC-licensed chauffeur.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/new-rochelle` },

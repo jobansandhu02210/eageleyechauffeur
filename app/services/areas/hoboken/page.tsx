@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hoboken NJ Black Car Service | NYC Chauffeur | Eagle Eye',
+  title: 'Hoboken NJ Black Car Service | NYC Chauffeur',
   description:
     'Hoboken NJ black car service — flat-rate airport transfers to JFK, EWR & LGA. TLC-licensed chauffeurs, door-to-door pickup, tolls included. Skip the.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hoboken` },

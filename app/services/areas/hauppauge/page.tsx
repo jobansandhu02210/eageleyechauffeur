@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hauppauge Car Service | JFK Transfers Suffolk County | Eagle Eye',
+  title: 'Hauppauge Car Service | JFK Transfers Suffolk County',
   description:
     'Hauppauge black car service — flat-rate JFK, LGA & EWR airport transfers from Suffolk County\'s business hub. Corporate travel for Hauppauge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hauppauge` },

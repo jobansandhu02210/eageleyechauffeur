@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LGA to Westchester Car Service | Airport Transfers | Eagle Eye',
+  title: 'LGA to Westchester Car Service | Airport Transfers',
   description:
     'LaGuardia Airport to Westchester car service — flat rate, flight tracking, TLC licensed. White Plains, Scarsdale, Yonkers, New Rochelle, Rye.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-westchester-car-service` },

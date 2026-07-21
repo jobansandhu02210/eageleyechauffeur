@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Garden City Car Service | JFK Airport Transfers NYC | Eagle Eye',
+  title: 'Garden City Car Service | JFK Airport Transfers NYC',
   description:
     'Garden City black car and chauffeur service — flat-rate JFK, LGA & EWR airport transfers, corporate travel, and events. TLC-licensed driver. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/garden-city` },

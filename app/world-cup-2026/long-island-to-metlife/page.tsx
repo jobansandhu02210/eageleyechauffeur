@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Long Island to MetLife Stadium | World Cup 2026 | Eagle Eye',
+  title: 'Long Island to MetLife Stadium | World Cup 2026',
   description:
     'Long Island to MetLife Stadium car service for World Cup 2026. Nassau and Suffolk County pickups — flat-rate, no surge. Garden City, Great Neck.',
   keywords: [

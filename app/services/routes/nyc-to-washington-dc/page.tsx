@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Washington DC Car Service | Private Chauffeur | Eagle Eye',
+  title: 'NYC to Washington DC Car Service | Private Chauffeur',
   description:
     'NYC to Washington DC car service — flat-rate private chauffeur from Manhattan, Brooklyn, JFK, LGA, or EWR to Washington DC. ~4–5 hours.',
   alternates: {

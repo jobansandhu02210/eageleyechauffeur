@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Nassau County Car Service | JFK LGA EWR Transfers | Eagle Eye',
+  title: 'Nassau County Car Service | JFK LGA EWR Transfers',
   description:
     'Nassau County black car service — JFK & LGA airport transfers from Garden City, Great Neck, Hempstead, Mineola, Manhasset, Rockville Centre. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/nassau-county` },

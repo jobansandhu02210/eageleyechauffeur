@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Harlem Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
+  title: 'Harlem Black Car Service NYC | Luxury Chauffeur',
   description:
     'Black car in Harlem — JFK & LGA airport transfers, Apollo Theater events, Columbia University pickups. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/harlem` },

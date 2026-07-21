@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Bronx Car Service | NYC Airport Transfers | Eagle Eye',
+  title: 'Bronx Car Service | NYC Airport Transfers',
   description:
     'Bronx black car service — airport transfers to JFK, LGA & EWR from all Bronx neighborhoods. Flat-rate, no surge pricing. Professional TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/bronx` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LaGuardia to MetLife Stadium | World Cup 2026 | Eagle Eye',
+  title: 'LaGuardia to MetLife Stadium | World Cup 2026',
   description:
     'LaGuardia Airport (LGA) to MetLife Stadium car service for World Cup 2026. Direct transfer ~35 minutes. Meet & greet at Terminal B & C, flat-rate.',
   keywords: [

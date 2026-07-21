@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Staten Island to JFK Car Service | Airport Transfer | Eagle Eye',
+  title: 'Staten Island to JFK Car Service | Airport Transfer',
   description:
     'Staten Island to JFK Airport black car service — flat rates including Verrazano toll, professional chauffeur, door-to-door. St. George.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/staten-island-to-jfk-black-car-service` },

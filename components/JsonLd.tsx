@@ -49,36 +49,9 @@ export function LocalBusinessJsonLd() {
       height: 120,
     },
     image: [`${site}/og-image.jpg`, `${site}/logo-2026-04-25.png`],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '3',
-      bestRating: '5',
-      worstRating: '1',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'James R.' },
-        reviewBody: 'Exceptional service from JFK to Midtown. Driver was on time, professional, and the car was spotless. Will book again for every business trip.',
-        datePublished: '2026-03-15',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'Sarah M.' },
-        reviewBody: 'Used Eagle Eye for my wedding day transportation. Flawless experience — driver arrived early, was incredibly professional, and made the whole day stress-free.',
-        datePublished: '2026-04-02',
-      },
-      {
-        '@type': 'Review',
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        author: { '@type': 'Person', name: 'David K.' },
-        reviewBody: 'My go-to car service for Newark airport runs. Always reliable, flat rate pricing with no surprises, and the driver tracked my delayed flight without me even calling.',
-        datePublished: '2026-02-28',
-      },
-    ],
+    // NOTE: aggregateRating / review markup intentionally omitted. Google
+    // prohibits self-serving review snippets on your own LocalBusiness. Re-add
+    // only with genuine third-party reviews (e.g. synced Google Business reviews).
     areaServed: [
       { '@type': 'City', name: 'New York City', sameAs: 'https://www.wikidata.org/wiki/Q60' },
       { '@type': 'Neighborhood', name: 'Manhattan', sameAs: 'https://www.wikidata.org/wiki/Q11299' },

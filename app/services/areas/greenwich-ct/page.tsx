@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Greenwich CT Car Service | NYC & Airport Transfers | Eagle Eye',
+  title: 'Greenwich CT Car Service | NYC & Airport Transfers',
   description:
     'Greenwich CT black car service — flat-rate transfers to JFK, LGA, EWR & HPN. Greenwich to NYC Midtown, door-to-door. TLC-licensed chauffeur for hedge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/greenwich-ct` },

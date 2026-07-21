@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'LGA Car Service | LaGuardia Airport Transfers NYC | Eagle Eye',
+  title: 'LGA Car Service | LaGuardia Airport Transfers NYC',
   description:
     'LGA car service — flat-rate LaGuardia airport pickup, meet & greet at Terminal B & C. Real-time flight tracking. No surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/lga` },

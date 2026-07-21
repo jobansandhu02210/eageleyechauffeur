@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Newark Car Service EWR | NJ Airport Transfers NYC | Eagle Eye',
+  title: 'Newark Car Service EWR | NJ Airport Transfers NYC',
   description:
     'Newark car service EWR — all NJ tolls included, meet & greet Terminals A, B & C. NJ to JFK transfers available. No surge pricing. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/ewr` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Levittown Car Service | JFK Transfers Nassau | Eagle Eye',
+  title: 'Levittown Car Service | JFK Transfers Nassau',
   description:
     'Levittown black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County. TLC-licensed chauffeur. No surge pricing. Book Eagle Eye.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/levittown` },

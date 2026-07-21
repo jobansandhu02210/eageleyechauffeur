@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Midtown Manhattan Black Car Service | Eagle Eye',
+  title: 'Midtown Manhattan Black Car Service',
   description:
     'Corporate black car Midtown Manhattan — flat-rate airport transfers, hourly roadshows, Penn Station pickups, Times Square events. TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/midtown-manhattan` },

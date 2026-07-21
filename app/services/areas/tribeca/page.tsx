@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Tribeca Black Car Service NYC | Luxury Chauffeur | Eagle Eye',
+  title: 'Tribeca Black Car Service NYC | Luxury Chauffeur',
   description:
     'Black car in Tribeca — residential pickups, private events, JFK & LGA transfers, discreet VIP transport. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/tribeca` },

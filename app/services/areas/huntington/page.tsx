@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Huntington Car Service | JFK Transfers Suffolk County | Eagle Eye',
+  title: 'Huntington Car Service | JFK Transfers Suffolk County',
   description:
     'Huntington NY black car service — flat-rate JFK, LGA & EWR airport transfers from Suffolk County\'s North Shore. Huntington Village, Cold Spring.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/huntington` },

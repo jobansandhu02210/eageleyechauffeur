@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Newark to MetLife Stadium | World Cup 2026 Car | Eagle Eye',
+  title: 'Newark to MetLife Stadium | World Cup 2026 Car',
   description:
     'Newark Airport (EWR) to MetLife Stadium car service for World Cup 2026. Closest airport to MetLife — just 15 minutes. Flat-rate, meet & greet, no.',
   keywords: [

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Westchester to Teterboro Airport Car Service | TEB | Eagle Eye',
+  title: 'Westchester to Teterboro Airport Car Service | TEB',
   description:
     'Westchester to Teterboro Airport (TEB) car service — White Plains, Scarsdale, Yonkers, New Rochelle & all Westchester. Flat-rate private jet.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/westchester-to-teterboro-car-service` },

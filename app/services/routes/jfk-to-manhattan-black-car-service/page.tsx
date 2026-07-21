@@ -4,7 +4,7 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'JFK to Manhattan Car Service | Eagle Eye',
+  title: 'JFK to Manhattan Car Service',
   description:
     'JFK to Manhattan black car service — flat rates, real-time flight tracking, meet & greet at arrivals. Professional chauffeurs, no surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-manhattan-black-car-service` },

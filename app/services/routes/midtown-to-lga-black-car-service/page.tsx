@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Midtown Manhattan to LGA Car Service | Eagle Eye',
+  title: 'Midtown Manhattan to LGA Car Service',
   description:
     'Midtown Manhattan to LaGuardia Airport black car service — flat rate, 20–30 min, door-to-door pickup from Times Square, Grand Central & all.',
   alternates: {

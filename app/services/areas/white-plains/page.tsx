@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'White Plains NY Black Car Service | Airport & NYC | Eagle Eye',
+  title: 'White Plains NY Black Car Service | Airport & NYC',
   description:
     'White Plains black car service — flat-rate airport transfers to HPN, JFK & LGA. Door-to-door from White Plains to NYC Midtown. TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/white-plains` },

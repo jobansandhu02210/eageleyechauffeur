@@ -93,6 +93,14 @@ model Booking {
 
   promoCode       String?
 
+  stripeCustomerId      String?
+  stripePaymentMethodId String?
+  stripeSetupIntentId   String?
+  stripePaymentIntentId String?
+  paymentStatus         String?  @default("pending")
+  chargedAmount         Float?
+  paidAt                DateTime?
+
   driver   Driver? @relation(fields: [driverId], references: [id], onDelete: SetNull)
   driverId String?
 
@@ -101,4 +109,6 @@ model Booking {
   @@index([createdAt])
   @@index([promoCode])
   @@index([driverId])
+  @@index([stripePaymentIntentId])
+  @@index([stripeCustomerId])
 }

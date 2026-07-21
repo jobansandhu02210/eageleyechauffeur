@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Summit NJ Black Car Service | NYC & Airport Transfers | Eagle Eye',
+  title: 'Summit NJ Black Car Service | NYC & Airport Transfers',
   description:
     'Summit NJ black car service — airport transfers to EWR & JFK, door-to-door Manhattan rides. Union County luxury chauffeur, flat rates, TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/summit-nj` },

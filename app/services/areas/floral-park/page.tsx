@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Floral Park Car Service | JFK Transfers Nassau | Eagle Eye',
+  title: 'Floral Park Car Service | JFK Transfers Nassau',
   description:
     'Floral Park black car service — flat-rate JFK, LGA & EWR airport transfers from western Nassau County. Stewart Manor & New Hyde Park also covered. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/floral-park` },

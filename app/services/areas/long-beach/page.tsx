@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Long Beach Car Service | JFK Transfers Nassau | Eagle Eye',
+  title: 'Long Beach Car Service | JFK Transfers Nassau',
   description:
     'Long Beach NY black car service — flat-rate JFK, LGA & EWR airport transfers from the barrier island city. TLC-licensed chauffeur. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/long-beach` },
