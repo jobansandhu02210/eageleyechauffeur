@@ -10,7 +10,7 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK Car Service NYC | Black Car & Chauffeur Transfers | Eagle Eye',
+  title: 'JFK Car Service NYC | Black Car Airport Transfers',
   description:
     'JFK car service NYC — flat-rate black car, JFK to Manhattan transfers, meet & greet all terminals. Real-time flight tracking. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/jfk` },

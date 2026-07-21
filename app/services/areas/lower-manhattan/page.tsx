@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Lower Manhattan Black Car Service NYC | Eagle Eye',
+  title: 'Lower Manhattan Black Car Service NYC',
   description:
     'Downtown NYC black car — City Hall, finance accounts, JFK & EWR transfers, Lower Manhattan coverage. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/lower-manhattan` },

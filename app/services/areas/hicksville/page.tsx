@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hicksville Car Service | JFK Transfers Nassau County | Eagle Eye',
+  title: 'Hicksville Car Service | JFK Transfers Nassau County',
   description:
     'Hicksville black car service — flat-rate JFK, LGA & EWR airport transfers from central Nassau County. TLC-licensed chauffeur. No surge pricing. Book.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hicksville` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Port Washington Car Service | JFK & LGA Transfers | Eagle Eye',
+  title: 'Port Washington Car Service | JFK & LGA Transfers',
   description:
     'Port Washington black car service — flat-rate JFK & LGA airport transfers from Nassau County\'s North Shore waterfront. TLC-licensed chauffeur. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/port-washington` },

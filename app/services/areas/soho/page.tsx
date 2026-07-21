@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'SoHo NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
+  title: 'SoHo NYC Black Car Service | Luxury Chauffeur',
   description:
     'Black car in SoHo and NoLIta — hotel pickups, shopping, JFK & LGA airport transfers, evening events. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/soho` },

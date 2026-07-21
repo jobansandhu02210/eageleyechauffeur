@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Wall Street to JFK Car Service | FiDi Car | Eagle Eye',
+  title: 'Wall Street to JFK Car Service | FiDi Car',
   description:
     'Wall Street to JFK black car service — flat rate, door-to-door pickup from Financial District, FiDi & lower Manhattan. Professional chauffeurs.',
   alternates: {

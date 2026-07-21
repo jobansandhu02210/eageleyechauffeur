@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Westchester Car Service | Airport Transfers | Eagle Eye',
+  title: 'NYC to Westchester Car Service | Airport Transfers',
   description:
     'NYC to Westchester car service — flat-rate black car, professional chauffeur, door-to-door from Manhattan, Brooklyn, Queens or the Bronx. White.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/nyc-to-westchester-car-service` },

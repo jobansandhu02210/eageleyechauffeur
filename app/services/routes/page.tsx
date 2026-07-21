@@ -4,7 +4,7 @@ import { getSiteUrl } from '@/lib/site';
 import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'NYC Black Car Routes | Airport & City Transfers | Eagle Eye',
+  title: 'NYC Black Car Routes | Airport & City Transfers',
   description:
     'All Eagle Eye Chauffeur routes — JFK, LGA, EWR airport transfers, borough-to-borough rides, Westchester, Hamptons, Long Island. Flat rates, TLC.',
   alternates: { canonical: `${getSiteUrl()}/services/routes` },

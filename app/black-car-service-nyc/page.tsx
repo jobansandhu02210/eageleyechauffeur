@@ -9,7 +9,7 @@ import {
 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Black Car Service NYC | Luxury Chauffeur & Transfers | Eagle Eye',
+  title: 'Black Car Service NYC | Luxury Chauffeur & Transfers',
   description:
     'NYC black car service — flat-rate luxury sedans and SUVs for airport transfers, corporate travel, and point-to-point rides. Professional.',
   alternates: { canonical: `${getSiteUrl()}/black-car-service-nyc` },

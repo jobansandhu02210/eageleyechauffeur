@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Chelsea NYC Black Car Service | Luxury Chauffeur | Eagle Eye',
+  title: 'Chelsea NYC Black Car Service | Luxury Chauffeur',
   description:
     'Chelsea black car NYC — High Line & Javits Center pickups, JFK & LGA transfers, Meatpacking event nights. Flat rates, no surge, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/chelsea` },

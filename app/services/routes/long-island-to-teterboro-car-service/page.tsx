@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Long Island to Teterboro Airport Car Service | TEB | Eagle Eye',
+  title: 'Long Island to Teterboro Airport Car Service | TEB',
   description:
     'Long Island to Teterboro Airport (TEB) car service — Garden City, Great Neck, Huntington, Hamptons & all LI communities. Flat-rate private jet.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/long-island-to-teterboro-car-service` },

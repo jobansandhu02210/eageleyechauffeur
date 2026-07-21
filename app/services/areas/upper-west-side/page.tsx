@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Upper West Side Black Car Service NYC | Eagle Eye',
+  title: 'Upper West Side Black Car Service NYC',
   description:
     'Black car on the Upper West Side — Lincoln Center pickups, JFK/LGA airport transfers, Columbia University area. Flat rates, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upper-west-side` },

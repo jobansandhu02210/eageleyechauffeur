@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Upper East Side Black Car Service NYC | Eagle Eye',
+  title: 'Upper East Side Black Car Service NYC',
   description:
     'Black car on the Upper East Side — residential building pickups, JFK/LGA transfers, Museum Mile events, hourly hire. Flat rates, TLC-licensed. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upper-east-side` },

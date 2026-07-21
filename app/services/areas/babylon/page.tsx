@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Babylon Car Service | JFK Transfers Suffolk County | Eagle Eye',
+  title: 'Babylon Car Service | JFK Transfers Suffolk County',
   description:
     'Babylon NY black car service — flat-rate JFK, LGA & EWR airport transfers from the South Shore. West Babylon & North Babylon also served. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/babylon` },

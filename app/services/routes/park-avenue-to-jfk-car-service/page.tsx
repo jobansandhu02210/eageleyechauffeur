@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Park Avenue to JFK Car Service | Midtown East Car | Eagle Eye',
+  title: 'Park Avenue to JFK Car Service | Midtown East Car',
   description:
     'Park Avenue to JFK black car service — flat rate from Midtown East, Grand Central area & Park Ave corridor. Door-to-door executive chauffeur. Eagle.',
   alternates: {

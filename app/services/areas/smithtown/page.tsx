@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Smithtown Car Service | JFK Transfers Suffolk County | Eagle Eye',
+  title: 'Smithtown Car Service | JFK Transfers Suffolk County',
   description:
     'Smithtown black car service — flat-rate JFK, LGA & EWR airport transfers from central Suffolk County. Kings Park & St. James also covered. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/smithtown` },

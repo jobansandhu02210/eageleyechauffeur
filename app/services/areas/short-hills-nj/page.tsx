@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Short Hills NJ Car Service | NYC & Airport Transfers | Eagle Eye',
+  title: 'Short Hills NJ Car Service | NYC & Airport Transfers',
   description:
     'Short Hills NJ black car service — EWR airport transfers (very close), JFK & NYC rides. Millburn luxury car service, flat rates, TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/short-hills-nj` },

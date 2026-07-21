@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Connecticut to Teterboro Airport Car Service | TEB | Eagle Eye',
+  title: 'Connecticut to Teterboro Airport Car Service | TEB',
   description:
     'Connecticut to Teterboro Airport (TEB) car service — Greenwich, Stamford, Westport, Norwalk, Darien & all CT. Flat-rate private jet transfers to.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/connecticut-to-teterboro-car-service` },

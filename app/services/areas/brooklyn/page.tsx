@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Brooklyn Black Car Service | JFK LGA EWR Transfers | Eagle Eye',
+  title: 'Brooklyn Black Car Service | JFK LGA EWR Transfers',
   description:
     'Brooklyn black car service — professional chauffeurs, flat-rate airport transfers to JFK, LGA & EWR from every Brooklyn neighborhood. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/brooklyn` },

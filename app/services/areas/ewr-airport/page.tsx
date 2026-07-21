@@ -5,7 +5,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Newark Airport Car Service NYC | EWR Tolls Included | Eagle Eye',
+  title: 'Newark Airport Car Service NYC | EWR Tolls Included',
   description:
     'Newark Airport (EWR) black car service — meet & greet, all tolls included, real-time flight tracking. Flat rates from Manhattan, Brooklyn, New.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/ewr-airport` },

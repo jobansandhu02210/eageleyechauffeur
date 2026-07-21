@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Battery Park City Black Car Service NYC | Eagle Eye',
+  title: 'Battery Park City Black Car Service NYC',
   description:
     'Black car in Battery Park City — Brookfield Place pickups, JFK & EWR transfers, World Trade Center area. Flat rates, no surge. Book Eagle Eye 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/battery-park-city` },

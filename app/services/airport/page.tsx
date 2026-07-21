@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC Airport Car Service | JFK LGA EWR HPN | Eagle Eye',
+  title: 'NYC Airport Car Service | JFK LGA EWR HPN',
   description:
     'NYC airport car service — flat-rate black car to JFK, LaGuardia, Newark & Westchester. Meet & greet, real-time flight tracking, no surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/airport` },

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
       'NYC Luxury Fleet | Black Cars, SUVs & Sprinter Vans | Eagle Eye',
     description:
       "Eagle Eye Chauffeur's luxury fleet — Business Class Cadillac & Mercedes Sedans, Chevrolet Suburban & GMC Yukon XL, First Class Cadillac Escalade & Lincoln Navigator, Mercedes-Benz S-Class & BMW 7 Series. Professional chauffeurs. Book NYC's finest black car service.",
+    images: [{ url: `${getSiteUrl()}/og-image.jpg`, width: 1200, height: 630, alt: 'Eagle Eye Chauffeur NYC luxury fleet — black cars, SUVs & Sprinter vans' }],
   },
 };
 

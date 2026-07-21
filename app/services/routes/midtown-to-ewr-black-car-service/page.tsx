@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Midtown Manhattan to Newark Airport Car Service | EWR | Eagle Eye',
+  title: 'Midtown Manhattan to Newark Airport Car Service | EWR',
   description:
     'Midtown Manhattan to Newark Airport (EWR) black car service — flat rate, tolls included, door-to-door from all Midtown locations. Professional.',
   alternates: {

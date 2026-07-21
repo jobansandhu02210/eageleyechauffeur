@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Queens & Bronx to Teterboro Airport Car Service | Eagle Eye',
+  title: 'Queens & Bronx to Teterboro Airport Car Service',
   description:
     'Queens and Bronx to Teterboro Airport (TEB) black car service — flat rate, FBO meet & greet, door-to-door private jet transfers. Eagle Eye Chauffeur 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/queens-bronx-to-teterboro-car-service` },

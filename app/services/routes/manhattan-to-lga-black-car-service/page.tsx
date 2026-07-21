@@ -4,7 +4,7 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Manhattan to LaGuardia Car Service | LGA Transfers | Eagle Eye',
+  title: 'Manhattan to LaGuardia Car Service | LGA Transfers',
   description:
     'Manhattan to LaGuardia (LGA) car service — flat rates, door-to-door pickup from any Manhattan address. NYC\'s closest major airport. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-lga-black-car-service` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Newark NJ Black Car Service | Airport Transfers EWR | Eagle Eye',
+  title: 'Newark NJ Black Car Service | Airport Transfers EWR',
   description:
     'Newark NJ black car service — EWR airport transfers, JFK & LGA rides, corporate travel, Prudential Center events. TLC-licensed chauffeurs, flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/newark-nj` },

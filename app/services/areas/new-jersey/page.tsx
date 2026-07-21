@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'New Jersey Black Car Service | NYC Airport Transfers | Eagle Eye',
+  title: 'New Jersey Black Car Service | NYC Airport Transfers',
   description:
     'New Jersey black car service — airport transfers to JFK, LGA & EWR from Hoboken, Jersey City, Princeton, Morristown, Short Hills and all NJ. Flat.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/new-jersey` },

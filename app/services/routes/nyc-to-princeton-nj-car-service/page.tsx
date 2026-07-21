@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'NYC to Princeton NJ Car Service | Eagle Eye',
+  title: 'NYC to Princeton NJ Car Service',
   description:
     'New York City to Princeton NJ black car service — flat rate from Manhattan, JFK, EWR & all NYC. Corporate & university transfers to Princeton.',
   alternates: {

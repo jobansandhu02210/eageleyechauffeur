@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Princeton NJ Car Service | NYC & Airport Transfers | Eagle Eye',
+  title: 'Princeton NJ Car Service | NYC & Airport Transfers',
   description:
     'Princeton NJ black car service — airport transfers to EWR & JFK, NYC rides, Princeton University & Route 1 corporate campuses. TLC-licensed.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/princeton-nj` },

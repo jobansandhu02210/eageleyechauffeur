@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Hempstead Car Service | JFK Transfers Nassau | Eagle Eye',
+  title: 'Hempstead Car Service | JFK Transfers Nassau',
   description:
     'Hempstead black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s largest township. TLC-licensed chauffeur. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/hempstead` },

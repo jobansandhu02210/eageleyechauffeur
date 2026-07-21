@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Bronx to Manhattan Car Service | Eagle Eye',
+  title: 'Bronx to Manhattan Car Service',
   description:
     'Professional black car from any Bronx neighborhood to Manhattan. Riverdale, Fordham, Grand Concourse, Pelham Bay. Flat rates, no surge pricing, TLC.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/bronx-to-manhattan-black-car-service` },

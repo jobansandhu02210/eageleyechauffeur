@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Manhasset Car Service | JFK LGA Transfers Nassau | Eagle Eye',
+  title: 'Manhasset Car Service | JFK LGA Transfers Nassau',
   description:
     'Manhasset black car and chauffeur service — flat-rate JFK & LGA airport transfers from Nassau County\'s Gold Coast. Miracle Mile area. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/manhasset` },

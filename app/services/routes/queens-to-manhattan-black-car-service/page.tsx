@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Queens to Manhattan Car Service | Eagle Eye',
+  title: 'Queens to Manhattan Car Service',
   description:
     'Queens to Manhattan black car service — flat rates, no surge pricing, TLC licensed chauffeurs. Astoria, Flushing, Jamaica, Forest Hills, Long.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/queens-to-manhattan-black-car-service` },

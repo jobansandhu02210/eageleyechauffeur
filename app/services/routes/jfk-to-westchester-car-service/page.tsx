@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'JFK to Westchester Car Service | Airport Transfer | Eagle Eye',
+  title: 'JFK to Westchester Car Service | Airport Transfer',
   description:
     'JFK Airport to Westchester car service — flat rates, real-time flight tracking, 60-min free wait, meet & greet at arrivals. White Plains.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/jfk-to-westchester-car-service` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Freeport Car Service | JFK Transfers Nassau | Eagle Eye',
+  title: 'Freeport Car Service | JFK Transfers Nassau',
   description:
     'Freeport black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s South Shore Nautical Mile. TLC-licensed chauffeur. No.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/freeport` },

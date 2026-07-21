@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Rockville Centre Car Service | JFK & LGA Transfers | Eagle Eye',
+  title: 'Rockville Centre Car Service | JFK & LGA Transfers',
   description:
     'Rockville Centre black car service — flat-rate JFK, LGA & EWR airport transfers from Nassau County\'s South Shore. TLC-licensed chauffeur. No surge.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/rockville-centre` },

@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Manhattan to Connecticut Car Service | Eagle Eye',
+  title: 'Manhattan to Connecticut Car Service',
   description:
     'Manhattan to Connecticut car service — flat-rate black car to Greenwich, Stamford, Westport, Fairfield & all CT. All tolls included. Professional.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-connecticut-car-service` },

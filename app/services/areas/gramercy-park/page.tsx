@@ -5,7 +5,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, CONTACT_EMAIL_BOOKINGS } from '@/lib/contact';
 
 export const metadata: Metadata = {
-  title: 'Gramercy Park Black Car Service NYC | Eagle Eye',
+  title: 'Gramercy Park Black Car Service NYC',
   description:
     'Black car in Gramercy Park and Murray Hill — residential pickups, JFK & LGA transfers, corporate travel, hourly hire. Flat rates, no surge. Book 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/gramercy-park` },
