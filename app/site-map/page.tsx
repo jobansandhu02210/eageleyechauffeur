@@ -135,7 +135,7 @@ export default function SitemapPage() {
             { label: 'Contact', href: '/contact' },
             { label: 'Blog', href: '/blog' },
             { label: 'Referral Program', href: '/referrals' },
-            { label: 'World Cup 2026 Transportation', href: '/world-cup-2026' },
+            { label: 'MetLife Stadium Transportation', href: '/world-cup-2026' },
           ]} />
 
           <Section title="Services" links={services} />

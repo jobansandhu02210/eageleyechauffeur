@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     'refer a friend car service',
     'Eagle Eye referral program',
     'NYC chauffeur referral',
-    'World Cup 2026 group transport',
+    'group transport referral NYC',
     'referral discount car service NYC',
   ],
   alternates: { canonical: `${getSiteUrl()}/referrals` },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: `${getSiteUrl()}/referrals`,
     title: 'Refer a Friend — Earn $50 | Eagle Eye Chauffeur NYC',
     description:
-      'Refer a friend to Eagle Eye Chauffeur and earn $50 credit when they book. Share with World Cup groups, corporate teams, and travelers.',
+      'Refer a friend to Eagle Eye Chauffeur and earn $50 credit when they book. Share with corporate teams, event groups, and travelers.',
   },
 };
 
@@ -33,7 +33,7 @@ const steps = [
   },
   {
     title: '2. They Book a Ride',
-    body: 'When someone uses your code to book their first ride with Eagle Eye — airport transfer, World Cup match day, or any trip — they get 10% off and you earn credit.',
+    body: 'When someone uses your code to book their first ride with Eagle Eye — airport transfer, night out, or any trip — they get 10% off and you earn credit.',
   },
   {
     title: '3. You Earn $50',
@@ -41,7 +41,7 @@ const steps = [
   },
   {
     title: '4. Group Travel Bonus',
-    body: 'Refer 5+ people who book World Cup match-day transportation and earn a $300 bonus on top of your $50 per referral. Perfect for fan groups!',
+    body: 'Refer 5+ people who book a ride and earn a $300 bonus on top of your $50 per referral. Perfect for corporate teams and event groups!',
   },
 ];
 
@@ -59,8 +59,8 @@ const faqs = [
     a: 'Yes — they get 10% off their first booking when they use your referral code.',
   },
   {
-    q: 'Can I use my credit for World Cup bookings?',
-    a: 'Absolutely. Credit can be applied to any Eagle Eye Chauffeur service, including World Cup match-day transportation.',
+    q: 'Can I use my credit for any type of booking?',
+    a: 'Absolutely. Credit can be applied to any Eagle Eye Chauffeur service — airport transfers, corporate travel, event transportation, and more.',
   },
   {
     q: 'How do I share my code?',
@@ -83,7 +83,7 @@ export default function ReferralsPage() {
               <span className="text-brand-white">Earn $50</span>
             </h1>
             <p className="mt-4 text-lg text-brand-silver max-w-xl">
-              Share Eagle Eye Chauffeur with your network. When they book their first ride, we add $50 to your account. Perfect for World Cup groups, corporate travel, and airport runs.
+              Share Eagle Eye Chauffeur with your network. When they book their first ride, we add $50 to your account. Perfect for corporate travel, event groups, and airport runs.
             </p>
             <div className="mt-8 inline-flex items-center gap-4 px-6 py-4 bg-brand-dark border border-brand-dark">
               <span className="text-brand-silver text-sm">Your Referral Code:</span>
@@ -112,14 +112,14 @@ export default function ReferralsPage() {
         </div>
       </section>
 
-      {/* World Cup Bonus */}
+      {/* Group Bonus */}
       <section className="py-16 lg:py-24 bg-brand-charcoal">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="font-serif text-3xl font-semibold text-brand-white mb-4">
-            🏆 World Cup Group Bonus
+            Group Referral Bonus
           </h2>
           <p className="text-brand-silver text-lg mb-8 max-w-2xl mx-auto">
-            Refer 5+ people who book World Cup match-day transportation and earn a <strong className="text-brand-white">$300 bonus</strong> on top of your $50 per referral. Share with your football crew!
+            Refer 5+ people who book a ride and earn a <strong className="text-brand-white">$300 bonus</strong> on top of your $50 per referral. Perfect for corporate teams and event groups.
           </p>
           <div className="grid grid-cols-2 gap-8 max-w-md mx-auto mb-8">
             <div className="bg-brand-dark p-6">
@@ -164,7 +164,7 @@ export default function ReferralsPage() {
             Start Referring Today
           </h2>
           <p className="text-brand-silver mb-8">
-            Your code is <strong className="text-brand-white">EAGLE50</strong>. Share it, earn $50 per booking, and help your crew travel in style for the World Cup.
+            Your code is <strong className="text-brand-white">EAGLE50</strong>. Share it, earn $50 per booking, and help your crew travel in style.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CopyCodeLarge code="EAGLE50" />

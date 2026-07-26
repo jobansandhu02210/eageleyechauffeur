@@ -6,76 +6,71 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'World Cup 2026 MetLife Car Service | NYC & NJ | Eagle Eye',
+    absolute: 'MetLife Stadium Car Service | NYC & NJ Transport | Eagle Eye',
   },
   description:
-    'World Cup 2026 MetLife Stadium car service — flat-rate from Manhattan, JFK, LGA & EWR. Full match schedule, Final packages & July 19 book-ahead.',
+    'MetLife Stadium car service — flat-rate chauffeur from Manhattan, JFK, LGA & EWR for Giants & Jets games, concerts and events. No surge, door-to-door, post-event pickup.',
   keywords: [
-    'World Cup 2026 MetLife car service',
-    'MetLife Stadium transportation World Cup',
-    'World Cup 2026 car service NYC',
-    'MetLife Stadium chauffeur 2026',
-    'FIFA World Cup 2026 New Jersey car service',
-    'World Cup Final MetLife car service',
+    'MetLife Stadium car service',
+    'MetLife Stadium transportation',
+    'MetLife Stadium chauffeur',
+    'car service to MetLife Stadium',
     'MetLife Stadium black car service',
-    'how to get to MetLife Stadium World Cup',
+    'Giants game car service MetLife',
+    'MetLife Stadium concert transportation',
+    'how to get to MetLife Stadium',
   ],
   alternates: { canonical: `${getSiteUrl()}/world-cup-2026` },
   openGraph: {
     url: `${getSiteUrl()}/world-cup-2026`,
-    title: 'World Cup 2026 MetLife Stadium Car Service | Eagle Eye',
+    title: 'MetLife Stadium Car Service | Eagle Eye Chauffeur',
     description:
-      'Flat-rate chauffeur service for every World Cup match at MetLife Stadium. Manhattan, JFK, EWR, LGA & Long Island pickups. Book before spots fill — the Final is July 19.',
-    images: [{ url: `${getSiteUrl()}/og-image.jpg`, width: 1200, height: 630, alt: 'World Cup 2026 MetLife Stadium Car Service' }],
+      'Flat-rate chauffeur service to MetLife Stadium for games, concerts and events. Manhattan, JFK, EWR, LGA & Long Island pickups. No surge, pre-arranged post-event pickup.',
+    images: [{ url: `${getSiteUrl()}/og-image.jpg`, width: 1200, height: 630, alt: 'MetLife Stadium Car Service' }],
   },
 };
 
-const matchSchedule = [
-  { date: 'Jun 12', day: 'Thu', round: 'Group Stage', note: 'Opening weekend' },
-  { date: 'Jun 15', day: 'Sun', round: 'Group Stage', note: '' },
-  { date: 'Jun 18', day: 'Wed', round: 'Group Stage', note: '' },
-  { date: 'Jun 22', day: 'Sun', round: 'Group Stage', note: '' },
-  { date: 'Jun 26', day: 'Thu', round: 'Group Stage', note: 'Final group stage' },
-  { date: 'Jun 29', day: 'Sun', round: 'Group Stage', note: 'Final group stage' },
-  { date: 'Jul 2',  day: 'Thu', round: 'Round of 16', note: 'Knockout begins' },
-  { date: 'Jul 6',  day: 'Mon', round: 'Quarterfinal', note: '' },
-  { date: 'Jul 19', day: 'Sun', round: '🏆 THE FINAL', note: 'Biggest match on earth', highlight: true },
+const eventTypes = [
+  { title: 'NFL Games', note: 'Giants & Jets home games', desc: 'Every home Sunday, Monday, and Thursday night. Skip the lot traffic — we drop you at the gate.' },
+  { title: 'Concerts & Tours', note: 'Stadium shows & festivals', desc: 'Major stadium tours and summer concert series. Door-to-door from any NYC hotel or address.' },
+  { title: 'Big Matches & Events', note: 'Soccer, motorsport & more', desc: 'International friendlies, championship matches, and marquee one-off events at the Meadowlands.' },
+  { title: 'Group & Corporate', note: 'SUVs & Sprinter vans', desc: 'Suites, hospitality, and team outings. Keep your group together in one vehicle, one flat rate.' },
 ];
 
 const transitComparison = [
   {
     option: 'NJ Transit Train',
-    cost: '~$105 round-trip',
+    cost: '~$11–15 round-trip',
     time: '35 min from Penn St.',
-    pain: 'Sold-out fast, massive crowds, 90-min wait after final whistle, no door-to-door',
+    pain: 'Event trains only, packed on big nights, long post-event platform waits, no door-to-door',
     rating: '⭐⭐',
   },
   {
     option: 'Direct Bus (NYC–MetLife)',
-    cost: '~$40–60 round-trip',
+    cost: '~$15–30 round-trip',
     time: '45–75 min',
-    pain: 'No set schedule, crowds, standing room only on return, drops at stadium perimeter',
+    pain: 'Crowds, standing room only on the return, drops at the stadium perimeter',
     rating: '⭐⭐',
   },
   {
     option: 'Uber / Lyft',
-    cost: '$150–350+ surge',
+    cost: '$90–250+ surge',
     time: '25–60 min',
-    pain: 'Surge pricing 3–5× on match days, unpredictable wait, no guaranteed pickup after match',
+    pain: 'Surge pricing on event nights, unpredictable wait, no guaranteed pickup after the show',
     rating: '⭐',
   },
   {
     option: 'Drive & Park',
-    cost: '$50–80 parking',
+    cost: '$40–80 parking',
     time: '45–90 min to exit',
-    pain: 'Post-match gridlock takes 60–90 minutes to escape. Not worth it for any match.',
+    pain: 'Post-event gridlock takes 60–90 minutes to clear the lots. Rarely worth it.',
     rating: '⭐',
   },
   {
     option: 'Eagle Eye Chauffeur',
     cost: 'Flat rate — locked at booking',
     time: '20–50 min by origin',
-    pain: '✓ No surge. ✓ Door-to-door. ✓ Pre-arranged post-match pickup. ✓ Skip the queues.',
+    pain: '✓ No surge. ✓ Door-to-door. ✓ Pre-arranged post-event pickup. ✓ Skip the queues.',
     rating: '⭐⭐⭐⭐⭐',
   },
 ];
@@ -92,46 +87,46 @@ const routePages = [
 const faqs = [
   {
     q: 'How far is MetLife Stadium from Manhattan?',
-    a: 'MetLife Stadium is approximately 8 miles from Midtown Manhattan in East Rutherford, New Jersey. The drive takes 20–35 minutes without traffic, though match days add time — plan an extra 30–45 minutes for arrival buffer.',
+    a: 'MetLife Stadium is approximately 8 miles from Midtown Manhattan in East Rutherford, New Jersey. The drive takes 20–35 minutes without traffic, though event days add time — plan an extra 30–45 minutes of arrival buffer for a sold-out game or concert.',
   },
   {
-    q: 'How much does car service from Manhattan to MetLife cost for the World Cup?',
+    q: 'How much does car service from Manhattan to MetLife cost?',
     a: 'Eagle Eye Chauffeur uses flat-rate pricing confirmed at booking — no surge, no surprises. Rates depend on your exact pickup location, vehicle class, and timing. Get an instant quote on our booking page.',
   },
   {
-    q: 'Is the NJ Transit train to MetLife available for World Cup matches?',
-    a: 'Yes, NJ Transit runs event trains from Penn Station to Meadowlands Station. However, demand is extreme for World Cup matches — trains sell out fast, cost approximately $105 round-trip for event pricing, and post-match wait times of 60–90 minutes are common. Pre-booked car service avoids all of this.',
+    q: 'Can you drop me right at the stadium gate?',
+    a: 'Yes. Your chauffeur takes you door-to-door to the MetLife Stadium drop-off nearest your gate, so you skip the long walk from the outer lots or the train station.',
   },
   {
-    q: 'Will Uber surge price on World Cup match days?',
-    a: 'Yes. During major World Cup matches at MetLife, rideshare apps like Uber and Lyft apply surge pricing of 3–5× normal rates. A typical $60 ride can cost $180–$300+ after a match. Eagle Eye Chauffeur locks your price at booking with no surge ever.',
+    q: 'Will car service to MetLife surge price on event nights?',
+    a: 'No. Rideshare apps like Uber and Lyft apply surge pricing on big game and concert nights — a typical ride can double or triple. Eagle Eye Chauffeur locks your price at booking, so what you quote is what you pay, no matter the demand.',
   },
   {
-    q: 'Can you pick me up after the match at MetLife?',
-    a: 'Yes. We coordinate a pre-arranged post-match pickup point near the stadium. Your chauffeur stays in contact via WhatsApp throughout the match and is ready when you exit — no waiting in rideshare queues.',
+    q: 'Can you pick me up after the game or concert at MetLife?',
+    a: 'Yes. We coordinate a pre-arranged post-event pickup point near the stadium. Your chauffeur stays in contact via WhatsApp and is ready when you exit — no waiting in rideshare queues or NJ Transit lines.',
   },
   {
-    q: 'Do you have service for the World Cup Final on July 19?',
-    a: 'Yes — and we strongly recommend booking the Final as early as possible. The World Cup Final at MetLife on July 19, 2026 is the highest-demand transportation event of the year. We have a dedicated Final page with booking details.',
+    q: 'Do you handle NFL games, concerts, and other events?',
+    a: 'Yes. We serve every event at MetLife Stadium — Giants and Jets home games, stadium concert tours, international soccer matches, and one-off marquee events. Same flat-rate, door-to-door service for all of them.',
   },
   {
-    q: 'Can you handle airport transfers AND match-day rides?',
-    a: 'Yes. Many World Cup visitors combine: airport arrival → hotel → match day → return airport. We handle the full itinerary. Multi-leg bookings with the same driver can be arranged — contact us to plan your stay.',
+    q: 'Can you handle groups and corporate outings?',
+    a: 'Yes. Our Business Class SUVs seat 5–6 and First Class SUVs seat 6–7; Sprinter vans handle larger groups. Ideal for suite holders, hospitality guests, and team outings. Contact us to plan multi-vehicle group transport.',
   },
 ];
 
-export default function WorldCup2026Page() {
+export default function MetLifeStadiumPage() {
   const siteUrl = getSiteUrl();
   const breadcrumbs = [
     { name: 'Home', url: siteUrl },
-    { name: 'World Cup 2026', url: `${siteUrl}/world-cup-2026` },
+    { name: 'MetLife Stadium Transportation', url: `${siteUrl}/world-cup-2026` },
   ];
 
   return (
     <>
       <ServiceJsonLd
-        name="World Cup 2026 MetLife Stadium Car Service"
-        description="Flat-rate chauffeur service for FIFA World Cup 2026 matches at MetLife Stadium, East Rutherford NJ. Pickups from Manhattan, JFK, EWR, LGA, and Long Island. No surge pricing."
+        name="MetLife Stadium Car Service"
+        description="Flat-rate chauffeur service to MetLife Stadium, East Rutherford NJ, for NFL games, concerts, and major events. Pickups from Manhattan, JFK, EWR, LGA, and Long Island. No surge pricing."
         areaServed="New York–New Jersey Metro Area"
         url={`${siteUrl}/world-cup-2026`}
       />
@@ -142,24 +137,24 @@ export default function WorldCup2026Page() {
       <section className="bg-brand-black text-brand-white py-20 lg:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-black via-brand-charcoal to-brand-black opacity-90" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="inline-flex items-center gap-2 bg-green-900/40 border border-green-700 text-green-400 text-xs font-semibold px-4 py-2 mb-6 tracking-wide uppercase">
-            FIFA World Cup 2026 · June 11 – July 19 · MetLife Stadium NJ
+          <div className="inline-flex items-center gap-2 bg-brand-charcoal/80 border border-brand-dark text-brand-silver text-xs font-semibold px-4 py-2 mb-6 tracking-wide uppercase">
+            MetLife Stadium · East Rutherford, NJ · Games · Concerts · Events
           </div>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight max-w-4xl mb-6">
-            World Cup 2026 MetLife Stadium Car Service
+            MetLife Stadium Car Service
           </h1>
           <p className="text-brand-silver text-lg max-w-2xl leading-relaxed mb-4">
-            Flat-rate chauffeur service for every match at MetLife Stadium — including the Final on July 19. No surge pricing, no parking nightmare, no crowded trains. Just a professional driver waiting at your door.
+            Flat-rate chauffeur service to MetLife Stadium for Giants &amp; Jets games, concerts, and major events. No surge pricing, no parking nightmare, no crowded trains. Just a professional driver waiting at your door.
           </p>
           <p className="text-brand-silver text-sm mb-10 max-w-xl">
             Serving Manhattan, JFK, Newark (EWR), LaGuardia (LGA), Long Island, and all NYC hotels.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors text-center">
-              Request a World Cup Quote
+              Request a Quote
             </Link>
-            <Link href="/world-cup-2026/final" className="inline-block bg-green-700 text-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-600 transition-colors text-center">
-              🏆 Final Transport — July 19
+            <Link href="/book" className="inline-block bg-brand-charcoal border border-brand-silver text-brand-white font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-dark transition-colors text-center">
+              Book Online
             </Link>
             <a href={`tel:${CONTACT_PHONE_E164}`} className="inline-block border border-brand-silver text-brand-white font-semibold px-8 py-4 text-sm tracking-wide hover:border-brand-white transition-colors text-center">
               Call {CONTACT_PHONE_DISPLAY}
@@ -172,56 +167,34 @@ export default function WorldCup2026Page() {
       <section className="bg-brand-charcoal border-y border-brand-dark text-brand-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm">
-            <div><div className="text-2xl font-bold">9</div><div className="text-brand-silver mt-1">Matches at MetLife</div></div>
-            <div><div className="text-2xl font-bold">48</div><div className="text-brand-silver mt-1">Nations Competing</div></div>
-            <div><div className="text-2xl font-bold">Jul 19</div><div className="text-brand-silver mt-1">World Cup Final</div></div>
+            <div><div className="text-2xl font-bold">~8 mi</div><div className="text-brand-silver mt-1">From Midtown</div></div>
+            <div><div className="text-2xl font-bold">82,500</div><div className="text-brand-silver mt-1">Stadium Capacity</div></div>
+            <div><div className="text-2xl font-bold">Flat Rate</div><div className="text-brand-silver mt-1">No Surge, Ever</div></div>
             <div><div className="text-2xl font-bold">24/7</div><div className="text-brand-silver mt-1">Booking Available</div></div>
           </div>
         </div>
       </section>
 
-      {/* MATCH SCHEDULE */}
+      {/* EVENTS WE SERVE */}
       <section className="bg-brand-white py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3">
-            MetLife Stadium — Full Match Schedule 2026
+            Every Event at MetLife Stadium
           </h2>
-          <p className="text-brand-grey text-sm mb-8">
-            Every FIFA World Cup 2026 match at MetLife Stadium, East Rutherford, NJ. Confirm kickoff times at FIFA.com.
+          <p className="text-brand-grey text-sm mb-8 max-w-2xl">
+            Whatever brings you to East Rutherford, we get you there and back in comfort — no lot traffic, no surge, no post-event scramble.
           </p>
-          <div className="space-y-3">
-            {matchSchedule.map((m) => (
-              <div
-                key={m.date}
-                className={`flex items-center gap-4 p-4 border rounded transition-colors ${
-                  m.highlight
-                    ? 'border-green-600 bg-green-950 text-white'
-                    : 'border-brand-light bg-brand-offwhite'
-                }`}
-              >
-                <div className={`text-center w-16 shrink-0 ${m.highlight ? 'text-green-300' : 'text-brand-silver'}`}>
-                  <div className="font-bold text-sm">{m.date}</div>
-                  <div className="text-xs">{m.day}</div>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {eventTypes.map((e) => (
+              <div key={e.title} className="border border-brand-light bg-brand-offwhite p-6">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="font-semibold text-brand-black">{e.title}</h3>
+                  <span className="text-brand-silver text-xs shrink-0 ml-2">{e.note}</span>
                 </div>
-                <div className="flex-1">
-                  <div className={`font-semibold text-sm ${m.highlight ? 'text-white' : 'text-brand-black'}`}>{m.round}</div>
-                  {m.note && <div className={`text-xs mt-0.5 ${m.highlight ? 'text-green-300' : 'text-brand-silver'}`}>{m.note}</div>}
-                </div>
-                {m.highlight ? (
-                  <Link href="/world-cup-2026/final" className="shrink-0 text-xs bg-green-600 text-white font-semibold px-3 py-1.5 hover:bg-green-500 transition-colors">
-                    Final Quote →
-                  </Link>
-                ) : (
-                  <Link href="/contact" className="shrink-0 text-xs border border-brand-dark text-brand-black font-medium px-3 py-1.5 hover:bg-brand-black hover:text-white transition-colors">
-                    Get Quote →
-                  </Link>
-                )}
+                <p className="text-brand-grey text-sm leading-relaxed">{e.desc}</p>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-brand-silver">
-            Dates shown are approximate match days. Exact kickoff times confirmed at FIFA.com. Book your transfer for any match day above.
-          </p>
         </div>
       </section>
 
@@ -229,10 +202,10 @@ export default function WorldCup2026Page() {
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3">
-            How to Get to MetLife for the World Cup — Honest Comparison
+            How to Get to MetLife Stadium — Honest Comparison
           </h2>
           <p className="text-brand-grey text-sm mb-8 max-w-2xl">
-            Every option ranked by real World Cup match-day conditions — not normal-day commutes.
+            Every option ranked by real event-day conditions — not normal-day commutes.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
@@ -241,17 +214,17 @@ export default function WorldCup2026Page() {
                   <th className="px-4 py-3 font-semibold">Option</th>
                   <th className="px-4 py-3 font-semibold">Cost</th>
                   <th className="px-4 py-3 font-semibold">Drive Time</th>
-                  <th className="px-4 py-3 font-semibold">Match-Day Reality</th>
+                  <th className="px-4 py-3 font-semibold">Event-Day Reality</th>
                   <th className="px-4 py-3 font-semibold text-center">Rating</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-brand-light">
                 {transitComparison.map((t, i) => (
-                  <tr key={t.option} className={i === transitComparison.length - 1 ? 'bg-green-950 text-white' : 'bg-brand-white'}>
-                    <td className={`px-4 py-4 font-semibold ${i === transitComparison.length - 1 ? 'text-green-300' : 'text-brand-black'}`}>{t.option}</td>
-                    <td className={`px-4 py-4 ${i === transitComparison.length - 1 ? 'text-white' : 'text-brand-grey'}`}>{t.cost}</td>
-                    <td className={`px-4 py-4 ${i === transitComparison.length - 1 ? 'text-white' : 'text-brand-grey'}`}>{t.time}</td>
-                    <td className={`px-4 py-4 text-xs leading-relaxed ${i === transitComparison.length - 1 ? 'text-green-200' : 'text-brand-grey'}`}>{t.pain}</td>
+                  <tr key={t.option} className={i === transitComparison.length - 1 ? 'bg-brand-black text-white' : 'bg-brand-white'}>
+                    <td className={`px-4 py-4 font-semibold ${i === transitComparison.length - 1 ? 'text-brand-white' : 'text-brand-black'}`}>{t.option}</td>
+                    <td className={`px-4 py-4 ${i === transitComparison.length - 1 ? 'text-brand-silver' : 'text-brand-grey'}`}>{t.cost}</td>
+                    <td className={`px-4 py-4 ${i === transitComparison.length - 1 ? 'text-brand-silver' : 'text-brand-grey'}`}>{t.time}</td>
+                    <td className={`px-4 py-4 text-xs leading-relaxed ${i === transitComparison.length - 1 ? 'text-brand-silver' : 'text-brand-grey'}`}>{t.pain}</td>
                     <td className="px-4 py-4 text-center">{t.rating}</td>
                   </tr>
                 ))}
@@ -289,27 +262,11 @@ export default function WorldCup2026Page() {
         </div>
       </section>
 
-      {/* FINAL CTA BANNER */}
-      <section className="bg-green-900 text-white py-12 lg:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="text-green-400 text-xs font-semibold tracking-widest uppercase mb-3">Most Important Date of the Tournament</div>
-          <h2 className="font-serif text-3xl lg:text-4xl font-semibold mb-4">
-            🏆 World Cup Final — July 19, 2026
-          </h2>
-          <p className="text-green-200 max-w-xl mx-auto leading-relaxed mb-8">
-            MetLife Stadium. The biggest match on earth. Rideshares will surge to $300+. Trains will be sold out. Request a custom Final quote before spots fill.
-          </p>
-          <Link href="/world-cup-2026/final" className="inline-block bg-white text-green-900 font-semibold px-8 py-4 text-sm tracking-wide hover:bg-green-100 transition-colors">
-            Request Final Transport Quote →
-          </Link>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black text-center mb-12">
-            World Cup 2026 Transport FAQ
+            MetLife Stadium Transport FAQ
           </h2>
           <div className="space-y-8">
             {faqs.map((faq) => (
@@ -325,8 +282,8 @@ export default function WorldCup2026Page() {
       {/* BOTTOM CTA */}
       <section className="bg-brand-black text-brand-white py-14 lg:py-18">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-3xl font-semibold mb-4">Request Your World Cup Transfer Quote</h2>
-          <p className="text-brand-silver mb-8">Custom World Cup pricing · No surge · Door-to-door · Pre-arranged post-match pickup</p>
+          <h2 className="font-serif text-3xl font-semibold mb-4">Request Your MetLife Stadium Transfer</h2>
+          <p className="text-brand-silver mb-8">Flat-rate pricing · No surge · Door-to-door · Pre-arranged post-event pickup</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm tracking-wide hover:bg-brand-offwhite transition-colors">
               Request a Quote

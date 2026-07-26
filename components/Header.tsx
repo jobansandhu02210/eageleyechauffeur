@@ -14,7 +14,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
   { href: '/blog', label: 'Blog' },
-  { href: '/world-cup-2026', label: 'World Cup' },
+  { href: '/world-cup-2026', label: 'MetLife Stadium' },
   { href: '/referrals', label: 'Refer' },
 ];
 

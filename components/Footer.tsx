@@ -17,7 +17,7 @@ const company = [
   { href: '/about', label: 'About Us' },
   { href: '/contact', label: 'Contact' },
   { href: '/book', label: 'Book Now' },
-  { href: '/world-cup-2026', label: 'World Cup 2026' },
+  { href: '/world-cup-2026', label: 'MetLife Stadium' },
   { href: '/referrals', label: 'Refer & Earn $50' },
   { href: '/blog', label: 'Blog' },
 ];
