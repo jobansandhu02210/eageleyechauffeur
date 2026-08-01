@@ -7,7 +7,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'HPN Airport Car Service | Westchester County',
   description:
-    'HPN Westchester County Airport car service — flat rates from Manhattan, Westchester, Fairfield County CT. Meet & greet, professional chauffeur. No.',
+    'HPN Westchester County Airport car service — flat rates from Manhattan, Westchester, Fairfield County CT. Meet & greet, professional chauffeur. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/hpn` },
 };
 

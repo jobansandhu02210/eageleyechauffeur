@@ -136,6 +136,7 @@ export default function SitemapPage() {
             { label: 'Blog', href: '/blog' },
             { label: 'Referral Program', href: '/referrals' },
             { label: 'MetLife Stadium Transportation', href: '/world-cup-2026' },
+            { label: 'US Open Car Service', href: '/us-open-2026' },
           ]} />
 
           <Section title="Services" links={services} />

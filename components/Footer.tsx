@@ -18,6 +18,7 @@ const company = [
   { href: '/contact', label: 'Contact' },
   { href: '/book', label: 'Book Now' },
   { href: '/world-cup-2026', label: 'MetLife Stadium' },
+  { href: '/us-open-2026', label: 'US Open 2026' },
   { href: '/referrals', label: 'Refer & Earn $50' },
   { href: '/blog', label: 'Blog' },
 ];
@@ -109,10 +110,10 @@ export default function Footer() {
             © {new Date().getFullYear()} Eagle Eye Chauffeur. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <Link href="/contact" className="text-brand-silver hover:text-brand-white transition-colors">
+            <Link href="/privacy" className="text-brand-silver hover:text-brand-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="text-brand-silver hover:text-brand-white transition-colors">
+            <Link href="/terms" className="text-brand-silver hover:text-brand-white transition-colors">
               Terms of Service
             </Link>
           </div>

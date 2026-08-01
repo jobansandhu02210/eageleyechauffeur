@@ -6,7 +6,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'LaGuardia to Manhattan Car Service | LGA Flat Rate',
   description:
-    'LaGuardia (LGA) to Manhattan car service — flat rates, real-time flight tracking, meet & greet at arrivals. NYC\'s closest airport to Midtown. No.',
+    'LaGuardia (LGA) to Manhattan car service — flat rates, real-time flight tracking, meet & greet at arrivals. NYC\'s closest airport to Midtown. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/lga-to-manhattan-black-car-service` },
 };
 
