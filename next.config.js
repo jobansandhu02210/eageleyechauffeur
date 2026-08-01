@@ -24,6 +24,12 @@ const nextConfig = {
         destination: '/services/areas/teb-airport',
         permanent: true,
       },
+      // World Cup 2026 Final page retired after the event — fold into the evergreen MetLife hub
+      {
+        source: '/world-cup-2026/final',
+        destination: '/world-cup-2026',
+        permanent: true,
+      },
     ];
   },
   async headers() {

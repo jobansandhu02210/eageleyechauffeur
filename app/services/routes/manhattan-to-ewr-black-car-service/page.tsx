@@ -6,7 +6,7 @@ import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd'
 export const metadata: Metadata = {
   title: 'Manhattan to Newark Airport Car Service | EWR Tolls',
   description:
-    'Manhattan to Newark Airport (EWR) car service — flat rates, all tolls included, door-to-door pickup from any address. Professional chauffeur. No.',
+    'Manhattan to Newark Airport (EWR) car service — flat rates, all tolls included, door-to-door pickup from any address. Professional chauffeur. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/manhattan-to-ewr-black-car-service` },
 };
 

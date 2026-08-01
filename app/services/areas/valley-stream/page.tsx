@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Valley Stream Car Service | JFK Airport Transfers NYC',
   description:
-    'Valley Stream black car service — flat-rate JFK airport transfers in as little as 15 minutes. LGA & EWR also covered. TLC-licensed chauffeur. No.',
+    'Valley Stream black car service — flat-rate JFK airport transfers in as little as 15 minutes. LGA & EWR also covered. TLC-licensed chauffeur. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/valley-stream` },
 };
 

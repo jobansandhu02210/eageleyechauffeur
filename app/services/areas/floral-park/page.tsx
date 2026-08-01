@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Floral Park Car Service | JFK Transfers Nassau',
   description:
-    'Floral Park black car service — flat-rate JFK, LGA & EWR airport transfers from western Nassau County. Stewart Manor & New Hyde Park also covered. No.',
+    'Floral Park black car service — flat-rate JFK, LGA & EWR airport transfers from western Nassau County. Stewart Manor & New Hyde Park also covered. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/floral-park` },
 };
 

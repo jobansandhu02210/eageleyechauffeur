@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164 } from 
 export const metadata: Metadata = {
   title: 'Patchogue Car Service | JFK Transfers Suffolk County',
   description:
-    'Patchogue black car service — flat-rate JFK, LGA & EWR airport transfers from the Suffolk County South Shore. Medford & Blue Point also covered. No.',
+    'Patchogue black car service — flat-rate JFK, LGA & EWR airport transfers from the Suffolk County South Shore. Medford & Blue Point also covered. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/patchogue` },
 };
 
