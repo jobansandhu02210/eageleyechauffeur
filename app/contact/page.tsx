@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { BreadcrumbJsonLd, FaqJsonLd, LocalBusinessJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd, FaqJsonLd } from '@/components/JsonLd';
 import { ContactForm } from '@/components/ContactForm';
 import {
   CONTACT_EMAIL_BOOKINGS,
@@ -67,7 +67,6 @@ export default function ContactPage() {
           { name: 'Contact', url: `${siteUrl}/contact` },
         ]}
       />
-      <LocalBusinessJsonLd />
       <FaqJsonLd faqs={faqs} />
 
       <div className="bg-brand-offwhite">

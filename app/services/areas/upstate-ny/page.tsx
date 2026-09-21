@@ -7,7 +7,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 export const metadata: Metadata = {
   title: 'Upstate New York Car Service | NYC Airport Transfers',
   description:
-    'Upstate New York black car service — NYC airport transfers from Hudson Valley, Catskills, Albany, Poughkeepsie, Newburgh, Kingston. Flat rates.',
+    'Upstate New York car service to JFK, LGA & EWR — flat-rate airport transfers from the Hudson Valley, Catskills, Poughkeepsie & Albany. No surge, 24/7.',
   alternates: { canonical: `${getSiteUrl()}/services/areas/upstate-ny` },
 };
 

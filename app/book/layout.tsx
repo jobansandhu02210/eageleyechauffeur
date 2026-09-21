@@ -43,7 +43,15 @@ const faqs = [
   },
   {
     q: 'What vehicles are available?',
-    a: 'Our fleet includes Business Class sedans and SUVs and First Class luxury sedans and SUVs — seating from 3 up to 6 passengers with room for luggage. You choose your vehicle class during booking.',
+    a: 'Our fleet includes an Executive Sedan (up to 3 passengers), First Class SUV (up to 6), First Class Sedan, and Sprinter vans for groups (executive, limo, and jet cabins seating up to roughly 14–18). You choose your vehicle class during booking, with room for luggage in every class.',
+  },
+  {
+    q: 'How much does a car service cost in NYC?',
+    a: 'Airport transfers and point-to-point rides are flat-rate, confirmed at booking with tolls included and no surge. Hourly bookings typically range from about $110 per hour for an executive sedan up to roughly $200 per hour for a luxury SUV or Sprinter van, with a short minimum. Enter your trip above for an exact instant quote.',
+  },
+  {
+    q: 'What areas do you serve?',
+    a: 'Eagle Eye Chauffeur serves all five NYC boroughs — Manhattan, Brooklyn, Queens, the Bronx, and Staten Island — plus Long Island, Westchester, the Hamptons, New Jersey, Connecticut, and upstate New York, along with all major airports (JFK, LGA, EWR, HPN, TEB).',
   },
 ];
 

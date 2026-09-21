@@ -43,6 +43,14 @@ const faqs = [
     q: 'Is hourly black car hire available for a night out in the Village?',
     a: "Yes. Hourly hire in Greenwich Village is particularly practical for evenings that move between multiple destinations — a pre-dinner cocktail bar on Christopher Street, dinner on Bleecker, and a nightcap on Hudson, for instance. Book hourly and your chauffeur stays with your party through the full booking window, positioned nearby at each stop so you move seamlessly without waiting or re-booking.",
   },
+  {
+    q: 'How far is Greenwich Village from the NYC airports?',
+    a: 'From Greenwich Village in Lower Manhattan, LaGuardia (LGA) is about 9 miles (25–45 minutes), Newark (EWR) about 12 miles (25–45 minutes via the Holland Tunnel), and JFK about 14 miles (40–60 minutes). Being close to the Holland Tunnel, Newark is often the quickest airport from the Village.',
+  },
+  {
+    q: 'How much does a car service from Greenwich Village to the airport cost?',
+    a: 'Airport transfers from Greenwich Village are a flat rate confirmed at booking, with all tolls included and no surge regardless of downtown traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

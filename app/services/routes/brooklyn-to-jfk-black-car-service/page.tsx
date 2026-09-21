@@ -4,9 +4,9 @@ import { getSiteUrl } from '@/lib/site';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Brooklyn to JFK Car Service',
+  title: 'Brooklyn to JFK Car Service | Black Car Transfer',
   description:
-    'Brooklyn to JFK black car service — door-to-door pickup, real-time flight tracking. Professional chauffeurs from DUMBO, Williamsburg, Park Slope.',
+    'Brooklyn to JFK black car service — flat-rate, door-to-door, flight tracking, no surge. Just 8–14 miles from most Brooklyn neighborhoods.',
   alternates: { canonical: `${getSiteUrl()}/services/routes/brooklyn-to-jfk-black-car-service` },
 };
 
@@ -30,6 +30,18 @@ const faqs = [
   {
     q: 'Can I get a black car from Brooklyn for an early morning JFK flight?',
     a: 'Yes. Eagle Eye Chauffeur operates 24/7. Early morning departures from Brooklyn are fully covered — your driver is confirmed the evening before.',
+  },
+  {
+    q: 'Which Brooklyn neighborhoods are closest to JFK?',
+    a: 'The southern and eastern neighborhoods are closest: East New York and Bushwick are about 7 miles, and Sheepshead Bay, Marine Park, Canarsie, and Flatbush are roughly 8–9 miles — often under 20 minutes to the terminal. Northern and western areas like DUMBO, Williamsburg, and Bay Ridge are around 13–14 miles.',
+  },
+  {
+    q: 'How much does a car service from Brooklyn to JFK cost?',
+    a: 'It is a flat rate confirmed at booking, based on your specific Brooklyn neighborhood and vehicle class, with all tolls included and no surge. Because Brooklyn is the closest borough to JFK, these are among the most affordable NYC airport transfers — enter your address on the booking page for an exact quote.',
+  },
+  {
+    q: 'Do you also do JFK-to-Brooklyn pickups with meet and greet?',
+    a: 'Yes. For arrivals, your chauffeur tracks your flight, meets you at baggage claim in your terminal with a name sign, helps with your luggage, and drives you straight home to Brooklyn — with 60 minutes of complimentary wait time included after you land.',
   },
 ];
 
@@ -75,23 +87,39 @@ export default function BrooklynToJFKBlackCarPage() {
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+              Brooklyn Is the Closest Borough to JFK
+            </h2>
+            <p className="text-brand-grey leading-relaxed mb-4">
+              Of all five boroughs, Brooklyn sits closest to John F. Kennedy International Airport — most neighborhoods are
+              just 8 to 14 miles away, a 15 to 35 minute drive in normal traffic via the Belt Parkway, which hugs the
+              southern edge of Brooklyn straight to the JFK exits. Southern and eastern neighborhoods like Sheepshead Bay,
+              Marine Park, Canarsie, and East New York are the closest of all, often under 20 minutes; DUMBO, Williamsburg,
+              and Bay Ridge on the north and west sides run a little longer.
+            </p>
+            <p className="text-brand-grey leading-relaxed mb-8">
+              That proximity makes Brooklyn one of the most affordable boroughs for a flat-rate JFK transfer — and a
+              private car still beats the AirTrain-plus-subway, which requires a transfer at Jamaica or Broadway Junction
+              and can take 60 to 90 minutes with luggage. Your Eagle Eye chauffeur picks you up at your door, watches the
+              Belt Parkway traffic live, and takes you straight to your terminal.
+            </p>
             <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Popular Routes from Brooklyn to JFK
+              Distances &amp; Drive Times: Brooklyn Neighborhoods to JFK
             </h2>
             <div className="space-y-3">
               {[
-                { from: 'DUMBO / Brooklyn Heights → JFK', time: '20–30 min' },
-                { from: 'Williamsburg / Greenpoint → JFK', time: '20–30 min' },
-                { from: 'Park Slope / Prospect Heights → JFK', time: '20–30 min' },
-                { from: 'Downtown Brooklyn / Fort Greene → JFK', time: '20–30 min' },
-                { from: 'Crown Heights / Flatbush → JFK', time: '15–25 min' },
-                { from: 'Bay Ridge / Dyker Heights → JFK', time: '25–35 min' },
-                { from: 'Sheepshead Bay / Marine Park → JFK', time: '20–30 min' },
-                { from: 'Bushwick / East New York → JFK', time: '15–25 min' },
+                { from: 'Bushwick / East New York → JFK', miles: '~7 miles', time: '15–25 min' },
+                { from: 'Sheepshead Bay / Marine Park → JFK', miles: '~8 miles', time: '15–25 min' },
+                { from: 'Crown Heights / Flatbush → JFK', miles: '~9 miles', time: '15–25 min' },
+                { from: 'Park Slope / Prospect Heights → JFK', miles: '~11 miles', time: '20–30 min' },
+                { from: 'Downtown Brooklyn / Fort Greene → JFK', miles: '~12 miles', time: '20–30 min' },
+                { from: 'DUMBO / Brooklyn Heights → JFK', miles: '~13 miles', time: '20–30 min' },
+                { from: 'Williamsburg / Greenpoint → JFK', miles: '~14 miles', time: '20–35 min' },
+                { from: 'Bay Ridge / Dyker Heights → JFK', miles: '~14 miles', time: '25–35 min' },
               ].map((r) => (
-                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

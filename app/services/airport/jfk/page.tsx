@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: 'JFK Car Service NYC | Black Car Airport Transfers',
   description:
-    'JFK car service NYC — flat-rate black car, JFK to Manhattan transfers, meet & greet all terminals. Real-time flight tracking. No surge pricing.',
+    'JFK car service NYC — flat-rate black car airport transfers, meet & greet all terminals, real-time flight tracking. No surge pricing, ever.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/jfk` },
 };
 

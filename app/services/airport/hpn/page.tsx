@@ -5,7 +5,7 @@ import { WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { ServiceJsonLd, FaqJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'HPN Airport Car Service | Westchester County',
+  title: 'HPN Car Service | Westchester Airport Transfers',
   description:
     'HPN Westchester County Airport car service — flat rates from Manhattan, Westchester, Fairfield County CT. Meet & greet, professional chauffeur. No surge pricing.',
   alternates: { canonical: `${getSiteUrl()}/services/airport/hpn` },
@@ -95,7 +95,7 @@ export default function HPNPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-brand-grey text-sm uppercase tracking-widest mb-3">HPN · Westchester County Airport</p>
           <h1 className="font-serif text-4xl lg:text-5xl font-semibold text-brand-black mb-5">
-            HPN Airport Car Service | Westchester County Airport
+            HPN Car Service — Westchester Airport Transfers
           </h1>
           <p className="text-lg text-brand-grey mb-4">
             Westchester County Airport (HPN) is the smart alternative to JFK and LGA for travelers in Westchester, Fairfield County Connecticut, and northern Manhattan. Shorter security lines, faster boarding, and easy access from major parkways make HPN the preferred airport for those who value their time.

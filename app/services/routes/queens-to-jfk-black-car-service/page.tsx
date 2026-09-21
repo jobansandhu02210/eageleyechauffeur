@@ -39,6 +39,14 @@ const faqs = [
     q: "What's included in the JFK airport pickup if I'm arriving in Queens?",
     a: 'For arrivals, your chauffeur meets you inside the arrivals hall of your terminal with a name sign, just past baggage claim. We track your flight in real time, so if your flight is delayed we adjust automatically — no rebooking, no calls needed. You receive 60 minutes of complimentary wait time after landing, and your driver assists with all luggage.',
   },
+  {
+    q: 'How far is Queens from JFK?',
+    a: 'JFK is in southeastern Queens, so most of the borough is very close. Howard Beach is only about 3 miles, Jamaica about 5 miles, and Forest Hills and Flushing roughly 9–10 miles. Even the farthest northern neighborhoods — Astoria, Long Island City, Bayside — are only about 12–13 miles, making Queens the closest borough to JFK alongside Brooklyn.',
+  },
+  {
+    q: 'How much does a car service from Queens to JFK cost?',
+    a: 'It is a flat rate confirmed at booking, based on your Queens neighborhood and vehicle class, with all tolls included and no surge. Because JFK sits within Queens, these are some of the shortest — and most affordable — airport transfers in the city. Enter your address on the booking page for an exact quote.',
+  },
 ];
 
 
@@ -120,29 +128,31 @@ export default function QueensToJFKBlackCarPage() {
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3">
-            Queens to JFK — Neighborhoods &amp; Estimated Times
+            Queens to JFK — Neighborhoods, Distances &amp; Times
           </h2>
           <p className="text-brand-grey mb-8 max-w-2xl">
-            Every Queens neighborhood is covered. Times below are typical off-peak estimates —
-            allow additional time during morning rush hour and Friday afternoons.
+            JFK is in southeastern Queens, so most of the borough is remarkably close — Howard Beach and Jamaica are
+            practically next door. Distances and times below are typical off-peak estimates; allow additional time during
+            morning rush hour and Friday afternoons.
           </p>
           <div className="space-y-3">
             {[
-              { from: 'Astoria → JFK', time: '25–40 min' },
-              { from: 'Long Island City → JFK', time: '20–35 min' },
-              { from: 'Flushing → JFK', time: '20–30 min' },
-              { from: 'Jamaica → JFK', time: '15–25 min' },
-              { from: 'Forest Hills → JFK', time: '20–30 min' },
-              { from: 'Howard Beach → JFK', time: '10–20 min' },
-              { from: 'Bayside → JFK', time: '25–35 min' },
-              { from: 'Ridgewood → JFK', time: '25–40 min' },
+              { from: 'Howard Beach → JFK', miles: '~3 miles', time: '10–20 min' },
+              { from: 'Jamaica → JFK', miles: '~5 miles', time: '15–25 min' },
+              { from: 'Richmond Hill / Ozone Park → JFK', miles: '~6 miles', time: '15–25 min' },
+              { from: 'Forest Hills / Rego Park → JFK', miles: '~9 miles', time: '20–30 min' },
+              { from: 'Flushing → JFK', miles: '~10 miles', time: '20–30 min' },
+              { from: 'Ridgewood → JFK', miles: '~11 miles', time: '25–40 min' },
+              { from: 'Long Island City → JFK', miles: '~12 miles', time: '20–35 min' },
+              { from: 'Astoria → JFK', miles: '~13 miles', time: '25–40 min' },
+              { from: 'Bayside → JFK', miles: '~13 miles', time: '25–35 min' },
             ].map((r) => (
               <div
                 key={r.from}
-                className="bg-brand-white border border-brand-light p-4 flex justify-between items-center"
+                className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1"
               >
                 <span className="font-medium text-brand-black">{r.from}</span>
-                <span className="text-brand-grey text-sm">{r.time}</span>
+                <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
               </div>
             ))}
           </div>

@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'NYC Hotel to MetLife Stadium | Chauffeur Service',
   description:
-    'NYC hotel to MetLife Stadium chauffeur service for games, concerts & events. Concierge pickup from any Manhattan hotel — Times Square, Midtown, Tribeca. Flat-rate.',
+    'NYC hotel to MetLife Stadium chauffeur service for World Cup 2026, games & concerts. Concierge pickup from any Manhattan hotel. Flat-rate, post-event pickup.',
   keywords: [
     'NYC hotel to MetLife Stadium',
     'Manhattan hotel to MetLife Stadium',

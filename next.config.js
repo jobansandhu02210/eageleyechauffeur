@@ -30,6 +30,28 @@ const nextConfig = {
         destination: '/world-cup-2026',
         permanent: true,
       },
+      // Consolidate near-duplicate airport pages (areas/*-airport vs airport/*) that were
+      // cannibalizing each other's rankings for the same head term — one canonical page per airport.
+      {
+        source: '/services/areas/jfk-airport',
+        destination: '/services/airport/jfk',
+        permanent: true,
+      },
+      {
+        source: '/services/areas/lga-airport',
+        destination: '/services/airport/lga',
+        permanent: true,
+      },
+      {
+        source: '/services/areas/ewr-airport',
+        destination: '/services/airport/ewr',
+        permanent: true,
+      },
+      {
+        source: '/services/areas/hpn-airport',
+        destination: '/services/airport/hpn',
+        permanent: true,
+      },
     ];
   },
   async headers() {

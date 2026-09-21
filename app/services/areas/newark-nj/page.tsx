@@ -44,6 +44,14 @@ const faqs = [
     q: 'Is hourly hire available in Newark and Essex County?',
     a: 'Yes. Hourly hire is available for Newark-based executives who need a dedicated chauffeur for a full day of meetings, multi-stop travel, or client entertainment. Your driver stays with you for the entire booking period with no re-booking required between stops.',
   },
+  {
+    q: 'How far is Newark from the airport and Manhattan?',
+    a: 'Downtown Newark is only about 3 miles from Newark Liberty Airport (EWR) — a 10–15 minute drive — and about 12 miles from Midtown Manhattan (25–45 minutes via the Holland or Lincoln Tunnel). JFK is roughly 25 miles and LaGuardia about 16 miles.',
+  },
+  {
+    q: 'How much does a car service in Newark cost?',
+    a: 'Newark transfers are billed as a flat rate confirmed at booking, with all tunnel and airport tolls included and no surge. Whether it is a short EWR run or a trip into Manhattan, enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

@@ -29,7 +29,15 @@ const faqs = [
   },
   {
     q: 'What if my LGA flight is delayed?',
-    a: 'We track your flight in real time and adjust your pickup automatically. No extra charge for delays. Your driver is always there when you land.',
+    a: 'We track your flight in real time and adjust your pickup automatically. No extra charge for delays, and 60 minutes of complimentary wait time is included after you land. Your driver is always there when you land.',
+  },
+  {
+    q: 'How far is LaGuardia from Brooklyn?',
+    a: 'LaGuardia is in northern Queens, so it is about 9 to 15 miles from Brooklyn depending on the neighborhood. North Brooklyn — Bushwick, Williamsburg, DUMBO — is closest at roughly 9–11 miles, while southern neighborhoods like Bay Ridge are about 15 miles. The drive typically takes 25–55 minutes via the BQE.',
+  },
+  {
+    q: 'How much does a car service from LGA to Brooklyn cost?',
+    a: 'It is a flat rate confirmed at booking, based on your Brooklyn neighborhood and vehicle class, with all tolls included and no surge. A pre-booked black car with meet-and-greet is often comparable to a surge-priced rideshare and far more predictable after a flight. Enter your destination on the booking page for an exact quote.',
   },
 ];
 
@@ -75,23 +83,28 @@ export default function LGAToBrooklynBlackCarPage() {
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Popular Routes from LGA to Brooklyn
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+              LGA to Brooklyn: Distances &amp; Drive Times
             </h2>
+            <p className="text-brand-grey mb-6 max-w-2xl">
+              LaGuardia is in northern Queens, so the drive to Brooklyn crosses the borough — typically 9 to 15 miles
+              via the BQE or Grand Central Parkway depending on your neighborhood. North Brooklyn (Williamsburg, Bushwick,
+              DUMBO) is closest; southern neighborhoods like Bay Ridge run a little longer. Times are off-peak estimates.
+            </p>
             <div className="space-y-3">
               {[
-                { from: 'LGA → Williamsburg', time: '25–35 min' },
-                { from: 'LGA → DUMBO / Brooklyn Heights', time: '30–40 min' },
-                { from: 'LGA → Park Slope', time: '30–45 min' },
-                { from: 'LGA → Flatbush / Prospect Park', time: '35–50 min' },
-                { from: 'LGA → Bay Ridge', time: '40–55 min' },
-                { from: 'LGA → Bushwick', time: '25–40 min' },
-                { from: 'LGA → Sunset Park', time: '35–50 min' },
-                { from: 'LGA → Downtown Brooklyn', time: '30–45 min' },
+                { from: 'LGA → Bushwick', miles: '~9 miles', time: '25–40 min' },
+                { from: 'LGA → Williamsburg', miles: '~10 miles', time: '25–35 min' },
+                { from: 'LGA → DUMBO / Brooklyn Heights', miles: '~11 miles', time: '30–40 min' },
+                { from: 'LGA → Downtown Brooklyn', miles: '~11 miles', time: '30–45 min' },
+                { from: 'LGA → Park Slope', miles: '~12 miles', time: '30–45 min' },
+                { from: 'LGA → Flatbush / Prospect Park', miles: '~13 miles', time: '35–50 min' },
+                { from: 'LGA → Sunset Park', miles: '~13 miles', time: '35–50 min' },
+                { from: 'LGA → Bay Ridge', miles: '~15 miles', time: '40–55 min' },
               ].map((r) => (
-                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

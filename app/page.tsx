@@ -5,7 +5,7 @@ import { SafeFleetImage } from '@/components/SafeFleetImage';
 import { CONTACT_EMAIL_BOOKINGS, CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from '@/lib/contact';
 import { getSiteUrl } from '@/lib/site';
 import { siteKeywords } from '@/lib/seo';
-import { FaqJsonLd, LocalBusinessJsonLd, SpeakableJsonLd } from '@/components/JsonLd';
+import { FaqJsonLd, SpeakableJsonLd } from '@/components/JsonLd';
 import AnimatedHeadline from '@/components/AnimatedHeadline';
 
 export const metadata: Metadata = {
@@ -156,7 +156,6 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
-      <LocalBusinessJsonLd />
       <FaqJsonLd faqs={faqs} />
       <SpeakableJsonLd cssSelectors={['h1', '.speakable-intro', '.speakable-service']} />
 

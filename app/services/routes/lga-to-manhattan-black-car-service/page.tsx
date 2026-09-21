@@ -13,43 +13,31 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'How much is a black car from LGA to Manhattan?',
-    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your LGA terminal and Manhattan destination.',
+    a: 'All rates are flat and confirmed at booking — no surge pricing, tolls included. Because LaGuardia is the closest airport to Manhattan, these are among the most affordable NYC airport transfers. Get an exact quote by entering your LGA terminal and Manhattan destination on the booking page.',
+  },
+  {
+    q: 'How far is LaGuardia from Manhattan, and how long does it take?',
+    a: 'LaGuardia is about 8 miles from Midtown Manhattan — the closest of New York\'s three major airports (JFK is about 15 miles and Newark about 15 miles). The drive is typically 20–40 minutes in normal traffic; during peak hours (7–9am and 5–8pm) allow 35–50 minutes. For Midtown and Upper Manhattan, LGA is usually the fastest airport by car.',
   },
   {
     q: 'Where does my chauffeur meet me at LaGuardia?',
-    a: 'Your chauffeur meets you in the arrivals area of your terminal with a name sign. LGA has Terminal B and Terminal C/D — we cover both. You receive a WhatsApp message with the exact meeting point before you land.',
+    a: 'Your chauffeur meets you in the arrivals area of your terminal with a name sign, and you receive a WhatsApp message with the exact meeting point before you land — so there is no searching and no taxi queue.',
+  },
+  {
+    q: 'Which LGA terminal will I arrive in, and does it matter?',
+    a: 'LaGuardia has two main terminals after its recent rebuild: Terminal B (American, United, Southwest, Alaska, and most carriers) and Terminal C (Delta). Provide your airline at booking and your driver is assigned to the correct terminal, with the exact meeting spot sent via WhatsApp before you land.',
   },
   {
     q: 'Do you track flights at LGA?',
-    a: 'Yes. We monitor your LaGuardia flight in real time and adjust pickup automatically for any delays or early arrivals — no extra charge.',
+    a: 'Yes. We monitor your LaGuardia flight in real time and adjust pickup automatically for any delays or early arrivals — at no extra charge — with 60 minutes of complimentary wait time after you land.',
   },
   {
     q: 'Is black car service from LGA faster than taking a taxi?',
-    a: 'The drive time is the same, but your experience is completely different. Your driver is already waiting when you clear baggage claim. No taxi queue, no surge pricing, no uncertainty.',
+    a: 'The drive time is the same, but the experience is completely different: your chauffeur is already waiting when you clear baggage claim, with no taxi queue, no surge, and help with your luggage — versus lining up at the taxi stand or walking to the rideshare lot.',
   },
   {
-    q: 'Can I book LGA black car service for early morning arrivals?',
-    a: 'Yes. Eagle Eye Chauffeur operates 24/7. Red-eye and early morning arrivals at LaGuardia are fully covered.',
-  },
-  {
-    q: 'How long is LGA to Manhattan by car?',
-    a: 'LaGuardia to Midtown Manhattan is just 9 miles — typically 20–30 minutes in normal traffic. During peak hours (7–9am and 5–8pm), allow 35–50 minutes. It is the shortest airport-to-Manhattan drive of any NYC area airport.',
-  },
-  {
-    q: 'Is LGA the closest airport to Midtown Manhattan?',
-    a: 'Yes. LaGuardia is the closest major airport to Midtown at just 9 miles. JFK is about 16 miles and EWR is about 16 miles via the Lincoln Tunnel. For Midtown or Upper Manhattan destinations, LGA is often the most convenient choice.',
-  },
-  {
-    q: 'Which LGA terminal will I arrive in?',
-    a: 'LaGuardia has two main terminals: Terminal B serves American, United, Southwest, Alaska, and most carriers. Terminal C serves Delta exclusively. When you book, provide your airline and we will confirm your terminal and send the exact meeting point via WhatsApp before you land.',
-  },
-  {
-    q: 'Is LaGuardia the closest airport to Midtown?',
-    a: 'Yes. LGA is approximately 8 miles from Midtown Manhattan — the closest of New York&apos;s three major commercial airports. Travel time is typically 20–30 minutes in normal traffic, significantly faster than JFK (40–55 min) or EWR (35–50 min) for Midtown destinations.',
-  },
-  {
-    q: 'Which LGA terminal should I tell my driver?',
-    a: 'Terminal B serves American, United, Southwest, and Alaska. Terminal C is Delta only. Check your ticket or airline app for your terminal before landing — your driver will be at the correct terminal based on what you provide at booking.',
+    q: 'Can I book LGA black car service for early morning or red-eye arrivals?',
+    a: 'Yes. Eagle Eye Chauffeur operates 24/7 at the same flat rate. Red-eye and early morning arrivals at LaGuardia are fully covered, with your driver confirmed in advance.',
   },
 ];
 

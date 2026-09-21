@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How long does it take to get from Wall Street to JFK?',
-    a: 'The drive from Wall Street and the Financial District to JFK Airport typically takes 35–50 minutes in normal traffic via the Brooklyn-Queens Expressway or the Belt Parkway. During the morning rush hour (7–9 AM), allow 50–70 minutes. Pre-market departures before 6 AM can clear the trip in under 35 minutes. We monitor traffic conditions and your chauffeur selects the fastest route at the time of pickup.',
+    q: 'How far is Wall Street from JFK, and how long does it take?',
+    a: 'Wall Street and the Financial District are approximately 14 miles from JFK Airport. The drive typically takes 35–50 minutes in normal traffic via the Brooklyn-Queens Expressway or the Belt Parkway. During the morning rush hour (7–9 AM), allow 50–70 minutes. Pre-market departures before 6 AM can clear the trip in under 35 minutes. We monitor traffic conditions and your chauffeur selects the fastest route at the time of pickup.',
   },
   {
     q: 'Is there a flat rate from the Financial District to JFK?',

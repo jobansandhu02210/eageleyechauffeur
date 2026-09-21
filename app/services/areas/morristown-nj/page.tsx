@@ -44,6 +44,18 @@ const faqs = [
     q: 'What is the best airport for Morristown NJ residents?',
     a: 'For most Morristown travelers, Newark Liberty (EWR) is the clear choice — it offers extensive domestic and international service and is approximately 35–50 minutes from Morristown. JFK is a viable option for destinations with better service from Kennedy, typically 55–75 minutes away. We serve both.',
   },
+  {
+    q: 'How far is Morristown from Newark Airport and Manhattan?',
+    a: 'Morristown is in Morris County, New Jersey — about 20 miles from Newark Liberty (EWR), roughly a 30–50 minute drive, and about 30 miles from Midtown Manhattan (50–80 minutes depending on tunnel traffic). JFK is roughly 40 miles and LaGuardia about 35 miles. Morristown Municipal Airport (MMU), a major private-jet hub, is just minutes away.',
+  },
+  {
+    q: 'How much does a car service from Morristown cost?',
+    a: 'Morristown transfers are billed as a flat rate confirmed at booking, with all tolls included and no surge. Whether it is a short EWR run, a Manhattan trip, or an FBO transfer at Morristown Airport, enter your destination on the booking page for an exact quote.',
+  },
+  {
+    q: 'Do you serve private jet travelers at Morristown Airport (MMU)?',
+    a: 'Yes. Morristown Municipal Airport (MMU) is one of the busiest private-aviation airports in the region, and we provide FBO-to-door and door-to-FBO transfers for private jet travelers, coordinating timing with your flight crew.',
+  },
 ];
 
 const eaglEyeBenefits = [

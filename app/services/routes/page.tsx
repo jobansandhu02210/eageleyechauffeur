@@ -141,6 +141,26 @@ const airportRoutes = [
     description: 'Newark Airport to Astoria, Flushing, Jamaica — tolls included',
     href: '/services/routes/ewr-to-queens-car-service',
   },
+  {
+    name: 'Wall Street to JFK',
+    description: 'FiDi & downtown offices to JFK — early departures, flat rate',
+    href: '/services/routes/wall-street-to-jfk-car-service',
+  },
+  {
+    name: 'Park Avenue to JFK',
+    description: 'Midtown corporate & residential Park Ave pickups to JFK',
+    href: '/services/routes/park-avenue-to-jfk-car-service',
+  },
+  {
+    name: 'Midtown to LGA',
+    description: 'Hotel & office pickups across Midtown to LaGuardia',
+    href: '/services/routes/midtown-to-lga-black-car-service',
+  },
+  {
+    name: 'Midtown to EWR',
+    description: 'Midtown to Newark Airport via Lincoln Tunnel, tolls included',
+    href: '/services/routes/midtown-to-ewr-black-car-service',
+  },
 ];
 
 const cityRoutes = [
@@ -326,9 +346,14 @@ export default function RoutesIndexPage() {
               { href: '/services/routes/nyc-to-boston', title: 'NYC to Boston Car Service' },
               { href: '/services/routes/nyc-to-philadelphia', title: 'NYC to Philadelphia Car Service' },
               { href: '/services/routes/nyc-to-washington-dc', title: 'NYC to Washington DC Car Service' },
+              { href: '/services/routes/nyc-to-princeton-nj-car-service', title: 'NYC to Princeton, NJ' },
               { href: '/services/routes/manhattan-to-teterboro-black-car-service', title: 'Manhattan to Teterboro (TEB)' },
               { href: '/services/routes/teterboro-to-manhattan-black-car-service', title: 'Teterboro to Manhattan' },
               { href: '/services/routes/teterboro-to-new-jersey-car-service', title: 'Teterboro to New Jersey' },
+              { href: '/services/routes/brooklyn-to-teterboro-car-service', title: 'Brooklyn to Teterboro (TEB)' },
+              { href: '/services/routes/queens-bronx-to-teterboro-car-service', title: 'Queens & Bronx to Teterboro' },
+              { href: '/services/routes/long-island-to-teterboro-car-service', title: 'Long Island to Teterboro' },
+              { href: '/services/routes/connecticut-to-teterboro-car-service', title: 'Connecticut to Teterboro' },
             ].map((l) => (
               <Link key={l.href} href={l.href} className="group bg-brand-white border border-brand-light hover:border-brand-black transition-colors p-4 text-sm font-medium text-brand-black">
                 {l.title} →

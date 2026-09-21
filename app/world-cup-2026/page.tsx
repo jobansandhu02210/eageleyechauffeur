@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: 'MetLife Stadium Car Service | NYC & NJ Transport | Eagle Eye',
   },
   description:
-    'MetLife Stadium car service — flat-rate chauffeur from Manhattan, JFK, LGA & EWR for Giants & Jets games, concerts and events. No surge, door-to-door, post-event pickup.',
+    'MetLife Stadium car service — flat-rate from Manhattan, JFK, LGA & EWR for World Cup 2026, games & concerts. No surge, door-to-door, post-event pickup.',
   keywords: [
     'MetLife Stadium car service',
     'MetLife Stadium transportation',

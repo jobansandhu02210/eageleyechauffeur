@@ -16,8 +16,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Queens destinations are close to JFK which often makes this one of our most affordable routes. Get an instant quote on our booking page.',
   },
   {
-    q: 'How long does it take from JFK to Queens neighborhoods?',
-    a: 'JFK is located in southeast Queens, so many trips within Queens are surprisingly short. Forest Hills and Jamaica can be 15–20 minutes; Flushing and Astoria 25–40 minutes; Long Island City 25–35 minutes.',
+    q: 'How far is JFK from Queens neighborhoods, and how long does it take?',
+    a: 'JFK sits in southeast Queens, so many trips within the borough are short: Howard Beach is about 3 miles, Jamaica roughly 4 miles, Forest Hills about 7 miles, and Astoria and Long Island City around 12–13 miles. In time, Forest Hills and Jamaica can be 15–20 minutes; Flushing and Astoria 25–40 minutes; Long Island City 25–35 minutes, depending on traffic.',
   },
   {
     q: 'Which Queens neighborhoods do you serve?',

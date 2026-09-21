@@ -16,8 +16,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Get an instant quote on our booking page by entering your EWR terminal and Brooklyn address.',
   },
   {
-    q: 'How long does it take from EWR to Brooklyn?',
-    a: 'Expect 45–70 minutes depending on your Brooklyn destination and traffic. The Goethals Bridge or Staten Island routes add some distance, but your driver always picks the fastest option in real time.',
+    q: 'How far is EWR from Brooklyn, and how long does it take?',
+    a: 'Newark Airport to Brooklyn is roughly 15–20 miles depending on your neighborhood. Expect 45–70 minutes depending on your destination and traffic — the Goethals Bridge / Staten Island route or the route through Manhattan each add some distance, but your driver always picks the fastest option in real time.',
   },
   {
     q: 'Do you track flights at Newark Liberty Airport?',

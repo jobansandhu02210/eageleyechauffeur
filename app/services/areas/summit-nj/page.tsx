@@ -44,6 +44,18 @@ const faqs = [
     q: 'Do you serve neighboring towns like New Providence, Berkeley Heights, and Westfield?',
     a: 'Yes. Eagle Eye serves all of Union County and surrounding areas including New Providence, Berkeley Heights, Westfield, Springfield, Chatham, and Madison. Enter your exact address on the booking page for an instant flat-rate quote — we serve all of these communities.',
   },
+  {
+    q: 'How far is Summit NJ from Newark Airport and Manhattan?',
+    a: 'Summit is about 15 miles from Newark Liberty (EWR) — roughly 20–35 minutes and the closest major airport — and about 22 miles from Midtown Manhattan (35–55 minutes via I-78 and the Lincoln Tunnel). JFK is farther at about 35 miles (50–75 minutes).',
+  },
+  {
+    q: 'How much does a car service from Summit NJ cost?',
+    a: 'Summit transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tunnel and bridge tolls included and no surge. Enter your trip on the booking page for an exact quote.',
+  },
+  {
+    q: 'Which airport is best for Summit NJ travelers?',
+    a: 'Newark Liberty (EWR) is the closest and most convenient airport for Summit and Union County — about 15 miles and 20–35 minutes — with the widest choice of domestic and international flights. JFK and LaGuardia are options for specific routes but involve a longer drive through or around Manhattan.',
+  },
 ];
 
 const eaglEyeBenefits = [

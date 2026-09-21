@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'JFK to US Open | Airport Car Service to Flushing Meadows',
   description:
-    'JFK Airport to US Open car service — direct transfer to the Billie Jean King National Tennis Center. ~20–30 minutes, meet & greet at all terminals, flat-rate, no surge.',
+    'JFK to US Open car service — direct transfer to the Billie Jean King National Tennis Center, ~20–30 min. Meet & greet at all terminals, flat-rate. No surge.',
   keywords: [
     'JFK to US Open',
     'JFK airport US Open car service',

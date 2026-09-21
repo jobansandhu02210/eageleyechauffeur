@@ -43,6 +43,14 @@ const faqs = [
     q: 'Can I get an airport black car from SoHo for an early morning flight?',
     a: 'Yes. Early morning airport runs from SoHo are straightforward bookings. Your chauffeur is confirmed the night before, arrives at your SoHo address at the agreed time, and handles your luggage at pickup and drop-off. We track your flight and provide terminal-specific guidance for JFK, LGA, and EWR.',
   },
+  {
+    q: 'How far is SoHo from the NYC airports?',
+    a: 'From SoHo in Lower Manhattan, JFK is about 14 miles (35–55 minutes), LaGuardia (LGA) about 10 miles (25–45 minutes), and Newark (EWR) about 12 miles (25–45 minutes via the Holland Tunnel). Because SoHo is close to the Holland Tunnel, Newark is often the quickest airport from here.',
+  },
+  {
+    q: 'How much does a car service from SoHo to the airport cost?',
+    a: 'Airport transfers from SoHo are a flat rate confirmed at booking, with all tolls included and no surge regardless of downtown traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

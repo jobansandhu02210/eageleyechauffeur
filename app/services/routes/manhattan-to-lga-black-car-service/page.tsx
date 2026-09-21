@@ -13,43 +13,31 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'How much is a black car from Manhattan to LGA?',
-    a: 'All rates are flat and confirmed at booking — no surge pricing. Get an instant quote on our booking page by entering your Manhattan address and LGA as the destination.',
+    a: 'All rates are flat and confirmed at booking — no surge, tolls included. Because LaGuardia is the closest airport to Manhattan, these are among the most affordable NYC airport transfers. Get an exact quote by entering your Manhattan address and LGA as the destination on the booking page.',
   },
   {
-    q: 'How early should I leave Manhattan for a LGA flight?',
-    a: 'We recommend scheduling your pickup at least 2.5 hours before departure. During rush hour (7-9am and 5-8pm), the drive can take 35-50 minutes, so build in extra buffer.',
+    q: 'How far is LaGuardia from Manhattan, and how early should I leave?',
+    a: 'LaGuardia is about 8 miles from Midtown Manhattan — the closest of the three major airports (JFK and EWR are both about 15 miles). The drive is typically 20–40 minutes, but during rush hour (7–9am and 5–8pm) allow 35–50 minutes. We recommend scheduling your pickup at least 2.5 hours before a domestic departure to cover the drive plus check-in and security.',
   },
   {
     q: 'Will my chauffeur come to my hotel or apartment in Manhattan?',
-    a: 'Yes. Your driver picks you up directly at your Manhattan address. Just step outside when your driver arrives and you are on your way.',
-  },
-  {
-    q: 'Do you cover early morning departures from LGA?',
-    a: 'Yes. Eagle Eye Chauffeur operates 24/7. We confirm your driver the evening before for all early morning departures.',
+    a: 'Yes. Your driver picks you up directly at your Manhattan address — hotel, apartment, or office. Just step outside when your driver arrives and you are on your way.',
   },
   {
     q: 'Which terminal at LGA do I depart from?',
-    a: 'LGA has Terminal B (Delta, American) and Terminal C/D (United, Southwest, others). Your chauffeur drops you at the correct terminal based on your airline.',
+    a: 'After LaGuardia\'s rebuild, Terminal B serves American, United, Southwest, Alaska, and most carriers, while Terminal C serves Delta. Provide your airline at booking and your chauffeur drops you at the correct terminal.',
   },
   {
-    q: 'Is LGA the closest airport to Midtown for departures?',
-    a: 'Yes. LaGuardia is the closest major airport to Manhattan at just 9 miles from Midtown. That means shorter drive times and less margin for traffic delays compared to JFK or EWR — an ideal choice for domestic departures.',
+    q: 'What is the fastest route from Manhattan to LGA?',
+    a: 'A private black car is consistently the fastest door-to-door option — your chauffeur monitors live traffic and typically takes the Queens-Midtown Tunnel to the Grand Central Parkway, or the RFK/Triborough Bridge depending on your neighborhood. Public transit (the subway plus the LaGuardia Link bus) takes considerably longer and requires a transfer.',
   },
   {
-    q: 'What route do you take from Manhattan to LGA?',
-    a: 'Your chauffeur monitors live traffic and takes the fastest route — typically the Queens-Midtown Tunnel to the Grand Central Parkway, or the Triborough Bridge depending on your pickup neighborhood. The route is always optimized for your departure time.',
-  },
-  {
-    q: 'Does Eagle Eye track my LGA flight for timing?',
-    a: 'Yes. For departures we monitor your flight status so we can alert you if there are any significant schedule changes. Your driver will have your flight details and will reach out proactively if timing needs adjusting.',
-  },
-  {
-    q: 'What&apos;s the fastest way from Midtown to LaGuardia?',
-    a: 'Private black car via the Queens-Midtown Tunnel and Grand Central Parkway is consistently the fastest door-to-door option. Avoid public transit — the LaGuardia Link bus takes significantly longer and requires transfers from the subway.',
+    q: 'Do you cover early-morning departures to LGA?',
+    a: 'Yes. Eagle Eye Chauffeur operates 24/7 at the same flat rate, and we confirm your driver the evening before — so a 4am or 5am pickup for an early flight is fully covered with no last-minute uncertainty.',
   },
   {
     q: 'How far in advance should I book a car to LGA from Manhattan?',
-    a: 'We recommend booking at least 2 hours in advance. For rush-hour departures (7–9am, 4–7pm), book the night before. Flight time plus airport check-in plus drive time is the formula — your driver will help you work backwards from your departure.',
+    a: 'Booking a few hours ahead is usually enough, and we accept same-day requests 24/7. For rush-hour or early-morning departures, and to guarantee your preferred vehicle, we recommend booking the night before.',
   },
 ];
 

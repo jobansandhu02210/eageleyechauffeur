@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'NYC Hotel to US Open 2026 | Chauffeur Service',
   description:
-    'NYC hotel to US Open chauffeur service. Concierge pickup from any Manhattan hotel — Times Square, Midtown, Tribeca, Upper East Side. Flat-rate, no surge, post-match return. Book now.',
+    'NYC hotel to US Open chauffeur service. Concierge pickup from any Manhattan hotel — Times Square, Midtown, Tribeca, UES. Flat-rate, post-match return.',
   keywords: [
     'NYC hotel to US Open',
     'Manhattan hotel to US Open tennis',

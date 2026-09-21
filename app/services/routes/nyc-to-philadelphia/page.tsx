@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How long does it take to drive from NYC to Philadelphia?',
-    a: 'The drive from Midtown Manhattan to Center City Philadelphia is approximately 1.5–2 hours under normal conditions via the New Jersey Turnpike. Rush hour adds 30–45 minutes. It\'s one of the most popular long-distance routes on the Northeast Corridor and often faster by car than dealing with airport transfers.',
+    q: 'How far is NYC from Philadelphia, and how long does the drive take?',
+    a: 'New York City to Philadelphia is about 95 miles, almost entirely on the New Jersey Turnpike (I-95). The drive from Midtown Manhattan to Center City is typically 1.5–2 hours under normal conditions; rush hour adds 30–45 minutes. It is one of the most popular long-distance routes on the Northeast Corridor and often simpler by car than dealing with airport transfers at both ends.',
   },
   {
     q: 'How much does car service from NYC to Philadelphia cost?',
@@ -74,6 +74,7 @@ export default function NYCToPhiladelphiaPage() {
             Flat-rate private chauffeur from New York City to Philadelphia. Pickup at any NYC address or direct from JFK, LGA, or EWR — door-to-door to Center City, University City, or anywhere in Greater Philadelphia.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-brand-silver mb-10">
+            <span>📍 ~95 miles</span>
             <span>⏱ ~1.5–2 hours</span>
             <span>🛣 NJ Turnpike tolls included</span>
             <span>💰 Flat rate — no surge</span>
@@ -116,6 +117,36 @@ export default function NYCToPhiladelphiaPage() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-brand-white py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-4">
+            The NYC to Philadelphia Drive: What to Expect
+          </h2>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            New York City to Philadelphia is about 95 miles, running almost entirely down the New Jersey
+            Turnpike (I-95). Door to door it is typically a 1.5 to 2 hour drive; the main variables are
+            getting out of the city — the Holland or Lincoln Tunnel, or the George Washington Bridge — and
+            the final approach into Center City via I-95 or the Vine Street Expressway (I-676). Your
+            chauffeur watches traffic live and times the departure to keep the trip smooth.
+          </p>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            A private car makes the most sense as a same-day round trip — leave Manhattan in the morning,
+            spend the day in Philadelphia meetings, and return the same evening without an overnight. Unlike
+            Amtrak, there is no station-to-station transfer at either end, no luggage limit, and no fixed
+            timetable — you leave from your door and arrive directly at your Philadelphia address. It is a
+            popular route for law firms, Comcast Center and Center City corporate travel, and University City
+            (Penn, Drexel, CHOP) visits.
+          </p>
+          <p className="text-brand-grey leading-relaxed">
+            We pick up from any NYC address or directly from JFK, LGA, or EWR, and drop anywhere in Greater
+            Philadelphia — Center City, Rittenhouse, Old City, University City, the Navy Yard, the South
+            Philadelphia sports complex (Citizens Bank Park, Lincoln Financial Field, Wells Fargo Center),
+            PHL Airport, and suburbs like King of Prussia and the Main Line. First Class SUVs are recommended
+            for groups and luggage; Sprinter vans are available for larger parties.
+          </p>
         </div>
       </section>
 

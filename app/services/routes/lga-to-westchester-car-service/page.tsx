@@ -36,6 +36,14 @@ const faqs = [
     q: 'Is this service good for corporate travelers to Westchester?',
     a: 'Yes. Westchester County is home to major corporate headquarters including IBM and PepsiCo. We regularly serve business travelers arriving at LGA for meetings in White Plains, Armonk, Purchase, and surrounding corporate campuses. Book in advance for guaranteed availability.',
   },
+  {
+    q: 'How far is LaGuardia from White Plains and Westchester?',
+    a: 'LaGuardia is about 22 miles from White Plains (roughly 30–50 minutes via the Whitestone Bridge and Hutchinson River Parkway). Yonkers and New Rochelle are closer at about 12–18 miles (25–40 minutes), while Rye and the Connecticut border run about 25 miles (40–55 minutes).',
+  },
+  {
+    q: 'What is the driving distance from LGA to specific Westchester towns?',
+    a: 'Approximate distances from LaGuardia: Yonkers ~12 miles, New Rochelle ~15 miles, Scarsdale ~18 miles, White Plains ~22 miles, Rye ~25 miles, and Greenwich, CT ~28 miles. All are flat-rate transfers with tolls included and no surge.',
+  },
 ];
 
 

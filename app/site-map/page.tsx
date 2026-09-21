@@ -15,6 +15,7 @@ const airports = [
   { label: 'LaGuardia (LGA) Car Service', href: '/services/airport/lga' },
   { label: 'Newark (EWR) Car Service', href: '/services/airport/ewr' },
   { label: 'Westchester (HPN) Car Service', href: '/services/airport/hpn' },
+  { label: 'Teterboro (TEB) Car Service', href: '/services/areas/teb-airport' },
 ];
 
 const services = [
@@ -28,6 +29,7 @@ const services = [
 ];
 
 const areas = [
+  // Boroughs & regions
   { label: 'Manhattan', href: '/services/areas/manhattan' },
   { label: 'Brooklyn', href: '/services/areas/brooklyn' },
   { label: 'Queens', href: '/services/areas/queens' },
@@ -41,6 +43,7 @@ const areas = [
   { label: 'New Jersey', href: '/services/areas/new-jersey' },
   { label: 'Connecticut', href: '/services/areas/connecticut' },
   { label: 'Upstate NY', href: '/services/areas/upstate-ny' },
+  // Manhattan neighborhoods
   { label: 'Midtown Manhattan', href: '/services/areas/midtown-manhattan' },
   { label: 'Upper East Side', href: '/services/areas/upper-east-side' },
   { label: 'Upper West Side', href: '/services/areas/upper-west-side' },
@@ -55,43 +58,114 @@ const areas = [
   { label: 'Battery Park City', href: '/services/areas/battery-park-city' },
   { label: 'Gramercy Park', href: '/services/areas/gramercy-park' },
   { label: 'Harlem', href: '/services/areas/harlem' },
+  // Nassau County
   { label: 'Garden City', href: '/services/areas/garden-city' },
   { label: 'Great Neck', href: '/services/areas/great-neck' },
   { label: 'New Hyde Park', href: '/services/areas/new-hyde-park' },
   { label: 'Manhasset', href: '/services/areas/manhasset' },
+  { label: 'Roslyn', href: '/services/areas/roslyn' },
+  { label: 'Port Washington', href: '/services/areas/port-washington' },
+  { label: 'Mineola', href: '/services/areas/mineola' },
+  { label: 'Hicksville', href: '/services/areas/hicksville' },
+  { label: 'Westbury', href: '/services/areas/westbury' },
+  { label: 'Hempstead', href: '/services/areas/hempstead' },
+  { label: 'Levittown', href: '/services/areas/levittown' },
+  { label: 'Massapequa', href: '/services/areas/massapequa' },
+  { label: 'Freeport', href: '/services/areas/freeport' },
+  { label: 'Rockville Centre', href: '/services/areas/rockville-centre' },
+  { label: 'Long Beach', href: '/services/areas/long-beach' },
+  { label: 'Valley Stream', href: '/services/areas/valley-stream' },
+  { label: 'Elmont', href: '/services/areas/elmont' },
+  { label: 'Floral Park', href: '/services/areas/floral-park' },
+  // Suffolk County
+  { label: 'Huntington', href: '/services/areas/huntington' },
+  { label: 'Babylon', href: '/services/areas/babylon' },
+  { label: 'Bay Shore', href: '/services/areas/bay-shore' },
+  { label: 'Smithtown', href: '/services/areas/smithtown' },
+  { label: 'Commack', href: '/services/areas/commack' },
+  { label: 'Hauppauge', href: '/services/areas/hauppauge' },
+  { label: 'Ronkonkoma', href: '/services/areas/ronkonkoma' },
+  { label: 'Patchogue', href: '/services/areas/patchogue' },
+  { label: 'Hampton Bays', href: '/services/areas/hampton-bays' },
+  { label: 'Westhampton Beach', href: '/services/areas/westhampton-beach' },
+  // Westchester
   { label: 'White Plains', href: '/services/areas/white-plains' },
   { label: 'Yonkers', href: '/services/areas/yonkers' },
   { label: 'Scarsdale', href: '/services/areas/scarsdale' },
   { label: 'New Rochelle', href: '/services/areas/new-rochelle' },
+  // Connecticut
   { label: 'Greenwich CT', href: '/services/areas/greenwich-ct' },
   { label: 'Stamford CT', href: '/services/areas/stamford-ct' },
   { label: 'Norwalk CT', href: '/services/areas/norwalk-ct' },
+  // New Jersey
   { label: 'Hoboken NJ', href: '/services/areas/hoboken' },
   { label: 'Jersey City NJ', href: '/services/areas/jersey-city' },
   { label: 'Newark NJ', href: '/services/areas/newark-nj' },
   { label: 'Princeton NJ', href: '/services/areas/princeton-nj' },
+  { label: 'Morristown NJ', href: '/services/areas/morristown-nj' },
   { label: 'Short Hills NJ', href: '/services/areas/short-hills-nj' },
+  { label: 'Summit NJ', href: '/services/areas/summit-nj' },
 ];
 
 const routes = [
+  // Airport ⇄ Manhattan
   { label: 'JFK → Manhattan', href: '/services/routes/jfk-to-manhattan-black-car-service' },
   { label: 'Manhattan → JFK', href: '/services/routes/manhattan-to-jfk-black-car-service' },
   { label: 'LGA → Manhattan', href: '/services/routes/lga-to-manhattan-black-car-service' },
   { label: 'Manhattan → LGA', href: '/services/routes/manhattan-to-lga-black-car-service' },
   { label: 'EWR → Manhattan', href: '/services/routes/ewr-to-manhattan-black-car-service' },
   { label: 'Manhattan → EWR', href: '/services/routes/manhattan-to-ewr-black-car-service' },
+  { label: 'JFK → Midtown Manhattan', href: '/services/routes/jfk-to-midtown-manhattan-black-car-service' },
+  { label: 'JFK → Upper East Side', href: '/services/routes/jfk-to-upper-east-side-car-service' },
+  // Boroughs ⇄ airports
   { label: 'Brooklyn → JFK', href: '/services/routes/brooklyn-to-jfk-black-car-service' },
   { label: 'Queens → JFK', href: '/services/routes/queens-to-jfk-black-car-service' },
   { label: 'Bronx → JFK', href: '/services/routes/bronx-to-jfk-black-car-service' },
   { label: 'Staten Island → JFK', href: '/services/routes/staten-island-to-jfk-black-car-service' },
   { label: 'Midtown → JFK', href: '/services/routes/midtown-to-jfk-black-car-service' },
   { label: 'Upper East Side → JFK', href: '/services/routes/upper-east-side-to-jfk-black-car-service' },
+  { label: 'JFK → Brooklyn', href: '/services/routes/jfk-to-brooklyn' },
+  { label: 'JFK → Queens', href: '/services/routes/jfk-to-queens-black-car-service' },
+  { label: 'LGA → Brooklyn', href: '/services/routes/lga-to-brooklyn-black-car-service' },
+  { label: 'LGA → Queens', href: '/services/routes/lga-to-queens-black-car-service' },
+  { label: 'EWR → Brooklyn', href: '/services/routes/ewr-to-brooklyn-black-car-service' },
+  { label: 'EWR → Queens', href: '/services/routes/ewr-to-queens-car-service' },
+  { label: 'Queens → LGA', href: '/services/routes/queens-to-lga-black-car-service' },
+  { label: 'Wall Street → JFK', href: '/services/routes/wall-street-to-jfk-car-service' },
+  { label: 'Park Avenue → JFK', href: '/services/routes/park-avenue-to-jfk-car-service' },
+  { label: 'Midtown → LGA', href: '/services/routes/midtown-to-lga-black-car-service' },
+  { label: 'Midtown → EWR', href: '/services/routes/midtown-to-ewr-black-car-service' },
+  // Borough ⇄ Manhattan
+  { label: 'Manhattan → Brooklyn', href: '/services/routes/manhattan-to-brooklyn' },
+  { label: 'Brooklyn → Manhattan', href: '/services/routes/brooklyn-to-manhattan-black-car-service' },
+  { label: 'Bronx → Manhattan', href: '/services/routes/bronx-to-manhattan-black-car-service' },
+  { label: 'Queens → Manhattan', href: '/services/routes/queens-to-manhattan-black-car-service' },
+  { label: 'Staten Island → Manhattan', href: '/services/routes/staten-island-to-manhattan-black-car-service' },
+  // Airport ⇄ Long Island & Westchester
   { label: 'JFK → Long Island', href: '/services/routes/jfk-to-long-island-car-service' },
+  { label: 'LGA → Long Island', href: '/services/routes/lga-to-long-island-car-service' },
+  { label: 'EWR → Long Island', href: '/services/routes/ewr-to-long-island-car-service' },
   { label: 'JFK → Westchester', href: '/services/routes/jfk-to-westchester-car-service' },
+  { label: 'LGA → Westchester', href: '/services/routes/lga-to-westchester-car-service' },
   { label: 'NYC → Westchester', href: '/services/routes/nyc-to-westchester-car-service' },
+  // Regional & long-distance
   { label: 'Manhattan → Hamptons', href: '/services/routes/manhattan-to-hamptons-car-service' },
   { label: 'Manhattan → Connecticut', href: '/services/routes/manhattan-to-connecticut-car-service' },
-  { label: 'All Routes', href: '/services/routes' },
+  { label: 'NYC → Boston', href: '/services/routes/nyc-to-boston' },
+  { label: 'NYC → Philadelphia', href: '/services/routes/nyc-to-philadelphia' },
+  { label: 'NYC → Washington DC', href: '/services/routes/nyc-to-washington-dc' },
+  { label: 'NYC → Princeton, NJ', href: '/services/routes/nyc-to-princeton-nj-car-service' },
+  // Teterboro (TEB)
+  { label: 'Manhattan → Teterboro', href: '/services/routes/manhattan-to-teterboro-black-car-service' },
+  { label: 'Teterboro → Manhattan', href: '/services/routes/teterboro-to-manhattan-black-car-service' },
+  { label: 'New Jersey → Teterboro', href: '/services/routes/new-jersey-to-teterboro-car-service' },
+  { label: 'Teterboro → New Jersey', href: '/services/routes/teterboro-to-new-jersey-car-service' },
+  { label: 'Brooklyn → Teterboro', href: '/services/routes/brooklyn-to-teterboro-car-service' },
+  { label: 'Long Island → Teterboro', href: '/services/routes/long-island-to-teterboro-car-service' },
+  { label: 'Westchester → Teterboro', href: '/services/routes/westchester-to-teterboro-car-service' },
+  { label: 'Connecticut → Teterboro', href: '/services/routes/connecticut-to-teterboro-car-service' },
+  { label: 'Queens & Bronx → Teterboro', href: '/services/routes/queens-bronx-to-teterboro-car-service' },
+  { label: 'All Routes (incl. Hamptons)', href: '/services/routes' },
 ];
 
 function Section({ title, links }: { title: string; links: { label: string; href: string }[] }) {
@@ -141,7 +215,7 @@ export default function SitemapPage() {
 
           <Section title="Services" links={services} />
           <Section title="Airport Car Service" links={airports} />
-          <Section title="Popular Routes" links={routes} />
+          <Section title="Routes" links={routes} />
           <Section title="Service Areas" links={areas} />
 
           <div>

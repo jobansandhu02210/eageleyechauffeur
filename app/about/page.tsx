@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getSiteUrl } from '@/lib/site';
-import { BreadcrumbJsonLd, LocalBusinessJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 import {
   CONTACT_PHONE_DISPLAY,
   CONTACT_PHONE_E164,
@@ -98,7 +98,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <LocalBusinessJsonLd />
       <BreadcrumbJsonLd items={breadcrumbs} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}

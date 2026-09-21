@@ -13,39 +13,31 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'How much is a black car from Newark Airport to Manhattan?',
-    a: 'All rates are flat and confirmed at booking — all tolls included, no hidden fees. Get an instant quote on our booking page by entering your EWR terminal and Manhattan destination.',
+    a: 'All rates are flat and confirmed at booking — all tolls included, no surge, no hidden fees. For reference, a taxi from EWR to Midtown typically runs $60–90 plus tolls, and an Uber ranges from about $50–80 and can exceed $120 with surge; a pre-booked black car is often the more predictable and comfortable choice. Get an exact quote by entering your EWR terminal and Manhattan destination on the booking page.',
   },
   {
-    q: 'Are tolls included in the EWR to Manhattan black car price?',
-    a: 'Yes. All tunnel and airport tolls are included in your quoted price. What you see at booking is what you pay — nothing added at the end.',
+    q: 'How far is Newark Airport from Manhattan, and how long does it take?',
+    a: 'Newark Liberty (EWR) is about 15 miles from Midtown Manhattan and about 14 miles from Lower Manhattan and the Financial District. The drive is typically 30–50 minutes depending on your destination and the tunnel used; morning rush (7–9am) and evening peak (4–7pm) can add 20–30 minutes. EWR is actually the closest of the three major airports to Lower Manhattan and the west side.',
+  },
+  {
+    q: 'Are tolls included in the EWR to Manhattan price?',
+    a: 'Yes — every toll is included in your flat rate: the EWR airport egress fee and either the Lincoln Tunnel or Holland Tunnel. There are no toll surcharges or add-ons at drop-off. The price you see at booking is the price you pay.',
   },
   {
     q: 'Where does my chauffeur meet me at Newark Airport?',
-    a: 'Your chauffeur meets you in the ground transportation area of your terminal (A, B, or C) with a name sign. You receive a WhatsApp message with the exact meeting point before landing.',
-  },
-  {
-    q: 'How long does it take from EWR to Manhattan?',
-    a: 'The drive from Newark Airport to Midtown Manhattan is approximately 16 miles and takes 30-45 minutes in normal traffic. During peak hours, allow 50-65 minutes.',
+    a: 'Your chauffeur meets you in the ground transportation area of your terminal (A, B, or C) with a name sign. You receive a WhatsApp message with the exact meeting point before landing, so there is no searching or walking to a remote rideshare lot.',
   },
   {
     q: 'Do you track flights at Newark Liberty Airport?',
-    a: 'Yes. We monitor your EWR flight in real time and adjust pickup automatically for any delays or early arrivals — at no extra charge.',
+    a: 'Yes. We monitor your EWR flight in real time and adjust pickup automatically for any delays or early arrivals — at no extra charge — and include 60 minutes of complimentary wait time after you land.',
   },
   {
     q: 'Which route do you take from EWR to Manhattan?',
-    a: 'Your chauffeur selects the fastest route based on real-time traffic — typically the New Jersey Turnpike to the Lincoln Tunnel for Midtown destinations, or the Holland Tunnel for lower Manhattan and the Financial District. All tunnel tolls are included in your flat rate.',
+    a: 'Your chauffeur selects the fastest route based on real-time traffic — typically the New Jersey Turnpike to the Lincoln Tunnel for Midtown and uptown destinations, or the Holland Tunnel for Lower Manhattan, SoHo, Tribeca, and the Financial District.',
   },
   {
-    q: 'Is the EWR airport toll included in the price?',
-    a: 'Yes. All tolls — including the EWR airport toll, the Lincoln Tunnel, and the Holland Tunnel — are included in your quoted flat rate. There are no hidden fees or add-ons when you arrive at your destination.',
-  },
-  {
-    q: 'Are tolls included in the EWR to Manhattan rate?',
-    a: 'Yes. All tolls — whether via the Holland Tunnel or Lincoln Tunnel — are included in your flat rate. There are no toll surcharges added to your bill. The price you see at booking is the price you pay.',
-  },
-  {
-    q: 'How long does it take from Newark Airport to Manhattan?',
-    a: 'Typically 35–50 minutes to Midtown in normal traffic via the New Jersey Turnpike and Lincoln Tunnel. Morning rush (7–9am) and evening peak (4–7pm) can add 20–30 minutes. Your driver monitors traffic and selects the fastest tunnel or bridge approach.',
+    q: 'Is Newark (EWR) or JFK better for getting to Manhattan?',
+    a: 'It depends where in Manhattan you are going. For Lower Manhattan, the Financial District, and the west side, Newark (EWR) is often the closest and most convenient. For the east side, JFK can be comparable. Both are well under an hour by car outside of peak traffic, and EWR is frequently the quicker choice into Downtown.',
   },
 ];
 

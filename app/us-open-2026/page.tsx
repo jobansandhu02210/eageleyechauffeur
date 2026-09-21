@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     absolute: 'US Open Car Service 2026 | Billie Jean King Tennis Center | Eagle Eye',
   },
   description:
-    'US Open car service to the Billie Jean King National Tennis Center, Flushing Meadows. Flat-rate chauffeur from Manhattan, JFK, LGA & EWR. No surge, no parking gridlock, pre-arranged post-match pickup.',
+    'US Open car service to the Billie Jean King National Tennis Center, Flushing Meadows. Flat-rate chauffeur from Manhattan, JFK, LGA & EWR. No surge, ever.',
   keywords: [
     'US Open car service',
     'US Open tennis transportation',

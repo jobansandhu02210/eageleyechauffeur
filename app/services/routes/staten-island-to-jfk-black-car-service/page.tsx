@@ -17,8 +17,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, no hidden fees. Crucially, the Verrazano-Narrows Bridge toll is fully included in your flat rate. There are no surprise add-ons when you arrive at the toll plaza. Get an instant quote on our booking page by entering your Staten Island address and JFK as your destination.',
   },
   {
-    q: 'How long does it take from Staten Island to JFK?',
-    a: 'Travel time from Staten Island to JFK ranges from 45 to 70 minutes depending on your pickup neighborhood and traffic conditions. St. George and Stapleton are closest to the Verrazano Bridge and typically reach JFK in 45–60 minutes. Tottenville in the south of the island adds 10–15 minutes. Your chauffeur monitors live traffic and takes the fastest available route via the Verrazano-Narrows Bridge and Belt Parkway.',
+    q: 'How far is Staten Island from JFK, and how long does it take?',
+    a: 'Staten Island to JFK is roughly 20–25 miles via the Verrazzano-Narrows Bridge and the Belt Parkway. Travel time ranges from 45 to 70 minutes depending on your pickup neighborhood and traffic conditions. St. George and Stapleton are closest to the Verrazano Bridge and typically reach JFK in 45–60 minutes. Tottenville in the south of the island adds 10–15 minutes. Your chauffeur monitors live traffic and takes the fastest available route via the Verrazano-Narrows Bridge and Belt Parkway.',
   },
   {
     q: 'Is the Verrazano-Narrows Bridge toll included in the rate?',

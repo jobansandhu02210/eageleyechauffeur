@@ -1,7 +1,5 @@
 'use client';
 
-import { getSiteUrl } from '@/lib/site';
-
 import { useState } from 'react';
 import Link from 'next/link';
 import {
@@ -14,7 +12,6 @@ const benefits = [
     title: 'Monthly Consolidated Invoicing',
     description:
       'One expense-report-ready invoice at the end of each month with itemized trip details — no chasing receipts.',
-  alternates: { canonical: `${getSiteUrl()}/corporate-accounts` },
   },
   {
     title: 'Dedicated Account Coordinator',

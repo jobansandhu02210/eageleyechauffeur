@@ -43,6 +43,14 @@ const faqs = [
     q: 'Is hourly black car hire available in Tribeca?',
     a: 'Yes. Hourly hire is popular in Tribeca for multi-stop days — meetings in the Financial District, lunch in SoHo, pickups back at the loft, and onward to an evening event. Your dedicated chauffeur stays with you throughout the booking period and waits at each stop without re-booking.',
   },
+  {
+    q: 'How far is Tribeca from the NYC airports?',
+    a: 'From Tribeca in Lower Manhattan, Newark (EWR) is about 11 miles (20–40 minutes via the Holland Tunnel), LaGuardia (LGA) about 10 miles (25–45 minutes), and JFK about 14 miles (35–55 minutes). Being close to the Holland Tunnel, Newark is often the quickest airport from Tribeca.',
+  },
+  {
+    q: 'How much does a car service from Tribeca to the airport cost?',
+    a: 'Airport transfers from Tribeca are a flat rate confirmed at booking, with all tolls included and no surge regardless of downtown traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

@@ -43,6 +43,14 @@ const faqs = [
     q: 'Do you serve Tribeca and the Seaport from the same area?',
     a: 'Yes. Our Financial District service extends seamlessly into neighboring Tribeca, South Street Seaport, and the Brooklyn Bridge area. If you&apos;re moving between FiDi offices and Tribeca meetings or heading to the Seaport for a client dinner, we handle it as a single cohesive booking.',
   },
+  {
+    q: 'How far is the Financial District from the NYC airports?',
+    a: 'From the Financial District in Lower Manhattan, Newark (EWR) is about 12 miles (20–40 minutes via the Holland Tunnel), LaGuardia (LGA) about 10 miles (25–45 minutes), and JFK about 14 miles (35–55 minutes). Being close to the tunnels, Newark and LaGuardia are usually the quickest airports from FiDi.',
+  },
+  {
+    q: 'How much does a car service from the Financial District to the airport cost?',
+    a: 'Airport transfers from the Financial District are a flat rate confirmed at booking, with all tolls included and no surge regardless of downtown traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How long does it take to drive from NYC to Washington DC?',
-    a: 'The drive from Midtown Manhattan to downtown Washington DC is approximately 4–5 hours under normal conditions via I-95 and the New Jersey and Delaware turnpikes. Traffic through the Baltimore-Washington corridor can add 30–90 minutes during peak hours. Early morning departures (before 7 AM) typically have the smoothest run.',
+    q: 'How far is NYC from Washington DC, and how long does the drive take?',
+    a: 'New York City to Washington DC is about 225 miles down I-95 through New Jersey, Delaware, and Maryland. Door to door it is typically a 4–5 hour drive; traffic through the Baltimore-Washington corridor can add 30–90 minutes during peak hours. Early morning departures (before 7 AM) typically have the smoothest run.',
   },
   {
     q: 'How much does car service from NYC to Washington DC cost?',
@@ -78,11 +78,11 @@ export default function NYCToWashingtonDCPage() {
             Flat-rate private chauffeur from New York City to Washington DC. Pickup at any NYC address or direct from JFK, LGA, or EWR — door-to-door to the Capitol, K Street, Georgetown, or Reagan National.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-brand-silver mb-10">
+            <span>📍 ~225 miles</span>
             <span>⏱ ~4–5 hours</span>
             <span>🛣 All tolls included (NJ, DE, MD)</span>
             <span>💰 Flat rate — no surge</span>
             <span>🚪 Door-to-door</span>
-            <span>🔄 Same-day round trips available</span>
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/book" className="inline-block bg-brand-white text-brand-black font-semibold px-8 py-4 text-sm hover:bg-brand-offwhite transition-colors text-center">Get Instant Quote</Link>
@@ -109,7 +109,33 @@ export default function NYCToWashingtonDCPage() {
         </div>
       </section>
 
-      <section className="bg-brand-offwhite py-14">
+      <section className="bg-brand-offwhite py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-4">
+            The NYC to DC Drive: What to Expect
+          </h2>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            New York City to Washington DC is about 225 miles, running down I-95 through New Jersey, Delaware, and
+            Maryland. Door to door it is typically a 4 to 5 hour drive; the biggest variable is the Baltimore-Washington
+            corridor, where I-95 and the Beltway can add 30 to 90 minutes during peak hours. Your chauffeur monitors
+            traffic live and can take the I-95 Express Lanes or reroute to keep you on schedule.
+          </p>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            This is one of the most popular corporate routes we run, especially as a same-day round trip — leave
+            Manhattan before 7 AM, spend the day in DC meetings, and return the same evening without an overnight hotel.
+            Unlike the Acela or a flight, you work privately the entire way, carry whatever you need, and skip station
+            transfers and airport security at both ends.
+          </p>
+          <p className="text-brand-grey leading-relaxed">
+            We pick up from any NYC address or directly from JFK, LGA, or EWR, and drop anywhere in the DC area — Capitol
+            Hill, the K Street corridor, Georgetown, Dupont Circle, Reagan National (DCA) or Dulles (IAD), and the
+            northern Virginia suburbs (Arlington, McLean, Tysons Corner). First Class SUVs are recommended for the
+            distance; Sprinter vans are available for delegations.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-brand-white py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-brand-black mb-8">NYC to Washington DC FAQ</h2>
           <div className="space-y-6">

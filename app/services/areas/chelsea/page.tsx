@@ -43,6 +43,14 @@ const faqs = [
     q: 'Is hourly black car hire available in Chelsea?',
     a: 'Absolutely. Chelsea&apos;s gallery district and the High Line corridor make hourly hire particularly practical here — you can move between gallery openings, Chelsea Market stops, and Flatiron meetings with your chauffeur on standby at each location. Book hourly and your driver stays with you through the full booking period.',
   },
+  {
+    q: 'How far is Chelsea from the NYC airports?',
+    a: 'From Chelsea on Manhattan\'s west side, LaGuardia (LGA) is about 9 miles (25–45 minutes), Newark (EWR) is about 12 miles (25–45 minutes via the Lincoln or Holland Tunnel), and JFK is about 15 miles (40–65 minutes). Because Chelsea is close to the West Side Highway and the Hudson River tunnels, EWR is often quicker than its distance suggests.',
+  },
+  {
+    q: 'How much does a car service from Chelsea to the airport cost?',
+    a: 'Airport transfers from Chelsea are a flat rate confirmed at booking, with all tolls included and no surge — regardless of West Side Highway or tunnel traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

@@ -43,6 +43,14 @@ const faqs = [
     q: 'Do you cover Broadway and Amsterdam Avenue on the Upper West Side?',
     a: 'Yes. Our UWS coverage runs the full width and length of the neighborhood — from Riverside Park and Riverside Drive on the west to Central Park West on the east, and from 59th Street at Columbus Circle north through Morningside Heights to 125th Street. Broadway, Amsterdam Avenue, Columbus Avenue, and all cross-streets are included.',
   },
+  {
+    q: 'How far is the Upper West Side from the NYC airports?',
+    a: 'From the Upper West Side, LaGuardia (LGA) is about 9 miles (25–45 minutes), Newark (EWR) about 14 miles (30–50 minutes), and JFK about 16 miles (45–65 minutes). Because the UWS is on Manhattan\'s west side near the Henry Hudson Parkway, LaGuardia and Newark are usually the quickest airports.',
+  },
+  {
+    q: 'How much does a car service from the Upper West Side to the airport cost?',
+    a: 'Airport transfers from the Upper West Side are a flat rate confirmed at booking, with all tolls included and no surge regardless of traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

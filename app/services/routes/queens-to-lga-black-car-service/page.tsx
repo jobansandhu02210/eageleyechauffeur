@@ -39,6 +39,14 @@ const faqs = [
     q: 'Is an LGA car service worth it for short Queens trips?',
     a: 'Absolutely. Even for a 10-minute drive from Astoria, a professional chauffeur service means door-to-terminal service, luggage handled for you, no parking stress, and a vehicle waiting exactly when you scheduled it. The convenience of a confirmed, professional pickup — especially for early morning flights — is worth far more than the short distance suggests.',
   },
+  {
+    q: 'How far is Queens from LaGuardia in miles?',
+    a: 'Because LaGuardia is in East Elmhurst, northern Queens, it is only a few miles from most of the borough: Astoria and Jackson Heights are about 3 miles, Long Island City and Flushing about 5 miles, Forest Hills about 6 miles, and Jamaica — on the far side of Queens — about 9 miles. These are some of the shortest airport transfers anywhere in New York City.',
+  },
+  {
+    q: 'Do you offer LGA-to-Queens pickups with meet and greet?',
+    a: 'Yes. For arrivals, your chauffeur tracks your flight, meets you in the arrivals area of Terminal B or C with a name sign, helps with your luggage, and drives you straight home anywhere in Queens — with 60 minutes of complimentary wait time included after you land.',
+  },
 ];
 
 
@@ -120,29 +128,31 @@ export default function QueensToLGABlackCarPage() {
       <section className="bg-brand-offwhite py-16 lg:py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3">
-            Queens to LGA — Neighborhoods &amp; Estimated Times
+            Queens to LGA — Neighborhoods, Distances &amp; Times
           </h2>
           <p className="text-brand-grey mb-8 max-w-2xl">
-            Because LGA sits within Queens, many neighborhoods are among the closest airport
-            transfers in all of New York City. Times below are off-peak estimates.
+            LaGuardia sits on the northern edge of Queens, in East Elmhurst — so much of the borough is
+            practically next door. Astoria and Jackson Heights are only about 3 miles away, often 10–20 minutes to
+            the terminal. Distances and times below are off-peak estimates; add time during morning rush and Friday
+            afternoons.
           </p>
           <div className="space-y-3">
             {[
-              { from: 'Astoria → LGA', time: '10–20 min' },
-              { from: 'Long Island City → LGA', time: '15–25 min' },
-              { from: 'Flushing → LGA', time: '15–25 min' },
-              { from: 'Jamaica → LGA', time: '25–35 min' },
-              { from: 'Forest Hills → LGA', time: '20–30 min' },
-              { from: 'Jackson Heights → LGA', time: '10–20 min' },
-              { from: 'Bayside → LGA', time: '20–30 min' },
-              { from: 'Ridgewood → LGA', time: '20–35 min' },
+              { from: 'Astoria → LGA', miles: '~3 miles', time: '10–20 min' },
+              { from: 'Jackson Heights → LGA', miles: '~3 miles', time: '10–20 min' },
+              { from: 'Long Island City → LGA', miles: '~5 miles', time: '15–25 min' },
+              { from: 'Flushing → LGA', miles: '~5 miles', time: '15–25 min' },
+              { from: 'Forest Hills → LGA', miles: '~6 miles', time: '20–30 min' },
+              { from: 'Ridgewood → LGA', miles: '~7 miles', time: '20–35 min' },
+              { from: 'Bayside → LGA', miles: '~8 miles', time: '20–30 min' },
+              { from: 'Jamaica → LGA', miles: '~9 miles', time: '25–35 min' },
             ].map((r) => (
               <div
                 key={r.from}
-                className="bg-brand-white border border-brand-light p-4 flex justify-between items-center"
+                className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1"
               >
                 <span className="font-medium text-brand-black">{r.from}</span>
-                <span className="text-brand-grey text-sm">{r.time}</span>
+                <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
               </div>
             ))}
           </div>

@@ -3,7 +3,7 @@ import { Poppins, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { GtagLeadEvents } from '@/components/GtagLeadEvents';
 import { LeadCaptureStrip } from '@/components/LeadCaptureStrip';
 import { LocalBusinessJsonLd } from '@/components/JsonLd';
@@ -31,6 +31,7 @@ const playfair = Playfair_Display({
 const siteUrl = getSiteUrl();
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID?.trim();
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -87,6 +88,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${poppins.variable} ${playfair.variable}`}>
+      {gtmId ? <GoogleTagManager gtmId={gtmId} /> : null}
       <body className="font-sans min-h-screen flex flex-col">
         <LocalBusinessJsonLd />
         <WebSiteJsonLd />

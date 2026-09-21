@@ -13,39 +13,31 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: 'How much is a black car from Manhattan to Newark Airport?',
-    a: 'All rates are flat and confirmed at booking — all tolls included, no hidden fees. Get an instant quote on our booking page by entering your Manhattan address and EWR as the destination.',
+    a: 'All rates are flat and confirmed at booking — all tolls included, no surge, no hidden fees. For reference, a taxi from Manhattan to EWR runs a metered fare plus a New Jersey surcharge and tolls, and Uber can surge past $120 at peak times; a pre-booked black car is often the more predictable choice. Get an exact quote by entering your Manhattan address and EWR on the booking page.',
   },
   {
-    q: 'How far in advance should I leave Manhattan for a EWR flight?',
-    a: 'We recommend scheduling pickup at least 3 hours before your flight. The drive is 30-45 minutes in normal traffic, but the Lincoln Tunnel approach can add 20-30 minutes during peak hours.',
+    q: 'How far is Manhattan from Newark Airport, and how long does it take?',
+    a: 'Newark Liberty (EWR) is about 15 miles from Midtown Manhattan and about 14 miles from Lower Manhattan — EWR is actually the closest of the three major airports to Downtown and the west side. The drive is typically 30–45 minutes, but the Lincoln Tunnel approach can add 20–30 minutes during peak hours, so we recommend scheduling pickup at least 3 hours before your flight.',
   },
   {
-    q: 'Are tunnel tolls included in the price?',
-    a: 'Yes. All tolls — including the Lincoln or Holland Tunnel and the airport toll — are included in your flat rate. Zero surprise fees when you arrive.',
+    q: 'Are tolls included in the Manhattan to EWR price?',
+    a: 'Yes — every toll is included in your flat rate: the Lincoln or Holland Tunnel and the Newark airport fee. There are no surprise charges at the end of the ride; the price you see at booking is the price you pay.',
   },
   {
     q: 'Which Newark Airport terminal will I be dropped at?',
-    a: 'Your driver drops you at the correct departures terminal based on your airline. EWR has Terminal A (United domestic), Terminal B (American, international carriers), and Terminal C (United international). Just confirm your airline when booking.',
+    a: 'Your driver drops you at the correct departures terminal based on your airline. EWR has Terminal A (United domestic and others), Terminal B (international carriers and American), and Terminal C (United\'s main hub). Just confirm your airline when booking.',
   },
   {
     q: 'Do you handle large luggage for EWR departures?',
-    a: 'Yes. Our SUV option (Escalade or similar) accommodates large bags and multiple passengers comfortably. Mention your luggage count when booking.',
+    a: 'Yes. Our First Class SUV accommodates large bags and multiple passengers comfortably, and Sprinter vans are available for groups. Mention your luggage and passenger count when booking so we assign the right vehicle.',
   },
   {
     q: 'Which route do you take from Manhattan to Newark Airport?',
-    a: 'Your chauffeur selects the optimal route in real time — the Lincoln Tunnel is the primary route for Midtown pickups, while the Holland Tunnel serves lower Manhattan and Tribeca pickups most efficiently. All toll costs are included in your flat rate.',
-  },
-  {
-    q: 'How long does it take from Manhattan to EWR?',
-    a: 'The drive from Manhattan to Newark Airport takes 30–45 minutes in normal traffic. During peak hours — weekday mornings (7–9am) and evenings (5–8pm) — the Lincoln Tunnel approach can add 20–30 minutes. We recommend allowing 3 hours before your departure for stress-free travel.',
+    a: 'Your chauffeur selects the optimal route in real time — the Lincoln Tunnel is the primary route for Midtown pickups, while the Holland Tunnel serves Lower Manhattan, Tribeca, and the Financial District most efficiently. All toll costs are included in your flat rate.',
   },
   {
     q: 'Why do some travelers prefer EWR over JFK?',
-    a: 'Newark Airport often has more United Airlines international connections, lower fares on certain routes, and can be faster to reach from Midtown via the Lincoln Tunnel than JFK via Queens. EWR is also the closest airport for Hudson Yards and west Midtown clients.',
-  },
-  {
-    q: 'Are tolls included in the Manhattan to EWR rate?',
-    a: 'Yes — all Holland Tunnel or Lincoln Tunnel tolls are included in your flat rate. No surprise charges at the end of the ride.',
+    a: 'Newark often has more United Airlines connections and can be faster to reach from Midtown via the Lincoln Tunnel than JFK via Queens. It is also the closest airport for Hudson Yards, Chelsea, and the west side, and for anyone heading to or from New Jersey.',
   },
 ];
 

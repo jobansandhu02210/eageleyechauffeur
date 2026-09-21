@@ -43,6 +43,14 @@ const faqs = [
     q: 'Do you serve Peter Cooper Village and Stuyvesant Town from Gramercy?',
     a: "Yes. Stuyvesant Town and Peter Cooper Village — the large residential complex along the East River between 14th and 23rd Streets — are within our service area. We pick up from the main gates on First Avenue and from any of the building entrances throughout the complex. Residents use Eagle Eye for JFK and LGA airport transfers, uptown appointments, and evening events in other parts of Manhattan.",
   },
+  {
+    q: 'How far is Gramercy Park from the NYC airports?',
+    a: 'From Gramercy Park in Manhattan, LaGuardia (LGA) is about 9 miles (25–45 minutes), Newark (EWR) about 12 miles (25–45 minutes via the tunnels), and JFK about 14 miles (40–60 minutes). LaGuardia is typically the quickest airport from Gramercy.',
+  },
+  {
+    q: 'How much does a car service from Gramercy Park to the airport cost?',
+    a: 'Airport transfers from Gramercy Park are a flat rate confirmed at booking, with all tolls included and no surge regardless of traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

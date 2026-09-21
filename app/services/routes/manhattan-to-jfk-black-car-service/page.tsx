@@ -51,6 +51,14 @@ const faqs = [
     q: 'Which route do you take from Manhattan to JFK?',
     a: 'The route depends on traffic — typically the Queens-Midtown Tunnel and the Van Wyck Expressway, or the Brooklyn-Queens Expressway depending on your Manhattan location. Your driver monitors live traffic and selects the fastest approach.',
   },
+  {
+    q: 'How far is Manhattan from JFK?',
+    a: 'JFK is about 14 to 17 miles from Manhattan depending on your neighborhood — roughly 14 miles from Lower Manhattan and the Financial District, about 15 miles from Midtown, and up to 17 miles from the Upper West Side. The drive is typically 35–60 minutes.',
+  },
+  {
+    q: 'How much does a car service from Manhattan to JFK cost?',
+    a: 'It is a flat rate confirmed at booking, based on your Manhattan neighborhood and vehicle class, with all tolls included and no surge — even during rush hour. A pre-booked black car is often comparable to a surge-priced Uber and far more predictable than a metered taxi. Enter your address on the booking page for an exact quote.',
+  },
 ];
 
 
@@ -95,23 +103,28 @@ export default function ManhattanToJFKBlackCarPage() {
 
         <section className="pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-              Popular Routes from Manhattan to JFK
+            <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+              Manhattan to JFK: Distances &amp; Drive Times
             </h2>
+            <p className="text-brand-grey mb-6 max-w-2xl">
+              JFK is about 14–17 miles from most of Manhattan — roughly a 35–60 minute drive depending on your
+              neighborhood and traffic. Downtown and East Side neighborhoods are usually a touch faster than the far West
+              Side and Upper West Side. Times below are off-peak estimates; add time for weekday rush hours.
+            </p>
             <div className="space-y-3">
               {[
-                { from: 'Midtown Manhattan → JFK', time: '35–50 min' },
-                { from: 'Financial District / Wall Street → JFK', time: '35–50 min' },
-                { from: 'Times Square / Theater District → JFK', time: '40–50 min' },
-                { from: 'Chelsea / Meatpacking District → JFK', time: '35–50 min' },
-                { from: 'Upper East Side → JFK', time: '40–55 min' },
-                { from: 'Upper West Side → JFK', time: '45–60 min' },
-                { from: 'SoHo / Tribeca → JFK', time: '35–50 min' },
-                { from: 'Harlem / East Harlem → JFK', time: '45–60 min' },
+                { from: 'Financial District / Wall Street → JFK', miles: '~14 miles', time: '35–50 min' },
+                { from: 'SoHo / Tribeca → JFK', miles: '~14 miles', time: '35–50 min' },
+                { from: 'Chelsea / Meatpacking District → JFK', miles: '~14 miles', time: '35–50 min' },
+                { from: 'Midtown Manhattan → JFK', miles: '~15 miles', time: '35–50 min' },
+                { from: 'Times Square / Theater District → JFK', miles: '~15 miles', time: '40–55 min' },
+                { from: 'Upper East Side → JFK', miles: '~15 miles', time: '40–55 min' },
+                { from: 'Harlem / East Harlem → JFK', miles: '~16 miles', time: '45–60 min' },
+                { from: 'Upper West Side → JFK', miles: '~17 miles', time: '45–60 min' },
               ].map((r) => (
-                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

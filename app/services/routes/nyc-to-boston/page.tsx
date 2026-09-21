@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How long does it take to drive from NYC to Boston?',
-    a: 'The drive from Midtown Manhattan to downtown Boston is approximately 3.5–4.5 hours under normal conditions. On weekdays, traffic through Connecticut (particularly around Hartford and New Haven) can add 30–60 minutes. We recommend morning departures or mid-evening for the best drive times.',
+    q: 'How far is NYC from Boston, and how long does the drive take?',
+    a: 'New York City to Boston is about 215 miles, almost entirely on I-95 through Connecticut and Rhode Island. Door to door it is typically a 3.5–4.5 hour drive; weekday traffic through Connecticut (around Bridgeport, New Haven, and Hartford) can add 30–60 minutes. We recommend a morning or mid-evening departure for the best drive times.',
   },
   {
     q: 'How much does car service from NYC to Boston cost?',
@@ -74,6 +74,7 @@ export default function NYCToBostonPage() {
             Flat-rate private chauffeur from New York City to Boston. Pickup at any Manhattan, Brooklyn, or Queens address — or direct from JFK, LGA, or EWR. Door-to-door to your Boston hotel, office, or residence.
           </p>
           <div className="flex flex-wrap gap-6 text-sm text-brand-silver mb-10">
+            <span>📍 ~215 miles</span>
             <span>⏱ ~3.5–4.5 hrs</span>
             <span>🛣 All tolls included</span>
             <span>💰 Flat rate — no surge</span>
@@ -119,7 +120,33 @@ export default function NYCToBostonPage() {
         </div>
       </section>
 
-      <section className="bg-brand-offwhite py-14">
+      <section className="bg-brand-offwhite py-16">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-2xl lg:text-3xl font-semibold text-brand-black mb-4">
+            The NYC to Boston Drive: What to Expect
+          </h2>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            New York City to Boston is roughly 215 miles — almost entirely along I-95, up through Connecticut, Rhode
+            Island, and into Massachusetts. Door to door it is typically a 3.5 to 4.5 hour drive; the main variable is
+            Connecticut, where I-95 around Bridgeport, New Haven, and Hartford can add 30 to 60 minutes on a weekday. Your
+            chauffeur watches traffic live and can reroute onto I-91 or the Merritt Parkway when the shoreline backs up.
+          </p>
+          <p className="text-brand-grey leading-relaxed mb-4">
+            A private car makes the most sense when you are traveling as a small group, carrying luggage or equipment,
+            working en route, keeping a meeting schedule at both ends, or making a stop along the way (Greenwich, New
+            Haven, Providence). Unlike the Acela, there is no station-to-station transfer, no luggage limit, and no
+            fixed timetable — you leave from your door when you want and arrive at your Boston address directly.
+          </p>
+          <p className="text-brand-grey leading-relaxed">
+            We pick up from any NYC address or directly from JFK, LGA, or EWR, and drop at any Boston destination — a
+            hotel in Back Bay, an office in the Financial District or the Seaport, a home in Cambridge or Brookline, or
+            a venue in Kendall Square. First Class SUVs are recommended for the distance and luggage; Sprinter vans are
+            available for larger groups.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-brand-white py-14">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-brand-black mb-8">NYC to Boston FAQ</h2>
           <div className="space-y-6">

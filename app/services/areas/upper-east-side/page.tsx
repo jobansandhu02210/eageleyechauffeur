@@ -51,6 +51,14 @@ const faqs = [
     q: 'How long does it take to get from the Upper East Side to JFK on a weekday morning?',
     a: 'On a typical weekday morning between 7–9 a.m., expect 40–55 minutes from the Upper East Side to JFK. The Queens-Midtown Tunnel and Grand Central Parkway approach tend to move well in the outbound direction at that hour. We recommend allowing 2.5 hours before your departure time for domestic flights and 3 hours for international — your flat rate is confirmed at booking regardless of how traffic develops.',
   },
+  {
+    q: 'How far is the Upper East Side from the NYC airports?',
+    a: 'From the Upper East Side, LaGuardia (LGA) is the closest airport at about 7 miles (20–40 minutes via the RFK/Triborough Bridge). JFK is about 15 miles (40–60 minutes) and Newark (EWR) about 14 miles (35–55 minutes). LaGuardia is usually the quickest option from the UES.',
+  },
+  {
+    q: 'How much does a car service from the Upper East Side to the airport cost?',
+    a: 'Airport transfers from the Upper East Side are a flat rate confirmed at booking, with all tolls included and no surge regardless of traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

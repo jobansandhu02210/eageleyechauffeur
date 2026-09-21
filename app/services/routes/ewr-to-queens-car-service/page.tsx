@@ -17,8 +17,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — including all tolls. No surge pricing, no add-ons at the end of the trip. Get an instant quote on our booking page by entering Newark Airport as your pickup and your Queens destination.',
   },
   {
-    q: 'How long does it take from Newark Airport to Queens?',
-    a: 'EWR to Long Island City or Astoria typically takes 35–55 minutes. To Flushing or Bayside, allow 50–70 minutes. To Jamaica or Ozone Park, which are closer to EWR via the Staten Island route, times can be 40–55 minutes. Your driver selects the optimal route in real time.',
+    q: 'How far is Newark Airport from Queens, and how long does it take?',
+    a: 'Newark Airport to Queens is roughly 15–20 miles depending on your neighborhood. EWR to Long Island City or Astoria typically takes 35–55 minutes. To Flushing or Bayside, allow 50–70 minutes. To Jamaica or Ozone Park, which are closer to EWR via the Staten Island route, times can be 40–55 minutes. Your driver selects the optimal route in real time.',
   },
   {
     q: 'Which route does the driver take from EWR to Queens?',

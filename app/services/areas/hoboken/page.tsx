@@ -44,6 +44,14 @@ const faqs = [
     q: 'Are Lincoln Tunnel tolls included in my Hoboken to Manhattan fare?',
     a: 'Yes — all tunnel and bridge tolls are built into your flat rate at booking. Lincoln Tunnel, Holland Tunnel, and any other applicable tolls are included. The price you see when you book is exactly what you pay at the end of your trip.',
   },
+  {
+    q: 'How far is Hoboken from Newark Airport and the other NYC airports?',
+    a: 'Hoboken sits right across the Hudson from Manhattan, so Newark Liberty (EWR) is the closest airport at about 8 miles (15–30 minutes). LaGuardia (LGA) is roughly 12 miles (30–50 minutes) and JFK about 18 miles (40–60 minutes), both via Manhattan or the bridges.',
+  },
+  {
+    q: 'How much does a car service from Hoboken cost?',
+    a: 'Hoboken transfers are billed as a flat rate confirmed at booking, with all tunnel and bridge tolls included and no surge. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

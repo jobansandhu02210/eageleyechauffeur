@@ -61,7 +61,27 @@ export default async function HamptonsRoutePage({ params }: Props) {
   const { origin, destination, driveTimeLabel } = route;
   const siteUrl = getSiteUrl();
 
+  // Approximate driving distance (miles) from Manhattan to each Hamptons destination.
+  const destMiles: Record<string, number> = {
+    'southampton': 90,
+    'east-hampton': 100,
+    'sag-harbor': 100,
+    'montauk': 120,
+    'bridgehampton': 95,
+    'water-mill': 92,
+    'westhampton-beach': 80,
+    'hampton-bays': 85,
+    'amagansett': 105,
+  };
+  const miles = destMiles[route.destSlug];
+
   const faqs = [
+    ...(miles
+      ? [{
+          q: `How far is ${destination.name} from New York City?`,
+          a: `${destination.name} is approximately ${miles} miles from Manhattan, on the eastern end of Long Island — a drive of about ${driveTimeLabel}. The distance from other NYC pickup points varies slightly, and summer Friday and weekend traffic on the Long Island Expressway can extend the time considerably, which is why a flat-rate chauffeur that monitors live traffic is the most reliable option.`,
+        }]
+      : []),
     {
       q: `How long does it take to drive from ${origin.name} to ${destination.name}?`,
       a: `The drive from ${origin.name} to ${destination.name} typically takes ${driveTimeLabel} depending on traffic and time of day. Summer weekends and Friday afternoons can add significant time — your Eagle Eye chauffeur monitors live traffic and plans the optimal route and departure time.`,
@@ -85,6 +105,18 @@ export default async function HamptonsRoutePage({ params }: Props) {
     {
       q: `Do you serve multiple passengers and luggage from ${origin.name}?`,
       a: `Yes. Our Business Class SUVs accommodate up to 5 passengers with luggage, and First Class SUVs seat up to 7. For weekend Hamptons trips with bags, an SUV is recommended. Specify your passenger count and luggage needs when booking.`,
+    },
+    {
+      q: `Is car service cheaper than the Hampton Jitney or the LIRR to ${destination.name}?`,
+      a: `For a solo traveler packing light, the LIRR Montauk branch or the Hampton Jitney can be lower cost per seat — but both run on fixed schedules with stops, no door-to-door service, and no luggage help, and you still need a taxi at the ${destination.name} end. For couples, families, or groups with weekend bags, a flat-rate private chauffeur from ${origin.name} to your exact ${destination.name} address is usually the better value once you split the fare and count the time saved.`,
+    },
+    {
+      q: `When should I leave ${origin.name} to avoid summer Hamptons traffic?`,
+      a: `On summer Fridays, eastbound traffic toward ${destination.name} builds from early afternoon into the evening, so leaving before noon or after 9 PM makes a real difference. Sunday afternoons and holiday Mondays are the worst heading back west. Your Eagle Eye chauffeur watches live conditions and recommends a departure window when you book.`,
+    },
+    {
+      q: `Can the driver make stops on the way to ${destination.name}?`,
+      a: `Yes. Many guests add a stop on the ${origin.name} to ${destination.name} run — a farm stand, a North or South Fork winery, lunch, or a grocery run before check-in. Let us know when booking and we will build it into your itinerary at the same transparent flat rate.`,
     },
   ];
 
@@ -184,6 +216,7 @@ export default async function HamptonsRoutePage({ params }: Props) {
               <p className="text-brand-grey leading-relaxed text-sm mb-4">{destination.description}</p>
               <div className="text-sm text-brand-grey space-y-1">
                 <div className="flex gap-3"><span className="text-brand-silver w-20 shrink-0">Drive time</span><span>{driveTimeLabel} from {origin.name}</span></div>
+                {miles && <div className="flex gap-3"><span className="text-brand-silver w-20 shrink-0">Distance</span><span>≈{miles} miles from Manhattan</span></div>}
                 <div className="flex gap-3"><span className="text-brand-silver w-20 shrink-0">Known for</span><span>{destination.knownFor}</span></div>
                 <div className="flex gap-3"><span className="text-brand-silver w-20 shrink-0">Drop-off</span><span>Exact address, estate, or hotel</span></div>
               </div>
@@ -289,6 +322,51 @@ export default async function HamptonsRoutePage({ params }: Props) {
               <div key={lm} className="bg-brand-white border border-brand-light px-4 py-3 text-sm text-brand-black flex gap-2">
                 <span className="text-brand-charcoal shrink-0">→</span>
                 <span>{lm}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* THE DRIVE */}
+      <section className="bg-brand-white py-16 lg:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold text-brand-black mb-6">
+            The Drive: {origin.name} to {destination.name}
+          </h2>
+          <div className="space-y-4 text-brand-grey text-sm leading-relaxed">
+            <p>
+              {origin.name} to {destination.name} is {miles ? `approximately ${miles} miles` : 'a straight run east across Long Island'} — about {driveTimeLabel} in normal conditions. From {origin.name}, your chauffeur heads east across Long Island, typically via the Long Island Expressway (LIE) or the Southern State Parkway before joining Sunrise Highway (Route 27), the main artery to the East End. Your driver picks the fastest combination based on live traffic that day.
+            </p>
+            <p>
+              The final approach into {destination.name} runs along {destination.mainRoad}. {destination.drivingTip}
+            </p>
+            <p>
+              Timing is everything on this route. Summer Friday afternoons and holiday weekends can add well over an hour eastbound, and Sunday evenings back it up heading west. Because your fare is a flat rate locked at booking, that traffic never changes your price — your chauffeur simply plans the departure window and route to keep the {origin.name} to {destination.name} trip as smooth as possible.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPARISON */}
+      <section className="bg-brand-offwhite py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-serif text-3xl font-semibold text-brand-black mb-3 text-center">
+            Ways to Get from {origin.name} to {destination.name}
+          </h2>
+          <p className="text-brand-grey text-sm text-center max-w-2xl mx-auto mb-10">
+            How a private chauffeur compares to the other common ways to reach {destination.name} from the {origin.borough} area.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { title: 'Private Chauffeur', best: true, body: `Door-to-door from your exact ${origin.name} address to your ${destination.name} destination. Flat rate, luggage assistance, your own schedule, and live traffic routing the whole way.` },
+              { title: 'LIRR (Montauk Branch)', best: false, body: `Station-to-station on the Montauk line, often with a change at Jamaica or Babylon. Lower per-seat cost, but no door-to-door service, limited luggage room, and a taxi still needed at the ${destination.name} end.` },
+              { title: 'Hampton Jitney', best: false, body: `A comfortable coach with fixed stops and a set schedule. Fine for a solo traveler packing light, but you are tied to departure times and drop points rather than your own door.` },
+              { title: 'Rideshare (Uber / Lyft)', best: false, body: `Possible but unpredictable for a ${miles ? `${miles}-mile` : 'long East End'} trip — summer surge pricing spikes the fare and long-haul drivers can be hard to find on peak weekends.` },
+            ].map((o) => (
+              <div key={o.title} className={`border p-6 ${o.best ? 'bg-brand-black text-brand-white border-brand-black' : 'bg-brand-white border-brand-light'}`}>
+                <h3 className={`font-semibold mb-2 ${o.best ? 'text-brand-white' : 'text-brand-black'}`}>{o.title}{o.best ? ' ✓' : ''}</h3>
+                <p className={`text-sm leading-relaxed ${o.best ? 'text-brand-silver' : 'text-brand-grey'}`}>{o.body}</p>
               </div>
             ))}
           </div>

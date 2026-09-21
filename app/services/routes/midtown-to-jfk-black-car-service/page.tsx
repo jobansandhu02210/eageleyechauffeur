@@ -16,8 +16,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Get an instant quote on our booking page by entering your Midtown address and JFK as the destination.',
   },
   {
-    q: 'How long does the drive from Midtown to JFK take?',
-    a: 'In normal traffic, Midtown to JFK takes 35-50 minutes via the Queens-Midtown Tunnel or the Queensboro Bridge. During morning rush hour (7-9am), allow 55-70 minutes.',
+    q: 'How far is Midtown Manhattan from JFK, and how long does the drive take?',
+    a: 'Midtown Manhattan to JFK is approximately 15 miles via the Queens-Midtown Tunnel and the Long Island Expressway to the Van Wyck, or the Queensboro Bridge. In normal traffic it takes 35–50 minutes; during morning rush hour (7–9am), allow 55–70 minutes. Your driver monitors live traffic and picks the fastest route to make your flight.',
   },
   {
     q: 'Do you pick up from Midtown hotels?',

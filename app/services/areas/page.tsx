@@ -111,10 +111,10 @@ const longIslandCities = [
 ];
 
 const airports = [
-  { href: '/services/areas/jfk-airport', title: 'JFK Airport Car Service', blurb: 'All terminals. Meet-and-greet, flight tracking, flat rates to all NYC neighborhoods.' },
-  { href: '/services/areas/lga-airport', title: 'LaGuardia (LGA) Car Service', blurb: 'Terminals B, C & D. Fastest airport to Manhattan — no surge on morning flights.' },
-  { href: '/services/areas/ewr-airport', title: 'Newark (EWR) Car Service', blurb: 'All tolls included. Flat rate from Manhattan, NJ, and Brooklyn to EWR.' },
-  { href: '/services/areas/hpn-airport', title: 'Westchester (HPN) Car Service', blurb: 'Commercial and private terminal. Westchester County Airport service.' },
+  { href: '/services/airport/jfk', title: 'JFK Airport Car Service', blurb: 'All terminals. Meet-and-greet, flight tracking, flat rates to all NYC neighborhoods.' },
+  { href: '/services/airport/lga', title: 'LaGuardia (LGA) Car Service', blurb: 'Terminals B, C & D. Fastest airport to Manhattan — no surge on morning flights.' },
+  { href: '/services/airport/ewr', title: 'Newark (EWR) Car Service', blurb: 'All tolls included. Flat rate from Manhattan, NJ, and Brooklyn to EWR.' },
+  { href: '/services/airport/hpn', title: 'Westchester (HPN) Car Service', blurb: 'Commercial and private terminal. Westchester County Airport service.' },
   { href: '/services/areas/teb-airport', title: 'Teterboro (TEB) Car Service', blurb: 'Private aviation only. FBO lobby meet & greet at Signature, Atlantic & Meridian. 12 miles from Midtown.' },
 ];
 
@@ -155,7 +155,7 @@ export default function AreasIndexPage() {
                   href={a.href}
                   className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
                 >
-                  <h2 className="font-serif text-xl font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <h3 className="font-serif text-xl font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h3>
                   <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
                   <span className="mt-4 inline-block text-sm font-medium text-brand-black">View service page →</span>
                 </Link>
@@ -201,7 +201,7 @@ export default function AreasIndexPage() {
                   href={a.href}
                   className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
                 >
-                  <h2 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h3>
                   <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
                   <span className="mt-3 inline-block text-sm font-medium text-brand-black">Learn more →</span>
                 </Link>
@@ -224,7 +224,7 @@ export default function AreasIndexPage() {
                   href={a.href}
                   className="block bg-brand-white border border-brand-light p-6 hover:border-brand-dark transition-colors group"
                 >
-                  <h2 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h2>
+                  <h3 className="font-semibold text-brand-black group-hover:underline mb-2">{a.title}</h3>
                   <p className="text-sm text-brand-grey leading-relaxed">{a.blurb}</p>
                   <span className="mt-3 inline-block text-sm font-medium text-brand-black">Learn more →</span>
                 </Link>

@@ -33,6 +33,14 @@ const faqs = [
     q: 'How far in advance should I book a Manhattan to TEB transfer?',
     a: 'We recommend booking at least 24 hours ahead. For early morning departures or multi-vehicle group trips, 48 hours is ideal. That said, we accommodate last-minute requests when capacity allows — reach us by phone or WhatsApp for urgent bookings.',
   },
+  {
+    q: 'How far is Teterboro Airport from Manhattan?',
+    a: 'Teterboro (TEB) is in Bergen County, New Jersey, about 12 miles from Midtown Manhattan — typically a 15–30 minute drive via the Lincoln Tunnel or the George Washington Bridge, though it can run longer at peak tunnel times. It is the closest private-aviation airport to Manhattan, which is why so many private jet travelers use it.',
+  },
+  {
+    q: 'How much does a car service from Manhattan to Teterboro cost?',
+    a: 'It is a flat rate confirmed at booking, with all tolls included and no surge, coordinated to your FBO and flight time. For private-aviation clients we can also arrange multiple vehicles for a group arriving on one aircraft. Enter your Manhattan address on the booking page for an exact quote.',
+  },
 ];
 
 export default function ManhattanToTeterboroBlackCarPage() {
@@ -87,18 +95,18 @@ export default function ManhattanToTeterboroBlackCarPage() {
             </p>
             <div className="space-y-3">
               {[
-                { from: 'Midtown Manhattan → TEB', time: '15–25 min' },
-                { from: 'Financial District → TEB', time: '20–30 min' },
-                { from: 'Upper East Side → TEB', time: '20–30 min' },
-                { from: 'Upper West Side → TEB', time: '20–30 min' },
-                { from: 'Chelsea → TEB', time: '18–28 min' },
-                { from: 'Tribeca → TEB', time: '20–30 min' },
-                { from: 'SoHo → TEB', time: '22–32 min' },
-                { from: 'Harlem → TEB', time: '25–35 min' },
+                { from: 'Chelsea → TEB', miles: '~11 miles', time: '18–28 min' },
+                { from: 'Upper West Side → TEB', miles: '~11 miles', time: '20–30 min' },
+                { from: 'Midtown Manhattan → TEB', miles: '~12 miles', time: '15–25 min' },
+                { from: 'Tribeca → TEB', miles: '~12 miles', time: '20–30 min' },
+                { from: 'SoHo → TEB', miles: '~12 miles', time: '22–32 min' },
+                { from: 'Upper East Side → TEB', miles: '~13 miles', time: '20–30 min' },
+                { from: 'Financial District → TEB', miles: '~13 miles', time: '20–30 min' },
+                { from: 'Harlem → TEB', miles: '~13 miles', time: '25–35 min' },
               ].map((r) => (
-                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black">{r.from}</span>
-                  <span className="text-brand-grey text-sm">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

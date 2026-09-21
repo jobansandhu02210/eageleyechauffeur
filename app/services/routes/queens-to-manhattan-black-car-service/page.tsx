@@ -36,6 +36,14 @@ const faqs = [
     q: 'Can I connect a Queens to Manhattan trip with an airport ride?',
     a: 'Yes. We can chain pickups — for example, picking up in Queens, dropping at JFK or LGA, then continuing to Manhattan. Contact us to arrange a multi-stop booking.',
   },
+  {
+    q: 'How far is Queens from Manhattan?',
+    a: 'It depends on the neighborhood, since western Queens sits right across the East River from Manhattan. Long Island City is only about 3 miles from Midtown, Astoria and Sunnyside about 5 miles, Forest Hills about 8 miles, and eastern neighborhoods like Bayside and Jamaica roughly 12–13 miles. Drive times run from about 10 minutes up to 50 minutes in traffic.',
+  },
+  {
+    q: 'How much does a car service from Queens to Manhattan cost?',
+    a: 'It is a flat rate confirmed at booking, based on your Queens neighborhood, destination, and vehicle class, with all tolls included and no surge — even during rush hour. Hourly hire is also available for multi-stop days in the city. Enter your trip on the booking page for an exact quote.',
+  },
 ];
 
 
@@ -102,25 +110,27 @@ export default function QueensToManhattanPage() {
       <section className="bg-brand-offwhite py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-serif text-2xl font-semibold text-brand-black mb-2">
-            Popular Queens to Manhattan Routes
+            Queens to Manhattan: Distances &amp; Drive Times
           </h2>
           <p className="text-brand-grey mb-6">
-            Queens is the borough closest to Midtown by geography — Long Island City sits across the East River, and Astoria is minutes from the 59th Street Bridge.
+            Queens is the borough closest to Midtown by geography — Long Island City sits just across the East River (about
+            3 miles via the Queensboro/59th Street Bridge or Queens-Midtown Tunnel), and western Queens neighborhoods are
+            minutes from the crossings. Times below are off-peak estimates.
           </p>
           <div className="space-y-3">
             {[
-              { from: 'Long Island City → Midtown Manhattan', time: '10–20 min' },
-              { from: 'Astoria → Midtown Manhattan', time: '15–25 min' },
-              { from: 'Sunnyside → Midtown Manhattan', time: '15–25 min' },
-              { from: 'Forest Hills → Midtown Manhattan', time: '20–35 min' },
-              { from: 'Flushing → Midtown Manhattan', time: '30–45 min' },
-              { from: 'Bayside → Midtown Manhattan', time: '35–50 min' },
-              { from: 'Jamaica → Midtown Manhattan', time: '35–50 min' },
-              { from: 'Howard Beach → Midtown Manhattan', time: '35–50 min' },
+              { from: 'Long Island City → Midtown Manhattan', miles: '~3 miles', time: '10–20 min' },
+              { from: 'Astoria → Midtown Manhattan', miles: '~5 miles', time: '15–25 min' },
+              { from: 'Sunnyside → Midtown Manhattan', miles: '~5 miles', time: '15–25 min' },
+              { from: 'Forest Hills → Midtown Manhattan', miles: '~8 miles', time: '20–35 min' },
+              { from: 'Flushing → Midtown Manhattan', miles: '~10 miles', time: '30–45 min' },
+              { from: 'Jamaica → Midtown Manhattan', miles: '~12 miles', time: '35–50 min' },
+              { from: 'Bayside → Midtown Manhattan', miles: '~13 miles', time: '35–50 min' },
+              { from: 'Howard Beach → Midtown Manhattan', miles: '~13 miles', time: '35–50 min' },
             ].map((r) => (
-              <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+              <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                 <span className="font-medium text-brand-black">{r.from}</span>
-                <span className="text-brand-grey text-sm">{r.time}</span>
+                <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
               </div>
             ))}
           </div>

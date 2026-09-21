@@ -28,15 +28,27 @@ const faqs = [
     q: 'What areas near New Hyde Park do you serve?',
     a: 'We serve all of New Hyde Park including North New Hyde Park and the surrounding communities of Floral Park, Garden City, Mineola, Albertson, and Williston Park — all under the same flat-rate standard.',
   },
+  {
+    q: 'How far is New Hyde Park from JFK and LaGuardia?',
+    a: 'New Hyde Park sits right on the Queens/Nassau border, so it is one of the closest Nassau communities to the airports — about 13 miles from JFK (roughly 20–30 minutes via the Belt Parkway) and about 11 miles from LaGuardia (25–35 minutes).',
+  },
+  {
+    q: 'How much does a car service from New Hyde Park cost?',
+    a: 'New Hyde Park transfers are billed as a flat rate confirmed at booking. Because it is so close to the airports, the JFK and LGA rates are among the lowest in Nassau County — all tolls included, no surge. Enter your trip for an exact quote.',
+  },
+  {
+    q: 'What is the best way to get from New Hyde Park to a NYC airport?',
+    a: 'A private car service is the easiest option — a short, direct run door to door with a guaranteed pre-dawn pickup, no AirTrain transfer at Jamaica, and no early-morning rideshare uncertainty. As a locally based service, our drivers know every street in the area.',
+  },
 ];
 
 const routes = [
-  { label: 'New Hyde Park to JFK Airport', time: '20–30 min' },
-  { label: 'New Hyde Park to LaGuardia (LGA)', time: '25–35 min' },
-  { label: 'New Hyde Park to Newark (EWR)', time: '55–70 min' },
-  { label: 'New Hyde Park to Manhattan (Midtown)', time: '45–60 min' },
-  { label: 'New Hyde Park to Brooklyn', time: '40–55 min' },
-  { label: 'New Hyde Park to HPN (Westchester)', time: '50–65 min' },
+  { label: 'New Hyde Park to LaGuardia (LGA)', miles: '~11 miles', time: '25–35 min' },
+  { label: 'New Hyde Park to JFK Airport', miles: '~13 miles', time: '20–30 min' },
+  { label: 'New Hyde Park to Manhattan (Midtown)', miles: '~18 miles', time: '35–60 min' },
+  { label: 'New Hyde Park to Brooklyn', miles: '~16 miles', time: '40–55 min' },
+  { label: 'New Hyde Park to Newark (EWR)', miles: '~28 miles', time: '55–75 min' },
+  { label: 'New Hyde Park to HPN (Westchester)', miles: '~25 miles', time: '50–65 min' },
 ];
 
 export default function NewHydeParkPage() {
@@ -85,9 +97,9 @@ export default function NewHydeParkPage() {
             <p className="text-brand-grey mb-6">Estimated travel times from New Hyde Park. All rates are flat and confirmed at booking — tolls included.</p>
             <div className="space-y-3">
               {routes.map((r) => (
-                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black text-sm">{r.label}</span>
-                  <span className="text-brand-grey text-sm tabular-nums">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

@@ -44,6 +44,14 @@ const faqs = [
     q: 'Can I hire a chauffeur by the hour in Scarsdale for shopping or events?',
     a: 'Yes. Hourly hire is available for Scarsdale residents who need a chauffeur on call — whether for city shopping trips, social events, medical appointments, or multi-stop executive days. Your vehicle and driver remain at your disposal for the full booked period. Contact us to arrange.',
   },
+  {
+    q: 'How far is Scarsdale from the NYC airports?',
+    a: 'From Scarsdale in Westchester County, Westchester County Airport (HPN) is the closest at about 8 miles (15–25 minutes). LaGuardia (LGA) is about 20 miles (35–55 minutes), Newark (EWR) about 30 miles (45–70 minutes), and JFK about 30 miles (50–75 minutes). Midtown Manhattan is roughly 22 miles.',
+  },
+  {
+    q: 'How much does a car service from Scarsdale cost?',
+    a: 'Scarsdale transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tolls included and no surge. Enter your trip on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

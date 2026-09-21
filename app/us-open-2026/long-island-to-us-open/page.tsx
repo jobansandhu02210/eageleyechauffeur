@@ -7,7 +7,7 @@ import { CONTACT_PHONE_DISPLAY, CONTACT_PHONE_E164, WHATSAPP_BOOKING_URL } from 
 export const metadata: Metadata = {
   title: 'Long Island to US Open | Car Service to Flushing Meadows',
   description:
-    'Long Island to US Open car service — Nassau and Suffolk County pickups to the Billie Jean King National Tennis Center. Flat-rate, no surge. Garden City, Great Neck & more.',
+    'Long Island to US Open car service — Nassau & Suffolk County pickups to the Billie Jean King National Tennis Center. Flat-rate, no surge, door-to-door.',
   keywords: [
     'Long Island to US Open',
     'Long Island US Open tennis car service',

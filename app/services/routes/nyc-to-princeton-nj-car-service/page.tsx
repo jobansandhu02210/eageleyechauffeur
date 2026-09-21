@@ -19,8 +19,8 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    q: 'How long is the drive from New York City to Princeton NJ?',
-    a: 'From Midtown Manhattan, the drive to Princeton NJ typically takes 65–80 minutes via the New Jersey Turnpike or I-287. From the Financial District (FiDi), expect a similar 65–80 minutes. From EWR Airport to Princeton, the drive is shorter — approximately 45–60 minutes — making Newark the most convenient airport for Princeton-bound travelers. From JFK, the drive is 70–90 minutes depending on traffic. We monitor conditions in real time and select the optimal route for your pickup time.',
+    q: 'How far is Princeton NJ from New York City, and how long is the drive?',
+    a: 'New York City to Princeton NJ is about 50 miles. From Midtown Manhattan, the drive typically takes 65–80 minutes via the New Jersey Turnpike or I-287. From the Financial District (FiDi), expect a similar 65–80 minutes. From EWR Airport to Princeton, the drive is shorter — approximately 45–60 minutes — making Newark the most convenient airport for Princeton-bound travelers. From JFK, the drive is 70–90 minutes depending on traffic. We monitor conditions in real time and select the optimal route for your pickup time.',
   },
   {
     q: 'Is there a flat rate for car service from Manhattan to Princeton?',

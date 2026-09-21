@@ -43,6 +43,14 @@ const faqs = [
     q: 'Can you handle event transfers for private parties and corporate events at Flatiron venues?',
     a: "Absolutely. The Flatiron District and NoMad are home to numerous event spaces, rooftop venues, and private dining rooms — from the Dream Hotel to 1 Hotel Brooklyn Bridge-adjacent event spaces. We coordinate both inbound guest arrivals and post-event departures, including multi-vehicle group transfers when large parties need to disperse to different Manhattan destinations or airports.",
   },
+  {
+    q: 'How far is the Flatiron District from the NYC airports?',
+    a: 'From the Flatiron District in Manhattan, LaGuardia (LGA) is about 9 miles (25–45 minutes), Newark (EWR) about 11 miles (25–45 minutes via the tunnels), and JFK about 14 miles (40–60 minutes). LaGuardia is usually the quickest airport from Flatiron.',
+  },
+  {
+    q: 'How much does a car service from the Flatiron District to the airport cost?',
+    a: 'Airport transfers from the Flatiron District are a flat rate confirmed at booking, with all tolls included and no surge regardless of traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

@@ -17,8 +17,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Get an instant quote on our booking page by entering JFK as your pickup and your Upper East Side address as the destination.',
   },
   {
-    q: 'How long does JFK to Upper East Side take?',
-    a: 'In normal traffic, JFK to the Upper East Side takes 35–55 minutes. During Midtown afternoon traffic (3–7pm), allow 55–70 minutes. Your driver takes the most efficient route in real time.',
+    q: 'How far is JFK from the Upper East Side, and how long does it take?',
+    a: 'JFK to the Upper East Side is approximately 16 miles via the Midtown Tunnel or the RFK Bridge. In normal traffic it takes 35–55 minutes. During Midtown afternoon traffic (3–7pm), allow 55–70 minutes. Your driver takes the most efficient route in real time.',
   },
   {
     q: 'Do you go to Park Avenue and 5th Avenue addresses on the UES?',

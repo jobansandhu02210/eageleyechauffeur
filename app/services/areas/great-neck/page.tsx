@@ -28,15 +28,27 @@ const faqs = [
     q: 'Is there surge pricing for Great Neck rides during rush hour?',
     a: 'Never. Your price is flat and locked at booking regardless of traffic, time of day, or demand. A 5am JFK run costs the same confirmed rate as any other time.',
   },
+  {
+    q: 'How far is Great Neck from JFK and LaGuardia?',
+    a: 'Great Neck is on the Nassau County North Shore, close to the Queens border — about 10 miles from LaGuardia (20–30 minutes) and about 18 miles from JFK (25–40 minutes). Its proximity to LGA makes it a strong option for domestic flights.',
+  },
+  {
+    q: 'How much does a car service from Great Neck cost?',
+    a: 'Great Neck transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tolls included and no surge. Enter your trip on the booking page for an exact quote.',
+  },
+  {
+    q: 'What is the best way to get from Great Neck to a NYC airport?',
+    a: 'A private car service is the most reliable option — door to door with no LIRR transfer at Jamaica for the JFK AirTrain, and a guaranteed pre-dawn pickup without depending on rideshare availability on the North Shore early in the morning.',
+  },
 ];
 
 const routes = [
-  { label: 'Great Neck to JFK Airport', time: '25–40 min' },
-  { label: 'Great Neck to LaGuardia (LGA)', time: '20–30 min' },
-  { label: 'Great Neck to Newark (EWR)', time: '60–80 min' },
-  { label: 'Great Neck to Manhattan (Midtown)', time: '50–65 min' },
-  { label: 'Great Neck to Brooklyn', time: '45–60 min' },
-  { label: 'Great Neck to Westchester', time: '60–80 min' },
+  { label: 'Great Neck to LaGuardia (LGA)', miles: '~10 miles', time: '20–30 min' },
+  { label: 'Great Neck to JFK Airport', miles: '~18 miles', time: '25–40 min' },
+  { label: 'Great Neck to Manhattan (Midtown)', miles: '~16 miles', time: '30–55 min' },
+  { label: 'Great Neck to Brooklyn', miles: '~20 miles', time: '45–60 min' },
+  { label: 'Great Neck to Newark (EWR)', miles: '~26 miles', time: '60–80 min' },
+  { label: 'Great Neck to Westchester (HPN)', miles: '~22 miles', time: '45–70 min' },
 ];
 
 export default function GreatNeckPage() {
@@ -85,9 +97,9 @@ export default function GreatNeckPage() {
             <p className="text-brand-grey mb-6">Estimated travel times from Great Neck. All rates are flat — tolls included, no surge pricing.</p>
             <div className="space-y-3">
               {routes.map((r) => (
-                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black text-sm">{r.label}</span>
-                  <span className="text-brand-grey text-sm tabular-nums">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

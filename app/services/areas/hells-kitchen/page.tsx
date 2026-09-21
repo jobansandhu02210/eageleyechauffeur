@@ -43,6 +43,14 @@ const faqs = [
     q: "Can you handle group transfers for Broadway shows or Hudson Yards events from Hell's Kitchen?",
     a: "Yes. Hell's Kitchen&apos;s position between the Theater District, Times Square, Columbus Circle, and Hudson Yards makes multi-stop or multi-vehicle group bookings very common. Whether you need two SUVs after a Broadway night or a sedan convoy for a Hudson Yards corporate event, we coordinate the logistics so every guest departs on time in a luxury vehicle.",
   },
+  {
+    q: "How far is Hell's Kitchen from the NYC airports?",
+    a: "From Hell's Kitchen on Manhattan's west side, Newark (EWR) is about 10 miles (20–40 minutes via the Lincoln Tunnel), LaGuardia (LGA) about 9 miles (25–45 minutes), and JFK about 15 miles (45–65 minutes). Being right by the Lincoln Tunnel, Newark is often the quickest airport from here.",
+  },
+  {
+    q: "How much does a car service from Hell's Kitchen to the airport cost?",
+    a: 'Airport transfers are a flat rate confirmed at booking, with all tolls included and no surge — even during Theater District and Times Square congestion. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

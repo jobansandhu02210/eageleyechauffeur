@@ -44,6 +44,18 @@ const faqs = [
     q: 'Do you offer event transportation in South Norwalk (SoNo)?',
     a: 'Yes. SoNo&apos;s restaurant and entertainment district, along with Norwalk&apos;s growing events calendar, makes event transportation a regular request. Eagle Eye provides professional chauffeur service for corporate dinners, private events, and group occasions in SoNo, Downtown Norwalk, and throughout Fairfield County.',
   },
+  {
+    q: 'How far is Norwalk, CT from the NYC airports?',
+    a: 'Norwalk is in Fairfield County, Connecticut. Westchester County Airport (HPN) is the closest at about 15 miles (20–30 minutes). LaGuardia (LGA) is about 40 miles (50–75 minutes), JFK about 50 miles (70–95 minutes), and Newark (EWR) about 55 miles (70–95 minutes). Midtown Manhattan is roughly 45 miles.',
+  },
+  {
+    q: 'How much does a car service from Norwalk cost?',
+    a: 'Norwalk transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tolls included and no surge. Because it is a Connecticut run over the I-95 corridor, enter your trip on the booking page for an exact quote.',
+  },
+  {
+    q: 'What is the best way to travel between Norwalk and NYC or the airports?',
+    a: 'For business travel and airport connections, a private chauffeur is the most flexible option — door to door with no Metro-North schedule to catch, hourly hire available for meeting days, flight tracking on airport arrivals, and a flat rate with tolls included on the I-95 or Merritt Parkway route.',
+  },
 ];
 
 const eaglEyeBenefits = [

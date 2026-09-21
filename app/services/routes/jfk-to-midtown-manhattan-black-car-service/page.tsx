@@ -17,8 +17,8 @@ const faqs = [
     a: 'All rates are flat and confirmed at booking — no surge pricing, ever. Get an instant quote on our booking page by entering JFK as your pickup and your Midtown address or hotel as the destination.',
   },
   {
-    q: 'How long does JFK to Midtown Manhattan take?',
-    a: 'In normal traffic, JFK to Midtown takes 35–55 minutes via the Van Wyck Expressway and Queens-Midtown Tunnel. For afternoon arrivals (3–7pm), allow 60–75 minutes due to Midtown congestion.',
+    q: 'How far is JFK from Midtown Manhattan, and how long does it take?',
+    a: 'JFK to Midtown Manhattan is approximately 15 miles via the Van Wyck Expressway and the Queens-Midtown Tunnel. In normal traffic it takes 35–55 minutes. For afternoon arrivals (3–7pm), allow 60–75 minutes due to Midtown congestion.',
   },
   {
     q: 'Do you serve Times Square hotels from JFK?',

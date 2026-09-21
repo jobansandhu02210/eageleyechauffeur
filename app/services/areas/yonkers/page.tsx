@@ -44,6 +44,14 @@ const faqs = [
     q: 'Do you serve residential neighborhoods throughout all of Yonkers?',
     a: 'Yes. Eagle Eye serves all Yonkers neighborhoods — from Riverdale-adjacent Southwest Yonkers and Nodine Hill to Park Hill, Crestwood, Dunwoodie, and the Hudson River waterfront communities including the new Ridge Hill area. Your address is your pickup point.',
   },
+  {
+    q: 'How far is Yonkers from the NYC airports?',
+    a: 'Yonkers, in southern Westchester County, is about 15 miles from LaGuardia (30–50 minutes), 25 miles from JFK (45–70 minutes), and 20 miles from Newark (EWR) (35–55 minutes). Westchester County Airport (HPN) is closer at about 12 miles, and Midtown Manhattan is roughly 15 miles.',
+  },
+  {
+    q: 'How much does a car service from Yonkers cost?',
+    a: 'Yonkers transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tolls included and no surge. Enter your trip on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

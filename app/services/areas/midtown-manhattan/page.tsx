@@ -51,6 +51,14 @@ const faqs = [
     q: 'Can I book a black car from a Midtown hotel for an early morning JFK departure?',
     a: 'Yes. Early morning airport pickups from Midtown hotels — The Plaza, The St. Regis, Four Seasons on 57th, Park Hyatt, and all other Midtown properties — are one of our most common bookings. Your chauffeur is confirmed the evening before, coordinates with the hotel bell desk, and arrives precisely at your requested time. Visit /book to reserve your transfer.',
   },
+  {
+    q: 'How far is Midtown Manhattan from the NYC airports?',
+    a: 'From Midtown Manhattan, LaGuardia (LGA) is the closest airport at about 8 miles (20–40 minutes). JFK is about 15 miles (45–60 minutes) and Newark (EWR) about 15 miles (30–50 minutes via the Lincoln Tunnel). LaGuardia is usually quickest for domestic flights, while EWR can be faster than JFK in heavy traffic.',
+  },
+  {
+    q: 'How much does a car service from Midtown Manhattan to the airport cost?',
+    a: 'Airport transfers from Midtown are a flat rate confirmed at booking, with all tolls included and no surge regardless of traffic. Enter your destination on the booking page for an exact quote.',
+  },
 ];
 
 const eaglEyeBenefits = [

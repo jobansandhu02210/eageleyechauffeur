@@ -32,6 +32,14 @@ const faqs = [
     q: 'Is JFK to Westchester car service available at 3am for early morning flights?',
     a: 'Yes. Eagle Eye Chauffeur operates 24 hours a day, 7 days a week, 365 days a year. Early morning departures and late-night arrivals for Westchester transfers are fully covered. Your rate is the same regardless of the hour.',
   },
+  {
+    q: 'How far is JFK from Westchester?',
+    a: 'Westchester is roughly 22 to 35 miles north of JFK depending on the town. Yonkers and New Rochelle are the closest at about 22–25 miles (40–55 minutes), Scarsdale and Larchmont about 25–27 miles, and White Plains, Rye, and Port Chester about 30–33 miles (50–75 minutes). Greenwich, CT is about 35 miles.',
+  },
+  {
+    q: 'Which is the closest Westchester town to JFK?',
+    a: 'Yonkers is the closest major Westchester city to JFK — about 25 miles and 40–55 minutes — since it sits right on the New York City border. New Rochelle and Bronxville are also among the shortest transfers, while northern towns like Port Chester and the Connecticut border are farther.',
+  },
 ];
 
 
@@ -117,21 +125,22 @@ export default function JFKToWestchesterPage() {
             Popular JFK to Westchester Routes
           </h2>
           <p className="text-brand-grey mb-8 max-w-2xl">
-            All times are estimated and vary with traffic. Your chauffeur takes the fastest live-traffic
-            route. Flat rates confirmed at booking — no surprises.
+            Westchester is roughly 22 to 35 miles north of JFK — the drive runs up the Whitestone or Throgs Neck Bridge
+            and the Hutchinson River Parkway or I-95. Distances and times below are estimates and vary with traffic;
+            your chauffeur takes the fastest live-traffic route. Flat rates confirmed at booking — no surprises.
           </p>
           <div className="space-y-3">
             {[
-              { from: 'JFK → White Plains', time: '50–70 min', note: 'Westchester\'s largest city; major corporate hub' },
-              { from: 'JFK → Scarsdale', time: '45–65 min', note: 'Residential village, Tuckahoe Rd corridor' },
-              { from: 'JFK → Yonkers', time: '40–55 min', note: 'Closest major Westchester city to NYC' },
-              { from: 'JFK → New Rochelle', time: '40–55 min', note: 'Sound Shore corridor, I-95 area' },
-              { from: 'JFK → Bronxville', time: '45–60 min', note: 'Village, Pondfield Rd area' },
-              { from: 'JFK → Larchmont', time: '45–65 min', note: 'Shore road area, Long Island Sound' },
-              { from: 'JFK → Mamaroneck', time: '45–65 min', note: 'Harbor area, Westchester Ave' },
-              { from: 'JFK → Rye', time: '50–70 min', note: 'Boston Post Rd corridor' },
-              { from: 'JFK → Port Chester', time: '55–75 min', note: 'Near CT border, King Street area' },
-              { from: 'JFK → Greenwich, CT', time: '65–85 min', note: 'Cross-state; Merritt Pkwy access' },
+              { from: 'JFK → Yonkers', dist: '~25 mi · 40–55 min', note: 'Closest major Westchester city to NYC' },
+              { from: 'JFK → New Rochelle', dist: '~22 mi · 40–55 min', note: 'Sound Shore corridor, I-95 area' },
+              { from: 'JFK → Bronxville', dist: '~24 mi · 45–60 min', note: 'Village, Pondfield Rd area' },
+              { from: 'JFK → Scarsdale', dist: '~27 mi · 45–65 min', note: 'Residential village, Tuckahoe Rd corridor' },
+              { from: 'JFK → Larchmont', dist: '~25 mi · 45–65 min', note: 'Shore road area, Long Island Sound' },
+              { from: 'JFK → Mamaroneck', dist: '~27 mi · 45–65 min', note: 'Harbor area, Westchester Ave' },
+              { from: 'JFK → White Plains', dist: '~32 mi · 50–70 min', note: 'Westchester\'s largest city; major corporate hub' },
+              { from: 'JFK → Rye', dist: '~30 mi · 50–70 min', note: 'Boston Post Rd corridor' },
+              { from: 'JFK → Port Chester', dist: '~33 mi · 55–75 min', note: 'Near CT border, King Street area' },
+              { from: 'JFK → Greenwich, CT', dist: '~35 mi · 65–85 min', note: 'Cross-state; Merritt Pkwy access' },
             ].map((r) => (
               <div
                 key={r.from}
@@ -141,7 +150,7 @@ export default function JFKToWestchesterPage() {
                   <span className="font-semibold text-brand-black">{r.from}</span>
                   <span className="text-brand-grey text-sm ml-3">{r.note}</span>
                 </div>
-                <span className="text-brand-grey text-sm font-medium whitespace-nowrap">{r.time}</span>
+                <span className="text-brand-grey text-sm font-medium whitespace-nowrap tabular-nums">{r.dist}</span>
               </div>
             ))}
           </div>

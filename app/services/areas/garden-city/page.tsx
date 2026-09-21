@@ -28,15 +28,23 @@ const faqs = [
     q: 'Do you provide black car service for Garden City events and weddings?',
     a: 'Yes. We serve weddings, corporate events, galas, and special occasions throughout Garden City and Nassau County. Hourly service is available for multi-stop itineraries.',
   },
+  {
+    q: 'How far is Garden City from JFK and LaGuardia?',
+    a: 'Garden City is one of the closest Nassau County communities to the airports — about 18 miles from JFK (roughly 20–35 minutes via the Belt or Southern State Parkway) and about 15 miles from LaGuardia (25–40 minutes).',
+  },
+  {
+    q: 'How much does a car service from Garden City cost?',
+    a: 'Garden City transfers are billed as a flat rate confirmed at booking, based on your address and destination, with all tolls included and no surge. Enter your trip on the booking page for an exact quote.',
+  },
 ];
 
 const routes = [
-  { label: 'Garden City to JFK Airport', time: '20–35 min' },
-  { label: 'Garden City to LaGuardia (LGA)', time: '30–45 min' },
-  { label: 'Garden City to Newark (EWR)', time: '55–75 min' },
-  { label: 'Garden City to Manhattan (Midtown)', time: '45–60 min' },
-  { label: 'Garden City to Brooklyn', time: '35–50 min' },
-  { label: 'Garden City to Westchester', time: '65–85 min' },
+  { label: 'Garden City to LaGuardia (LGA)', miles: '~15 miles', time: '25–40 min' },
+  { label: 'Garden City to JFK Airport', miles: '~18 miles', time: '20–35 min' },
+  { label: 'Garden City to Manhattan (Midtown)', miles: '~22 miles', time: '40–65 min' },
+  { label: 'Garden City to Brooklyn', miles: '~20 miles', time: '35–50 min' },
+  { label: 'Garden City to Newark (EWR)', miles: '~35 miles', time: '55–80 min' },
+  { label: 'Garden City to Westchester (White Plains)', miles: '~30 miles', time: '55–85 min' },
 ];
 
 export default function GardenCityPage() {
@@ -93,9 +101,9 @@ export default function GardenCityPage() {
             </p>
             <div className="space-y-3">
               {routes.map((r) => (
-                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex justify-between items-center">
+                <div key={r.label} className="bg-brand-offwhite border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                   <span className="font-medium text-brand-black text-sm">{r.label}</span>
-                  <span className="text-brand-grey text-sm tabular-nums">{r.time}</span>
+                  <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
                 </div>
               ))}
             </div>

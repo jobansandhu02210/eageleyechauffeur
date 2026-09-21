@@ -36,6 +36,14 @@ const faqs = [
     q: 'Do you offer Bronx to Manhattan car service for medical appointments?',
     a: 'Yes. We regularly transport clients to hospital appointments and medical facilities in Manhattan including NY-Presbyterian, Mount Sinai, and NYU Langone. Book in advance for scheduled appointments.',
   },
+  {
+    q: 'How far is the Bronx from Manhattan?',
+    a: 'The Bronx borders northern Manhattan, so the South Bronx is very close — Mott Haven is about 6 miles from Lower Manhattan and roughly 8 miles from Midtown. Central neighborhoods like Fordham and the Grand Concourse are about 8–10 miles from Midtown, while Riverdale, Co-op City, and City Island are about 13–16 miles. Drive times run from 15 minutes to under an hour depending on traffic.',
+  },
+  {
+    q: 'How much does a car service from the Bronx to Manhattan cost?',
+    a: 'It is a flat rate confirmed at booking, based on your Bronx neighborhood, destination, and vehicle class, with all tolls included and no surge. Hourly hire is available for appointments, events, or multi-stop days in the city. Enter your trip on the booking page for an exact quote.',
+  },
 ];
 
 
@@ -100,23 +108,28 @@ export default function BronxToManhattanPage() {
       {/* Popular sub-routes */}
       <section className="bg-brand-offwhite py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-6">
-            Popular Bronx to Manhattan Routes
+          <h2 className="font-serif text-2xl font-semibold text-brand-black mb-4">
+            Bronx to Manhattan: Distances &amp; Drive Times
           </h2>
+          <p className="text-brand-grey mb-6 max-w-2xl">
+            The Bronx borders Manhattan to the north, so the South Bronx is remarkably close — Mott Haven is only about 6
+            miles from Lower Manhattan via the bridges over the Harlem River. Northern and eastern neighborhoods like
+            Riverdale, Co-op City, and City Island run a little longer. Times below are off-peak estimates.
+          </p>
           <div className="space-y-3">
             {[
-              { from: 'Riverdale → Midtown Manhattan', time: '25–40 min' },
-              { from: 'Fordham → Midtown Manhattan', time: '20–35 min' },
-              { from: 'Grand Concourse → Midtown Manhattan', time: '20–30 min' },
-              { from: 'Co-op City → Midtown Manhattan', time: '30–45 min' },
-              { from: 'Pelham Bay → Midtown Manhattan', time: '30–50 min' },
-              { from: 'City Island → Midtown Manhattan', time: '35–55 min' },
-              { from: 'Mott Haven → Lower Manhattan', time: '15–25 min' },
-              { from: 'Hunts Point → Midtown Manhattan', time: '20–35 min' },
+              { from: 'Mott Haven → Lower Manhattan', miles: '~6 miles', time: '15–25 min' },
+              { from: 'Grand Concourse → Midtown Manhattan', miles: '~8 miles', time: '20–30 min' },
+              { from: 'Hunts Point → Midtown Manhattan', miles: '~9 miles', time: '20–35 min' },
+              { from: 'Fordham → Midtown Manhattan', miles: '~10 miles', time: '20–35 min' },
+              { from: 'Riverdale → Midtown Manhattan', miles: '~13 miles', time: '25–40 min' },
+              { from: 'Co-op City → Midtown Manhattan', miles: '~15 miles', time: '30–45 min' },
+              { from: 'Pelham Bay → Midtown Manhattan', miles: '~15 miles', time: '30–50 min' },
+              { from: 'City Island → Midtown Manhattan', miles: '~16 miles', time: '35–55 min' },
             ].map((r) => (
-              <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex justify-between items-center">
+              <div key={r.from} className="bg-brand-white border border-brand-light p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
                 <span className="font-medium text-brand-black">{r.from}</span>
-                <span className="text-brand-grey text-sm">{r.time}</span>
+                <span className="text-brand-grey text-sm tabular-nums">{r.miles} · {r.time}</span>
               </div>
             ))}
           </div>
