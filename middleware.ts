@@ -13,7 +13,10 @@ function unauthorized() {
 export function middleware(req: NextRequest) {
   const password = process.env.ADMIN_PASSWORD;
   if (!password) {
-    // If you didn't set a password, don't lock you out during setup.
+    // In production, fail CLOSED: an unset password must never leave the admin
+    // dashboard and the card-charging endpoint open to the public. Locally,
+    // stay open so you're not locked out during first-time setup.
+    if (process.env.NODE_ENV === 'production') return unauthorized();
     return NextResponse.next();
   }
 
@@ -34,6 +37,6 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin/:path*', '/api/admin/:path*', '/api/booking/:id/charge'],
 };
 

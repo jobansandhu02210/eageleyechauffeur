@@ -23,6 +23,20 @@ model Driver {
   bookings  Booking[]
 }
 
+/** Fleet chauffeurs for dispatch/assignment (separate from the referral Driver model). */
+model Chauffeur {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String?
+  email     String?
+  notes     String?
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([active])
+}
+
 model Referral {
   id            String   @id @default(cuid())
   promoCode     String
@@ -87,11 +101,32 @@ model Booking {
   quoteAmount     Float?
   quoteLabel      String?
 
+  tipAmount       Float?   // gratuity selected at booking (added to the after-trip charge)
+  tipPercent      Int?     // 15 / 20 / 25, or null when a custom amount was entered
+
   customerName    String?
   customerEmail   String?
   customerPhone   String?
 
   promoCode       String?
+
+  stripeCustomerId      String?
+  stripePaymentMethodId String?
+  stripeSetupIntentId   String?
+  stripePaymentIntentId String?
+  paymentStatus         String?  @default("pending")
+  chargedAmount         Float?
+  paidAt                DateTime?
+
+  source          String?  @default("web")  // web | manual | whatsapp
+  sourceMessage   String?  // raw inbound text (e.g. the original WhatsApp message)
+
+  // Dispatch / operations
+  assignedDriver      String?          // name of the chauffeur assigned to this ride
+  assignedChauffeurId String?          // id of the Chauffeur record assigned (for contact/notify)
+  rideStatus          String?  @default("new")  // new | confirmed | completed | cancelled
+  confirmationSentAt  DateTime?        // when the admin emailed the customer a confirmation
+  driverNotifiedAt    DateTime?        // when the assigned driver was emailed the trip details
 
   driver   Driver? @relation(fields: [driverId], references: [id], onDelete: SetNull)
   driverId String?
@@ -101,4 +136,7 @@ model Booking {
   @@index([createdAt])
   @@index([promoCode])
   @@index([driverId])
+  @@index([rideStatus])
+  @@index([stripePaymentIntentId])
+  @@index([stripeCustomerId])
 }
